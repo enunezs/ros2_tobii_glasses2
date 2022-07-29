@@ -18,15 +18,20 @@ endif()
 # find dependencies
 find_package(ament_cmake REQUIRED)
 find_package(ament_cmake_python REQUIRED)
-find_package(rclpy REQUIRED)
 
 #  TODO: Complete, ensure they match
 find_package(rclcpp REQUIRED)
+find_package(rclpy REQUIRED)
 find_package(std_msgs REQUIRED) # TODO: Remove python ones
+find_package(sensor_msgs REQUIRED)
+find_package(OpenCV REQUIRED)
+find_package(image_transport REQUIRED)
+find_package(cv_bridge REQUIRED)
+find_package(rosidl_default_generators REQUIRED)
 
 # TODO: C++ scripts
 add_executable(talker src/publisher_member_function.cpp)
-ament_target_dependencies(talker rclcpp std_msgs)
+ament_target_dependencies(talker rclcpp std_msgs sensor_msgs)
 
 install(TARGETS
   talker

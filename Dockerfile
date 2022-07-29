@@ -7,14 +7,17 @@ WORKDIR $HOME
 
 # install ros2 packages
 RUN apt-get update && apt-get install -y \ 
-	python3-numpy \
 	ros-foxy-cv-bridge \
 	ros-foxy-vision-opencv \
-	python3-opencv \
-	python3-pip
+	ros-foxy-compressed-image-transport
 
 #RUN pip3 install --upgrade 
-
+# install ros2 packages
+RUN apt-get update && apt-get install -y \ 
+	python3-numpy \
+	python3-opencv \
+	python3-pip
+	
 #pip3 install --no-cache-dir pyautogui 
 RUN pip3 install --upgrade pip
 
