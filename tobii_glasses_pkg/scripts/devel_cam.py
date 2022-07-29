@@ -74,10 +74,10 @@ class tobiiPublisher(Node):  # Create node inheriting from Node
 
         # Get cursor position instead of eye data
         # Normalized respect to screen size
-        w = pyautogui.position()
-        screenWidth, screenHeight = pyautogui.size()
-        x_mouse = w.x/screenWidth
-        y_mouse = w.y/screenHeight
+        #w = pyautogui.position()
+        #screenWidth, screenHeight = pyautogui.size()
+        x_mouse = w.x#/screenWidth
+        y_mouse = w.y#/screenHeight
         print(x_mouse, y_mouse)
 
         # Send

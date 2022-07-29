@@ -20,6 +20,19 @@ find_package(ament_cmake REQUIRED)
 find_package(ament_cmake_python REQUIRED)
 find_package(rclpy REQUIRED)
 
+#  TODO: Complete, ensure they match
+find_package(rclcpp REQUIRED)
+find_package(std_msgs REQUIRED) # TODO: Remove python ones
+
+# TODO: C++ scripts
+add_executable(talker src/publisher_member_function.cpp)
+ament_target_dependencies(talker rclcpp std_msgs)
+
+install(TARGETS
+  talker
+  DESTINATION lib/${PROJECT_NAME})
+
+
 # Path to scripts
 ament_python_install_package(scripts/)
 
