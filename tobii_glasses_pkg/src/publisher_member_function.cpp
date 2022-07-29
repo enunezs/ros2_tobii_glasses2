@@ -5,15 +5,22 @@
 
 //ROS2
 #include "rclcpp/rclcpp.hpp"
-
-/*
 #include <rclcpp/qos.hpp>
 //#include "cv_bridge/cv_bridge.h"
 #include "sensor_msgs/msg/image.hpp"
 #include "std_msgs/msg/header.hpp"
+
+
+//CV
 //#include <opencv2/opencv.hpp>
+//#include <opencv/cv.h>
+#include "cv_bridge/cv_bridge.h"
+#include <opencv2/opencv.hpp>
+// #include <sensor_msgs/msg/image_encodings.h>
+#include <opencv2/imgproc/imgproc.hpp>
+#include <opencv2/highgui/highgui.hpp>
 //#include <stdio.h>
-*/
+
 //Messages
 #include "std_msgs/msg/string.hpp"
 #include "sensor_msgs/msg/image.hpp"
@@ -26,7 +33,9 @@
 
 using namespace std::chrono_literals;
 
-//using namespace cv;
+
+
+using namespace cv;
 using namespace std;
 
 
@@ -38,23 +47,30 @@ int publish_rate = 0.01 ;
 /* This example creates a subclass of Node and uses std::bind() to register a
 * member function as a callback from the timer. */
 
+
+cv::VideoCapture capture; //(videoStreamAddress);
+
+
+
 class TobiiGlassesPublisher : public rclcpp::Node
 {
   public:
     TobiiGlassesPublisher()
-    : Node("minimal_publisher"), count_(0)
+    : Node("tobii_glasses_publisher_node"), count_(0)
     { //Initialization
       // Send custom msg for glasses, packaging all needed elements
       //Start simple first, independent parts 
       //Compressed Image for camera feed
       video_stream_publisher_ = this->create_publisher<sensor_msgs::msg::Image>("tobii_glasses/camera_compressed", 1); //TODO: Change to custom msg
       // String for eye info      
-      //eye_stream_publisher_ = this->create_publisher<std_msgs::msg::String>("tobii_glasses/eye_info", 1); //TODO: Change to custom msg
+      eye_stream_publisher_ = this->create_publisher<std_msgs::msg::String>("tobii_glasses/eye_info", 1); //TODO: Change to custom msg
       //Eye feed exisgts as well?
 
       timer_ = this->create_wall_timer(
       500ms, std::bind(&TobiiGlassesPublisher::timer_callback, this));
 
+
+      tobii_glasses_connect();
 
 
     }
@@ -68,7 +84,35 @@ class TobiiGlassesPublisher : public rclcpp::Node
       eye_stream_publisher_->publish(message);
 
 
+      //Image stuff
+      cv::Mat frame;
 
+
+      if (!capture.read(frame)) {
+        RCLCPP_INFO(this->get_logger(), "No image ");
+      }
+      else {
+        //success
+        RCLCPP_INFO(this->get_logger(), "got image!");
+
+        //cv::imshow("scene", frame);
+        //cv::waitKey(30);
+      }
+    }
+
+    int tobii_glasses_connect(){
+          
+      const std::string videoStreamAddress = "rtsp://192.168.71.50:8554/live/scene";
+      capture = cv::VideoCapture(videoStreamAddress);
+
+      if (!capture.open(videoStreamAddress)) {
+        return 1;
+      }
+
+      
+      //cv::Mat frame;
+
+      return 0;
     }
     rclcpp::TimerBase::SharedPtr timer_;
     rclcpp::Publisher<sensor_msgs::msg::Image>::SharedPtr video_stream_publisher_;

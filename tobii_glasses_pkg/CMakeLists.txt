@@ -31,7 +31,13 @@ find_package(rosidl_default_generators REQUIRED)
 
 # TODO: C++ scripts
 add_executable(talker src/publisher_member_function.cpp)
-ament_target_dependencies(talker rclcpp std_msgs sensor_msgs)
+
+ament_target_dependencies(talker 
+  rclcpp 
+  std_msgs 
+  sensor_msgs 
+  OpenCV
+  cv_bridge)
 
 install(TARGETS
   talker
