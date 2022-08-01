@@ -10,7 +10,6 @@
 #include "sensor_msgs/msg/image.hpp"
 #include "std_msgs/msg/header.hpp"
 
-
 //CV
 //#include <opencv2/opencv.hpp>
 //#include <opencv/cv.h>
@@ -32,9 +31,6 @@
 // /#include "Tobii_Glasses_2_Python3_And_C/"
 
 using namespace std::chrono_literals;
-
-
-
 using namespace cv;
 using namespace std;
 
