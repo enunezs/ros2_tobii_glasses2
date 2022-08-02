@@ -15,7 +15,7 @@ if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
 
-# find dependencies
+# * find packages for dependencies
 find_package(ament_cmake REQUIRED)
 find_package(ament_cmake_python REQUIRED)
 
@@ -28,19 +28,46 @@ find_package(OpenCV REQUIRED)
 find_package(image_transport REQUIRED)
 find_package(cv_bridge REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
+#find_package(TobiiGlasses2 REQUIRED)
+
+
 
 # TODO: C++ scripts
-add_executable(talker src/publisher_member_function.cpp)
+add_executable(tobii_glasses_node 
+src/tobii_glasses_publisher.cpp
+)
 
-ament_target_dependencies(talker 
+# * Dependencies for base node
+#target_link_libraries(tobii_glasses_node
+#tobii_glasses
+#)
+
+include_directories(include ${cv_bridge_INCLUDE_DIRS})
+
+add_library(tobii_glasses SHARED
+src/tobii_glasses.cpp)
+
+
+target_include_directories(tobii_glasses
+  PUBLIC
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+    $<INSTALL_INTERFACE:include>)
+
+# rclcpp_components_register_nodes(TobiiGlasses "TobiiGlasses")
+
+
+ament_target_dependencies(tobii_glasses_node 
   rclcpp 
   std_msgs 
   sensor_msgs 
   OpenCV
-  cv_bridge)
+  cv_bridge
+)
+
 
 install(TARGETS
-  talker
+  #TobiiGlasses2
+  tobii_glasses_node
   DESTINATION lib/${PROJECT_NAME})
 
 
@@ -50,7 +77,6 @@ ament_python_install_package(scripts/)
 install(PROGRAMS
   scripts/tobii_glasses.py
   scripts/devel_cam.py
-
   # scripts/visual.py
   DESTINATION lib/${PROJECT_NAME}
 )

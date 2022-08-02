@@ -3,11 +3,11 @@
 #include <memory>
 #include <string>
 
-// ROS2
+// * ROS2
 #include "rclcpp/rclcpp.hpp"
 #include <rclcpp/qos.hpp>
 
-// CV
+// * CV
 #include "cv_bridge/cv_bridge.h"
 #include "opencv2/highgui/highgui.hpp"
 #include "image_transport/image_transport.hpp"
@@ -19,29 +19,27 @@
 #include "cv_bridge/cv_bridge.h"
 */
 
-// Messages
+// * Messages
+// TODO Add custom
 #include "std_msgs/msg/string.hpp"
 #include "sensor_msgs/msg/image.hpp"
 
-//#include <cv_bridge/cv_bridge.h>
+// * Tobii Glasses
+// ? Add namespace
+//#include "tobii_glasses.hpp"
 
-// /#include "Tobii_Glasses_2_Python3_And_C/"
 
 using namespace std::chrono_literals;
 using namespace cv;
 using namespace std;
 
-// Parameters
-const int PUBLISH_RATE = 100; //Hz
+// * Parameters
 //TODO: Expose
+const int PUBLISH_RATE = 100; //Hz
 
 // TODO: Send compressed?
 // Research first
 
-/* This example creates a subclass of Node and uses std::bind() to register a
- * member function as a callback from the timer. */
-
-cv::VideoCapture capture; //(videoStreamAddress);
 
 
 //    camera_info_pub_ = image_transport::create_camera_publisher(this, "image", custom_qos_profile);
@@ -74,6 +72,10 @@ private:
   rclcpp::Publisher<sensor_msgs::msg::Image>::SharedPtr video_stream_publisher_;
   rclcpp::Publisher<std_msgs::msg::String>::SharedPtr eye_stream_publisher_;
   size_t count_;
+
+  cv::VideoCapture capture; //(videoStreamAddress);
+  //TobiiGlasses tobiiGlasses;
+
 
   void update_callback() // Callback function
   {
@@ -136,12 +138,13 @@ private:
     // frame
   }
 
-  //TODO
+  // TODO
   cv::Mat processFrame(cv::Mat frame){
     return frame;
   }
 
-  //TODO
+  // TODO
+  // ! Incomplete
   sensor_msgs::msg::Image::SharedPtr ConvertFrameToMessage(cv::Mat frame){
 
   }
@@ -149,8 +152,6 @@ private:
 
 
 };
-
-
 
 
 

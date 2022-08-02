@@ -1,14 +1,26 @@
-#include "TobiiGlasses2.hpp"
+#include "tobii_glasses.hpp"
 //#include <math.h>
 #include <string>
+#include <iostream>
+using namespace std;
 
 
+
+/*
+// * CV
+#include "cv_bridge/cv_bridge.h"
+#include "opencv2/highgui/highgui.hpp"
+using namespace cv;
+*/
+
+
+/*
 class TobiiGlasses {
 
   public:
     TobiiGlasses();
-    tobiiGlassesConnect();
-    tobiiGlassesConnect(const std::string videoStreamAddress);
+    int tobiiGlassesConnect();
+    int tobiiGlassesConnect(const std::string videoStreamAddress);
 
     void getFrame(cv::Mat &frame);
     //void getEyeFocus2D();
@@ -23,34 +35,35 @@ class TobiiGlasses {
 
 
 }
+*/
 
-void TobiiGlasses::TobiiGlasses(){
-  const std::string videoStreamAddress = "rtsp://192.168.71.50:8554/live/scene";
-  return TobiiGlasses(videoStreamAddress);
-
+TobiiGlasses::TobiiGlasses(){
 }
 
 bool TobiiGlasses::tobiiGlassesConnect(){
-
-
+  const std::string videoStreamAddress = "rtsp://192.168.71.50:8554/live/scene";
+  return tobiiGlassesConnect(videoStreamAddress);
 }
+
 
 bool TobiiGlasses::tobiiGlassesConnect(const std::string videoStreamAddress)
   {
     //const std::string videoStreamAddress = "rtsp://192.168.71.50:8554/live/scene";
+    cv::VideoCapture capture; //(videoStreamAddress);
     capture = cv::VideoCapture(videoStreamAddress);
 
     if (!capture.open(videoStreamAddress))
     {
-      RCLCPP_INFO(this->get_logger(), "Could not connect to Tobii Glasses. Video stream could not open");
+      //RCLCPP_INFO(this->get_logger(), "Could not connect to Tobii Glasses. Video stream could not open");
       return 1;
     }
 
-    RCLCPP_INFO(this->get_logger(), "Succesfully connected to Tobii Glasses");
+      //RCLCPP_INFO(this->get_logger(), "Succesfully connected to Tobii Glasses");
     return 0;
+    
   }
 
-
+/*
 void TobiiGlasses::getFrame(cv::Mat &frame)
 {
     // Image capturing
@@ -74,7 +87,6 @@ void TobiiGlasses::getFrame(cv::Mat &frame)
     {
       // Code for too slow/too fast framerate here
     }
-        return sqrt(d);
 }
-
+*/
 
