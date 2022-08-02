@@ -6,25 +6,22 @@
 // ROS2
 #include "rclcpp/rclcpp.hpp"
 #include <rclcpp/qos.hpp>
-//#include "cv_bridge/cv_bridge.h"
-#include "sensor_msgs/msg/image.hpp"
-#include "std_msgs/msg/header.hpp"
 
 // CV
-//#include <opencv2/opencv.hpp>
-//#include <opencv/cv.h>
 #include "cv_bridge/cv_bridge.h"
+#include "opencv2/highgui/highgui.hpp"
+#include "image_transport/image_transport.hpp"
+
+/*
 #include <opencv2/opencv.hpp>
-// #include <sensor_msgs/msg/image_encodings.h>
 #include <opencv2/imgproc/imgproc.hpp>
 #include <opencv2/highgui/highgui.hpp>
-//#include <stdio.h>
+#include "cv_bridge/cv_bridge.h"
+*/
 
 // Messages
 #include "std_msgs/msg/string.hpp"
 #include "sensor_msgs/msg/image.hpp"
-
-#include <image_transport/image_transport.hpp>
 
 //#include <cv_bridge/cv_bridge.h>
 
@@ -35,7 +32,8 @@ using namespace cv;
 using namespace std;
 
 // Parameters
-int publish_rate = 0.01;
+const int PUBLISH_RATE = 100; //Hz
+//TODO: Expose
 
 // TODO: Send compressed?
 // Research first
@@ -45,17 +43,9 @@ int publish_rate = 0.01;
 
 cv::VideoCapture capture; //(videoStreamAddress);
 
-/**
-class TobiiGlasses {
-
-  public:
-    std::string videoStreamAddress = "rtsp://192.168.71.50:8554/live/scene";
-
-
-};
-**/
 
 //    camera_info_pub_ = image_transport::create_camera_publisher(this, "image", custom_qos_profile);
+
 
 class TobiiGlassesPublisher : public rclcpp::Node
 {
@@ -71,28 +61,34 @@ public:
     eye_stream_publisher_ = this->create_publisher<std_msgs::msg::String>("tobii_glasses/eye_info", 1); // TODO: Change to custom msg
     // Eye feed exisgts as well?
 
+    //TODO: Change time
     timer_ = this->create_wall_timer(
-        500ms, std::bind(&TobiiGlassesPublisher::timer_callback, this));
+        100ms, std::bind(&TobiiGlassesPublisher::update_callback, this));
 
-    tobii_glasses_connect();
+    //tobii_glasses_connect();
   }
 
 private:
-  void timer_callback() // Callback function
+  
+  rclcpp::TimerBase::SharedPtr timer_;
+  rclcpp::Publisher<sensor_msgs::msg::Image>::SharedPtr video_stream_publisher_;
+  rclcpp::Publisher<std_msgs::msg::String>::SharedPtr eye_stream_publisher_;
+  size_t count_;
+
+  void update_callback() // Callback function
   {
     auto message = std_msgs::msg::String();
     message.data = "Hello, world! " + std::to_string(count_++);
     RCLCPP_INFO(this->get_logger(), "Publishing: '%s'", message.data.c_str());
     eye_stream_publisher_->publish(message);
 
+    //// Get frame ////
+
     // Image capturing
     cv::Mat frame; // OpenCv native format for images
-
     // http://wiki.ros.org/cv_bridge/Tutorials/UsingCvBridgeToConvertBetweenROSImagesAndOpenCVImages
-
     if (!capture.read(frame))
     {
-
       RCLCPP_INFO(this->get_logger(), "No image ");
       return;
     }
@@ -110,6 +106,9 @@ private:
       // Code for too slow/too fast framerate here
     }
 
+    //// Process Frame ////
+    frame = processFrame(frame);
+
     // Image editting here, for resizing and optimizing
     // copy to get a mutable CvImage
 
@@ -119,15 +118,16 @@ private:
     // Image conversion
     // sensor_msgs::ImagePtr ros_img = toImageMsg(&frame);
 
-    // Pack messqages for sending
-    ConvertFrameToMessage(frame);
+    //// Pack messqages ////
+    // for sending
+    //ConvertFrameToMessage(frame);
 
     cv_bridge::CvImage cv_ptr;
 
     if (!frame.empty())
     {
       // msg = cv_bridge::CvImage(std_msgs::msg::Header(), "bgr8", frame).toImageMsg();
-      video_stream_publisher_.publish(msg);
+      //video_stream_publisher_.publish(msg);
     }
 
     auto image_msg_ = ConvertFrameToMessage(frame);
@@ -136,22 +136,62 @@ private:
     // frame
   }
 
-  int tobii_glasses_connect()
-  {
-
-    const std::string videoStreamAddress = "rtsp://192.168.71.50:8554/live/scene";
-    capture = cv::VideoCapture(videoStreamAddress);
-
-    if (!capture.open(videoStreamAddress))
-    {
-
-      return 1;
-    }
-
-    // cv::Mat frame;
-
-    return 0;
+  //TODO
+  cv::Mat processFrame(cv::Mat frame){
+    return frame;
   }
+
+  //TODO
+  sensor_msgs::msg::Image::SharedPtr ConvertFrameToMessage(cv::Mat frame){
+
+  }
+
+
+
+};
+
+
+
+
+
+
+
+
+
+
+
+int main(int argc, char *argv[])
+{
+  // Init
+  rclcpp::init(argc, argv);
+  rclcpp::NodeOptions options;
+
+
+
+  // QoS
+  //  https://github.com/ros2/ros2/wiki/About-Quality-of-Service-Settings
+  rclcpp::QoS video_qos(1);
+  video_qos.keep_last(1);
+  video_qos.best_effort();
+  video_qos.durability_volatile();
+
+  rclcpp::executors::SingleThreadedExecutor exec;
+
+  // Run node
+  rclcpp::spin(std::make_shared<TobiiGlassesPublisher>());
+
+  // Shutdown if the node is stopped using Ctrl+C
+  rclcpp::shutdown();
+  return 0;
+}
+
+
+
+
+
+
+
+
 
   std::shared_ptr<sensor_msgs::msg::Image> ConvertFrameToMessage(cv::Mat &frame)
   {
@@ -183,38 +223,3 @@ private:
     auto msg_ptr_ = std::make_shared<sensor_msgs::msg::Image>(ros_image);
     return msg_ptr_;
   }
-
-  rclcpp::TimerBase::SharedPtr timer_;
-  rclcpp::Publisher<sensor_msgs::msg::Image>::SharedPtr video_stream_publisher_;
-  rclcpp::Publisher<std_msgs::msg::String>::SharedPtr eye_stream_publisher_;
-  size_t count_;
-};
-
-int main(int argc, char *argv[])
-{
-  // Init
-  setvbuf(stdout, NULL, _IONBF, BUFSIZ);
-  rclcpp::init(argc, argv);
-
-  // QoS
-  //  https://github.com/ros2/ros2/wiki/About-Quality-of-Service-Settings
-  rclcpp::QoS video_qos(1);
-  video_qos.keep_last(1);
-  video_qos.best_effort();
-  video_qos.durability_volatile();
-
-  rclcpp::executors::SingleThreadedExecutor exec;
-
-  // const rclcpp::NodeOptions options;
-  // exec.add_node(usb_camera_driver);
-  // exec.spin();
-
-  // auto node
-
-  // Run node
-  rclcpp::spin(std::make_shared<TobiiGlassesPublisher>());
-
-  // Shutdown if the node is stopped using Ctrl+C
-  rclcpp::shutdown();
-  return 0;
-}
