@@ -9,20 +9,20 @@
 
 // * CV
 #include "cv_bridge/cv_bridge.h"
-#include "opencv2/highgui/highgui.hpp"
 #include "image_transport/image_transport.hpp"
-
+#include "opencv2/highgui/highgui.hpp"
+#include "opencv2/core/mat.hpp"
+#include "opencv2/imgcodecs.hpp"
+#include "opencv2/videoio.hpp"
 /*
-#include <opencv2/opencv.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
-#include <opencv2/highgui/highgui.hpp>
-#include "cv_bridge/cv_bridge.h"
 */
 
 // * Messages
 // TODO Add custom
 #include "std_msgs/msg/string.hpp"
 #include "sensor_msgs/msg/image.hpp"
+#include "std_msgs/msg/header.hpp"
 
 // * Tobii Glasses
 // ? Add namespace
@@ -39,10 +39,6 @@ const int PUBLISH_RATE = 100; //Hz
 
 // TODO: Send compressed?
 // Research first
-
-
-
-//    camera_info_pub_ = image_transport::create_camera_publisher(this, "image", custom_qos_profile);
 
 
 class TobiiGlassesPublisher : public rclcpp::Node
@@ -77,6 +73,8 @@ private:
   //TobiiGlasses tobiiGlasses;
 
 
+
+
   void update_callback() // Callback function
   {
     auto message = std_msgs::msg::String();
@@ -85,6 +83,8 @@ private:
     eye_stream_publisher_->publish(message);
 
     //// Get frame ////
+
+    /*
 
     // Image capturing
     cv::Mat frame; // OpenCv native format for images
@@ -134,6 +134,13 @@ private:
 
     auto image_msg_ = ConvertFrameToMessage(frame);
 
+    */
+    string image_path = "";
+    cv::Mat image = cv::imread(image_path, cv::IMREAD_COLOR);
+    std_msgs::msg::Header hdr;
+    sensor_msgs::msg::Image::SharedPtr msg = cv_bridge::CvImage(hdr, "bgr8", image).toImageMsg();
+    video_stream_publisher_->publish(*msg);
+
     // auto message = sensor_msgs::msg::Image();
     // frame
   }
@@ -148,9 +155,6 @@ private:
   sensor_msgs::msg::Image::SharedPtr ConvertFrameToMessage(cv::Mat frame){
 
   }
-
-
-
 };
 
 
@@ -166,8 +170,7 @@ int main(int argc, char *argv[])
   // Init
   rclcpp::init(argc, argv);
   rclcpp::NodeOptions options;
-
-
+  rclcpp::Node::SharedPtr node = rclcpp::Node::make_shared("image_publisher", options);
 
   // QoS
   //  https://github.com/ros2/ros2/wiki/About-Quality-of-Service-Settings
@@ -176,17 +179,29 @@ int main(int argc, char *argv[])
   video_qos.best_effort();
   video_qos.durability_volatile();
 
+  //Executor
   rclcpp::executors::SingleThreadedExecutor exec;
 
+  // Instance of TobiiGlassesPublisher which inherits from node
+  auto old_node = std::make_shared<TobiiGlassesPublisher>();
+  
+  //Image transport start
+  image_transport::ImageTransport it(old_node);
+  //image_transport::Publisher pub = it.advertise("camera/image", 1);
+
+  //camera_info_pub_ = image_transport::create_camera_publisher(this, "image", custom_qos_profile);
+
   // Run node
-  rclcpp::spin(std::make_shared<TobiiGlassesPublisher>());
+
+  
+  // Spin node
+  rclcpp::spin(old_node);
 
   // Shutdown if the node is stopped using Ctrl+C
   rclcpp::shutdown();
   return 0;
+
 }
-
-
 
 
 

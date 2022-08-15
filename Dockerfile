@@ -9,7 +9,8 @@ WORKDIR $HOME
 RUN apt-get update && apt-get install -y \ 
 	ros-foxy-cv-bridge \
 	ros-foxy-vision-opencv \
-	ros-foxy-compressed-image-transport
+	ros-foxy-compressed-image-transport\
+	ros-foxy-image-transport
 
 #RUN pip3 install --upgrade 
 # install ros2 packages
