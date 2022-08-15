@@ -14,57 +14,48 @@ using namespace cv;
 */
 
 
-/*
-class TobiiGlasses {
-
-  public:
-    TobiiGlasses();
-    int tobiiGlassesConnect();
-    int tobiiGlassesConnect(const std::string videoStreamAddress);
-
-    void getFrame(cv::Mat &frame);
-    //void getEyeFocus2D();
-    //void getEyeFocus3D();
-    //void getLeftEye();
-
-  private:
-    std::string videoStreamAddress;
-
-    bool emulation_mode;
-    //camera id (for sim)
+namespace tobii_glasses {
 
 
-}
-*/
-
-TobiiGlasses::TobiiGlasses(){
-}
+//TobiiGlasses::TobiiGlasses(){
+//}
 
 bool TobiiGlasses::tobiiGlassesConnect(){
   const std::string videoStreamAddress = "rtsp://192.168.71.50:8554/live/scene";
   return tobiiGlassesConnect(videoStreamAddress);
 }
 
+// make a function that starts connection to the  webcam
 
 
+// Send 0 for webcam mode
+bool TobiiGlasses::tobiiGlassesConnect(const std::string videoStreamAddress){
 
-
-bool TobiiGlasses::tobiiGlassesConnect(const std::string videoStreamAddress)
-  {
+  // * Start connection
+  cv::VideoCapture capture; //(videoStreamAddress);
+    // *Debug mode
+    if (videoStreamAddress == "0") {
+      capture = cv::VideoCapture(0);
+  }
+  else{
+    // *Connection to glasses
     //const std::string videoStreamAddress = "rtsp://192.168.71.50:8554/live/scene";
-    cv::VideoCapture capture; //(videoStreamAddress);
     capture = cv::VideoCapture(videoStreamAddress);
-
+  }
+    
+  // *Check and return if succesful
     if (!capture.open(videoStreamAddress))
     {
       //RCLCPP_INFO(this->get_logger(), "Could not connect to Tobii Glasses. Video stream could not open");
       return 1;
     }
-
       //RCLCPP_INFO(this->get_logger(), "Succesfully connected to Tobii Glasses");
     return 0;
-    
-  }
+
+}
+
+} //namespace TobiiGlasses
+
 
 /*
 void TobiiGlasses::getFrame(cv::Mat &frame)
@@ -93,3 +84,5 @@ void TobiiGlasses::getFrame(cv::Mat &frame)
 }
 */
 
+//#include "rclcpp_components/register_node_macro.hpp"
+//RCLCPP_COMPONENTS_REGISTER_NODE(tobii_glasses::TobiiGlasses)

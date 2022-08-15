@@ -26,7 +26,7 @@
 
 // * Tobii Glasses
 // ? Add namespace
-//#include "tobii_glasses.hpp"
+#include "tobii_glasses.hpp"
 
 
 using namespace std::chrono_literals;
@@ -46,9 +46,11 @@ class TobiiGlassesPublisher : public rclcpp::Node
 public:
   TobiiGlassesPublisher()
       : Node("tobii_glasses_publisher_node"), count_(0)
-  { // Initialization
+  { 
+    // Initialization
     // Send custom msg for glasses, packaging all needed elements
     // Start simple first, independent parts
+    
     // Compressed Image for camera feed
     video_stream_publisher_ = this->create_publisher<sensor_msgs::msg::Image>("tobii_glasses/camera_compressed", 1); // TODO: Change to custom msg
     // String for eye info
@@ -60,6 +62,11 @@ public:
         100ms, std::bind(&TobiiGlassesPublisher::update_callback, this));
 
     //tobii_glasses_connect();
+
+    // * Glasses connection stablish
+    tobiiGlasses = tobii_glasses::TobiiGlasses();
+    tobiiGlasses.tobiiGlassesConnect("0");
+
   }
 
 private:
@@ -70,7 +77,7 @@ private:
   size_t count_;
 
   cv::VideoCapture capture; //(videoStreamAddress);
-  //TobiiGlasses tobiiGlasses;
+  tobii_glasses::TobiiGlasses tobiiGlasses;
 
 
 
@@ -82,7 +89,7 @@ private:
     RCLCPP_INFO(this->get_logger(), "Publishing: '%s'", message.data.c_str());
     eye_stream_publisher_->publish(message);
 
-    //// Get frame ////
+    // TODO Get frame from glasses
 
     /*
 
@@ -135,11 +142,15 @@ private:
     auto image_msg_ = ConvertFrameToMessage(frame);
 
     */
+
+
     string image_path = "";
     cv::Mat image = cv::imread(image_path, cv::IMREAD_COLOR);
     std_msgs::msg::Header hdr;
     sensor_msgs::msg::Image::SharedPtr msg = cv_bridge::CvImage(hdr, "bgr8", image).toImageMsg();
     video_stream_publisher_->publish(*msg);
+
+    
 
     // auto message = sensor_msgs::msg::Image();
     // frame
@@ -207,8 +218,7 @@ int main(int argc, char *argv[])
 
 
 
-
-
+/**
   std::shared_ptr<sensor_msgs::msg::Image> ConvertFrameToMessage(cv::Mat &frame)
   {
 
@@ -216,20 +226,20 @@ int main(int argc, char *argv[])
     sensor_msgs::msg::Image ros_image;
 
     // Make sure output in the size the user wants even if it is not native
-    /*
+    /
     if (frame.rows != image_width_ || frame.cols != image_height_)
     {
       cv::resize(frame, frame, cv::Size(image_width_, image_height_));
     }
-    */
+    /
 
-    /* To remove CV-bridge and boost-python3 dependencies, this is pretty much a copy of the toImageMsg method in cv_bridge. */
+    // To remove CV-bridge and boost-python3 dependencies, this is pretty much a copy of the toImageMsg method in cv_bridge. /
     ros_image.header = header_;
     ros_image.height = frame.rows;
     ros_image.width = frame.cols;
     ros_image.encoding = "bgr8";
 
-    /* FIXME c++20 has std::endian */
+    // FIXME c++20 has std::endian /
     // ros_image.is_bigendian = (std::endian::native == std::endian::big);
     ros_image.is_bigendian = false;
     ros_image.step = frame.cols * frame.elemSize();
@@ -239,3 +249,5 @@ int main(int argc, char *argv[])
     auto msg_ptr_ = std::make_shared<sensor_msgs::msg::Image>(ros_image);
     return msg_ptr_;
   }
+**/
+

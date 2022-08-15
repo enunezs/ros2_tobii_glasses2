@@ -23,17 +23,28 @@ find_package(ament_cmake_python REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(rclpy REQUIRED)
 find_package(OpenCV REQUIRED)
+find_package(rclcpp_components REQUIRED)
 find_package(cv_bridge REQUIRED)
 find_package(image_transport REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
 find_package(std_msgs REQUIRED) # TODO: Remove python ones
 find_package(sensor_msgs REQUIRED)
 find_package(pluginlib REQUIRED)
-#find_package(TobiiGlasses2 REQUIRED)
-
+#find_package(tobii_glasses REQUIRED)
 
 include_directories(include ${cv_bridge_INCLUDE_DIRS})
 
+# * Dependencies for library
+add_library(tobii_glasses SHARED
+  src/tobii_glasses.cpp)
+target_include_directories(tobii_glasses
+  PUBLIC
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+    $<INSTALL_INTERFACE:include>
+  PRIVATE "COMPOSITION_BUILDING_DLL")
+
+
+  
 # TODO: C++ scripts
 # * Dependencies for base node
 add_executable(tobii_glasses_node src/tobii_glasses_publisher.cpp)
@@ -47,19 +58,13 @@ ament_target_dependencies(tobii_glasses_node
   pluginlib
 )
 
-# Not working?
-#target_link_libraries(tobii_glasses_node
-  #image_transport::image_transport # TODO CLOSE
-#)
-# * Dependencies for library
-add_library(tobii_glasses SHARED
-src/tobii_glasses.cpp)
-target_include_directories(tobii_glasses
-  PUBLIC
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
-    $<INSTALL_INTERFACE:include>)
 
-# rclcpp_components_register_nodes(TobiiGlasses "TobiiGlasses")
+target_link_libraries(tobii_glasses_node tobii_glasses)
+
+#  "tobii_glasses"
+#)
+#rclcpp_components_register_nodes(tobii_glasses "tobii_glasses::TobiiGlasses")
+#rclcpp_components_register_nodes(TobiiGlasses "TobiiGlasses")
 
 # * Install executables
 install(
@@ -67,7 +72,6 @@ install(
   #TobiiGlasses2
   DESTINATION lib/${PROJECT_NAME}
 )
-
 
 # Path to scripts
 ament_python_install_package(scripts/)

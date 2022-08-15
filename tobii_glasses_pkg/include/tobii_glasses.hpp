@@ -12,12 +12,11 @@ using namespace std;
 //#include "image_transport/image_transport.hpp"
 //using namespace cv;
 
-//namespace tobii_glasses
-
+namespace tobii_glasses {
 class TobiiGlasses {
 
   public:
-    TobiiGlasses();
+    TobiiGlasses(){};
     bool tobiiGlassesConnect();
     bool tobiiGlassesConnect(const std::string videoStreamAddress);
 
@@ -32,5 +31,7 @@ class TobiiGlasses {
     bool emulation_mode;
     //camera id (for sim)
 };
+} //namespace TobiiGlasses
+
 
 #endif
