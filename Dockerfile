@@ -49,6 +49,14 @@ RUN apt-get update && apt-get install -y \
 RUN pip3 install -U \
 	tobiiglassesctrl
 
+# Glasses emulation (Via Mouse)
+RUN pip3 install python-xlib
+
+RUN apt-get update && apt-get install -y \
+	scrot \
+	python3-tk\
+	python3-dev
+
 #### SET ENVIRONMENT
 
 WORKDIR /home/ema

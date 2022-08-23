@@ -15,78 +15,41 @@ if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
 
-# * find packages for dependencies
+# find dependencies
 find_package(ament_cmake REQUIRED)
 find_package(ament_cmake_python REQUIRED)
-
-#  TODO: Complete, ensure they match
-find_package(rclcpp REQUIRED)
 find_package(rclpy REQUIRED)
-find_package(OpenCV REQUIRED)
-find_package(rclcpp_components REQUIRED)
-find_package(cv_bridge REQUIRED)
-find_package(image_transport REQUIRED)
-find_package(rosidl_default_generators REQUIRED)
-find_package(std_msgs REQUIRED) # TODO: Remove python ones
+#find_package(geometry_msgs REQUIRED)
 find_package(sensor_msgs REQUIRED)
-find_package(pluginlib REQUIRED)
-#find_package(tobii_glasses REQUIRED)
+find_package(std_msgs REQUIRED)
+find_package(rosidl_default_generators REQUIRED)
 
-include_directories(include ${cv_bridge_INCLUDE_DIRS})
-
-# * Dependencies for library
-add_library(tobii_glasses SHARED
-  src/tobii_glasses.cpp)
-target_include_directories(tobii_glasses
-  PUBLIC
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
-    $<INSTALL_INTERFACE:include>
-  PRIVATE "COMPOSITION_BUILDING_DLL")
-
-
-  
-# TODO: C++ scripts
-# * Dependencies for base node
-add_executable(tobii_glasses_node src/tobii_glasses_publisher.cpp)
-ament_target_dependencies(tobii_glasses_node 
-  rclcpp 
-  std_msgs 
-  sensor_msgs 
-  OpenCV
-  cv_bridge
-  image_transport
-  pluginlib
-)
-
-
-target_link_libraries(tobii_glasses_node tobii_glasses)
-
-#  "tobii_glasses"
-#)
-#rclcpp_components_register_nodes(tobii_glasses "tobii_glasses::TobiiGlasses")
-#rclcpp_components_register_nodes(TobiiGlasses "TobiiGlasses")
-
-# * Install executables
-install(
-  TARGETS tobii_glasses_node
-  #TobiiGlasses2
-  DESTINATION lib/${PROJECT_NAME}
-)
 
 # Path to scripts
 ament_python_install_package(scripts/)
-
 install(PROGRAMS
   scripts/tobii_glasses.py
-  scripts/devel_cam.py
-  # scripts/visual.py
+  #scripts/devel_cam.py
   DESTINATION lib/${PROJECT_NAME}
 )
 
+# Path to resources
 install(DIRECTORY
   launch
   DESTINATION share/${PROJECT_NAME}/
 )
+
+# Generate custom messages
+rosidl_generate_interfaces(${PROJECT_NAME}
+  "msg/TobiiGlasses.msg"
+  "msg/GazePosition.msg"
+  "msg/GazePosition3D.msg"
+  "msg/EyeData.msg"
+  DEPENDENCIES builtin_interfaces
+  DEPENDENCIES sensor_msgs
+#  DEPENDENCIES geometry_msgs   
+)
+
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
