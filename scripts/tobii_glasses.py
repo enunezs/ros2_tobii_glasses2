@@ -1,6 +1,7 @@
 #! /usr/bin/env python3
 
 # * Core dependencies
+from socket import IPV6_CHECKSUM
 import rclpy
 from rclpy.node import Node
 import json
@@ -24,40 +25,43 @@ from tobii_glasses_pkg.msg import GazePosition
 from tobii_glasses_pkg.msg import GazePosition3D
 
 ### * PARAMETERS * ###
-ipv4_address = "192.168.71.50" # TODO: 0.0.0.0 for wired?
-publish_freq = 50 # Hz # TODO Fix? # Need to change to on refresh... -> 
-# ! TODO: check how cv2 capture works, get latest instead
-#eye_update_frequency = 50 # Hz #!!!
-#scene_camera_frequency = 50 # * Run
-use_glasses_timestamp = True # TODO, if false uses ROS-es
-#video_resolution = (1280, 720) # plain HD
-video_resolution = (960, 540) # pixels (qHD).
+# Wifi connection
+ipv4_address = "192.168.71.50"
+# Wired conneciton
+wired_mode = True
+ipv6_address = "fe80::76fe:48ff:fe1f:2c16"      # fe80::692c:1876:10f:33c8
+ipv6_interface = "enx60634c83de17"
+#ping6 ff02::1%eth0
 
-### * Mouse emulation * ###
+PUBLISH_FREQ = 50 # Hz # TODO Fix? # Need to change to on refresh... -> Not possible
+#eye_update_frequency = 50 # Hz #!!!
+#scene_camera_frequency = 50 # * Runtobii_glasses/camera
+
+# * For emulation
 import pyautogui
+EMULATE_GLASSES = False
 #from pynput.mouse import Controller
 
 ### * DEBUG * ###
-emulate_glasses = False
-high_refresh_rate = True # TODO: Fix this
+high_refresh_rate = True    # TODO: Fix this
 send_image = True
 draw_circle = True
 do_calibration = False
-record_glasses = False
+record_glasses = False      # TODO: PENDING
 print_performance = False
+undo_distortion = False     # TODO
 
-
-# TODO: Eventually, request fast mode refresh
-# json_data = self.__post_request__('/api/calibrations', data)
-#	def send_custom_event(self, event_type, event_tag = ''):
 # TODO: INVESTIGATE Individual eye control
 # Add toggle to switch between eyes
 # Trigger calibration from other terminal?
 
-
 # TODO: Sync data sources
 #Modes?
+
 # TODO: Need to carefully observe data, particularly time
+
+# TODO: Parameter expose
+# >>> ros2 run turtlesim turtlesim_node --ros-args --params-file ./turtlesim.yaml
 
 class tobiiPublisher(Node):  # Create node inheriting from Node
 
@@ -66,6 +70,9 @@ class tobiiPublisher(Node):  # Create node inheriting from Node
         # * Base node init
         super().__init__("tobii_pub_node")
         self.frame_buffer = None 
+
+        #self.declare_parameter("Name",name)
+        #self.get_parameter("Name").get_parameter_value()
 
         # * Intialize publishers
         self.publisher_glasses = self.create_publisher(
@@ -83,13 +90,17 @@ class tobiiPublisher(Node):  # Create node inheriting from Node
         # * Init glasses
         self.bridge = CvBridge()
 
-        if emulate_glasses:
+        if EMULATE_GLASSES:
             self.cap = cv2.VideoCapture(0)
             pass
         else:
-            self.tobii_glasses = TobiiGlassesController(
-                ipv4_address, video_scene=True)
-            
+            if wired_mode:
+                self.tobii_glasses = TobiiGlassesController("fe80::76fe:48ff:fe1f:2c16%enx60634c83de17")
+                #self.tobii_glasses = TobiiGlassesController(ipv6_address+"%"+ipv6_interface, video_scene=True)
+            else:
+                self.tobii_glasses = TobiiGlassesController(
+                    ipv4_address, video_scene=True)
+
             if high_refresh_rate:
                 res = self.tobii_glasses.set_video_freq_50()
                 print(f"Trying to set video refresh rate to 50Hz: {res}")
@@ -102,6 +113,8 @@ class tobiiPublisher(Node):  # Create node inheriting from Node
             if do_calibration:
                 self.calibrate_glasses(self.tobii_glasses)
 
+            
+            self.cap.set(cv2.CV_CAP_PROP_BUFFERSIZE, 3); # internal buffer will now store only 3 frames
 
             # self.load_glasses_calibration()
             self.cap = cv2.VideoCapture(
@@ -112,7 +125,7 @@ class tobiiPublisher(Node):  # Create node inheriting from Node
             print("Error opening video stream")
 
         # * Create publisher
-        self.timer = self.create_timer(1.0/publish_freq, self.publish_tobii_data)
+        self.timer = self.create_timer(1.0/PUBLISH_FREQ, self.publish_tobii_data)
 
         # * Init debug vars
         self.iterations = 0
@@ -159,23 +172,25 @@ class tobiiPublisher(Node):  # Create node inheriting from Node
 
 
         # * Get latest data stream 
-        if not emulate_glasses:
+        if not EMULATE_GLASSES:
             # Real glasses
             json_data = self.tobii_glasses.get_data()
         else:
             #Emulated: Webcam + Mouse
-            json_data = json.loads(self.emulate_glasses())
+            json_data = json.loads(self.EMULATE_GLASSES())
             
         # * Make and pack final message
         tobii_glasses_msg = self.get_glasses_update(json_data)
 
         # * Get latest image frame
         is_new_frame, frame = self.cap.read() #ret false if no frame available
+        print(f"frames in buffer: {self.cap.get(cv2.CAP_PROP_FRAME_COUNT)}")
 
         if not is_new_frame:
             print("No new frame")
             frame = self.frame_buffer
             #return
+        
 
         # * Adjust colour and resize image
         frame = self.modify_image(frame)
@@ -265,7 +280,7 @@ class tobiiPublisher(Node):  # Create node inheriting from Node
 
         return tobii_glasses_msg
 
-    def emulate_glasses(self):
+    def EMULATE_GLASSES(self):
         screen_res_x,screen_res_y = pyautogui.size()
         cursor_x, cursor_y = pyautogui.position()
         gaze_x = cursor_x/screen_res_x
