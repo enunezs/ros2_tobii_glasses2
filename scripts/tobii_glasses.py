@@ -28,28 +28,36 @@ from tobii_glasses_pkg.msg import GazePosition3D
 # Wifi connection
 ipv4_address = "192.168.71.50"
 # Wired conneciton
-wired_mode = True
 ipv6_address = "fe80::76fe:48ff:fe1f:2c16"      # fe80::692c:1876:10f:33c8
 ipv6_interface = "enx60634c83de17"
 #ping6 ff02::1%eth0
+wired_mode = False
+PUBLISH_FREQ = 50            #Hz
+video_resolution = (960, 540) 
+# (1280, 720)
 
-PUBLISH_FREQ = 50 # Hz # TODO Fix? # Need to change to on refresh... -> Not possible
+# pixels (qHD).
+
 #eye_update_frequency = 50 # Hz #!!!
-#scene_camera_frequency = 50 # * Runtobii_glasses/camera
+#scene_camera_frequency = 50 # * Run
+use_glasses_timestamp = True # TODO, if false uses ROS-es
+#video_resolution = (1280, 720) # plain HD
 
-# * For emulation
+### * Mouse emulation * ###
 import pyautogui
 EMULATE_GLASSES = False
-#from pynput.mouse import Controller
 
 ### * DEBUG * ###
-high_refresh_rate = True    # TODO: Fix this
+high_refresh_rate = True    
 send_image = True
 draw_circle = True
 do_calibration = False
-record_glasses = False      # TODO: PENDING
 print_performance = False
+syncronize_data = False     # TODO
+record_glasses = False      # TODO
 undo_distortion = False     # TODO
+
+import numpy as np
 
 # TODO: INVESTIGATE Individual eye control
 # Add toggle to switch between eyes
@@ -113,12 +121,10 @@ class tobiiPublisher(Node):  # Create node inheriting from Node
             if do_calibration:
                 self.calibrate_glasses(self.tobii_glasses)
 
-            
-            self.cap.set(cv2.CV_CAP_PROP_BUFFERSIZE, 3); # internal buffer will now store only 3 frames
-
             # self.load_glasses_calibration()
             self.cap = cv2.VideoCapture(
                 "rtsp://%s:8554/live/scene" % ipv4_address)
+            self.cap.set(cv2.CAP_PROP_BUFFERSIZE, 3); # internal buffer will now store only 3 frames
 
         # * Check if connection is succesful
         if (self.cap.isOpened() == False):
@@ -130,6 +136,7 @@ class tobiiPublisher(Node):  # Create node inheriting from Node
         # * Init debug vars
         self.iterations = 0
         self.total_time = 0
+        self.timings = []
 
     def calibrate_glasses(self, tobiiglasses):
 
@@ -170,27 +177,32 @@ class tobiiPublisher(Node):  # Create node inheriting from Node
 
         start_time = self.get_clock().now()
 
-
         # * Get latest data stream 
         if not EMULATE_GLASSES:
             # Real glasses
             json_data = self.tobii_glasses.get_data()
         else:
             #Emulated: Webcam + Mouse
-            json_data = json.loads(self.EMULATE_GLASSES())
-            
+            json_data = json.loads(self.emulate_glasses())
+        
+        eye_data_get_time = self.get_clock().now()
+
         # * Make and pack final message
         tobii_glasses_msg = self.get_glasses_update(json_data)
 
-        # * Get latest image frame
-        is_new_frame, frame = self.cap.read() #ret false if no frame available
-        print(f"frames in buffer: {self.cap.get(cv2.CAP_PROP_FRAME_COUNT)}")
+        eye_data_pack_time = self.get_clock().now() 
 
-        if not is_new_frame:
-            print("No new frame")
-            frame = self.frame_buffer
-            #return
-        
+        # * Get latest image frame
+        if self.cap.grab():
+            ret, frame = self.cap.retrieve()
+            if ret:
+                self.frame_buffer = frame
+                #print(f"Frame: {frame}")
+            else:
+                frame = self.frame_buffer
+
+        #print(f"frames in buffer: {self.cap.get(cv2.CAP_PROP_FRAME_COUNT)}")
+        image_data_get_time = self.get_clock().now()
 
         # * Adjust colour and resize image
         frame = self.modify_image(frame)
@@ -199,6 +211,8 @@ class tobiiPublisher(Node):  # Create node inheriting from Node
                 gaze_pos = tobii_glasses_msg.gaze_position.gaze_position
                 frame = self.draw_circle(frame,gaze_pos)
 
+        image_process_time = self.get_clock().now() 
+
         # * Pack image into message
         img_msg = self.bridge.cv2_to_imgmsg(frame)
         img_msg.header.stamp = self.get_clock().now().to_msg() # TODO: Change to glasses, align with pts?
@@ -206,17 +220,24 @@ class tobiiPublisher(Node):  # Create node inheriting from Node
 
         tobii_glasses_msg.camera_image = img_msg
 
+        image_data_pack_time = self.get_clock().now() 
 
         # * Publish all glasses data
-        print("Publishing glasses data")
+        #print("Publishing glasses data")
         self.publisher_glasses.publish(tobii_glasses_msg)
 
         # * Publish image?
         if send_image:
-            print("Publishing image")
+            #print("Publishing image")
             self.publisher_front_camera.publish(img_msg)  # Publish the message
 
         # * Calculate time difference between iterations and frame rate
+
+        end_time = self.get_clock().now() 
+
+        self.iterations += 1
+        self.timings.append( [start_time.nanoseconds, eye_data_get_time.nanoseconds, eye_data_pack_time.nanoseconds, image_data_get_time.nanoseconds, image_process_time.nanoseconds, image_data_pack_time.nanoseconds, end_time.nanoseconds, self.iterations] )
+
         if print_performance:
             self.performance_stats(start_time, self.get_clock().now())
 
@@ -280,7 +301,7 @@ class tobiiPublisher(Node):  # Create node inheriting from Node
 
         return tobii_glasses_msg
 
-    def EMULATE_GLASSES(self):
+    def emulate_glasses(self):
         screen_res_x,screen_res_y = pyautogui.size()
         cursor_x, cursor_y = pyautogui.position()
         gaze_x = cursor_x/screen_res_x
@@ -349,6 +370,18 @@ def main(args=None):
         rclpy.spin(glasses_publisher)  # prevents closure. Run until interrupt
     except KeyboardInterrupt:
         cv2.destroyAllWindows()
+
+        fields = ['start_time', 'eye_data_get_time', 'eye_data_pack_time', 'image_data_get_time', 'image_process_time', 'image_data_pack_time', 'end_time', 'iterations'] 
+        rows = glasses_publisher.timings
+
+        combined = rows.insert(0, fields)
+
+        np.savetxt("Resolution"+str(video_resolution)+".csv", 
+                rows,
+                delimiter =", ", 
+                fmt ='% s')
+
+
         glasses_publisher.destroy_node()  # duh
         rclpy.shutdown()  # Shutdown DDS !
 
