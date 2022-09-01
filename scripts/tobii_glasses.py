@@ -32,9 +32,15 @@ ipv6_address = "fe80::76fe:48ff:fe1f:2c16"      # fe80::692c:1876:10f:33c8
 ipv6_interface = "enx60634c83de17"
 #ping6 ff02::1%eth0
 wired_mode = False
-PUBLISH_FREQ = 50            #Hz
-video_resolution = (960, 540) 
-# (1280, 720)
+publish_freq = 50   #Hz
+video_resolution = (960, 540)   #Default for high framerate
+video_resolution = (720, 480)
+
+# video_resolution = (1280, 720)
+# video_resolution = (1600, 900)
+# video_resolution = (1920,1080) # Default for low framerate
+
+# TODO: Visualization error for eye marker
 
 # pixels (qHD).
 
@@ -100,6 +106,8 @@ class tobiiPublisher(Node):  # Create node inheriting from Node
 
         if EMULATE_GLASSES:
             self.cap = cv2.VideoCapture(0)
+            publish_freq = 30            #Hz
+
             pass
         else:
             if wired_mode:
@@ -112,6 +120,11 @@ class tobiiPublisher(Node):  # Create node inheriting from Node
             if high_refresh_rate:
                 res = self.tobii_glasses.set_video_freq_50()
                 print(f"Trying to set video refresh rate to 50Hz: {res}")
+                publish_freq = 50            #Hz
+            else:
+                publish_freq = 25            #Hz
+
+
 
             self.tobii_glasses.start_streaming()
 
@@ -131,7 +144,7 @@ class tobiiPublisher(Node):  # Create node inheriting from Node
             print("Error opening video stream")
 
         # * Create publisher
-        self.timer = self.create_timer(1.0/PUBLISH_FREQ, self.publish_tobii_data)
+        self.timer = self.create_timer(1.0/publish_freq, self.publish_tobii_data)
 
         # * Init debug vars
         self.iterations = 0
@@ -338,16 +351,18 @@ class tobiiPublisher(Node):  # Create node inheriting from Node
         image = cv2.resize(image, video_resolution)
         #resized_frame = cv2.resize(gray_frame, (0, 0), fx=0.5, fy=0.5)
 
-        # Convert to grayscale
+        # ! Convert to grayscale
         image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
         # Convert to uint8
         image = image.astype(np.uint8)
         # Apply Gaussian blur to remove noise
-        image = cv2.GaussianBlur(image, (5, 5), 0)
+        #image = cv2.GaussianBlur(image, (5, 5), 0)
 
         return image
 
     # Draw circle on image given gaze position
+    # TODO: Fix
+    # ! Error in resolution ?
     def draw_circle(self, image, gaze_position):
         screen_size = image.shape[:2]
         # Draw circle at gaze position
@@ -376,7 +391,7 @@ def main(args=None):
 
         combined = rows.insert(0, fields)
 
-        np.savetxt("Resolution"+str(video_resolution)+".csv", 
+        np.savetxt("grey_" + "Res_"+str(video_resolution)+"_HRR_"+ str(high_refresh_rate) + ".csv", 
                 rows,
                 delimiter =", ", 
                 fmt ='% s')
