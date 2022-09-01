@@ -1,5 +1,7 @@
 #! /usr/bin/env python3
 
+# ! TODO: Copyright stuff
+
 # * Core dependencies
 from socket import IPV6_CHECKSUM
 import rclpy
@@ -12,7 +14,7 @@ import cv2
 import numpy as np
 
 # * Base messages
-from sensor_msgs.msg import Image #TODO: What is compressed for? Network?
+from sensor_msgs.msg import Image
 from std_msgs.msg import String
 from builtin_interfaces.msg import Time as TimeMsg
 
@@ -20,6 +22,7 @@ from builtin_interfaces.msg import Time as TimeMsg
 from tobiiglassesctrl import TobiiGlassesController  # Import glasses lib
 
 # * Glasses messages
+# TODO: Ahem, simplify or fill
 from tobii_glasses_pkg.msg import TobiiGlasses as TobiiGlassesMsg
 from tobii_glasses_pkg.msg import GazePosition
 from tobii_glasses_pkg.msg import GazePosition3D
@@ -33,9 +36,8 @@ ipv6_interface = "enx60634c83de17"
 #ping6 ff02::1%eth0
 wired_mode = False
 publish_freq = 50   #Hz
-video_resolution = (960, 540)   #Default for high framerate
-video_resolution = (720, 480)
-
+video_resolution = (960, 540)   #Default for high framerate, optimal performance
+# video_resolution = (720, 480) #Not recommmeded
 # video_resolution = (1280, 720)
 # video_resolution = (1600, 900)
 # video_resolution = (1920,1080) # Default for low framerate
@@ -63,6 +65,8 @@ syncronize_data = False     # TODO
 record_glasses = False      # TODO
 undo_distortion = False     # TODO
 
+
+# TODO Remove after study done
 import numpy as np
 
 # TODO: INVESTIGATE Individual eye control
@@ -82,7 +86,7 @@ class tobiiPublisher(Node):  # Create node inheriting from Node
     def __init__(self):
 
         # * Base node init
-        super().__init__("tobii_pub_node")
+        super().__init__("tobii_glasses_node")
         self.frame_buffer = None 
 
         #self.declare_parameter("Name",name)
@@ -345,32 +349,28 @@ class tobiiPublisher(Node):  # Create node inheriting from Node
             self.iterations = 0
             self.total_time = 0
 
-    # Pending, open parameters
-    def modify_image(self, image):
+    # TODO: Pending, open parameters
+    def modify_image(self, image, greyscale= False, video_resolution = (960, 540) ):
         # Resize selected image to given dimension
         image = cv2.resize(image, video_resolution)
-        #resized_frame = cv2.resize(gray_frame, (0, 0), fx=0.5, fy=0.5)
-
-        # ! Convert to grayscale
-        image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+        if greyscale:
+            image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
         # Convert to uint8
         image = image.astype(np.uint8)
-        # Apply Gaussian blur to remove noise
+        # Apply Gaussian blur to remove noise -> Best left for receiver?
         #image = cv2.GaussianBlur(image, (5, 5), 0)
 
         return image
 
     # Draw circle on image given gaze position
-    # TODO: Fix
-    # ! Error in resolution ?
     def draw_circle(self, image, gaze_position):
-        screen_size = image.shape[:2]
+        image_size = image.shape[:2][::-1]
         # Draw circle at gaze position
-        cv2.circle(image, (int(gaze_position[0]*screen_size[0]), int(gaze_position[1]*screen_size[1])), 10, (0, 255, 0), -1)
+        cv2.circle(image, (int(gaze_position[0]*image_size[0]), int(gaze_position[1]*image_size[1])), 10, (0, 255, 0), -1)
         # Draw circle at center of image
-        cv2.circle(image, (int(video_resolution[0]/2), int(video_resolution[1]/2)), 10, (0, 0, 255), -1)
+        cv2.circle(image, (int(image_size[0]/2), int(image_size[1]/2)), 10, (0, 0, 255), -1)
         # Draw line from gaze position to center of image
-        cv2.line(image, (int(gaze_position[0]), int(gaze_position[1])), (int(video_resolution[0]/2), int(video_resolution[1]/2)), (0, 0, 255), 2)
+        cv2.line(image, (int(gaze_position[0]*image_size[0]), int(gaze_position[1]*image_size[1])), (int(image_size[0]/2), int(image_size[1]/2)), (0, 0, 255), 2)
         return image
 
 # * Run
