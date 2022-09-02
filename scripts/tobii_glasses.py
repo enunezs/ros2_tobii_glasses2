@@ -105,6 +105,13 @@ class tobiiPublisher(Node):  # Create node inheriting from Node
             String, "tobii_glasses/eye_info", 1)
         """
 
+        # To data queue
+        self.gp_buffer = {}
+        self.last_pts = 0
+        self.last_ts = 0
+        
+
+
         # * Init glasses
         self.bridge = CvBridge()
 
@@ -204,10 +211,9 @@ class tobiiPublisher(Node):  # Create node inheriting from Node
         
         eye_data_get_time = self.get_clock().now()
 
-        # * Make and pack final message
-        tobii_glasses_msg = self.get_glasses_update(json_data)
+        # * Buffer and sync data
 
-        eye_data_pack_time = self.get_clock().now() 
+        #json_data = self.get_synced_data(json_data)
 
         # * Get latest image frame
         if self.cap.grab():
@@ -220,6 +226,12 @@ class tobiiPublisher(Node):  # Create node inheriting from Node
 
         #print(f"frames in buffer: {self.cap.get(cv2.CAP_PROP_FRAME_COUNT)}")
         image_data_get_time = self.get_clock().now()
+
+
+        # * Make and pack eye data message
+        tobii_glasses_msg = self.get_glasses_update(json_data)
+
+        eye_data_pack_time = self.get_clock().now() 
 
         # * Adjust colour and resize image
         frame = self.modify_image(frame)
@@ -258,6 +270,51 @@ class tobiiPublisher(Node):  # Create node inheriting from Node
         if print_performance:
             self.performance_stats(start_time, self.get_clock().now())
 
+
+    # 'gp': {   'ts': 1,579,247,690,   's': 0, 'gidx': 137928, 'l': 121786, 'gp': [0.5913, 0.0918]},  
+    # 'gp3': {  'ts': 1,579,247,690,   's': 0, 'gidx': 137928, 'gp3': [-55.52, 191.5, 413.59]},  
+    # 'pts': {  'ts': 1,579,117,765,   's': 0, 'pts': 48,486,755, 'pv': 5},  
+
+
+    """
+        self.gp_buffer = {}
+        self.last_pts = 0
+        self.last_ts = 0
+    """
+
+    def get_synced_data(self, json_data): 
+
+        # save new data in buffer, use ts as`key
+        new_sync_data = None
+        new_ts = None
+
+        for key, value in json_data.items():
+            # All sensor data
+            if key == "gp": # or key == "gp3":
+                #TODO iterate on others                
+                self.gp_buffer[value['ts']] = value['gp']
+
+                # TODO get latest ts for group
+                new_ts = value['ts']
+            
+            # Get pts 
+            elif key == "pts":
+                new_sync_data = value
+                # maybe add to a buffer as well?
+                #self.pts_buffer[value['ts']] = value
+
+        # Update data 
+        if new_sync_data:
+            self.last_pts = new_sync_data['pts']
+            self.last_ts = new_sync_data['ts']
+
+        # get associated ts 
+
+        #
+
+
+
+        return json_data
 
     # receives json data from glasses
     # returns the corresponding filled message with latest data
@@ -312,6 +369,16 @@ class tobiiPublisher(Node):  # Create node inheriting from Node
                     gaze_pos_msg.gaze_position_3d = data[key]['gp3']# gaze position
 
                     tobii_glasses_msg.gaze_position = gaze_pos_msg
+            
+            except:
+                #ts = -1 
+                pass
+
+            try:
+                if key == 'pts' and data[key]['s'] ==0: # Gaze position
+                    pass
+                    #print(f"ts: {data[key]['ts']}")
+                    #print(f"pts: {data[key]['pts']}")
             except:
                 #ts = -1 
                 pass
