@@ -106,9 +106,12 @@ class tobiiPublisher(Node):  # Create node inheriting from Node
         """
 
         # To data queue
-        self.gp_buffer = {}
+        # ! TODO: Move to class 
+        self.offset_buffer = {}
+        self.sensor_data_buffer = {}
         self.last_pts = 0
-        self.last_ts = 0
+        self.pts_offset = 0
+        #self.last_ts = 0
         
 
 
@@ -162,6 +165,9 @@ class tobiiPublisher(Node):  # Create node inheriting from Node
         self.total_time = 0
         self.timings = []
 
+        self.stamps = []
+
+
     def calibrate_glasses(self, tobiiglasses):
 
         print(f"Battery level at: {tobiiglasses.get_battery_info()}")
@@ -211,10 +217,6 @@ class tobiiPublisher(Node):  # Create node inheriting from Node
         
         eye_data_get_time = self.get_clock().now()
 
-        # * Buffer and sync data
-
-        #json_data = self.get_synced_data(json_data)
-
         # * Get latest image frame
         if self.cap.grab():
             ret, frame = self.cap.retrieve()
@@ -224,8 +226,14 @@ class tobiiPublisher(Node):  # Create node inheriting from Node
             else:
                 frame = self.frame_buffer
 
+        video_pts = self.cap.get(cv2.CAP_PROP_POS_MSEC)
+
         #print(f"frames in buffer: {self.cap.get(cv2.CAP_PROP_FRAME_COUNT)}")
         image_data_get_time = self.get_clock().now()
+
+        # * Buffer and sync data
+
+        json_data = self.get_synced_data(json_data, video_pts)
 
 
         # * Make and pack eye data message
@@ -262,10 +270,12 @@ class tobiiPublisher(Node):  # Create node inheriting from Node
 
         # * Calculate time difference between iterations and frame rate
 
+        #print(f"Video timing is {time} ?")
+
         end_time = self.get_clock().now() 
 
-        self.iterations += 1
-        self.timings.append( [start_time.nanoseconds, eye_data_get_time.nanoseconds, eye_data_pack_time.nanoseconds, image_data_get_time.nanoseconds, image_process_time.nanoseconds, image_data_pack_time.nanoseconds, end_time.nanoseconds, self.iterations] )
+        #self.iterations += 1
+        #self.timings.append( [start_time.nanoseconds, eye_data_get_time.nanoseconds, eye_data_pack_time.nanoseconds, image_data_get_time.nanoseconds, image_process_time.nanoseconds, image_data_pack_time.nanoseconds, end_time.nanoseconds, self.iterations] )
 
         if print_performance:
             self.performance_stats(start_time, self.get_clock().now())
@@ -277,14 +287,113 @@ class tobiiPublisher(Node):  # Create node inheriting from Node
 
 
     """
-        self.gp_buffer = {}
+        self.offset_buffer = {}
+        self.sensor_data_buffer = {}
         self.last_pts = 0
-        self.last_ts = 0
     """
 
-    def get_synced_data(self, json_data): 
+    def get_synced_data(self, json_data, video_pts): 
+
+        # * General process:
+        # * [video pts] -> [offset pts, sensor ts] -> [sensor ts, data]
+
+
+        # Also calculates the video timestamp to message timestamp offset
+        def add_data_to_buffers(self, json_data):
+            # If the data has a pts, add ts to the offset buffer indexed by pts
+            # JSON structure is quirky
+            if "pts" in json_data:
+                #Convert offset pts to nanoseconds
+                conversion_cnst = 0.09 # 90KHz in microseconds (!), unconfirmed
+                adjusted_pts = int(json_data['pts']['pts']/0.09)
+
+                if not adjusted_pts in self.offset_buffer:
+                    self.offset_buffer[int(json_data['pts']['pts']/0.09)] = json_data['pts']['ts']
+                    self.pts_offset = adjusted_pts-video_pts
+
+            # TODO: Change to sub json for scalability
+            if "gp" in json_data:
+                self.sensor_data_buffer[json_data["gp"]['ts']] = json_data["gp"]['gp'] 
+
+
+        # Gets ts latest from the latest pts
+        def get_ts(self, time_stamp):
+            # get closes pts in the offset_buffer: largest that is smaller than the timestamp
+            cur_pts = list(self.offset_buffer)[0] 
+
+            for pts in self.offset_buffer: #iterate over key
+                if pts <= time_stamp and pts>cur_pts: # TODO: Rewrite in gamma notation(?)
+                    cur_pts = pts
+
+            # get associated ts
+
+            cur_ts = self.offset_buffer[cur_pts]
+            return cur_ts
+
+        def get_buffered_data(self, cur_ts):
+            print("Looking for buffered data")
+            # get closes ts in the sensor_data_buffer: largest that is smaller than the timestamp
+            cur_data_ts = list(self.sensor_data_buffer)[0] 
+            print(f"First element {cur_data_ts}")
+            print(f"Limit is current timestamp: {cur_ts}")
+
+            for ts in self.sensor_data_buffer:
+                if ts <= cur_ts and ts>cur_data_ts:
+                    cur_data_ts = ts
+                    print(f" Updated to: {cur_data_ts}")
+
+
+            cur_data = self.sensor_data_buffer[ts]
+            print(f"Associated data {cur_data}")
+            return cur_data
+
+        def flush_buffers(self, current_ts):
+            # Remove all pts that are smaller than the current timestamp 
+
+
+            pass
+
+
+        # TODO: pts matching and get offset, flush
+
+        # Add new data to respective data_stream:
+        # sync_buffer contains the pts-ts pairs
+        # sensor_buffer contains the ts-data for each sensor list
+        # How to organize for multiple? Keep multiple buffers or just one with more data?
+
+        add_data_to_buffers(self, json_data)
+
+        # Using the video pts, find inmediate previous pts and respective ts 
+        # calculate offset 
+        # and find the closest (inmediate previous) ts in the sensor buffer
+
+        current_pts = video_pts + self.pts_offset
+        cur_ts = get_ts(self, current_pts)
+        # I guess this can be practically ommitted and only get the last one in the offset buffer?
+
+
+        # Get new data from json_data, pull closest ts from sensor buffer
+        cur_data = get_buffered_data(self, cur_ts)
+
+
+        print(f"Video pts: {video_pts}")
+        print(f"Current adjusted pts: {current_pts/1000000}")
+        
+        print(f"Offset buffer: {self.offset_buffer}")
+        print(f"current ts is {cur_ts/1000000}")
+
+        print(f"Sensor buffer: {self.sensor_data_buffer}")
+        print(f"current gp is {cur_data}")
+
+        print(f"Video pts - data offset: {self.pts_offset/1000000} micro seconds")
+
+        # Discard old buffer data
+        flush_buffers(self, cur_ts)
+
+        print(f"----")
 
         # save new data in buffer, use ts as`key
+        """
         new_sync_data = None
         new_ts = None
 
@@ -307,7 +416,7 @@ class tobiiPublisher(Node):  # Create node inheriting from Node
         if new_sync_data:
             self.last_pts = new_sync_data['pts']
             self.last_ts = new_sync_data['ts']
-
+        """
         # get associated ts 
 
         #
@@ -322,9 +431,12 @@ class tobiiPublisher(Node):  # Create node inheriting from Node
     # TODO SYNC image
     def get_glasses_update(self, data):
 
+        #video_pts = self.cap.get(cv2.CAP_PROP_POS_MSEC)
+
         # parse json data into a dictionary
         # Save to messages
         tobii_glasses_msg = TobiiGlassesMsg()
+        gp_ts, gp3_ts, pts_ts, pts_pts = None,None,None,None
 
         for key in data:
             #print(key,data[key])
@@ -346,6 +458,9 @@ class tobiiPublisher(Node):  # Create node inheriting from Node
                     gaze_pos_msg.gaze_position = data[key]['gp']    # gaze position
 
                     tobii_glasses_msg.gaze_position = gaze_pos_msg
+
+                    gp_ts = data[key]['ts']
+                    #self.stamps.append(stamp.nanosec)
             except:
                 #nothing if wrong?
                 #ts = -1 
@@ -369,19 +484,30 @@ class tobiiPublisher(Node):  # Create node inheriting from Node
                     gaze_pos_msg.gaze_position_3d = data[key]['gp3']# gaze position
 
                     tobii_glasses_msg.gaze_position = gaze_pos_msg
-            
+                    
+                    #self.stamps.append(stamp.nanosec)
+                    gp3_ts = data[key]['ts']
+
             except:
                 #ts = -1 
                 pass
 
             try:
                 if key == 'pts' and data[key]['s'] ==0: # Gaze position
+                    #self.stamps.append(data[key]['ts'])
+                    pts_ts = data[key]['ts']
+                    #self.stamps.append(data[key]['pts'])
+                    pts_pts = data[key]['pts']
                     pass
                     #print(f"ts: {data[key]['ts']}")
                     #print(f"pts: {data[key]['pts']}")
             except:
                 #ts = -1 
                 pass
+
+        ros_time = self.get_clock().now().nanoseconds
+        self.iterations += 1
+        #self.timings.append( [gp_ts, gp3_ts, pts_ts, pts_pts, video_pts, ros_time, self.iterations] )
 
         return tobii_glasses_msg
 
@@ -453,12 +579,14 @@ def main(args=None):
     except KeyboardInterrupt:
         cv2.destroyAllWindows()
 
-        fields = ['start_time', 'eye_data_get_time', 'eye_data_pack_time', 'image_data_get_time', 'image_process_time', 'image_data_pack_time', 'end_time', 'iterations'] 
+        #fields = ['start_time', 'eye_data_get_time', 'eye_data_pack_time', 'image_data_get_time', 'image_process_time', 'image_data_pack_time', 'end_time', 'iterations'] 
+        fields = ['gp_ts', 'gp3_ts', 'pts_ts', 'pts_pts', 'video_pts', 'ros_time', 'iteration'] 
+        
         rows = glasses_publisher.timings
 
         combined = rows.insert(0, fields)
 
-        np.savetxt("grey_" + "Res_"+str(video_resolution)+"_HRR_"+ str(high_refresh_rate) + ".csv", 
+        np.savetxt("Timing_tests" + ".csv", 
                 rows,
                 delimiter =", ", 
                 fmt ='% s')
