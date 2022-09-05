@@ -39,52 +39,41 @@ ipv6_interface = "enx60634c83de17"
 #ping6 ff02::1%eth0
 wired_mode = False
 publish_freq = 50   #Hz
-video_resolution = (960, 540)   #Default for high framerate, optimal performance
-# video_resolution = (720, 480) #Not recommmeded
-# video_resolution = (1280, 720)
+video_resolution = (960, 540)       # (qHD) Default for high framerate, optimal performance
+# video_resolution = (720, 480)     # Not recommmeded
+# video_resolution = (1280, 720)    # plain HD
 # video_resolution = (1600, 900)
-# video_resolution = (1920,1080) # Default for low framerate
+# video_resolution = (1920,1080)    # (full HD) Default for low framerate
 
 # TODO: Visualization error for eye marker
 
-# pixels (qHD).
-
-#eye_update_frequency = 50 # Hz #!!!
-#scene_camera_frequency = 50 # * Run
-use_glasses_timestamp = True # TODO, if false uses ROS-es
-#video_resolution = (1280, 720) # plain HD
+#use_glasses_timestamp = True # TODO, if false uses ROS-es
 
 ### * Mouse emulation * ###
 import pyautogui
 EMULATE_GLASSES = False
 
 ### * DEBUG * ###
+syncronize_data = True     # TODO
 high_refresh_rate = False    
 send_image = True
 draw_circle = True
 do_calibration = False
 print_performance = False
-syncronize_data = False     # TODO
-record_glasses = False      # TODO
-undo_distortion = False     # TODO
-
+record_glasses = False      # TODO: Future
+undo_distortion = False     # TODO: Future
 
 # TODO Remove after study done
 import numpy as np
 
-# TODO: INVESTIGATE Individual eye control
+# TODO: Future: INVESTIGATE Individual eye control
 # Add toggle to switch between eyes
 # Trigger calibration from other terminal?
-
-# TODO: Sync data sources
-#Modes?
-
 # TODO: Need to carefully observe data, particularly time
-
 # TODO: Parameter expose
+# TODO: Use config file
 # >>> ros2 run turtlesim turtlesim_node --ros-args --params-file ./turtlesim.yaml
-
-class tobiiPublisher(Node):  # Create node inheriting from Node
+class tobiiPublisher(Node): 
 
     def __init__(self):
 
@@ -101,11 +90,11 @@ class tobiiPublisher(Node):  # Create node inheriting from Node
 
         if send_image:
             self.publisher_front_camera = self.create_publisher(
-                Image, "tobii_glasses/camera", 1)
+                Image, "tobii_glasses/front_camera", 1)
 
         """
         self.publisher_eye_data = self.create_publisher(
-            String, "tobii_glasses/eye_info", 1)
+            String, "tobii_glasses/gp", 1)
         """
 
         # To data queue
@@ -171,7 +160,6 @@ class tobiiPublisher(Node):  # Create node inheriting from Node
 
         self.stamps = []
 
-
     def calibrate_glasses(self, tobiiglasses):
 
         print(f"Battery level at: {tobiiglasses.get_battery_info()}")
@@ -236,8 +224,8 @@ class tobiiPublisher(Node):  # Create node inheriting from Node
         image_data_get_time = self.get_clock().now()
 
         # * Buffer and sync data
-
-        #json_data = self.get_synced_data(json_data, video_pts)
+        if syncronize_data:
+            json_data = self.get_synced_data(json_data, video_pts)
 
 
         # * Make and pack eye data message
@@ -549,9 +537,11 @@ class tobiiPublisher(Node):  # Create node inheriting from Node
     # TODO: Pending, open parameters
     def modify_image(self, image, greyscale= False, video_resolution = (960, 540) ):
         # Resize selected image to given dimension
-        image = cv2.resize(image, video_resolution)
         if greyscale:
             image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+
+        image = cv2.resize(image, video_resolution)
+
         # Convert to uint8
         image = image.astype(np.uint8)
         # Apply Gaussian blur to remove noise -> Best left for receiver?
