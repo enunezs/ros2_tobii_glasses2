@@ -16,6 +16,8 @@ from cv_bridge import CvBridge
 import cv2
 import numpy as np
 
+from VideoCapture import VideoCapture
+
 # * Base messages
 from sensor_msgs.msg import Image
 from std_msgs.msg import String
@@ -51,10 +53,10 @@ video_resolution = (960, 540)       # (qHD) Default for high framerate, optimal 
 
 ### * Mouse emulation * ###
 import pyautogui
-EMULATE_GLASSES = False
+EMULATE_GLASSES = True
 
 ### * DEBUG * ###
-syncronize_data = True     # TODO
+syncronize_data = False     # ! TODO 
 high_refresh_rate = True
 do_calibration = False
 
@@ -93,6 +95,7 @@ class tobiiPublisher(Node):
             self.publisher_front_camera = self.create_publisher(
                 Image, "tobii_glasses/front_camera", 1)
 
+
         """
         self.publisher_eye_data = self.create_publisher(
             String, "tobii_glasses/gp", 1)
@@ -111,7 +114,8 @@ class tobiiPublisher(Node):
 
         if EMULATE_GLASSES:
             self.cap = cv2.VideoCapture(0)
-            publish_freq = 30            #Hz
+            self.cap.set(cv2.CAP_PROP_BUFFERSIZE, 0)
+            publish_freq = 5            #Hz
             syncronize_data = False     
             pass
         else:
@@ -132,6 +136,8 @@ class tobiiPublisher(Node):
                 publish_freq = 25
 
             self.tobii_glasses.start_streaming()
+            #publish_freq = 10
+
 
             # TODO: To parameter expose
             # * Calibrate glasses
@@ -142,7 +148,7 @@ class tobiiPublisher(Node):
             # self.load_glasses_calibration()
             self.cap = cv2.VideoCapture(
                 "rtsp://%s:8554/live/scene" % ipv4_address)
-            self.cap.set(cv2.CAP_PROP_BUFFERSIZE, 1); # internal buffer will now store only 3 frames
+            #self.cap.set(cv2.CAP_PROP_BUFFERSIZE, 0); # internal buffer will now store only 3 frames
 
         # * Check if connection is succesful
         if (self.cap.isOpened() == False):
@@ -225,6 +231,8 @@ class tobiiPublisher(Node):
 
 
         video_pts = self.cap.get(cv2.CAP_PROP_POS_MSEC)
+        print(f"Video timestamp is {video_pts}")
+        print(f"Video buffer is size {self.cap.get(cv2.CAP_PROP_BUFFERSIZE)}")
 
         #print(f"frames in buffer: {self.cap.get(cv2.CAP_PROP_FRAME_COUNT)}")
         image_data_get_time = self.get_clock().now()
@@ -293,7 +301,7 @@ class tobiiPublisher(Node):
     """
 
 # TODO: use latency property
-    def get_synced_data(self, json_data, debug = False): 
+    def get_synced_data(self, json_data, video_pts, debug = False): 
 
         # * General process:
         # * [video pts] -> [offset pts, sensor ts] -> [sensor ts, data]
@@ -311,15 +319,14 @@ class tobiiPublisher(Node):
                     offset_ts = json_data['pts']['ts']
                     self.offset_buffer[offset_pts] = offset_ts #-json_data["gp"]['l']
                     
-
             # TODO: Change to sub json for scalability
             if "gp" in json_data and json_data['gp']['s']==0:
                 latency = json_data["gp"]['l']
-                #Latency means data should be earlier relative to the timestamp
+                #Latency means data should be earlier relative to the timestamp 
+                # TODO (test) with dummy var
+                latency = 3000000
                 sensor_ts = json_data['gp']['ts'] - latency 
                 self.sensor_data_buffer[sensor_ts] = json_data
-
-
 
         def get_cur_pts(self, video_pts):
 
@@ -401,18 +408,12 @@ class tobiiPublisher(Node):
         # Add new data to respective data_stream:
         # sync_buffer contains the pts-ts pairs
         # sensor_buffer contains the ts-data for each sensor list
-        # How to organize for multiple? Keep multiple buffers or just one with more data?
-
         add_data_to_buffers(self, json_data)
 
-        # Using the video pts, find inmediate previous pts and respective ts 
-        # calculate offset 
-        # and find the closest (inmediate previous) ts in the sensor buffer
-        current_pts = video_pts + self.pts_video_to_sensor_offset
+        # With the video pts get the current (sensor) pts 
+        current_pts = get_cur_pts(self, video_pts)
+        # and find the current_pts (inmediate previous) ts in the sensor buffer
         current_ts = get_cur_ts(self, current_pts)
-
-        # I guess this can be practically ommitted and only get the last one in the offset buffer?
-
 
         # Get new data from json_data, pull closest ts from sensor buffer
         cur_data = get_buffered_data(self, current_ts)
@@ -427,25 +428,18 @@ class tobiiPublisher(Node):
             print(f"Sensor buffer timestamps: {self.sensor_data_buffer.keys() }")
             print(f"current gp is {cur_data}")
 
-            print(f"Video pts - data offset: {self.pts_video_to_sensor_offset/1000000:,} micro seconds")
+            print(f"Video pts - data offset: {(current_ts-current_pts)/1000000:,} micro seconds")
             print(f"----")
 
-        # Discard offset buffer data
+        # Discard unneeded buffer data
         self.offset_buffer = flush_buffer( self.offset_buffer, current_pts)
-
-        # Discard offset buffer data
         self.sensor_data_buffer = flush_buffer( self.sensor_data_buffer, current_ts)
-
-        
-
-
 
         return cur_data
 
     # receives json data from glasses
     # returns the corresponding filled message with latest data
     # Order of timestamps not guaranteed
-    # TODO SYNC image
     def get_glasses_update(self, data):
 
         #video_pts = self.cap.get(cv2.CAP_PROP_POS_MSEC)
