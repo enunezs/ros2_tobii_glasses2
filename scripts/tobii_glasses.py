@@ -45,11 +45,13 @@ ipv6_interface = "enx60634c83de17"
 #ping6 ff02::1%eth0
 wired_mode = False
 #publish_freq = 25   #Hz
+
+#! 
 video_resolution = (960, 540)       # (qHD) Default for high framerate, optimal performance
-# video_resolution = (720, 480)     # Not recommmeded
-# video_resolution = (1280, 720)    # plain HD
-# video_resolution = (1600, 900)
-# video_resolution = (1920,1080)    # (full HD) Default for low framerate
+video_resolution = (720, 480)     # Not recommmeded
+video_resolution = (1280, 720)    # plain HD
+video_resolution = (1600, 900)
+#video_resolution = (1920,1080)    # (full HD) Default for low framerate
 
 # TODO: Visualization error for eye marker
 
@@ -60,10 +62,12 @@ import pyautogui
 EMULATE_GLASSES = False
 
 ### * DEBUG * ###
-syncronize_data = False     # ! TODO 
+syncronize_data = True  
+#!
+greyscale = False
+#!
 high_refresh_rate = True
-do_calibration = False
-
+do_calibration = True
 send_image = True
 draw_circle = True
 print_performance = False
@@ -136,7 +140,7 @@ class tobiiPublisher(Node):
                 publish_freq = 50            #Hz
             else:
                 res = self.tobii_glasses.set_video_freq_25()
-                print("Setting video refresh rate to 25Hz")                #publish_freq = 25            #Hz
+                print("Setting video refresh rate to 25Hz") 
                 publish_freq = 25
 
             self.tobii_glasses.start_streaming()
@@ -207,7 +211,6 @@ class tobiiPublisher(Node):
 
     def publish_tobii_data(self):
 
-        print("EHHHHH")
         start_time = self.get_clock().now()
 
         # * Get latest data stream 
@@ -241,7 +244,7 @@ class tobiiPublisher(Node):
 
         if syncronize_data:
             #ros_time = self.get_clock().now().nanoseconds/1e9
-            json_data = self.buffer.get_synced_data(json_data, video_pts , debug=True)
+            json_data = self.buffer.get_synced_data(json_data, video_pts , debug=False)
 
         # * Make and pack eye data message
         tobii_glasses_msg = self.get_glasses_update(json_data)
@@ -249,7 +252,7 @@ class tobiiPublisher(Node):
         eye_data_pack_time = self.get_clock().now() 
 
         # * Adjust colour and resize image
-        frame = self.modify_image(frame, greyscale= True)
+        frame = self.modify_image(frame, greyscale= greyscale)
         if send_image and draw_circle:
             if tobii_glasses_msg.gaze_position and tobii_glasses_msg.gaze_position.status == 0:
                 gaze_pos = tobii_glasses_msg.gaze_position.gaze_position
@@ -453,7 +456,7 @@ def main(args=None):
 
         combined = rows.insert(0, fields)
 
-        np.savetxt("Timing_tests" + ".csv", 
+        np.savetxt("Res_" + str(video_resolution) + "_Grey_"+ str(greyscale) + "_HRR_" + str(high_refresh_rate) + ".csv", 
                 rows,
                 delimiter =", ", 
                 fmt ='% s')
