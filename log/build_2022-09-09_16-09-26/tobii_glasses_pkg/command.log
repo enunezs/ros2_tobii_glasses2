@@ -1,0 +1,2 @@
+Invoking command in '/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg -- -j8 -l8
+Invoked command in '/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg -- -j8 -l8

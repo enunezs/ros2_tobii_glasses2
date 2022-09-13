@@ -3,6 +3,15 @@
 # * Core dependencies
 import rclpy
 from rclpy.node import Node
+<<<<<<< Updated upstream:tobii_glasses_pkg/scripts/tobii_glasses.py
+=======
+
+from queue import Empty
+from re import L
+from socket import IPV6_CHECKSUM
+from time import time
+
+>>>>>>> Stashed changes:scripts/tobii_glasses.py
 import json
 
 # * Image messaging and conversion
@@ -38,12 +47,22 @@ import pyautogui
 #from pynput.mouse import Controller
 
 ### * DEBUG * ###
+<<<<<<< Updated upstream:tobii_glasses_pkg/scripts/tobii_glasses.py
 emulate_glasses = False
 high_refresh_rate = False # TODO: Fix this
 send_image = True
 draw_circle = True
 do_calibration = False
 record_glasses = False
+=======
+syncronize_data = True  
+greyscale = False
+high_refresh_rate = True
+do_calibration = True
+send_image = True
+draw_circle = True
+
+>>>>>>> Stashed changes:scripts/tobii_glasses.py
 print_performance = False
 
 
@@ -259,6 +278,63 @@ class tobiiPublisher(Node):  # Create node inheriting from Node
                     gaze_pos_msg.gaze_position_3d = data[key]['gp3']# gaze position
 
                     tobii_glasses_msg.gaze_position = gaze_pos_msg
+<<<<<<< Updated upstream:tobii_glasses_pkg/scripts/tobii_glasses.py
+=======
+                    
+                    #self.stamps.append(stamp.nanosec)
+                    gp3_ts = data[key]['ts']
+
+            except:
+                #ts = -1 
+                pass
+
+            # TODO
+            # TODO: Modify to use latest timestamp not from video
+            try:
+                if key == 'ac' and data[key]['s'] ==0: # Gaze position
+                    pass
+            except:
+                #ts = -1 
+                pass
+
+            try:
+                if key == 'gy' and data[key]['s'] ==0: # Gaze position
+                    pass
+            except:
+                #ts = -1 
+                pass
+
+            try:
+                if key == 'vts' and data[key]['s'] ==0: # Gaze position
+                    pass
+            except:
+                #ts = -1 
+                pass
+
+            try:
+                if key == 'evts' and data[key]['s'] ==0: # TODO
+                    pass
+            except:
+                #ts = -1 
+                pass
+
+            try:
+                if key == 'pts' and data[key]['s'] == 0: # Gaze position
+                    #self.stamps.append(data[key]['ts'])
+                    pts_ts = data[key]['ts']
+                    #self.stamps.append(data[key]['pts'])
+                    pts_pts = data[key]['pts']
+                    pass
+                    #print(f"ts: {data[key]['ts']}")
+                    #print(f"pts: {data[key]['pts']}")
+>>>>>>> Stashed changes:scripts/tobii_glasses.py
+            except:
+                #ts = -1 
+                pass
+            
+            try:
+                if key == 'epts' and data[key]['s'] ==0: # TODO
+                    pass
             except:
                 #ts = -1 
                 pass
@@ -334,6 +410,22 @@ def main(args=None):
         rclpy.spin(glasses_publisher)  # prevents closure. Run until interrupt
     except KeyboardInterrupt:
         cv2.destroyAllWindows()
+<<<<<<< Updated upstream:tobii_glasses_pkg/scripts/tobii_glasses.py
+=======
+
+
+        # Save timings to file
+        fields = ['start_time', 'eye_data_get_time', 'eye_data_pack_time', 'image_data_get_time', 'image_process_time', 'image_data_pack_time', 'end_time', 'iterations'] 
+        #fields = ['gp_ts', 'gp3_ts', 'pts_ts', 'pts_pts', 'video_pts', 'ros_time', 'iteration'] 
+        rows = glasses_publisher.timings
+        combined = rows.insert(0, fields)
+        np.savetxt("Res_" + str(video_resolution) + "_Grey_"+ str(greyscale) + "_HRR_" + str(high_refresh_rate) + ".csv", 
+                rows,
+                delimiter =", ", 
+                fmt ='% s')
+
+
+>>>>>>> Stashed changes:scripts/tobii_glasses.py
         glasses_publisher.destroy_node()  # duh
         rclpy.shutdown()  # Shutdown DDS !
 

@@ -1,0 +1,48 @@
+[0.018s] Invoking command in '/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg': /usr/bin/cmake --build /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg -- -j8 -l8
+[0.043s] -- Found ament_cmake: 0.9.9 (/opt/ros/foxy/share/ament_cmake/cmake)
+[0.058s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3") 
+[0.058s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[0.193s] -- Found rclpy: 1.0.8 (/opt/ros/foxy/share/rclpy/cmake)
+[0.193s] -- Found std_msgs: 2.0.5 (/opt/ros/foxy/share/std_msgs/cmake)
+[0.211s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.214s] -- Found rosidl_adapter: 1.2.1 (/opt/ros/foxy/share/rosidl_adapter/cmake)
+[0.318s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.361s] -- Found sensor_msgs: 2.0.5 (/opt/ros/foxy/share/sensor_msgs/cmake)
+[0.472s] -- Found cv_bridge: 2.2.1 (/opt/ros/foxy/share/cv_bridge/cmake)
+[0.486s] -- Found rosidl_default_generators: 1.0.1 (/opt/ros/foxy/share/rosidl_default_generators/cmake)
+[0.496s] CMake Error at CMakeLists.txt:45 (install):
+[0.496s]   install DIRECTORY given non-directory "scripts/video_capture.py" to
+[0.496s]   install.
+[0.496s] 
+[0.496s] 
+[0.511s] -- Found PythonInterp: /usr/bin/python3 (found version "3.8.10") 
+[0.637s] Error parsing '/home/usr/workspaces/ros2_tobii_glasses2/package.xml':
+[0.638s] Traceback (most recent call last):
+[0.638s]   File "/opt/ros/foxy/share/ament_cmake_core/cmake/core/package_xml_2_cmake.py", line 143, in <module>
+[0.638s]     main()
+[0.638s]   File "/opt/ros/foxy/share/ament_cmake_core/cmake/core/package_xml_2_cmake.py", line 52, in main
+[0.638s]     raise e
+[0.638s]   File "/opt/ros/foxy/share/ament_cmake_core/cmake/core/package_xml_2_cmake.py", line 48, in main
+[0.638s]     package = parse_package_string(
+[0.639s]   File "/usr/lib/python3/dist-packages/catkin_pkg/package.py", line 788, in parse_package_string
+[0.639s]     pkg.validate(warnings=warnings)
+[0.639s]   File "/usr/lib/python3/dist-packages/catkin_pkg/package.py", line 330, in validate
+[0.639s]     raise InvalidPackage('\n'.join(errors), self.filename)
+[0.639s] catkin_pkg.package.InvalidPackage: Error(s) in package '/home/usr/workspaces/ros2_tobii_glasses2/package.xml':
+[0.639s] Package version "1" does not follow version conventions
+[0.645s] CMake Error at /opt/ros/foxy/share/ament_cmake_core/cmake/core/ament_package_xml.cmake:94 (message):
+[0.645s]   execute_process(/usr/bin/python3
+[0.645s]   /opt/ros/foxy/share/ament_cmake_core/cmake/core/package_xml_2_cmake.py
+[0.645s]   /home/usr/workspaces/ros2_tobii_glasses2/package.xml
+[0.645s]   /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/ament_cmake_core/package.cmake)
+[0.645s]   returned error code 1
+[0.645s] Call Stack (most recent call first):
+[0.645s]   /opt/ros/foxy/share/ament_cmake_core/cmake/core/ament_package_xml.cmake:49 (_ament_package_xml)
+[0.645s]   /opt/ros/foxy/share/rosidl_cmake/cmake/rosidl_generate_interfaces.cmake:226 (ament_package_xml)
+[0.646s]   CMakeLists.txt:52 (rosidl_generate_interfaces)
+[0.646s] 
+[0.646s] 
+[0.646s] -- Configuring incomplete, errors occurred!
+[0.646s] See also "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/CMakeOutput.log".
+[0.651s] make: *** [Makefile:1468: cmake_check_build_system] Error 1
+[0.653s] Invoked command in '/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg' returned '2': /usr/bin/cmake --build /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg -- -j8 -l8

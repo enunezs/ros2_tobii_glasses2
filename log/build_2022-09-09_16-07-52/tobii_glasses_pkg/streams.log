@@ -1,0 +1,31 @@
+[0.017s] Invoking command in '/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg': /usr/bin/cmake --build /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg -- -j8 -l8
+[0.043s] -- Found ament_cmake: 0.9.9 (/opt/ros/foxy/share/ament_cmake/cmake)
+[0.058s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[0.191s] -- Found rclpy: 1.0.8 (/opt/ros/foxy/share/rclpy/cmake)
+[0.192s] -- Found std_msgs: 2.0.5 (/opt/ros/foxy/share/std_msgs/cmake)
+[0.209s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.212s] -- Found rosidl_adapter: 1.2.1 (/opt/ros/foxy/share/rosidl_adapter/cmake)
+[0.316s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.360s] -- Found sensor_msgs: 2.0.5 (/opt/ros/foxy/share/sensor_msgs/cmake)
+[0.471s] -- Found cv_bridge: 2.2.1 (/opt/ros/foxy/share/cv_bridge/cmake)
+[0.491s] CMake Error at CMakeLists.txt:32 (find_package):
+[0.492s]   By not providing "Findpyautogui.cmake" in CMAKE_MODULE_PATH this project
+[0.492s]   has asked CMake to find a package configuration file provided by
+[0.492s]   "pyautogui", but CMake did not find one.
+[0.492s] 
+[0.492s]   Could not find a package configuration file provided by "pyautogui" with
+[0.492s]   any of the following names:
+[0.492s] 
+[0.492s]     pyautoguiConfig.cmake
+[0.492s]     pyautogui-config.cmake
+[0.492s] 
+[0.492s]   Add the installation prefix of "pyautogui" to CMAKE_PREFIX_PATH or set
+[0.493s]   "pyautogui_DIR" to a directory containing one of the above files.  If
+[0.493s]   "pyautogui" provides a separate development package or SDK, be sure it has
+[0.493s]   been installed.
+[0.493s] 
+[0.493s] 
+[0.493s] -- Configuring incomplete, errors occurred!
+[0.493s] See also "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/CMakeOutput.log".
+[0.497s] make: *** [Makefile:1468: cmake_check_build_system] Error 1
+[0.499s] Invoked command in '/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg' returned '2': /usr/bin/cmake --build /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg -- -j8 -l8

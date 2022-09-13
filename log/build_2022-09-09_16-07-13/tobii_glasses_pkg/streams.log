@@ -1,0 +1,31 @@
+[0.018s] Invoking command in '/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg': /usr/bin/cmake --build /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg -- -j8 -l8
+[0.047s] -- Found ament_cmake: 0.9.9 (/opt/ros/foxy/share/ament_cmake/cmake)
+[0.064s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3") 
+[0.064s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[0.204s] -- Found rclpy: 1.0.8 (/opt/ros/foxy/share/rclpy/cmake)
+[0.204s] -- Found std_msgs: 2.0.5 (/opt/ros/foxy/share/std_msgs/cmake)
+[0.225s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.231s] -- Found rosidl_adapter: 1.2.1 (/opt/ros/foxy/share/rosidl_adapter/cmake)
+[0.342s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.389s] -- Found sensor_msgs: 2.0.5 (/opt/ros/foxy/share/sensor_msgs/cmake)
+[0.510s] CMake Error at CMakeLists.txt:28 (find_package):
+[0.510s]   By not providing "Findnumpy.cmake" in CMAKE_MODULE_PATH this project has
+[0.510s]   asked CMake to find a package configuration file provided by "numpy", but
+[0.510s]   CMake did not find one.
+[0.510s] 
+[0.510s]   Could not find a package configuration file provided by "numpy" with any of
+[0.510s]   the following names:
+[0.511s] 
+[0.511s]     numpyConfig.cmake
+[0.511s]     numpy-config.cmake
+[0.511s] 
+[0.511s]   Add the installation prefix of "numpy" to CMAKE_PREFIX_PATH or set
+[0.511s]   "numpy_DIR" to a directory containing one of the above files.  If "numpy"
+[0.511s]   provides a separate development package or SDK, be sure it has been
+[0.512s]   installed.
+[0.512s] 
+[0.512s] 
+[0.512s] -- Configuring incomplete, errors occurred!
+[0.512s] See also "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/CMakeOutput.log".
+[0.515s] make: *** [Makefile:1468: cmake_check_build_system] Error 1
+[0.517s] Invoked command in '/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg' returned '2': /usr/bin/cmake --build /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg -- -j8 -l8
