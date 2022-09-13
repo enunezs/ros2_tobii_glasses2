@@ -1,0 +1,322 @@
+[0.013s] Invoking command in '/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake /home/usr/workspaces/ros2_tobii_glasses2 -DCMAKE_INSTALL_PREFIX=/home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg
+[0.154s] -- The C compiler identification is GNU 9.4.0
+[0.244s] -- The CXX compiler identification is GNU 9.4.0
+[0.251s] -- Check for working C compiler: /usr/bin/cc
+[0.317s] -- Check for working C compiler: /usr/bin/cc -- works
+[0.319s] -- Detecting C compiler ABI info
+[0.382s] -- Detecting C compiler ABI info - done
+[0.394s] -- Detecting C compile features
+[0.395s] -- Detecting C compile features - done
+[0.398s] -- Check for working CXX compiler: /usr/bin/c++
+[0.477s] -- Check for working CXX compiler: /usr/bin/c++ -- works
+[0.478s] -- Detecting CXX compiler ABI info
+[0.566s] -- Detecting CXX compiler ABI info - done
+[0.579s] -- Detecting CXX compile features
+[0.580s] -- Detecting CXX compile features - done
+[0.587s] -- Found ament_cmake: 0.9.9 (/opt/ros/foxy/share/ament_cmake/cmake)
+[0.609s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3") 
+[0.610s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[0.798s] -- Found rclpy: 1.0.8 (/opt/ros/foxy/share/rclpy/cmake)
+[0.800s] -- Found sensor_msgs: 2.0.5 (/opt/ros/foxy/share/sensor_msgs/cmake)
+[0.833s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.841s] -- Found rosidl_adapter: 1.2.1 (/opt/ros/foxy/share/rosidl_adapter/cmake)
+[0.940s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "1.1.1f")  
+[0.969s] -- Found FastRTPS: /opt/ros/foxy/include  
+[1.096s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.302s] -- Found rosidl_default_generators: 1.0.1 (/opt/ros/foxy/share/rosidl_default_generators/cmake)
+[1.371s] -- Found PythonInterp: /usr/bin/python3 (found version "3.8.10") 
+[1.619s] -- Found ament_cmake_ros: 0.9.2 (/opt/ros/foxy/share/ament_cmake_ros/cmake)
+[1.957s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[2.113s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[2.134s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3.5") 
+[2.135s] -- Found python_cmake_module: 0.8.1 (/opt/ros/foxy/share/python_cmake_module/cmake)
+[2.154s] -- Found PythonLibs: /usr/lib/x86_64-linux-gnu/libpython3.8.so (found suitable version "3.8.10", minimum required is "3.5") 
+[2.154s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[2.155s] -- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.8
+[2.155s] -- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.8.so
+[2.170s] -- Found PythonExtra: .so  
+[2.242s] -- Found ament_lint_auto: 0.9.6 (/opt/ros/foxy/share/ament_lint_auto/cmake)
+[2.266s] -- Added test 'copyright' to check source files copyright and LICENSE
+[2.280s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[2.282s] -- Configured cppcheck include dirs: $<BUILD_INTERFACE:/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_c>;/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_c;/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_cpp;/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_fastrtps_c;/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_fastrtps_cpp;$<BUILD_INTERFACE:/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_introspection_c>;$<BUILD_INTERFACE:/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_c>;$<BUILD_INTERFACE:/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_cpp>;/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_py
+[2.282s] -- Configured cppcheck exclude dirs and/or files: 
+[2.295s] -- Added test 'cpplint' to check C / C++ code against the Google style
+[2.295s] -- Configured cpplint exclude dirs and/or files: 
+[2.297s] -- Added test 'flake8' to check Python code syntax and style conventions
+[2.301s] -- Added test 'lint_cmake' to check CMake code style
+[2.303s] -- Added test 'pep257' to check Python code against some of the style conventions in PEP 257
+[2.317s] -- Added test 'uncrustify' to check C / C++ code style
+[2.317s] -- Configured uncrustify additional arguments: 
+[2.319s] -- Added test 'xmllint' to check XML markup files
+[2.325s] -- Configuring done
+[2.401s] -- Generating done
+[2.404s] -- Build files have been written to: /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg
+[2.412s] Invoked command in '/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg' returned '0': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake /home/usr/workspaces/ros2_tobii_glasses2 -DCMAKE_INSTALL_PREFIX=/home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg
+[2.415s] Invoking command in '/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --build /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg -- -j8 -l8
+[2.455s] [35m[1mScanning dependencies of target tobii_glasses_pkg__cpp[0m
+[2.456s] [  1%] [34m[1mGenerating C code for ROS interfaces[0m
+[2.466s] [  3%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[3.102s] [  3%] Built target tobii_glasses_pkg__cpp
+[3.122s] [  5%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[3.127s] [  7%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[3.129s] [  9%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[3.149s] [35m[1mScanning dependencies of target tobii_glasses_pkg__rosidl_generator_c[0m
+[3.172s] [ 14%] [32mBuilding C object CMakeFiles/tobii_glasses_pkg__rosidl_generator_c.dir/rosidl_generator_c/tobii_glasses_pkg/msg/detail/gaze_position__functions.c.o[0m
+[3.173s] [ 14%] [32mBuilding C object CMakeFiles/tobii_glasses_pkg__rosidl_generator_c.dir/rosidl_generator_c/tobii_glasses_pkg/msg/detail/tobii_glasses__functions.c.o[0m
+[3.173s] [ 14%] [32mBuilding C object CMakeFiles/tobii_glasses_pkg__rosidl_generator_c.dir/rosidl_generator_c/tobii_glasses_pkg/msg/detail/gaze_position3_d__functions.c.o[0m
+[3.174s] [ 16%] [32mBuilding C object CMakeFiles/tobii_glasses_pkg__rosidl_generator_c.dir/rosidl_generator_c/tobii_glasses_pkg/msg/detail/eye_data__functions.c.o[0m
+[3.249s] [ 18%] [32m[1mLinking C shared library libtobii_glasses_pkg__rosidl_generator_c.so[0m
+[3.318s] [ 18%] Built target tobii_glasses_pkg__rosidl_generator_c
+[3.339s] [ 20%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[3.340s] [ 21%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[3.936s] [35m[1mScanning dependencies of target tobii_glasses_pkg__rosidl_typesupport_introspection_cpp[0m
+[3.962s] [35m[1mScanning dependencies of target tobii_glasses_pkg__rosidl_typesupport_cpp[0m
+[3.974s] [ 23%] [32mBuilding CXX object CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/tobii_glasses_pkg/msg/detail/gaze_position__type_support.cpp.o[0m
+[3.980s] [ 25%] [32mBuilding CXX object CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/tobii_glasses_pkg/msg/detail/eye_data__type_support.cpp.o[0m
+[3.982s] [ 27%] [32mBuilding CXX object CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/tobii_glasses_pkg/msg/detail/gaze_position3_d__type_support.cpp.o[0m
+[3.986s] [ 29%] [32mBuilding CXX object CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/tobii_glasses_pkg/msg/detail/tobii_glasses__type_support.cpp.o[0m
+[4.025s] [ 30%] [32mBuilding CXX object CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/tobii_glasses_pkg/msg/tobii_glasses__type_support.cpp.o[0m
+[4.236s] [35m[1mScanning dependencies of target tobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp[0m
+[4.308s] [35m[1mScanning dependencies of target tobii_glasses_pkg__rosidl_typesupport_c[0m
+[4.312s] [ 32%] [32mBuilding CXX object CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/tobii_glasses__type_support.cpp.o[0m
+[4.361s] [ 34%] [32mBuilding CXX object CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_c.dir/rosidl_typesupport_c/tobii_glasses_pkg/msg/tobii_glasses__type_support.cpp.o[0m
+[4.430s] [35m[1mScanning dependencies of target tobii_glasses_pkg__rosidl_typesupport_introspection_c[0m
+[4.444s] [ 36%] [32mBuilding CXX object CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_c.dir/rosidl_typesupport_c/tobii_glasses_pkg/msg/gaze_position__type_support.cpp.o[0m
+[4.505s] [ 38%] [32mBuilding C object CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/tobii_glasses_pkg/msg/detail/tobii_glasses__type_support.c.o[0m
+[4.520s] [ 40%] [32mBuilding CXX object CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_c.dir/rosidl_typesupport_c/tobii_glasses_pkg/msg/gaze_position3_d__type_support.cpp.o[0m
+[4.586s] [ 41%] [32mBuilding C object CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/tobii_glasses_pkg/msg/detail/gaze_position__type_support.c.o[0m
+[4.603s] [ 43%] [32mBuilding C object CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/tobii_glasses_pkg/msg/detail/gaze_position3_d__type_support.c.o[0m
+[4.615s] [ 47%] [32mBuilding C object CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/tobii_glasses_pkg/msg/detail/eye_data__type_support.c.o[0m
+[4.617s] [ 47%] [32mBuilding CXX object CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/tobii_glasses_pkg/msg/gaze_position__type_support.cpp.o[0m
+[4.649s] [ 49%] [32mBuilding CXX object CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/tobii_glasses_pkg/msg/gaze_position3_d__type_support.cpp.o[0m
+[4.662s] [ 50%] [32mBuilding CXX object CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_c.dir/rosidl_typesupport_c/tobii_glasses_pkg/msg/eye_data__type_support.cpp.o[0m
+[4.675s] [ 52%] [32mBuilding CXX object CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/gaze_position__type_support.cpp.o[0m
+[4.678s] [ 54%] [32m[1mLinking CXX shared library libtobii_glasses_pkg__rosidl_typesupport_introspection_cpp.so[0m
+[4.691s] [ 56%] [32m[1mLinking C shared library libtobii_glasses_pkg__rosidl_typesupport_introspection_c.so[0m
+[4.741s] [ 58%] [32m[1mLinking CXX shared library libtobii_glasses_pkg__rosidl_typesupport_c.so[0m
+[4.812s] [ 60%] [32mBuilding CXX object CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/tobii_glasses_pkg/msg/eye_data__type_support.cpp.o[0m
+[4.870s] [ 60%] Built target tobii_glasses_pkg__rosidl_typesupport_c
+[4.886s] [ 61%] [32mBuilding CXX object CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/gaze_position3_d__type_support.cpp.o[0m
+[4.889s] [ 61%] Built target tobii_glasses_pkg__rosidl_typesupport_introspection_c
+[4.918s] [ 63%] [32mBuilding CXX object CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/eye_data__type_support.cpp.o[0m
+[4.947s] [ 63%] Built target tobii_glasses_pkg__rosidl_typesupport_introspection_cpp
+[5.318s] [ 65%] [32m[1mLinking CXX shared library libtobii_glasses_pkg__rosidl_typesupport_cpp.so[0m
+[5.365s] [ 65%] Built target tobii_glasses_pkg__rosidl_typesupport_cpp
+[5.679s] [ 67%] [32m[1mLinking CXX shared library libtobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.so[0m
+[5.779s] [ 67%] Built target tobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp
+[5.790s] [ 69%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[6.238s] [35m[1mScanning dependencies of target tobii_glasses_pkg__rosidl_typesupport_fastrtps_c[0m
+[6.263s] [ 70%] [32mBuilding CXX object CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/tobii_glasses_pkg/msg/detail/gaze_position__type_support_c.cpp.o[0m
+[6.263s] [ 72%] [32mBuilding CXX object CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/tobii_glasses_pkg/msg/detail/gaze_position3_d__type_support_c.cpp.o[0m
+[6.265s] [ 74%] [32mBuilding CXX object CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/tobii_glasses_pkg/msg/detail/tobii_glasses__type_support_c.cpp.o[0m
+[6.265s] [ 76%] [32mBuilding CXX object CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/tobii_glasses_pkg/msg/detail/eye_data__type_support_c.cpp.o[0m
+[6.661s] [ 78%] [32m[1mLinking CXX shared library libtobii_glasses_pkg__rosidl_typesupport_fastrtps_c.so[0m
+[6.750s] [ 78%] Built target tobii_glasses_pkg__rosidl_typesupport_fastrtps_c
+[6.759s] [35m[1mScanning dependencies of target tobii_glasses_pkg[0m
+[6.770s] [ 78%] Built target tobii_glasses_pkg
+[6.780s] [35m[1mScanning dependencies of target tobii_glasses_pkg__py[0m
+[6.791s] [ 80%] [34m[1mGenerating Python code for ROS interfaces[0m
+[7.710s] [ 80%] Built target tobii_glasses_pkg__py
+[7.719s] [35m[1mScanning dependencies of target tobii_glasses_pkg__python[0m
+[7.756s] [ 83%] [32mBuilding C object CMakeFiles/tobii_glasses_pkg__python.dir/rosidl_generator_py/tobii_glasses_pkg/msg/_gaze_position_s.c.o[0m
+[7.756s] [ 83%] [32mBuilding C object CMakeFiles/tobii_glasses_pkg__python.dir/rosidl_generator_py/tobii_glasses_pkg/msg/_gaze_position3_d_s.c.o[0m
+[7.758s] [ 85%] [32mBuilding C object CMakeFiles/tobii_glasses_pkg__python.dir/rosidl_generator_py/tobii_glasses_pkg/msg/_tobii_glasses_s.c.o[0m
+[7.759s] [ 87%] [32mBuilding C object CMakeFiles/tobii_glasses_pkg__python.dir/rosidl_generator_py/tobii_glasses_pkg/msg/_eye_data_s.c.o[0m
+[7.869s] [ 89%] [32m[1mLinking C shared library rosidl_generator_py/tobii_glasses_pkg/libtobii_glasses_pkg__python.so[0m
+[7.914s] [ 89%] Built target tobii_glasses_pkg__python
+[7.925s] [35m[1mScanning dependencies of target tobii_glasses_pkg__rosidl_typesupport_c__pyext[0m
+[7.925s] [35m[1mScanning dependencies of target tobii_glasses_pkg__rosidl_typesupport_introspection_c__pyext[0m
+[7.925s] [35m[1mScanning dependencies of target tobii_glasses_pkg__rosidl_typesupport_fastrtps_c__pyext[0m
+[7.945s] [ 90%] [32mBuilding C object CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/tobii_glasses_pkg/_tobii_glasses_pkg_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[7.946s] [ 92%] [32mBuilding C object CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/tobii_glasses_pkg/_tobii_glasses_pkg_s.ep.rosidl_typesupport_c.c.o[0m
+[7.948s] [ 94%] [32mBuilding C object CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/tobii_glasses_pkg/_tobii_glasses_pkg_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[8.037s] [ 98%] [32m[1mLinking C shared library rosidl_generator_py/tobii_glasses_pkg/tobii_glasses_pkg_s__rosidl_typesupport_c.cpython-38-x86_64-linux-gnu.so[0m
+[8.037s] [ 98%] [32m[1mLinking CXX shared library rosidl_generator_py/tobii_glasses_pkg/tobii_glasses_pkg_s__rosidl_typesupport_fastrtps_c.cpython-38-x86_64-linux-gnu.so[0m
+[8.037s] [100%] [32m[1mLinking C shared library rosidl_generator_py/tobii_glasses_pkg/tobii_glasses_pkg_s__rosidl_typesupport_introspection_c.cpython-38-x86_64-linux-gnu.so[0m
+[8.079s] [100%] Built target tobii_glasses_pkg__rosidl_typesupport_introspection_c__pyext
+[8.079s] [100%] Built target tobii_glasses_pkg__rosidl_typesupport_c__pyext
+[8.110s] [100%] Built target tobii_glasses_pkg__rosidl_typesupport_fastrtps_c__pyext
+[8.121s] Invoked command in '/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg' returned '0': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --build /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg -- -j8 -l8
+[8.203s] Invoking command in '/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --install /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg
+[8.211s] -- Install configuration: ""
+[8.212s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg/environment/pythonpath.sh
+[8.212s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg/environment/pythonpath.dsv
+[8.212s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/python3.8/site-packages/scripts/
+[8.212s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/python3.8/site-packages/scripts//calibrate_glasses.py
+[8.212s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/python3.8/site-packages/scripts//tobii_glasses_buffer.py
+[8.213s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/python3.8/site-packages/scripts//__init__.py
+[8.213s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/python3.8/site-packages/scripts//tobii_glasses.py
+[8.213s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/python3.8/site-packages/scripts//video_capture.py
+[8.246s] Listing '/home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/python3.8/site-packages/scripts/'...
+[8.246s] Compiling '/home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/python3.8/site-packages/scripts/__init__.py'...
+[8.246s] Compiling '/home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/python3.8/site-packages/scripts/calibrate_glasses.py'...
+[8.246s] Compiling '/home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/python3.8/site-packages/scripts/tobii_glasses.py'...
+[8.246s] Compiling '/home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/python3.8/site-packages/scripts/tobii_glasses_buffer.py'...
+[8.246s] Compiling '/home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/python3.8/site-packages/scripts/video_capture.py'...
+[8.250s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/tobii_glasses_pkg/tobii_glasses.py
+[8.250s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg//launch
+[8.251s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg//launch/pupil.launch.py
+[8.251s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg//launch/piano_demo.launch.py
+[8.251s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg//launch/pupil_devel.launch.py
+[8.251s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/ament_index/resource_index/rosidl_interfaces/tobii_glasses_pkg
+[8.251s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg
+[8.251s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg
+[8.251s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail
+[8.251s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/gaze_position3_d__struct.h
+[8.252s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/eye_data__type_support.h
+[8.252s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/gaze_position3_d__type_support.h
+[8.252s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/eye_data__functions.c
+[8.252s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/eye_data__functions.h
+[8.252s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/tobii_glasses__functions.h
+[8.252s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/gaze_position3_d__functions.c
+[8.252s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/eye_data__struct.h
+[8.252s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/tobii_glasses__functions.c
+[8.253s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/gaze_position3_d__functions.h
+[8.253s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/gaze_position__type_support.h
+[8.253s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/gaze_position__functions.h
+[8.253s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/gaze_position__struct.h
+[8.253s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/gaze_position__functions.c
+[8.254s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/tobii_glasses__type_support.h
+[8.254s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/tobii_glasses__struct.h
+[8.254s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/tobii_glasses.h
+[8.254s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/rosidl_generator_c__visibility_control.h
+[8.254s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/gaze_position.h
+[8.254s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/eye_data.h
+[8.254s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/gaze_position3_d.h
+[8.255s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg/environment/library_path.sh
+[8.255s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg/environment/library_path.dsv
+[8.255s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/libtobii_glasses_pkg__rosidl_generator_c.so
+[8.255s] -- Set runtime path of "/home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/libtobii_glasses_pkg__rosidl_generator_c.so" to ""
+[8.255s] -- Up-to-date: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg
+[8.255s] -- Up-to-date: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg
+[8.256s] -- Up-to-date: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail
+[8.256s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/eye_data__rosidl_typesupport_fastrtps_c.h
+[8.256s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/gaze_position__rosidl_typesupport_fastrtps_c.h
+[8.256s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/tobii_glasses__rosidl_typesupport_fastrtps_c.h
+[8.256s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/gaze_position3_d__rosidl_typesupport_fastrtps_c.h
+[8.256s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[8.256s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/libtobii_glasses_pkg__rosidl_typesupport_fastrtps_c.so
+[8.257s] -- Set runtime path of "/home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/libtobii_glasses_pkg__rosidl_typesupport_fastrtps_c.so" to ""
+[8.257s] -- Up-to-date: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg
+[8.257s] -- Up-to-date: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg
+[8.257s] -- Up-to-date: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail
+[8.257s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/tobii_glasses__rosidl_typesupport_fastrtps_cpp.hpp
+[8.257s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/gaze_position__rosidl_typesupport_fastrtps_cpp.hpp
+[8.257s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/gaze_position3_d__rosidl_typesupport_fastrtps_cpp.hpp
+[8.257s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/eye_data__rosidl_typesupport_fastrtps_cpp.hpp
+[8.257s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/dds_fastrtps
+[8.258s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[8.258s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/libtobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.so
+[8.258s] -- Set runtime path of "/home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/libtobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.so" to ""
+[8.258s] -- Up-to-date: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg
+[8.258s] -- Up-to-date: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg
+[8.259s] -- Up-to-date: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail
+[8.259s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/tobii_glasses__type_support.c
+[8.259s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/gaze_position__type_support.c
+[8.259s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/eye_data__type_support.c
+[8.259s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/gaze_position3_d__type_support.c
+[8.259s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/gaze_position3_d__rosidl_typesupport_introspection_c.h
+[8.259s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/tobii_glasses__rosidl_typesupport_introspection_c.h
+[8.259s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/gaze_position__rosidl_typesupport_introspection_c.h
+[8.260s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/eye_data__rosidl_typesupport_introspection_c.h
+[8.260s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[8.260s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/libtobii_glasses_pkg__rosidl_typesupport_introspection_c.so
+[8.260s] -- Set runtime path of "/home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/libtobii_glasses_pkg__rosidl_typesupport_introspection_c.so" to ""
+[8.260s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/libtobii_glasses_pkg__rosidl_typesupport_c.so
+[8.261s] -- Set runtime path of "/home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/libtobii_glasses_pkg__rosidl_typesupport_c.so" to ""
+[8.261s] -- Up-to-date: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg
+[8.261s] -- Up-to-date: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg
+[8.261s] -- Up-to-date: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail
+[8.261s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/tobii_glasses__struct.hpp
+[8.261s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/gaze_position__builder.hpp
+[8.261s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/gaze_position3_d__traits.hpp
+[8.261s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/tobii_glasses__traits.hpp
+[8.262s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/gaze_position3_d__struct.hpp
+[8.262s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/gaze_position__traits.hpp
+[8.262s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/tobii_glasses__builder.hpp
+[8.262s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/eye_data__struct.hpp
+[8.262s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/eye_data__traits.hpp
+[8.262s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/gaze_position__struct.hpp
+[8.262s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/eye_data__builder.hpp
+[8.263s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/gaze_position3_d__builder.hpp
+[8.263s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/gaze_position.hpp
+[8.263s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/gaze_position3_d.hpp
+[8.263s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/tobii_glasses.hpp
+[8.263s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/eye_data.hpp
+[8.263s] -- Up-to-date: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg
+[8.263s] -- Up-to-date: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg
+[8.264s] -- Up-to-date: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail
+[8.264s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/gaze_position__rosidl_typesupport_introspection_cpp.hpp
+[8.264s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/tobii_glasses__type_support.cpp
+[8.264s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/gaze_position3_d__type_support.cpp
+[8.264s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/eye_data__rosidl_typesupport_introspection_cpp.hpp
+[8.264s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/eye_data__type_support.cpp
+[8.264s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/gaze_position__type_support.cpp
+[8.264s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/gaze_position3_d__rosidl_typesupport_introspection_cpp.hpp
+[8.264s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/tobii_glasses__rosidl_typesupport_introspection_cpp.hpp
+[8.265s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/libtobii_glasses_pkg__rosidl_typesupport_introspection_cpp.so
+[8.265s] -- Set runtime path of "/home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/libtobii_glasses_pkg__rosidl_typesupport_introspection_cpp.so" to ""
+[8.265s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/libtobii_glasses_pkg__rosidl_typesupport_cpp.so
+[8.266s] -- Set runtime path of "/home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/libtobii_glasses_pkg__rosidl_typesupport_cpp.so" to ""
+[8.266s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/python3.8/site-packages/tobii_glasses_pkg/__init__.py
+[8.294s] Compiling '/home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/python3.8/site-packages/tobii_glasses_pkg/__init__.py'...
+[8.298s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/python3.8/site-packages/tobii_glasses_pkg/msg
+[8.298s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/python3.8/site-packages/tobii_glasses_pkg/msg/_eye_data_s.c
+[8.298s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/python3.8/site-packages/tobii_glasses_pkg/msg/_gaze_position_s.c
+[8.299s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/python3.8/site-packages/tobii_glasses_pkg/msg/_tobii_glasses.py
+[8.299s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/python3.8/site-packages/tobii_glasses_pkg/msg/_eye_data.py
+[8.299s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/python3.8/site-packages/tobii_glasses_pkg/msg/__init__.py
+[8.299s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/python3.8/site-packages/tobii_glasses_pkg/msg/_tobii_glasses_s.c
+[8.299s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/python3.8/site-packages/tobii_glasses_pkg/msg/_gaze_position.py
+[8.299s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/python3.8/site-packages/tobii_glasses_pkg/msg/_gaze_position3_d_s.c
+[8.299s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/python3.8/site-packages/tobii_glasses_pkg/msg/_gaze_position3_d.py
+[8.299s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/python3.8/site-packages/tobii_glasses_pkg/tobii_glasses_pkg_s__rosidl_typesupport_fastrtps_c.cpython-38-x86_64-linux-gnu.so
+[8.299s] -- Set runtime path of "/home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/python3.8/site-packages/tobii_glasses_pkg/tobii_glasses_pkg_s__rosidl_typesupport_fastrtps_c.cpython-38-x86_64-linux-gnu.so" to ""
+[8.300s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/python3.8/site-packages/tobii_glasses_pkg/tobii_glasses_pkg_s__rosidl_typesupport_introspection_c.cpython-38-x86_64-linux-gnu.so
+[8.300s] -- Set runtime path of "/home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/python3.8/site-packages/tobii_glasses_pkg/tobii_glasses_pkg_s__rosidl_typesupport_introspection_c.cpython-38-x86_64-linux-gnu.so" to ""
+[8.300s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/python3.8/site-packages/tobii_glasses_pkg/tobii_glasses_pkg_s__rosidl_typesupport_c.cpython-38-x86_64-linux-gnu.so
+[8.301s] -- Set runtime path of "/home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/python3.8/site-packages/tobii_glasses_pkg/tobii_glasses_pkg_s__rosidl_typesupport_c.cpython-38-x86_64-linux-gnu.so" to ""
+[8.301s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/libtobii_glasses_pkg__python.so
+[8.301s] -- Set runtime path of "/home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/libtobii_glasses_pkg__python.so" to ""
+[8.301s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg/msg/TobiiGlasses.idl
+[8.301s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg/msg/GazePosition.idl
+[8.302s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg/msg/GazePosition3D.idl
+[8.302s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg/msg/EyeData.idl
+[8.302s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg/msg/TobiiGlasses.msg
+[8.302s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg/msg/GazePosition.msg
+[8.302s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg/msg/GazePosition3D.msg
+[8.302s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg/msg/EyeData.msg
+[8.302s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/ament_index/resource_index/package_run_dependencies/tobii_glasses_pkg
+[8.302s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/ament_index/resource_index/parent_prefix_path/tobii_glasses_pkg
+[8.302s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg/environment/ament_prefix_path.sh
+[8.303s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg/environment/ament_prefix_path.dsv
+[8.303s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg/environment/path.sh
+[8.303s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg/environment/path.dsv
+[8.303s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg/local_setup.bash
+[8.303s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg/local_setup.sh
+[8.303s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg/local_setup.zsh
+[8.303s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg/local_setup.dsv
+[8.303s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg/package.dsv
+[8.304s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/ament_index/resource_index/packages/tobii_glasses_pkg
+[8.304s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_generator_cExport.cmake
+[8.304s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_generator_cExport-noconfig.cmake
+[8.304s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_typesupport_introspection_cExport.cmake
+[8.304s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[8.304s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_typesupport_cExport.cmake
+[8.304s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_typesupport_cExport-noconfig.cmake
+[8.305s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_generator_cppExport.cmake
+[8.305s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_typesupport_introspection_cppExport.cmake
+[8.305s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[8.305s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_typesupport_cppExport.cmake
+[8.305s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_typesupport_cppExport-noconfig.cmake
+[8.305s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg/cmake/rosidl_cmake-extras.cmake
+[8.305s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg/cmake/ament_cmake_export_dependencies-extras.cmake
+[8.305s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg/cmake/ament_cmake_export_libraries-extras.cmake
+[8.306s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg/cmake/ament_cmake_export_targets-extras.cmake
+[8.306s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg/cmake/ament_cmake_export_include_directories-extras.cmake
+[8.306s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[8.306s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[8.306s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg/cmake/tobii_glasses_pkgConfig.cmake
+[8.306s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg/cmake/tobii_glasses_pkgConfig-version.cmake
+[8.306s] -- Installing: /home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg/package.xml
+[8.308s] Invoked command in '/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg' returned '0': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --install /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg

@@ -4,12 +4,14 @@
 # GNU V3.0
 
 # * Core dependencies
+import rclpy
+from rclpy.node import Node
+
 from queue import Empty
 from re import L
 from socket import IPV6_CHECKSUM
 from time import time
-import rclpy
-from rclpy.node import Node
+
 import json
 
 # * Image messaging and conversion
@@ -63,13 +65,12 @@ EMULATE_GLASSES = False
 
 ### * DEBUG * ###
 syncronize_data = True  
-#!
 greyscale = False
-#!
 high_refresh_rate = True
 do_calibration = True
 send_image = True
 draw_circle = True
+
 print_performance = False
 record_glasses = False      # TODO: Future
 undo_distortion = False     # TODO: Future
@@ -356,6 +357,36 @@ class tobiiPublisher(Node):
                 #ts = -1 
                 pass
 
+            # TODO
+            # TODO: Modify to use latest timestamp not from video
+            try:
+                if key == 'ac' and data[key]['s'] ==0: # Gaze position
+                    pass
+            except:
+                #ts = -1 
+                pass
+
+            try:
+                if key == 'gy' and data[key]['s'] ==0: # Gaze position
+                    pass
+            except:
+                #ts = -1 
+                pass
+
+            try:
+                if key == 'vts' and data[key]['s'] ==0: # Gaze position
+                    pass
+            except:
+                #ts = -1 
+                pass
+
+            try:
+                if key == 'evts' and data[key]['s'] ==0: # TODO
+                    pass
+            except:
+                #ts = -1 
+                pass
+
             try:
                 if key == 'pts' and data[key]['s'] == 0: # Gaze position
                     #self.stamps.append(data[key]['ts'])
@@ -365,6 +396,13 @@ class tobiiPublisher(Node):
                     pass
                     #print(f"ts: {data[key]['ts']}")
                     #print(f"pts: {data[key]['pts']}")
+            except:
+                #ts = -1 
+                pass
+            
+            try:
+                if key == 'epts' and data[key]['s'] ==0: # TODO
+                    pass
             except:
                 #ts = -1 
                 pass
@@ -449,13 +487,12 @@ def main(args=None):
     except KeyboardInterrupt:
         cv2.destroyAllWindows()
 
+
+        # Save timings to file
         fields = ['start_time', 'eye_data_get_time', 'eye_data_pack_time', 'image_data_get_time', 'image_process_time', 'image_data_pack_time', 'end_time', 'iterations'] 
         #fields = ['gp_ts', 'gp3_ts', 'pts_ts', 'pts_pts', 'video_pts', 'ros_time', 'iteration'] 
-        
         rows = glasses_publisher.timings
-
         combined = rows.insert(0, fields)
-
         np.savetxt("Res_" + str(video_resolution) + "_Grey_"+ str(greyscale) + "_HRR_" + str(high_refresh_rate) + ".csv", 
                 rows,
                 delimiter =", ", 

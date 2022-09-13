@@ -12,7 +12,6 @@ RUN apt-get update && apt-get install -y \
 	ros-foxy-compressed-image-transport\
 	ros-foxy-image-transport
 
-#RUN pip3 install --upgrade 
 # install ros2 packages
 RUN apt-get update && apt-get install -y \ 
 	python3-numpy \
@@ -26,14 +25,6 @@ RUN pip3 install -U \
   	argcomplete \
 	pyautogui
 
-#libboost-python-dev \
-#foxy-ros-cv-bridge 
-#python3-opencv \ 
-#ros-${ROS_DISTRO}-demo-nodes-cpp \
-# ros-${ROS_DISTRO}-demo-nodes-py && \
-#rm -rf /var/lib/apt/lists/*
-
-
 # general utilities
 RUN apt-get update && apt-get install -y \
     wget \
@@ -46,6 +37,7 @@ RUN apt-get update && apt-get install -y \
     python3-pip \
     unzip
 
+#
 RUN pip3 install -U \
 	tobiiglassesctrl
 
@@ -61,19 +53,16 @@ RUN apt-get update && apt-get install -y \
 RUN echo ' \n\
 echo "Sourcing ROS2 packages..." \n\
 source /opt/ros/foxy/setup.sh \n\
-source $HOME/tf_ws/install/local_setup.sh' >> $HOME/.bashrc
+source /home/usr/workspaces/ros2_tobii_glasses2/install/setup.sh' >> $HOME/.bashrc
 
 #### SET ENVIRONMENT
-WORKDIR /home/ema/workspaces/ros2_tobii_glasses2/
-
+WORKDIR /home/usr/workspaces/ros2_tobii_glasses2
 
 RUN echo ' \n\
 colcon build \n\
 source install/setup.bash'
 
-
-# RUN echo 'alias python="python3"' >> $HOME/.bashrc
+RUN echo 'alias python="python3"' >> $HOME/.bashrc
 
 # launch ros package
-
 #CMD ["ros2", "launch", "demo_nodes_cpp", "talker_listener.launch.py"]
