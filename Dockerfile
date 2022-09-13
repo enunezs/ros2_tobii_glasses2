@@ -49,24 +49,18 @@ RUN apt-get update && apt-get install -y \
 	python3-tk\
 	python3-dev
 
-#### SET ENVIRONMENT
-
-WORKDIR /home/ema
 
 RUN echo ' \n\
 echo "Sourcing ROS2 packages..." \n\
 source /opt/ros/foxy/setup.sh \n\
 source /home/usr/workspaces/ros2_tobii_glasses2/install/setup.sh' >> $HOME/.bashrc
 
-<<<<<<< Updated upstream
-=======
 #### SET ENVIRONMENT
 WORKDIR /home/usr/workspaces/ros2_tobii_glasses2
 
 RUN echo ' \n\
 colcon build \n\
 source install/setup.bash'
->>>>>>> Stashed changes
 
 RUN echo 'alias python="python3"' >> $HOME/.bashrc
 
