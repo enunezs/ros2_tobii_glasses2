@@ -37,8 +37,14 @@ module tobii_glasses_pkg {
 
       tobii_glasses_pkg::msg::GazePosition gaze_position;
 
+      @verbatim (language="comment", text=
+        "float32 gaze_position")
+      @unit (value="2")
       tobii_glasses_pkg::msg::GazePosition3D gaze_position_3d;
 
+      @verbatim (language="comment", text=
+        "float32 gaze_position_3d")
+      @unit (value="3")
       tobii_glasses_pkg::msg::EyeData right_eye;
 
       tobii_glasses_pkg::msg::EyeData left_eye;

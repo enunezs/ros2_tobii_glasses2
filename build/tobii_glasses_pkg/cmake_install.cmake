@@ -38,10 +38,7 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3.8/site-packages" TYPE DIRECTORY FILES
-    "/home/usr/workspaces/ros2_tobii_glasses2/launch"
-    "/home/usr/workspaces/ros2_tobii_glasses2/../tobii_glasses_pkg"
-    )
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/" TYPE DIRECTORY FILES "/home/usr/workspaces/ros2_tobii_glasses2/launch")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -53,14 +50,14 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3.8/site-packages/scripts/" TYPE DIRECTORY FILES "/home/usr/workspaces/ros2_tobii_glasses2/scripts//" REGEX "/[^/]*\\.pyc$" EXCLUDE REGEX "/\\_\\_pycache\\_\\_$" EXCLUDE)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3.8/site-packages/tobii_glasses_pkg" TYPE DIRECTORY FILES "/home/usr/workspaces/ros2_tobii_glasses2/tobii_glasses_pkg/" REGEX "/[^/]*\\.pyc$" EXCLUDE REGEX "/\\_\\_pycache\\_\\_$" EXCLUDE)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   execute_process(
         COMMAND
         "/usr/bin/python3" "-m" "compileall"
-        "/home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/python3.8/site-packages/scripts/"
+        "/home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/python3.8/site-packages/tobii_glasses_pkg"
       )
 endif()
 
