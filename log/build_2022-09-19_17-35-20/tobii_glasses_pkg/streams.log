@@ -1,0 +1,58 @@
+[0.016s] Invoking command in '/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg -- -j8 -l8
+[0.044s] -- Found ament_cmake: 0.9.9 (/opt/ros/foxy/share/ament_cmake/cmake)
+[0.060s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3") 
+[0.060s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[0.197s] -- Found rclpy: 1.0.8 (/opt/ros/foxy/share/rclpy/cmake)
+[0.197s] -- Found std_msgs: 2.0.5 (/opt/ros/foxy/share/std_msgs/cmake)
+[0.215s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.218s] -- Found rosidl_adapter: 1.2.1 (/opt/ros/foxy/share/rosidl_adapter/cmake)
+[0.331s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.374s] -- Found sensor_msgs: 2.0.5 (/opt/ros/foxy/share/sensor_msgs/cmake)
+[0.489s] -- Found cv_bridge: 2.2.1 (/opt/ros/foxy/share/cv_bridge/cmake)
+[0.505s] -- Found rosidl_default_generators: 1.0.1 (/opt/ros/foxy/share/rosidl_default_generators/cmake)
+[0.530s] -- Found PythonInterp: /usr/bin/python3 (found version "3.8.10") 
+[0.576s] CMake Error at /opt/ros/foxy/share/rosidl_adapter/cmake/rosidl_adapt_interfaces.cmake:60 (message):
+[0.577s]   execute_process(/usr/bin/python3 -m rosidl_adapter --package-name
+[0.577s]   tobii_glasses_pkg --arguments-file
+[0.577s]   /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_adapter__arguments__tobii_glasses_pkg.json
+[0.577s]   --output-dir
+[0.577s]   /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_adapter/tobii_glasses_pkg
+[0.577s]   --output-file
+[0.577s]   /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_adapter/tobii_glasses_pkg.idls)
+[0.577s]   returned error code 1:
+[0.577s] 
+[0.577s]   Error processing 'float32[3] Acelerometer' of
+[0.578s]   'tobii_glasses_pkg/TobiiGlasses': ''Acelerometer' is an invalid field name.
+[0.578s]   It should have the pattern '^(?!.*__)(?!.*_$)[a-z][a-z0-9_]*$''
+[0.578s] 
+[0.578s]   Traceback (most recent call last):
+[0.578s] 
+[0.578s]     File "/usr/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+[0.578s]       return _run_code(code, main_globals, None,
+[0.578s]     File "/usr/lib/python3.8/runpy.py", line 87, in _run_code
+[0.578s]       exec(code, run_globals)
+[0.578s]     File "/opt/ros/foxy/lib/python3.8/site-packages/rosidl_adapter/__main__.py", line 19, in <module>
+[0.578s]       sys.exit(main())
+[0.578s]     File "/opt/ros/foxy/lib/python3.8/site-packages/rosidl_adapter/main.py", line 53, in main
+[0.579s]       abs_idl_file = convert_to_idl(
+[0.579s]     File "/opt/ros/foxy/lib/python3.8/site-packages/rosidl_adapter/__init__.py", line 19, in convert_to_idl
+[0.579s]       return convert_msg_to_idl(
+[0.579s]     File "/opt/ros/foxy/lib/python3.8/site-packages/rosidl_adapter/msg/__init__.py", line 28, in convert_msg_to_idl
+[0.579s]       msg = parse_message_string(package_name, input_file.stem, content)
+[0.579s]     File "/opt/ros/foxy/lib/python3.8/site-packages/rosidl_adapter/parser.py", line 515, in parse_message_string
+[0.579s]       fields.append(Field(
+[0.579s]     File "/opt/ros/foxy/lib/python3.8/site-packages/rosidl_adapter/parser.py", line 353, in __init__
+[0.579s]       raise NameError(
+[0.579s] 
+[0.579s]   NameError: 'Acelerometer' is an invalid field name.  It should have the
+[0.579s]   pattern '^(?!.*__)(?!.*_$)[a-z][a-z0-9_]*$'
+[0.580s] 
+[0.580s] Call Stack (most recent call first):
+[0.580s]   /opt/ros/foxy/share/rosidl_cmake/cmake/rosidl_generate_interfaces.cmake:130 (rosidl_adapt_interfaces)
+[0.580s]   CMakeLists.txt:54 (rosidl_generate_interfaces)
+[0.580s] 
+[0.580s] 
+[0.580s] -- Configuring incomplete, errors occurred!
+[0.580s] See also "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/CMakeOutput.log".
+[0.581s] make: *** [Makefile:1468: cmake_check_build_system] Error 1
+[0.583s] Invoked command in '/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg -- -j8 -l8

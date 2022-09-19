@@ -27,9 +27,9 @@ GazePosition3D gaze_position_3d
 EyeData right_eye
 EyeData left_eye
 #Acelerometer
-float32[3] Acelerometer 
+#float32[3] Acelerometer 
 #Gyroscope
-float32[3] Gyroscope
+#float32[3] Gyroscope
 #PTS
 
 # 'gp': {'ts': 1493630785, 's': 0, 'gidx': 126842, 'l': 71271, 'gp': [0.6345, 0.5532]}, 

@@ -9,6 +9,8 @@ module tobii_glasses_pkg {
     @verbatim (language="comment", text=
       " Simplied to have the same timestamp and gaze-idx for all three")
     struct EyeData {
+      @verbatim (language="comment", text=
+        " TODO remove")
       uint8 status;
 
       string name;
