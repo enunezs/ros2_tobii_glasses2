@@ -16,7 +16,7 @@ import json
 
 # * Image messaging and conversion
 from cv_bridge import CvBridge
-import cv2
+import cv2 # TODO: specify particular modules of cv2
 import numpy as np
 
 # * My classes
@@ -47,8 +47,8 @@ ipv6_address = "fe80::76fe:48ff:fe1f:2c16"      # fe80::692c:1876:10f:33c8
 ipv6_interface = "enx60634c83de17"
 #ping6 ff02::1%eth0
 wired_mode = False
-#publish_freq = 25   #Hz
-video_resolution = (960, 540)       # (qHD) Default for high framerate, optimal performance
+publish_freq = 25   #Hz
+video_resolution = (960, 540)     # (qHD) Default for high framerate, optimal performance
 video_resolution = (720, 480)     # Not recommmeded
 video_resolution = (1280, 720)    # plain HD
 video_resolution = (1600, 900)
@@ -116,12 +116,14 @@ class tobiiPublisher(Node):
 
         # * Init glasses
         self.bridge = CvBridge()
-
+        global syncronize_data
+        
+        global publish_freq
         if EMULATE_GLASSES:
             self.cap = VideoCapture(0)
             syncronize_data = False
             #self.cap.set(cv2.CAP_PROP_BUFFERSIZE, 0)
-            publish_freq = 5            #Hz
+            #publish_freq = 5            #Hz
             #syncronize_data = False     
             pass
         else:
@@ -227,7 +229,6 @@ class tobiiPublisher(Node):
         eye_data_get_time = self.get_clock().now()
 
         # * Get latest image frame
-        #if self.cap.grab():
         ret, frame = self.cap.read()
         if ret:
             self.frame_buffer = frame
@@ -236,21 +237,19 @@ class tobiiPublisher(Node):
             if not self.frame_buffer:
                 return
             frame = self.frame_buffer
-        #print(f"Video timestamp is {video_pts}")
 
         image_data_get_time = self.get_clock().now()
 
-        # ! HERE
         # * Buffer and sync data
         #video_pts = self.cap.get(cv2.CAP_PROP_POS_MSEC)
         video_pts = self.get_clock().now().nanoseconds/1e3
 
-        if syncronize_data:
+        if syncronize_data and not EMULATE_GLASSES:
             #ros_time = self.get_clock().now().nanoseconds/1e9
             json_data = self.buffer.get_synced_data(json_data, video_pts , debug=False)
 
         # * Make and pack eye data message
-        tobii_glasses_msg = self.get_glasses_update(json_data)
+        tobii_glasses_msg = self.make_glasses_msg(json_data)
 
         eye_data_pack_time = self.get_clock().now() 
 
@@ -260,6 +259,8 @@ class tobiiPublisher(Node):
             if tobii_glasses_msg.gaze_position and tobii_glasses_msg.gaze_position.status == 0:
                 gaze_pos = tobii_glasses_msg.gaze_position.gaze_position
                 frame = self.draw_circle(frame,gaze_pos)
+                print(f"gaze position is {gaze_pos}")
+
 
         image_process_time = self.get_clock().now() 
 
@@ -296,7 +297,7 @@ class tobiiPublisher(Node):
     # receives json data from glasses
     # returns the corresponding filled message with latest data
     # Order of timestamps not guaranteed
-    def get_glasses_update(self, data):
+    def make_glasses_msg(self, data):
 
         #video_pts = self.cap.get(cv2.CAP_PROP_POS_MSEC)
 
@@ -304,9 +305,17 @@ class tobiiPublisher(Node):
         # Save to messages
         tobii_glasses_msg = TobiiGlassesMsg()
         gp_ts, gp3_ts, pts_ts, pts_pts = None,None,None,None
+        print(data)
+
+        # remove 'mems'
+        if 'mems' in data:
+            data = data['mems']
+        else:
+            return None # TODO: error!
 
         for key in data:
-            #print(key,data[key])
+            print("NEW KEY")
+            print(key,data[key])
             try:
                 if key == 'gp' and data[key]['s'] ==0: # Gaze position
                     #make a new message object
@@ -322,6 +331,7 @@ class tobiiPublisher(Node):
                     gaze_pos_msg.status = data[key]['s']            # status
                     gaze_pos_msg.latency = data[key]['l']           # latency
                     gaze_pos_msg.gaze_index = data[key]['gidx']     # gaze index
+                    print(f"json gp is {data[key]['gp']}")
                     gaze_pos_msg.gaze_position = data[key]['gp']    # gaze position
 
                     tobii_glasses_msg.gaze_position = gaze_pos_msg
@@ -439,7 +449,6 @@ class tobiiPublisher(Node):
         emulation_data = ' {"mems": {"gp": {"ts": %i, "s": 0, "gidx": 126842, "l": 71271, "gp": [%f, %f]} , "pts": {"ts": %i, "s": 0, "pts": %i, "pv": 1}}}'% (ts, gaze_x, gaze_y,ts,pts)
 
         #print(emulation_data)
-
         return emulation_data
 
     def print_performance_stats(self, start_time, end_time):
@@ -507,33 +516,3 @@ def main(args=None):
 
 if __name__ == '__main__':
     main()
-
-
-""" Complete data sample
-{'mems': {'ac': {'ts':          1549970177, 's': 0, 'ac': [-0.118, -10.305, -1.419]}, 
-            'gy': {'ts':        1549975065, 's': 0, 'gy': [-1.19, 1.74, -0.191]}}, 
-'right_eye': {  'pc': {'ts':    1493630785, 's': 0, 'gidx': 126842, 'pc': [-29.35, -33.55, -31.9], 'eye': 'right'}, 
-                'pd': {'ts':    1493630785, 's': 0, 'gidx': 126842, 'pd': 6.26, 'eye': 'right'}, 
-                'gd': {'ts':    1493630785, 's': 0, 'gidx': 126842, 'gd': [-0.1164, 0.1088, 0.9872], 'eye': 'right'}}, ###gd, this one?
-'left_eye': {   'pc': {'ts':    1493590817, 's': 0, 'gidx': 126838, 'pc': [27.31, -32.35, -31.24], 'eye': 'left'}, 
-                'pd': {'ts':    1493590817, 's': 0, 'gidx': 126838, 'pd': 5.12, 'eye': 'left'}, 
-                'gd': {'ts':    1493590817, 's': 0, 'gidx': 126838, 'gd': [-0.1345, -0.0705, 0.9884], 'eye': 'left'}}, 
-'gp': {'ts':                    1493630785, 's': 0, 'gidx': 126842, 'l': 71271, 'gp': [0.6345, 0.5532]}, 
-'gp3': {'ts':                   1493630785, 's': 0, 'gidx': 126842, 'gp3': [-72.87, 7.7, 340.59]}, 
-'pts': {'ts':                   15494   08533, 's': 0, 'pts': 118876414, 'pv': 1}, 'vts': {'ts': -1}}
-
-Not a properly formatted json file, so need to decipher data
-gidx: gaze index or gaze counter
-s: status -> 0 means ok
-l: glasses latency
-ts: timestamp in microseconds, translate the datastream time ts
-ac: acceroation data   
-pc: is specified in 3D coordinates with origo in the scenecam.
-pd: pupil diameter of each eye (!)
-gd: gaze direction
-gp: gaze position
-gp3: gaze position 3D
-mems: MEMS gyroscope (gy) info or acceleromter (ac)
-pts: the videostream time pts
-epts: eye position timestamp
-"""
