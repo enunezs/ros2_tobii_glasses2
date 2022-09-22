@@ -53,8 +53,6 @@ install(PROGRAMS
 # Generate custom messages
 rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/TobiiGlasses.msg"
-  "msg/GazePosition.msg"
-  "msg/GazePosition3D.msg"
   "msg/EyeData.msg"
   DEPENDENCIES builtin_interfaces
   DEPENDENCIES sensor_msgs

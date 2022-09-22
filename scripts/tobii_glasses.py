@@ -11,7 +11,6 @@ from queue import Empty
 from re import L
 from socket import IPV6_CHECKSUM
 from time import time
-
 import json
 
 # * Image messaging and conversion
@@ -20,10 +19,8 @@ import cv2 # TODO: specify particular modules of cv2
 import numpy as np
 
 # * My classes
-#from tobii_glasses_pkg.scripts.video_capture import VideoCapture   
 from tobii_glasses_pkg.video_capture import VideoCapture   
 from tobii_glasses_pkg.tobii_glasses_buffer import TobiiGlassesBuffer
-
 
 # * Base messages
 from sensor_msgs.msg import Image
@@ -36,8 +33,9 @@ from tobiiglassesctrl import TobiiGlassesController  # Import glasses lib
 # * Glasses messages
 # TODO: Ahem, simplify or fill
 from tobii_glasses_pkg.msg import TobiiGlasses as TobiiGlassesMsg
-from tobii_glasses_pkg.msg import GazePosition
-from tobii_glasses_pkg.msg import GazePosition3D
+from tobii_glasses_pkg.msg import EyeData as EyeDataMsg
+#from tobii_glasses_pkg.msg import GazePosition
+#from tobii_glasses_pkg.msg import GazePosition3D
 
 ### * PARAMETERS * ###
 # Wifi connection
@@ -60,13 +58,13 @@ video_resolution = (1600, 900)
 
 ### * Mouse emulation * ###
 import pyautogui
-EMULATE_GLASSES = True
+EMULATE_GLASSES = False
 
 ### * DEBUG * ###
 syncronize_data = False  
 greyscale = False
 high_refresh_rate = True
-do_calibration = True
+do_calibration = False
 send_image = True
 draw_circle = True
 
@@ -256,10 +254,9 @@ class tobiiPublisher(Node):
         # * Adjust colour and resize image
         frame = self.modify_image(frame, greyscale= greyscale)
         if send_image and draw_circle:
-            if tobii_glasses_msg.gaze_position and tobii_glasses_msg.gaze_position.status == 0:
-                gaze_pos = tobii_glasses_msg.gaze_position.gaze_position
+            if not tobii_glasses_msg.gaze_position is None: # and tobii_glasses_msg.status == 0:
+                gaze_pos = tobii_glasses_msg.gaze_position
                 frame = self.draw_circle(frame,gaze_pos)
-                print(f"gaze position is {gaze_pos}")
 
 
         image_process_time = self.get_clock().now() 
@@ -304,89 +301,102 @@ class tobiiPublisher(Node):
         # parse json data into a dictionary
         # Save to messages
         tobii_glasses_msg = TobiiGlassesMsg()
-        gp_ts, gp3_ts, pts_ts, pts_pts = None,None,None,None
-        print(data)
-
-        # remove 'mems'
-        if 'mems' in data:
-            data = data['mems']
-        else:
-            return None # TODO: error!
+        #gp_ts, gp3_ts, pts_ts, pts_pts = None,None,None,None
 
         for key in data:
-            print("NEW KEY")
-            print(key,data[key])
-            try:
-                if key == 'gp' and data[key]['s'] ==0: # Gaze position
-                    #make a new message object
-                    #print("Packing gaze position")
-                    gaze_pos_msg = GazePosition()
 
+            #TODO: header based on vts?
+            # * Currently using latest timestamp not from the video (gp)
+            try:
+                if key == 'gp' and data[key]['s'] ==0: 
+                    # Gaze position
                     stamp = TimeMsg()
                     stamp.sec = int(data[key]['ts']/1000000)        # timestamp in microseconds
                     stamp.nanosec = int((data[key]['ts']%1000000)*1000)
-
-                    gaze_pos_msg.glasses_header.stamp = stamp       
-                    gaze_pos_msg.glasses_header.frame_id = "tobii_glasses_frame"  # TODO: Should be different "Relative to the user head or root
-                    gaze_pos_msg.status = data[key]['s']            # status
-                    gaze_pos_msg.latency = data[key]['l']           # latency
-                    gaze_pos_msg.gaze_index = data[key]['gidx']     # gaze index
-                    print(f"json gp is {data[key]['gp']}")
-                    gaze_pos_msg.gaze_position = data[key]['gp']    # gaze position
-
-                    tobii_glasses_msg.gaze_position = gaze_pos_msg
-
-                    gp_ts = data[key]['ts']
-                    #self.stamps.append(stamp.nanosec)
-            except:
-                #nothing if wrong?
-                #ts = -1 
-                pass
-
-            try:
-                if key == 'gp3' and data[key]['s'] ==0: # Gaze position
-                    #make a new message object
-                    #print("Packing gaze position")
-                    gaze_pos_msg = GazePosition3D()
-
-                    stamp = TimeMsg()
-                    stamp.sec = int(data[key]['ts']/1000000)        # timestamp in microseconds
-                    stamp.nanosec = int((data[key]['ts']%1000000)*1000)
-
-                    gaze_pos_msg.glasses_header.stamp = stamp       
-                    gaze_pos_msg.glasses_header.frame_id = "tobii_glasses_frame"  # TODO: Should be different "Relative to the user head or root
-                    gaze_pos_msg.status = data[key]['s']            # status
-                    gaze_pos_msg.latency = data[key]['l']           # latency
-                    gaze_pos_msg.gaze_index = data[key]['gidx']     # gaze index
-                    gaze_pos_msg.gaze_position_3d = data[key]['gp3']# gaze position
-
-                    tobii_glasses_msg.gaze_position = gaze_pos_msg
                     
+                    tobii_glasses_msg.header.stamp = stamp       
+                    tobii_glasses_msg.header.frame_id = "tobii_glasses_frame"  # TODO: Should be different "Relative to the user head or root
+
+                    tobii_glasses_msg.gaze_position = data[key]['gp']  
                     #self.stamps.append(stamp.nanosec)
-                    gp3_ts = data[key]['ts']
-
             except:
                 #ts = -1 
                 pass
 
-            # TODO
-            # TODO: Modify to use latest timestamp not from video
             try:
-                if key == 'ac' and data[key]['s'] ==0: # Gaze position
+                if key == 'gp3' and data[key]['s'] ==0: 
+                    # Gaze position 3D
+                    tobii_glasses_msg.gaze_position_3d = data[key]['gp3']# gaze position
+            except:
+                pass
+
+            # Right eye
+            if key == 'right_eye':
+                try:
+                    right_eye_data_msg = EyeDataMsg()
+                    right_eye_data_msg.name = "right_eye"
+
+                    eye_status = 0
+                    if data[key]['pc'] and data[key]['pc']['s'] ==0: 
+                        right_eye_data_msg.pupil_center = data[key]['pc']['pc']
+                        eye_status = min(eye_status, data[key]['pc']['s'])
+                    if data[key]['pd'] and data[key]['pd']['s'] ==0: 
+                        right_eye_data_msg.pupil_diameter = data[key]['pd']['pd']
+                        eye_status = min(eye_status, data[key]['pd']['s'])
+                    if data[key]['gd'] and data[key]['gd']['s'] ==0: 
+                        right_eye_data_msg.gaze_direction = data[key]['gd']['gd']
+                        eye_status = min(eye_status, data[key]['gd']['s'])
+
+                    right_eye_data_msg.status = eye_status
+                    tobii_glasses_msg.right_eye = right_eye_data_msg
+                except:
                     pass
-            except:
-                #ts = -1 
-                pass
+            # Right eye
+            if key == 'left_eye':
+                try:
+                    left_eye_data_msg = EyeDataMsg()
+                    left_eye_data_msg.name = "left_eye"
 
-            try:
-                if key == 'gy' and data[key]['s'] ==0: # Gaze position
+                    eye_status = 0
+                    if data[key]['pc'] and data[key]['pc']['s'] ==0: 
+                        left_eye_data_msg.pupil_center = data[key]['pc']['pc']
+                        eye_status = min(eye_status, data[key]['pc']['s'])
+                    if data[key]['pd'] and data[key]['pd']['s'] ==0: 
+                        left_eye_data_msg.pupil_diameter = data[key]['pd']['pd']
+                        eye_status = min(eye_status, data[key]['pd']['s'])
+                    if data[key]['gd'] and data[key]['gd']['s'] ==0: 
+                        left_eye_data_msg.gaze_direction = data[key]['gd']['gd']
+                        eye_status = min(eye_status, data[key]['gd']['s'])
+
+                    tobii_glasses_msg.left_eye = left_eye_data_msg
+                except:
                     pass
-            except:
-                #ts = -1 
-                pass
+
+
+
+            # TODO: Nothing if no data!
+            # Eyes stuck when glasses removed
+            # Consistency between user hasnt worn glasses and user has removed glasses
+
+            if key == 'mems':
+                try:
+                    if data[key]['ac'] and data[key]['ac']['s'] ==0: 
+                        # Accelerometer
+                        tobii_glasses_msg.acelerometer = data[key]['ac']['ac']  
+                except:
+                    #ts = -1 
+                    pass
+
+                try:
+                    if data[key]['gy'] and data[key]['gy']['s'] ==0: 
+                        # Gyroscope
+                        tobii_glasses_msg.gyroscope = data[key]['gy']['gy']  
+                except:
+                    #ts = -1 
+                    pass
 
             try:
-                if key == 'vts' and data[key]['s'] ==0: # Gaze position
+                if key == 'vts' and data[key]['s'] ==0: # VTS
                     pass
             except:
                 #ts = -1 
@@ -418,10 +428,6 @@ class tobiiPublisher(Node):
             except:
                 #ts = -1 
                 pass
-
-        ros_time = self.get_clock().now().nanoseconds
-        #self.iterations += 1
-        #self.timings.append( [gp_ts, gp3_ts, pts_ts, pts_pts, video_pts, ros_time, self.iterations] )
 
         return tobii_glasses_msg
 
