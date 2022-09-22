@@ -58,7 +58,7 @@ video_resolution = (1600, 900)
 
 ### * Mouse emulation * ###
 import pyautogui
-EMULATE_GLASSES = False
+EMULATE_GLASSES = True
 
 ### * DEBUG * ###
 syncronize_data = False  
@@ -222,7 +222,9 @@ class tobiiPublisher(Node):
             json_data = self.tobii_glasses.get_data()
         else:
             #Emulated: Webcam + Mouse
-            json_data = json.loads(self.emulate_glasses())
+            string_data = self.emulate_glasses()
+            print(string_data)
+            json_data = json.loads(string_data)
         
         eye_data_get_time = self.get_clock().now()
 
@@ -437,23 +439,27 @@ class tobiiPublisher(Node):
         gaze_x = cursor_x/screen_res_x
         gaze_y = cursor_y/screen_res_y
 
-        emulation_data = """{'mems': {'ac': {'ts':          1549970177, 's': 0, 'ac': [-0.118, -10.305, -1.419]}, 
-                    'gy': {'ts':        1549975065, 's': 0, 'gy': [-1.19, 1.74, -0.191]}}, 
-        'right_eye': {  'pc': {'ts':    1493630785, 's': 0, 'gidx': 126842, 'pc': [-29.35, -33.55, -31.9], 'eye': 'right'}, 
-                        'pd': {'ts':    1493630785, 's': 0, 'gidx': 126842, 'pd': 6.26, 'eye': 'right'}, 
-                        'gd': {'ts':    1493630785, 's': 0, 'gidx': 126842, 'gd': [-0.1164, 0.1088, 0.9872], 'eye': 'right'}}, ###gd, this one?
-        'left_eye': {   'pc': {'ts':    1493590817, 's': 0, 'gidx': 126838, 'pc': [27.31, -32.35, -31.24], 'eye': 'left'}, 
-                        'pd': {'ts':    1493590817, 's': 0, 'gidx': 126838, 'pd': 5.12, 'eye': 'left'}, 
-                        'gd': {'ts':    1493590817, 's': 0, 'gidx': 126838, 'gd': [-0.1345, -0.0705, 0.9884], 'eye': 'left'}}, 
-        'gp': {'ts':                    1493630785, 's': 0, 'gidx': 126842, 'l': 71271, 'gp': [%f, %f]}, 
-        'gp3': {'ts':                   1493630785, 's': 0, 'gidx': 126842, 'gp3': [-72.87, 7.7, 340.59]}, 
-        'pts': {'ts':                   15494   08533, 's': 0, 'pts': 118876414, 'pv': 1}, 'vts': {'ts': -1}} }""" % (gaze_x, gaze_y)
         ros_time = self.get_clock().now().nanoseconds/1e9
         ts = ros_time + 500000 
         pts = ros_time*0.09
 
-        emulation_data = ' {"mems": {"gp": {"ts": %i, "s": 0, "gidx": 126842, "l": 71271, "gp": [%f, %f]} , "pts": {"ts": %i, "s": 0, "pts": %i, "pv": 1}}}'% (ts, gaze_x, gaze_y,ts,pts)
+        emulation_mems = """ "mems": {  "ac": {"ts":    1549970177, "s": 0, "ac": [-0.118, -10.305, -1.419]}, 
+                                        "gy": {"ts":    1549975065, "s": 0, "gy": [-1.19, 1.74, -0.191]}}"""
+        emulation_right_eye = """   
+                                    "right_eye": {  "pc": {"ts":    1493630785, "s": 0, "gidx": 126842, "pc": [-29.35, -33.55, -31.9], "eye": "right"}, 
+                                                    "pd": {"ts":    1493630785, "s": 0, "gidx": 126842, "pd": 6.26, "eye": "right"}, 
+                                                    "gd": {"ts":    1493630785, "s": 0, "gidx": 126842, "gd": [-0.1164, 0.1088, 0.9872], "eye": "right"}}"""
+        emulation_left_eye = """    "left_eye": {   "pc": {"ts":    1493590817, "s": 0, "gidx": 126838, "pc": [27.31, -32.35, -31.24], "eye": "left"}, 
+                                                    "pd": {"ts":    1493590817, "s": 0, "gidx": 126838, "pd": 5.12, "eye": "left"}, 
+                                                    "gd": {"ts":    1493590817, "s": 0, "gidx": 126838, "gd": [-0.1345, -0.0705, 0.9884], "eye": "left"}}"""
+        emulation_gp =  """"gp": {"ts": %i,           "s": 0, "gidx": 126842, "l": 71271, "gp": [%f, %f]}"""% (ts, gaze_x, gaze_y) 
+        emulation_gp3 = """"gp3": {"ts": 1493630785,  "s": 0, "gidx": 126842, "gp3": [-72.87, 7.7, 340.59]}"""
+        emulation_pts = """"pts": {"ts": %i,          "s": 0, "pts": %i, "pv": 1} """% (ts,pts) 
+        #, "vts": {"ts": -1}
 
+        emulation_data = "{" + emulation_mems + "," + emulation_right_eye + "," + emulation_left_eye + "," + emulation_gp + "," + emulation_gp3 + "," + emulation_pts + "}"
+
+        emulation_data = emulation_data.replace(" ", "")
         #print(emulation_data)
         return emulation_data
 
