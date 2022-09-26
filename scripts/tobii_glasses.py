@@ -18,6 +18,11 @@ from cv_bridge import CvBridge
 import cv2 # TODO: specify particular modules of cv2
 import numpy as np
 
+from visualization_msgs.msg import Marker
+from visualization_msgs.msg import MarkerArray
+from geometry_msgs.msg import Point as PointMsg
+
+
 # * My classes
 from tobii_glasses_pkg.video_capture import VideoCapture   
 from tobii_glasses_pkg.tobii_glasses_buffer import TobiiGlassesBuffer
@@ -58,7 +63,7 @@ video_resolution = (1600, 900)
 
 ### * Mouse emulation * ###
 import pyautogui
-EMULATE_GLASSES = True
+EMULATE_GLASSES = False
 
 ### * DEBUG * ###
 syncronize_data = False  
@@ -104,6 +109,12 @@ class tobiiPublisher(Node):
         if send_image:
             self.publisher_front_camera = self.create_publisher(
                 Image, "tobii_glasses/front_camera", 1)
+
+        # * markers
+        self.publisher_marker = self.create_publisher(
+            MarkerArray, "tobii_glasses/visualization_marker", 2)        
+
+        #marker_pub = rospy.Publisher("/visualization_marker", Marker, queue_size = 2)
 
         """
         self.publisher_eye_data = self.create_publisher(
@@ -175,7 +186,6 @@ class tobiiPublisher(Node):
 
         #self.pts_video_to_sensor_offset = 0
         self.stamps = []
-        #self.pts_offset = None
 
     def calibrate_glasses(self, tobiiglasses):
 
@@ -238,8 +248,6 @@ class tobiiPublisher(Node):
                 return
             frame = self.frame_buffer
 
-        image_data_get_time = self.get_clock().now()
-
         # * Buffer and sync data
         #video_pts = self.cap.get(cv2.CAP_PROP_POS_MSEC)
         video_pts = self.get_clock().now().nanoseconds/1e3
@@ -251,8 +259,6 @@ class tobiiPublisher(Node):
         # * Make and pack eye data message
         tobii_glasses_msg = self.make_glasses_msg(json_data)
 
-        eye_data_pack_time = self.get_clock().now() 
-
         # * Adjust colour and resize image
         frame = self.modify_image(frame, greyscale= greyscale)
         if send_image and draw_circle:
@@ -260,35 +266,97 @@ class tobiiPublisher(Node):
                 gaze_pos = tobii_glasses_msg.gaze_position
                 frame = self.draw_circle(frame,gaze_pos)
 
-
-        image_process_time = self.get_clock().now() 
-
         # * Pack image into message
         img_msg = self.bridge.cv2_to_imgmsg(frame)
         img_msg.header.stamp = self.get_clock().now().to_msg() # TODO: Change to glasses, align with pts?
-        img_msg.header.frame_id = "tobii_frame"
+        img_msg.header.frame_id = "tobii_glasses_frame"
 
         tobii_glasses_msg.camera_image = img_msg
-
-        image_data_pack_time = self.get_clock().now() 
 
         # * Publish all glasses data
         #print("Publishing glasses data")
         self.publisher_glasses.publish(tobii_glasses_msg)
 
-        # * Publish image?
+        # * Publish image
         if send_image:
             #print("Publishing image")
             self.publisher_front_camera.publish(img_msg)  # Publish the message
 
+
+        if True : # tobii_glasses_msg.left_eye:
+
+            marker_msg = MarkerArray()
+            magnitude = 0.15
+            # TODO Publish Arrow marker
+            # Position/Orientation method
+            marker_msg_left = Marker()
+            marker_msg_left.header.frame_id = "tobii_glasses_frame"
+            marker_msg_left.header.stamp = self.get_clock().now().to_msg() # Change to empty time message?
+            marker_msg_left.ns = "tobii_glasses"
+            marker_msg_left.id = 0
+            marker_msg_left.type = Marker.ARROW
+            marker_msg_left.action = Marker.ADD #Same as modify?
+
+            end_point_msg = PointMsg()
+            end_point_msg.x = float(tobii_glasses_msg.left_eye.gaze_direction[0])*magnitude
+            end_point_msg.y = float(tobii_glasses_msg.left_eye.gaze_direction[1])*magnitude
+            end_point_msg.z = float(tobii_glasses_msg.left_eye.gaze_direction[2])*magnitude
+            marker_msg_left.points.append(end_point_msg)            
+            start_point_msg = PointMsg()
+            start_point_msg.x = float(tobii_glasses_msg.left_eye.pupil_center[0])
+            start_point_msg.y = float(tobii_glasses_msg.left_eye.pupil_center[1])
+            start_point_msg.z = float(tobii_glasses_msg.left_eye.pupil_center[2])
+            marker_msg_left.points.append(start_point_msg)
+
+            marker_msg_left.scale.x = 0.1
+            marker_msg_left.scale.y = 0.50
+            marker_msg_left.scale.z = 1.0
+            marker_msg_left.color.a = 1.0 # Don't forget to set the alpha!
+            marker_msg_left.color.r = 1.0
+            marker_msg_left.color.g = 0.0
+            marker_msg_left.color.b = 0.0
+            marker_msg.markers.append(marker_msg_left)
+
+            #self.publisher_marker.publish(marker_msg_left)
+
+            #if tobii_glasses_msg.right_eye:
+
+            # TODO Publish Arrow marker
+            # Position/Orientation method
+            marker_msg_right = Marker()
+            marker_msg_right.header.frame_id = "tobii_glasses_frame"
+            marker_msg_right.header.stamp = self.get_clock().now().to_msg() # Change to empty time message?
+            marker_msg_right.ns = "tobii_glasses"
+            marker_msg_right.id = 0
+            marker_msg_right.type = Marker.ARROW
+            marker_msg_right.action = Marker.ADD #Same as modify?
+            end_point_msg = PointMsg()
+
+            end_point_msg.x = float(tobii_glasses_msg.right_eye.gaze_direction[0])*magnitude
+            end_point_msg.y = float(tobii_glasses_msg.right_eye.gaze_direction[1])*magnitude
+            end_point_msg.z = float(tobii_glasses_msg.right_eye.gaze_direction[2])*magnitude
+            marker_msg_right.points.append(end_point_msg)
+            start_point_msg = PointMsg()
+            start_point_msg.x = float(tobii_glasses_msg.right_eye.pupil_center[0])
+            start_point_msg.y = float(tobii_glasses_msg.right_eye.pupil_center[1])
+            start_point_msg.z = float(tobii_glasses_msg.right_eye.pupil_center[2])
+            marker_msg_right.points.append(start_point_msg)
+  
+            marker_msg_right.scale.x = 0.1
+            marker_msg_right.scale.y = 0.5
+            marker_msg_right.scale.z = 1.0
+            marker_msg_right.color.a = 1.0 # Don't forget to set the alpha!
+            marker_msg_right.color.r = 0.0
+            marker_msg_right.color.g = 0.0
+            marker_msg_right.color.b = 1.0
+
+            #
+            marker_msg.markers.append(marker_msg_right)
+            self.publisher_marker.publish(marker_msg)
+
+
         # * Calculate time difference between iterations and frame rate
-
-        #print(f"Video timing is {time} ?")
-
         end_time = self.get_clock().now() 
-
-        self.iterations += 1
-        self.timings.append( [start_time.nanoseconds, eye_data_get_time.nanoseconds, eye_data_pack_time.nanoseconds, image_data_get_time.nanoseconds, image_process_time.nanoseconds, image_data_pack_time.nanoseconds, end_time.nanoseconds, self.iterations] )
 
         if print_performance:
             self.print_performance_stats(start_time, end_time)
@@ -374,8 +442,6 @@ class tobiiPublisher(Node):
                 except:
                     pass
 
-
-
             # TODO: Nothing if no data!
             # Eyes stuck when glasses removed
             # Consistency between user hasnt worn glasses and user has removed glasses
@@ -443,6 +509,7 @@ class tobiiPublisher(Node):
         ts = ros_time + 500000 
         pts = ros_time*0.09
 
+        # Using dummy vals
         emulation_mems = """ "mems": {  "ac": {"ts":    1549970177, "s": 0, "ac": [-0.118, -10.305, -1.419]}, 
                                         "gy": {"ts":    1549975065, "s": 0, "gy": [-1.19, 1.74, -0.191]}}"""
         emulation_right_eye = """   
@@ -497,7 +564,7 @@ class tobiiPublisher(Node):
         cv2.line(image, (int(gaze_position[0]*image_size[0]), int(gaze_position[1]*image_size[1])), (int(image_size[0]/2), int(image_size[1]/2)), (0, 0, 255), 2)
         return image
 
-# * Run
+# * Core
 def main(args=None):
     rclpy.init(args=args)  # Initialize ROS DDS
 
@@ -510,7 +577,6 @@ def main(args=None):
     except KeyboardInterrupt:
         cv2.destroyAllWindows()
 
-
         # Save timings to file
         fields = ['start_time', 'eye_data_get_time', 'eye_data_pack_time', 'image_data_get_time', 'image_process_time', 'image_data_pack_time', 'end_time', 'iterations'] 
         #fields = ['gp_ts', 'gp3_ts', 'pts_ts', 'pts_pts', 'video_pts', 'ros_time', 'iteration'] 
@@ -522,8 +588,8 @@ def main(args=None):
                 fmt ='% s')
 
 
-        glasses_publisher.destroy_node()  # duh
-        rclpy.shutdown()  # Shutdown DDS !
+        glasses_publisher.destroy_node() 
+        rclpy.shutdown() 
 
 
 if __name__ == '__main__':
