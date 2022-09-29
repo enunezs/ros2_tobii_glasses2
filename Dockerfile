@@ -52,13 +52,9 @@ RUN apt-get update && apt-get install -y \
 RUN source /opt/ros/foxy/setup.sh && \
 	colcon build
 
-RUN echo ' \n\
-echo "Sourcing ROS2 packages..." \n\
-source /opt/ros/foxy/setup.sh \n\
-source $HOME/install/setup.bash' >> $HOME/.bashrc
-
-#### SET ENVIRONMENT
 WORKDIR $HOME
+
+RUN echo 'source /opt/ros/foxy/setup.sh && source $HOME/ws/install/setup.bash' >> $HOME/.bashrc
 
 # RUN echo 'alias python="python3"' >> $HOME/.bashrc
 

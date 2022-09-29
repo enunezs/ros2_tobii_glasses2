@@ -12,7 +12,7 @@ docker run -it \
 	--privileged \
 	--net=host \
 	-e "ROS_DOMAIN_ID=7" \
-	-v $(pwd):/root \
+	-v $(pwd):/root/ws \
 	-v /dev/shm:/dev/shm \
 	ros2-glass-base
 
