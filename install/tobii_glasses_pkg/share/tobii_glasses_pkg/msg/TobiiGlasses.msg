@@ -21,11 +21,23 @@ std_msgs/Header header        # Header timestamp should be acquisition time of i
 
 sensor_msgs/Image camera_image    # Front camera image
 GazePosition gaze_position
+<<<<<<< HEAD
 GazePosition3D gaze_position_3d
 EyeData right_eye
 EyeData left_eye
 #Acelerometer
 #Gyroscope
+=======
+#float32[2] gaze_position 
+GazePosition3D gaze_position_3d
+#float32[3] gaze_position_3d
+EyeData right_eye
+EyeData left_eye
+#Acelerometer
+#float32[3] Acelerometer 
+#Gyroscope
+#float32[3] Gyroscope
+>>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
 #PTS
 
 # 'gp': {'ts': 1493630785, 's': 0, 'gidx': 126842, 'l': 71271, 'gp': [0.6345, 0.5532]}, 

@@ -1,0 +1,9 @@
+CMake Error: The current CMakeCache.txt directory /home/usr/workspaces/tobii_glasses_pkg/build/tobii_glasses_pkg/CMakeCache.txt is different than the directory /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg where CMakeCache.txt was created. This may result in binaries being created in the wrong place. If you are not sure, reedit the CMakeCache.txt
+/bin/sh: 1: cd: can't cd to /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg
+make[2]: *** [CMakeFiles/tobii_glasses_pkg__cpp.dir/build.make:261: CMakeFiles/tobii_glasses_pkg__cpp.dir/depend] Error 2
+make[1]: *** [CMakeFiles/Makefile2:468: CMakeFiles/tobii_glasses_pkg__cpp.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+/bin/sh: 1: cd: can't cd to /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg
+make[2]: *** [CMakeFiles/tobii_glasses_pkg__rosidl_generator_c.dir/build.make:353: CMakeFiles/tobii_glasses_pkg__rosidl_generator_c.dir/depend] Error 2
+make[1]: *** [CMakeFiles/Makefile2:271: CMakeFiles/tobii_glasses_pkg__rosidl_generator_c.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

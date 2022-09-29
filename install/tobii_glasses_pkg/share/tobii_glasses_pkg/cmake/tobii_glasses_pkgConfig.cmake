@@ -16,7 +16,11 @@ set(_tobii_glasses_pkg_CONFIG_INCLUDED TRUE)
 
 # output package information
 if(NOT tobii_glasses_pkg_FIND_QUIETLY)
+<<<<<<< HEAD
   message(STATUS "Found tobii_glasses_pkg: 0.1.0 (${tobii_glasses_pkg_DIR})")
+=======
+  message(STATUS "Found tobii_glasses_pkg: 1.0.0 (${tobii_glasses_pkg_DIR})")
+>>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
 endif()
 
 # warn when using a deprecated package

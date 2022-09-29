@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 rosidl_default_runtime;rclpy;std_msgs;geometry_msgs;sensor_msgs;builtin_interfaces;ament_lint_auto;ament_lint_common
+=======
+rosidl_default_runtime;rclpy;std_msgs;sensor_msgs;builtin_interfaces;ament_lint_auto;ament_lint_common
+>>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42

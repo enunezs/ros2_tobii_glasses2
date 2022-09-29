@@ -4,12 +4,22 @@
 # GNU V3.0
 
 # * Core dependencies
+<<<<<<< HEAD
+=======
+import rclpy
+from rclpy.node import Node
+
+>>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
 from queue import Empty
 from re import L
 from socket import IPV6_CHECKSUM
 from time import time
+<<<<<<< HEAD
 import rclpy
 from rclpy.node import Node
+=======
+
+>>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
 import json
 
 # * Image messaging and conversion
@@ -19,8 +29,14 @@ import numpy as np
 
 # * My classes
 #from tobii_glasses_pkg.scripts.video_capture import VideoCapture   
+<<<<<<< HEAD
 from video_capture import VideoCapture   
 from tobii_glasses_buffer import TobiiGlassesBuffer
+=======
+from tobii_glasses_pkg.video_capture import VideoCapture   
+from tobii_glasses_pkg.tobii_glasses_buffer import TobiiGlassesBuffer
+
+>>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
 
 # * Base messages
 from sensor_msgs.msg import Image
@@ -45,8 +61,11 @@ ipv6_interface = "enx60634c83de17"
 #ping6 ff02::1%eth0
 wired_mode = False
 #publish_freq = 25   #Hz
+<<<<<<< HEAD
 
 #! 
+=======
+>>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
 video_resolution = (960, 540)       # (qHD) Default for high framerate, optimal performance
 video_resolution = (720, 480)     # Not recommmeded
 video_resolution = (1280, 720)    # plain HD
@@ -59,6 +78,7 @@ video_resolution = (1600, 900)
 
 ### * Mouse emulation * ###
 import pyautogui
+<<<<<<< HEAD
 EMULATE_GLASSES = False
 
 ### * DEBUG * ###
@@ -66,10 +86,21 @@ syncronize_data = True
 #!
 greyscale = False
 #!
+=======
+EMULATE_GLASSES = True
+
+### * DEBUG * ###
+syncronize_data = False  
+greyscale = False
+>>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
 high_refresh_rate = True
 do_calibration = True
 send_image = True
 draw_circle = True
+<<<<<<< HEAD
+=======
+
+>>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
 print_performance = False
 record_glasses = False      # TODO: Future
 undo_distortion = False     # TODO: Future
@@ -112,16 +143,24 @@ class tobiiPublisher(Node):
             String, "tobii_glasses/gaze_position", 1)
         """
 
+<<<<<<< HEAD
         if syncronize_data:
             self.buffer = TobiiGlassesBuffer()
 
         #self.last_ts = 0
+=======
+
+>>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
 
         # * Init glasses
         self.bridge = CvBridge()
 
         if EMULATE_GLASSES:
             self.cap = VideoCapture(0)
+<<<<<<< HEAD
+=======
+            syncronize_data = False
+>>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
             #self.cap.set(cv2.CAP_PROP_BUFFERSIZE, 0)
             publish_freq = 5            #Hz
             #syncronize_data = False     
@@ -162,6 +201,14 @@ class tobiiPublisher(Node):
             print("Error opening video stream")
         """
 
+<<<<<<< HEAD
+=======
+
+        if syncronize_data:
+            self.buffer = TobiiGlassesBuffer()
+
+        #self.last_ts = 0
+>>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
         # * Create publisher
         self.timer = self.create_timer(1.0/publish_freq, self.publish_tobii_data)
 
@@ -356,6 +403,39 @@ class tobiiPublisher(Node):
                 #ts = -1 
                 pass
 
+<<<<<<< HEAD
+=======
+            # TODO
+            # TODO: Modify to use latest timestamp not from video
+            try:
+                if key == 'ac' and data[key]['s'] ==0: # Gaze position
+                    pass
+            except:
+                #ts = -1 
+                pass
+
+            try:
+                if key == 'gy' and data[key]['s'] ==0: # Gaze position
+                    pass
+            except:
+                #ts = -1 
+                pass
+
+            try:
+                if key == 'vts' and data[key]['s'] ==0: # Gaze position
+                    pass
+            except:
+                #ts = -1 
+                pass
+
+            try:
+                if key == 'evts' and data[key]['s'] ==0: # TODO
+                    pass
+            except:
+                #ts = -1 
+                pass
+
+>>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
             try:
                 if key == 'pts' and data[key]['s'] == 0: # Gaze position
                     #self.stamps.append(data[key]['ts'])
@@ -368,6 +448,16 @@ class tobiiPublisher(Node):
             except:
                 #ts = -1 
                 pass
+<<<<<<< HEAD
+=======
+            
+            try:
+                if key == 'epts' and data[key]['s'] ==0: # TODO
+                    pass
+            except:
+                #ts = -1 
+                pass
+>>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
 
         ros_time = self.get_clock().now().nanoseconds
         #self.iterations += 1
@@ -449,6 +539,7 @@ def main(args=None):
     except KeyboardInterrupt:
         cv2.destroyAllWindows()
 
+<<<<<<< HEAD
         fields = ['start_time', 'eye_data_get_time', 'eye_data_pack_time', 'image_data_get_time', 'image_process_time', 'image_data_pack_time', 'end_time', 'iterations'] 
         #fields = ['gp_ts', 'gp3_ts', 'pts_ts', 'pts_pts', 'video_pts', 'ros_time', 'iteration'] 
         
@@ -456,6 +547,14 @@ def main(args=None):
 
         combined = rows.insert(0, fields)
 
+=======
+
+        # Save timings to file
+        fields = ['start_time', 'eye_data_get_time', 'eye_data_pack_time', 'image_data_get_time', 'image_process_time', 'image_data_pack_time', 'end_time', 'iterations'] 
+        #fields = ['gp_ts', 'gp3_ts', 'pts_ts', 'pts_pts', 'video_pts', 'ros_time', 'iteration'] 
+        rows = glasses_publisher.timings
+        combined = rows.insert(0, fields)
+>>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
         np.savetxt("Res_" + str(video_resolution) + "_Grey_"+ str(greyscale) + "_HRR_" + str(high_refresh_rate) + ".csv", 
                 rows,
                 delimiter =", ", 

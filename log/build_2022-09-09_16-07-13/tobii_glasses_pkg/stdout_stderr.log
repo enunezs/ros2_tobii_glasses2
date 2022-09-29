@@ -1,0 +1,29 @@
+-- Found ament_cmake: 0.9.9 (/opt/ros/foxy/share/ament_cmake/cmake)
+-- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3") 
+-- Using PYTHON_EXECUTABLE: /usr/bin/python3
+-- Found rclpy: 1.0.8 (/opt/ros/foxy/share/rclpy/cmake)
+-- Found std_msgs: 2.0.5 (/opt/ros/foxy/share/std_msgs/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Found rosidl_adapter: 1.2.1 (/opt/ros/foxy/share/rosidl_adapter/cmake)
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found sensor_msgs: 2.0.5 (/opt/ros/foxy/share/sensor_msgs/cmake)
+CMake Error at CMakeLists.txt:28 (find_package):
+  By not providing "Findnumpy.cmake" in CMAKE_MODULE_PATH this project has
+  asked CMake to find a package configuration file provided by "numpy", but
+  CMake did not find one.
+
+  Could not find a package configuration file provided by "numpy" with any of
+  the following names:
+
+    numpyConfig.cmake
+    numpy-config.cmake
+
+  Add the installation prefix of "numpy" to CMAKE_PREFIX_PATH or set
+  "numpy_DIR" to a directory containing one of the above files.  If "numpy"
+  provides a separate development package or SDK, be sure it has been
+  installed.
+
+
+-- Configuring incomplete, errors occurred!
+See also "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/CMakeOutput.log".
+make: *** [Makefile:1468: cmake_check_build_system] Error 1

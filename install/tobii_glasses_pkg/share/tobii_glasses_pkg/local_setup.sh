@@ -2,7 +2,11 @@
 
 # since this file is sourced use either the provided AMENT_CURRENT_PREFIX
 # or fall back to the destination set at configure time
+<<<<<<< HEAD
 : ${AMENT_CURRENT_PREFIX:="/home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg"}
+=======
+: ${AMENT_CURRENT_PREFIX:="/home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg"}
+>>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
 if [ ! -d "$AMENT_CURRENT_PREFIX" ]; then
   if [ -z "$COLCON_CURRENT_PREFIX" ]; then
     echo "The compile time prefix path '$AMENT_CURRENT_PREFIX' doesn't " \

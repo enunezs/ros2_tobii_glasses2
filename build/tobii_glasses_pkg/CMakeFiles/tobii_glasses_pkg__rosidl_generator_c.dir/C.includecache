@@ -6,9 +6,15 @@
 
 #IncludeRegexTransform: 
 
+<<<<<<< HEAD
 /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_c/tobii_glasses_pkg/msg/detail/eye_data__functions.c
 tobii_glasses_pkg/msg/detail/eye_data__functions.h
 /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_c/tobii_glasses_pkg/msg/detail/tobii_glasses_pkg/msg/detail/eye_data__functions.h
+=======
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_c/tobii_glasses_pkg/msg/detail/eye_data__functions.c
+tobii_glasses_pkg/msg/detail/eye_data__functions.h
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_c/tobii_glasses_pkg/msg/detail/tobii_glasses_pkg/msg/detail/eye_data__functions.h
+>>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
 assert.h
 -
 stdbool.h
@@ -18,11 +24,19 @@ stdlib.h
 string.h
 -
 rosidl_runtime_c/string_functions.h
+<<<<<<< HEAD
 /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_c/tobii_glasses_pkg/msg/detail/rosidl_runtime_c/string_functions.h
 
 /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_c/tobii_glasses_pkg/msg/detail/gaze_position3_d__functions.c
 tobii_glasses_pkg/msg/detail/gaze_position3_d__functions.h
 /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_c/tobii_glasses_pkg/msg/detail/tobii_glasses_pkg/msg/detail/gaze_position3_d__functions.h
+=======
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_c/tobii_glasses_pkg/msg/detail/rosidl_runtime_c/string_functions.h
+
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_c/tobii_glasses_pkg/msg/detail/gaze_position3_d__functions.c
+tobii_glasses_pkg/msg/detail/gaze_position3_d__functions.h
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_c/tobii_glasses_pkg/msg/detail/tobii_glasses_pkg/msg/detail/gaze_position3_d__functions.h
+>>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
 assert.h
 -
 stdbool.h
@@ -32,11 +46,19 @@ stdlib.h
 string.h
 -
 std_msgs/msg/detail/header__functions.h
+<<<<<<< HEAD
 /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_c/tobii_glasses_pkg/msg/detail/std_msgs/msg/detail/header__functions.h
 
 /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_c/tobii_glasses_pkg/msg/detail/gaze_position__functions.c
 tobii_glasses_pkg/msg/detail/gaze_position__functions.h
 /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_c/tobii_glasses_pkg/msg/detail/tobii_glasses_pkg/msg/detail/gaze_position__functions.h
+=======
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_c/tobii_glasses_pkg/msg/detail/std_msgs/msg/detail/header__functions.h
+
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_c/tobii_glasses_pkg/msg/detail/gaze_position__functions.c
+tobii_glasses_pkg/msg/detail/gaze_position__functions.h
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_c/tobii_glasses_pkg/msg/detail/tobii_glasses_pkg/msg/detail/gaze_position__functions.h
+>>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
 assert.h
 -
 stdbool.h
@@ -46,11 +68,19 @@ stdlib.h
 string.h
 -
 std_msgs/msg/detail/header__functions.h
+<<<<<<< HEAD
 /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_c/tobii_glasses_pkg/msg/detail/std_msgs/msg/detail/header__functions.h
 
 /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_c/tobii_glasses_pkg/msg/detail/tobii_glasses__functions.c
 tobii_glasses_pkg/msg/detail/tobii_glasses__functions.h
 /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_c/tobii_glasses_pkg/msg/detail/tobii_glasses_pkg/msg/detail/tobii_glasses__functions.h
+=======
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_c/tobii_glasses_pkg/msg/detail/std_msgs/msg/detail/header__functions.h
+
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_c/tobii_glasses_pkg/msg/detail/tobii_glasses__functions.c
+tobii_glasses_pkg/msg/detail/tobii_glasses__functions.h
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_c/tobii_glasses_pkg/msg/detail/tobii_glasses_pkg/msg/detail/tobii_glasses__functions.h
+>>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
 assert.h
 -
 stdbool.h
@@ -60,6 +90,7 @@ stdlib.h
 string.h
 -
 std_msgs/msg/detail/header__functions.h
+<<<<<<< HEAD
 /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_c/tobii_glasses_pkg/msg/detail/std_msgs/msg/detail/header__functions.h
 sensor_msgs/msg/detail/image__functions.h
 /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_c/tobii_glasses_pkg/msg/detail/sensor_msgs/msg/detail/image__functions.h
@@ -69,6 +100,17 @@ tobii_glasses_pkg/msg/detail/gaze_position3_d__functions.h
 /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_c/tobii_glasses_pkg/msg/detail/tobii_glasses_pkg/msg/detail/gaze_position3_d__functions.h
 tobii_glasses_pkg/msg/detail/eye_data__functions.h
 /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_c/tobii_glasses_pkg/msg/detail/tobii_glasses_pkg/msg/detail/eye_data__functions.h
+=======
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_c/tobii_glasses_pkg/msg/detail/std_msgs/msg/detail/header__functions.h
+sensor_msgs/msg/detail/image__functions.h
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_c/tobii_glasses_pkg/msg/detail/sensor_msgs/msg/detail/image__functions.h
+tobii_glasses_pkg/msg/detail/gaze_position__functions.h
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_c/tobii_glasses_pkg/msg/detail/tobii_glasses_pkg/msg/detail/gaze_position__functions.h
+tobii_glasses_pkg/msg/detail/gaze_position3_d__functions.h
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_c/tobii_glasses_pkg/msg/detail/tobii_glasses_pkg/msg/detail/gaze_position3_d__functions.h
+tobii_glasses_pkg/msg/detail/eye_data__functions.h
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_c/tobii_glasses_pkg/msg/detail/tobii_glasses_pkg/msg/detail/eye_data__functions.h
+>>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
 
 /opt/ros/foxy/include/builtin_interfaces/msg/detail/time__struct.h
 stdbool.h

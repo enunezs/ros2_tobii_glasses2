@@ -43,10 +43,17 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
+<<<<<<< HEAD
 CMAKE_SOURCE_DIR = /home/ema/workspaces/ros2_tobii_glasses2
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg
+=======
+CMAKE_SOURCE_DIR = /home/usr/workspaces/ros2_tobii_glasses2
+
+# The top-level build directory on which CMake was run.
+CMAKE_BINARY_DIR = /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg
+>>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
 
 # Utility rule file for tobii_glasses_pkg__cpp.
 
@@ -179,8 +186,13 @@ rosidl_generator_cpp/tobii_glasses_pkg/msg/tobii_glasses.hpp: /opt/ros/foxy/shar
 rosidl_generator_cpp/tobii_glasses_pkg/msg/tobii_glasses.hpp: /opt/ros/foxy/share/std_msgs/msg/UInt64MultiArray.idl
 rosidl_generator_cpp/tobii_glasses_pkg/msg/tobii_glasses.hpp: /opt/ros/foxy/share/std_msgs/msg/UInt8.idl
 rosidl_generator_cpp/tobii_glasses_pkg/msg/tobii_glasses.hpp: /opt/ros/foxy/share/std_msgs/msg/UInt8MultiArray.idl
+<<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code for ROS interfaces"
 	/usr/bin/python3 /opt/ros/foxy/share/rosidl_generator_cpp/cmake/../../../lib/rosidl_generator_cpp/rosidl_generator_cpp --generator-arguments-file /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_cpp__arguments.json
+=======
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code for ROS interfaces"
+	/usr/bin/python3 /opt/ros/foxy/share/rosidl_generator_cpp/cmake/../../../lib/rosidl_generator_cpp/rosidl_generator_cpp --generator-arguments-file /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_cpp__arguments.json
+>>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
 
 rosidl_generator_cpp/tobii_glasses_pkg/msg/detail/tobii_glasses__builder.hpp: rosidl_generator_cpp/tobii_glasses_pkg/msg/tobii_glasses.hpp
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/tobii_glasses_pkg/msg/detail/tobii_glasses__builder.hpp
@@ -258,6 +270,10 @@ CMakeFiles/tobii_glasses_pkg__cpp.dir/clean:
 .PHONY : CMakeFiles/tobii_glasses_pkg__cpp.dir/clean
 
 CMakeFiles/tobii_glasses_pkg__cpp.dir/depend:
+<<<<<<< HEAD
 	cd /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ema/workspaces/ros2_tobii_glasses2 /home/ema/workspaces/ros2_tobii_glasses2 /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/tobii_glasses_pkg__cpp.dir/DependInfo.cmake --color=$(COLOR)
+=======
+	cd /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/usr/workspaces/ros2_tobii_glasses2 /home/usr/workspaces/ros2_tobii_glasses2 /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/tobii_glasses_pkg__cpp.dir/DependInfo.cmake --color=$(COLOR)
+>>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
 .PHONY : CMakeFiles/tobii_glasses_pkg__cpp.dir/depend
 

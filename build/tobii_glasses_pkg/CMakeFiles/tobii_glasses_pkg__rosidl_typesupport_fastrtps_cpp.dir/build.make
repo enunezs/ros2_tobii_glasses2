@@ -43,10 +43,17 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
+<<<<<<< HEAD
 CMAKE_SOURCE_DIR = /home/ema/workspaces/ros2_tobii_glasses2
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg
+=======
+CMAKE_SOURCE_DIR = /home/usr/workspaces/ros2_tobii_glasses2
+
+# The top-level build directory on which CMake was run.
+CMAKE_BINARY_DIR = /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg
+>>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
 
 # Include any dependencies generated for this target.
 include CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.dir/depend.make
@@ -158,8 +165,13 @@ rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/tobii_
 rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/tobii_glasses__type_support.cpp: /opt/ros/foxy/share/std_msgs/msg/UInt64MultiArray.idl
 rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/tobii_glasses__type_support.cpp: /opt/ros/foxy/share/std_msgs/msg/UInt8.idl
 rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/tobii_glasses__type_support.cpp: /opt/ros/foxy/share/std_msgs/msg/UInt8MultiArray.idl
+<<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ type support for eProsima Fast-RTPS"
 	/usr/bin/python3 /opt/ros/foxy/lib/rosidl_typesupport_fastrtps_cpp/rosidl_typesupport_fastrtps_cpp --generator-arguments-file /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_fastrtps_cpp__arguments.json
+=======
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ type support for eProsima Fast-RTPS"
+	/usr/bin/python3 /opt/ros/foxy/lib/rosidl_typesupport_fastrtps_cpp/rosidl_typesupport_fastrtps_cpp --generator-arguments-file /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_fastrtps_cpp__arguments.json
+>>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
 
 rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/tobii_glasses__rosidl_typesupport_fastrtps_cpp.hpp: rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/tobii_glasses__type_support.cpp
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/tobii_glasses__rosidl_typesupport_fastrtps_cpp.hpp
@@ -184,6 +196,7 @@ rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/eye_data__rosidl_ty
 
 CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/tobii_glasses__type_support.cpp.o: CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.dir/flags.make
 CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/tobii_glasses__type_support.cpp.o: rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/tobii_glasses__type_support.cpp
+<<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/tobii_glasses__type_support.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/tobii_glasses__type_support.cpp.o -c /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/tobii_glasses__type_support.cpp
 
@@ -233,6 +246,57 @@ CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesup
 CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/eye_data__type_support.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/eye_data__type_support.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/eye_data__type_support.cpp -o CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/eye_data__type_support.cpp.s
+=======
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/tobii_glasses__type_support.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/tobii_glasses__type_support.cpp.o -c /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/tobii_glasses__type_support.cpp
+
+CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/tobii_glasses__type_support.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/tobii_glasses__type_support.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/tobii_glasses__type_support.cpp > CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/tobii_glasses__type_support.cpp.i
+
+CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/tobii_glasses__type_support.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/tobii_glasses__type_support.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/tobii_glasses__type_support.cpp -o CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/tobii_glasses__type_support.cpp.s
+
+CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/gaze_position__type_support.cpp.o: CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.dir/flags.make
+CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/gaze_position__type_support.cpp.o: rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/gaze_position__type_support.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/gaze_position__type_support.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/gaze_position__type_support.cpp.o -c /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/gaze_position__type_support.cpp
+
+CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/gaze_position__type_support.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/gaze_position__type_support.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/gaze_position__type_support.cpp > CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/gaze_position__type_support.cpp.i
+
+CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/gaze_position__type_support.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/gaze_position__type_support.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/gaze_position__type_support.cpp -o CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/gaze_position__type_support.cpp.s
+
+CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/gaze_position3_d__type_support.cpp.o: CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.dir/flags.make
+CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/gaze_position3_d__type_support.cpp.o: rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/gaze_position3_d__type_support.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/gaze_position3_d__type_support.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/gaze_position3_d__type_support.cpp.o -c /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/gaze_position3_d__type_support.cpp
+
+CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/gaze_position3_d__type_support.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/gaze_position3_d__type_support.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/gaze_position3_d__type_support.cpp > CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/gaze_position3_d__type_support.cpp.i
+
+CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/gaze_position3_d__type_support.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/gaze_position3_d__type_support.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/gaze_position3_d__type_support.cpp -o CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/gaze_position3_d__type_support.cpp.s
+
+CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/eye_data__type_support.cpp.o: CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.dir/flags.make
+CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/eye_data__type_support.cpp.o: rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/eye_data__type_support.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/eye_data__type_support.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/eye_data__type_support.cpp.o -c /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/eye_data__type_support.cpp
+
+CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/eye_data__type_support.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/eye_data__type_support.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/eye_data__type_support.cpp > CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/eye_data__type_support.cpp.i
+
+CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/eye_data__type_support.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/eye_data__type_support.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/eye_data__type_support.cpp -o CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/eye_data__type_support.cpp.s
+>>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
 
 # Object files for target tobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp
 tobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp_OBJECTS = \
@@ -290,7 +354,11 @@ libtobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.so: /usr/lib/x86_64-linux-
 libtobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.so: /usr/lib/x86_64-linux-gnu/libssl.so
 libtobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.so: /usr/lib/x86_64-linux-gnu/libcrypto.so
 libtobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.so: CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.dir/link.txt
+<<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX shared library libtobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.so"
+=======
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX shared library libtobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.so"
+>>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -310,6 +378,10 @@ CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.dir/depend: rosidl
 CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.dir/depend: rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/gaze_position3_d__rosidl_typesupport_fastrtps_cpp.hpp
 CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.dir/depend: rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/eye_data__type_support.cpp
 CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.dir/depend: rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/eye_data__rosidl_typesupport_fastrtps_cpp.hpp
+<<<<<<< HEAD
 	cd /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ema/workspaces/ros2_tobii_glasses2 /home/ema/workspaces/ros2_tobii_glasses2 /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.dir/DependInfo.cmake --color=$(COLOR)
+=======
+	cd /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/usr/workspaces/ros2_tobii_glasses2 /home/usr/workspaces/ros2_tobii_glasses2 /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.dir/DependInfo.cmake --color=$(COLOR)
+>>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
 .PHONY : CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.dir/depend
 

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/install/strip.dir
 /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/list_install_components.dir
 /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/rebuild_cache.dir
@@ -28,3 +29,35 @@
 /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/tobii_glasses_pkg__py/CMakeFiles/edit_cache.dir
 /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/tobii_glasses_pkg__py/CMakeFiles/test.dir
 /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/tobii_glasses_pkg__py/CMakeFiles/tobii_glasses_pkg__py.dir
+=======
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/install/strip.dir
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/list_install_components.dir
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/rebuild_cache.dir
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/edit_cache.dir
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_c__pyext.dir
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_introspection_c__pyext.dir
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/test.dir
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/uninstall.dir
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/tobii_glasses_pkg_uninstall.dir
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/tobii_glasses_pkg.dir
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/tobii_glasses_pkg__rosidl_generator_c.dir
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_fastrtps_c.dir
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.dir
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_fastrtps_c__pyext.dir
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_introspection_c.dir
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/install/local.dir
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_c.dir
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_introspection_cpp.dir
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/tobii_glasses_pkg__cpp.dir
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/tobii_glasses_pkg__python.dir
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/install.dir
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_cpp.dir
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/tobii_glasses_pkg__py/CMakeFiles/install/strip.dir
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/tobii_glasses_pkg__py/CMakeFiles/install/local.dir
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/tobii_glasses_pkg__py/CMakeFiles/install.dir
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/tobii_glasses_pkg__py/CMakeFiles/list_install_components.dir
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/tobii_glasses_pkg__py/CMakeFiles/rebuild_cache.dir
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/tobii_glasses_pkg__py/CMakeFiles/edit_cache.dir
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/tobii_glasses_pkg__py/CMakeFiles/test.dir
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/tobii_glasses_pkg__py/CMakeFiles/tobii_glasses_pkg__py.dir
+>>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42

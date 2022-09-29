@@ -6,11 +6,19 @@
 
 #IncludeRegexTransform: 
 
+<<<<<<< HEAD
 /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/eye_data__type_support.cpp
 tobii_glasses_pkg/msg/detail/eye_data__rosidl_typesupport_fastrtps_cpp.hpp
 /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/tobii_glasses_pkg/msg/detail/eye_data__rosidl_typesupport_fastrtps_cpp.hpp
 tobii_glasses_pkg/msg/detail/eye_data__struct.hpp
 /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/tobii_glasses_pkg/msg/detail/eye_data__struct.hpp
+=======
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/eye_data__type_support.cpp
+tobii_glasses_pkg/msg/detail/eye_data__rosidl_typesupport_fastrtps_cpp.hpp
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/tobii_glasses_pkg/msg/detail/eye_data__rosidl_typesupport_fastrtps_cpp.hpp
+tobii_glasses_pkg/msg/detail/eye_data__struct.hpp
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/tobii_glasses_pkg/msg/detail/eye_data__struct.hpp
+>>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
 limits
 -
 stdexcept
@@ -18,6 +26,7 @@ stdexcept
 string
 -
 rosidl_typesupport_cpp/message_type_support.hpp
+<<<<<<< HEAD
 /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/rosidl_typesupport_cpp/message_type_support.hpp
 rosidl_typesupport_fastrtps_cpp/identifier.hpp
 /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/rosidl_typesupport_fastrtps_cpp/identifier.hpp
@@ -35,6 +44,25 @@ tobii_glasses_pkg/msg/detail/gaze_position3_d__rosidl_typesupport_fastrtps_cpp.h
 /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/tobii_glasses_pkg/msg/detail/gaze_position3_d__rosidl_typesupport_fastrtps_cpp.hpp
 tobii_glasses_pkg/msg/detail/gaze_position3_d__struct.hpp
 /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/tobii_glasses_pkg/msg/detail/gaze_position3_d__struct.hpp
+=======
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/rosidl_typesupport_cpp/message_type_support.hpp
+rosidl_typesupport_fastrtps_cpp/identifier.hpp
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/rosidl_typesupport_fastrtps_cpp/identifier.hpp
+rosidl_typesupport_fastrtps_cpp/message_type_support.h
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/rosidl_typesupport_fastrtps_cpp/message_type_support.h
+rosidl_typesupport_fastrtps_cpp/message_type_support_decl.hpp
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/rosidl_typesupport_fastrtps_cpp/message_type_support_decl.hpp
+rosidl_typesupport_fastrtps_cpp/wstring_conversion.hpp
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/rosidl_typesupport_fastrtps_cpp/wstring_conversion.hpp
+fastcdr/Cdr.h
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/fastcdr/Cdr.h
+
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/gaze_position3_d__type_support.cpp
+tobii_glasses_pkg/msg/detail/gaze_position3_d__rosidl_typesupport_fastrtps_cpp.hpp
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/tobii_glasses_pkg/msg/detail/gaze_position3_d__rosidl_typesupport_fastrtps_cpp.hpp
+tobii_glasses_pkg/msg/detail/gaze_position3_d__struct.hpp
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/tobii_glasses_pkg/msg/detail/gaze_position3_d__struct.hpp
+>>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
 limits
 -
 stdexcept
@@ -42,6 +70,7 @@ stdexcept
 string
 -
 rosidl_typesupport_cpp/message_type_support.hpp
+<<<<<<< HEAD
 /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/rosidl_typesupport_cpp/message_type_support.hpp
 rosidl_typesupport_fastrtps_cpp/identifier.hpp
 /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/rosidl_typesupport_fastrtps_cpp/identifier.hpp
@@ -59,6 +88,25 @@ tobii_glasses_pkg/msg/detail/gaze_position__rosidl_typesupport_fastrtps_cpp.hpp
 /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/tobii_glasses_pkg/msg/detail/gaze_position__rosidl_typesupport_fastrtps_cpp.hpp
 tobii_glasses_pkg/msg/detail/gaze_position__struct.hpp
 /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/tobii_glasses_pkg/msg/detail/gaze_position__struct.hpp
+=======
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/rosidl_typesupport_cpp/message_type_support.hpp
+rosidl_typesupport_fastrtps_cpp/identifier.hpp
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/rosidl_typesupport_fastrtps_cpp/identifier.hpp
+rosidl_typesupport_fastrtps_cpp/message_type_support.h
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/rosidl_typesupport_fastrtps_cpp/message_type_support.h
+rosidl_typesupport_fastrtps_cpp/message_type_support_decl.hpp
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/rosidl_typesupport_fastrtps_cpp/message_type_support_decl.hpp
+rosidl_typesupport_fastrtps_cpp/wstring_conversion.hpp
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/rosidl_typesupport_fastrtps_cpp/wstring_conversion.hpp
+fastcdr/Cdr.h
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/fastcdr/Cdr.h
+
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/gaze_position__type_support.cpp
+tobii_glasses_pkg/msg/detail/gaze_position__rosidl_typesupport_fastrtps_cpp.hpp
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/tobii_glasses_pkg/msg/detail/gaze_position__rosidl_typesupport_fastrtps_cpp.hpp
+tobii_glasses_pkg/msg/detail/gaze_position__struct.hpp
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/tobii_glasses_pkg/msg/detail/gaze_position__struct.hpp
+>>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
 limits
 -
 stdexcept
@@ -66,6 +114,7 @@ stdexcept
 string
 -
 rosidl_typesupport_cpp/message_type_support.hpp
+<<<<<<< HEAD
 /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/rosidl_typesupport_cpp/message_type_support.hpp
 rosidl_typesupport_fastrtps_cpp/identifier.hpp
 /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/rosidl_typesupport_fastrtps_cpp/identifier.hpp
@@ -83,6 +132,25 @@ tobii_glasses_pkg/msg/detail/tobii_glasses__rosidl_typesupport_fastrtps_cpp.hpp
 /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/tobii_glasses_pkg/msg/detail/tobii_glasses__rosidl_typesupport_fastrtps_cpp.hpp
 tobii_glasses_pkg/msg/detail/tobii_glasses__struct.hpp
 /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/tobii_glasses_pkg/msg/detail/tobii_glasses__struct.hpp
+=======
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/rosidl_typesupport_cpp/message_type_support.hpp
+rosidl_typesupport_fastrtps_cpp/identifier.hpp
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/rosidl_typesupport_fastrtps_cpp/identifier.hpp
+rosidl_typesupport_fastrtps_cpp/message_type_support.h
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/rosidl_typesupport_fastrtps_cpp/message_type_support.h
+rosidl_typesupport_fastrtps_cpp/message_type_support_decl.hpp
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/rosidl_typesupport_fastrtps_cpp/message_type_support_decl.hpp
+rosidl_typesupport_fastrtps_cpp/wstring_conversion.hpp
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/rosidl_typesupport_fastrtps_cpp/wstring_conversion.hpp
+fastcdr/Cdr.h
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/fastcdr/Cdr.h
+
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/tobii_glasses__type_support.cpp
+tobii_glasses_pkg/msg/detail/tobii_glasses__rosidl_typesupport_fastrtps_cpp.hpp
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/tobii_glasses_pkg/msg/detail/tobii_glasses__rosidl_typesupport_fastrtps_cpp.hpp
+tobii_glasses_pkg/msg/detail/tobii_glasses__struct.hpp
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/tobii_glasses_pkg/msg/detail/tobii_glasses__struct.hpp
+>>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
 limits
 -
 stdexcept
@@ -90,6 +158,7 @@ stdexcept
 string
 -
 rosidl_typesupport_cpp/message_type_support.hpp
+<<<<<<< HEAD
 /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/rosidl_typesupport_cpp/message_type_support.hpp
 rosidl_typesupport_fastrtps_cpp/identifier.hpp
 /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/rosidl_typesupport_fastrtps_cpp/identifier.hpp
@@ -101,6 +170,19 @@ rosidl_typesupport_fastrtps_cpp/wstring_conversion.hpp
 /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/rosidl_typesupport_fastrtps_cpp/wstring_conversion.hpp
 fastcdr/Cdr.h
 /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/fastcdr/Cdr.h
+=======
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/rosidl_typesupport_cpp/message_type_support.hpp
+rosidl_typesupport_fastrtps_cpp/identifier.hpp
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/rosidl_typesupport_fastrtps_cpp/identifier.hpp
+rosidl_typesupport_fastrtps_cpp/message_type_support.h
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/rosidl_typesupport_fastrtps_cpp/message_type_support.h
+rosidl_typesupport_fastrtps_cpp/message_type_support_decl.hpp
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/rosidl_typesupport_fastrtps_cpp/message_type_support_decl.hpp
+rosidl_typesupport_fastrtps_cpp/wstring_conversion.hpp
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/rosidl_typesupport_fastrtps_cpp/wstring_conversion.hpp
+fastcdr/Cdr.h
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/fastcdr/Cdr.h
+>>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
 
 /opt/ros/foxy/include/builtin_interfaces/msg/detail/time__struct.hpp
 rosidl_runtime_cpp/bounded_vector.hpp

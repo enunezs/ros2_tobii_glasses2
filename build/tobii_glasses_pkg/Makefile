@@ -48,10 +48,17 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
+<<<<<<< HEAD
 CMAKE_SOURCE_DIR = /home/ema/workspaces/ros2_tobii_glasses2
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg
+=======
+CMAKE_SOURCE_DIR = /home/usr/workspaces/ros2_tobii_glasses2
+
+# The top-level build directory on which CMake was run.
+CMAKE_BINARY_DIR = /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg
+>>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -137,9 +144,15 @@ install/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
+<<<<<<< HEAD
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles 0
+=======
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/progress.marks
+	$(MAKE) -f CMakeFiles/Makefile2 all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles 0
+>>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
 .PHONY : all
 
 # The main clean target

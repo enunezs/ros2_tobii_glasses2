@@ -43,10 +43,17 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
+<<<<<<< HEAD
 CMAKE_SOURCE_DIR = /home/ema/workspaces/ros2_tobii_glasses2
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg
+=======
+CMAKE_SOURCE_DIR = /home/usr/workspaces/ros2_tobii_glasses2
+
+# The top-level build directory on which CMake was run.
+CMAKE_BINARY_DIR = /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg
+>>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
 
 # Include any dependencies generated for this target.
 include CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_introspection_c__pyext.dir/depend.make
@@ -59,6 +66,7 @@ include CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_introspection_c__pyext.
 
 CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/tobii_glasses_pkg/_tobii_glasses_pkg_s.ep.rosidl_typesupport_introspection_c.c.o: CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_introspection_c__pyext.dir/flags.make
 CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/tobii_glasses_pkg/_tobii_glasses_pkg_s.ep.rosidl_typesupport_introspection_c.c.o: rosidl_generator_py/tobii_glasses_pkg/_tobii_glasses_pkg_s.ep.rosidl_typesupport_introspection_c.c
+<<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/tobii_glasses_pkg/_tobii_glasses_pkg_s.ep.rosidl_typesupport_introspection_c.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/tobii_glasses_pkg/_tobii_glasses_pkg_s.ep.rosidl_typesupport_introspection_c.c.o   -c /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_py/tobii_glasses_pkg/_tobii_glasses_pkg_s.ep.rosidl_typesupport_introspection_c.c
 
@@ -69,6 +77,18 @@ CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_introspection_c__pyext.dir/rosi
 CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/tobii_glasses_pkg/_tobii_glasses_pkg_s.ep.rosidl_typesupport_introspection_c.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/tobii_glasses_pkg/_tobii_glasses_pkg_s.ep.rosidl_typesupport_introspection_c.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_py/tobii_glasses_pkg/_tobii_glasses_pkg_s.ep.rosidl_typesupport_introspection_c.c -o CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/tobii_glasses_pkg/_tobii_glasses_pkg_s.ep.rosidl_typesupport_introspection_c.c.s
+=======
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/tobii_glasses_pkg/_tobii_glasses_pkg_s.ep.rosidl_typesupport_introspection_c.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/tobii_glasses_pkg/_tobii_glasses_pkg_s.ep.rosidl_typesupport_introspection_c.c.o   -c /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_py/tobii_glasses_pkg/_tobii_glasses_pkg_s.ep.rosidl_typesupport_introspection_c.c
+
+CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/tobii_glasses_pkg/_tobii_glasses_pkg_s.ep.rosidl_typesupport_introspection_c.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/tobii_glasses_pkg/_tobii_glasses_pkg_s.ep.rosidl_typesupport_introspection_c.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_py/tobii_glasses_pkg/_tobii_glasses_pkg_s.ep.rosidl_typesupport_introspection_c.c > CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/tobii_glasses_pkg/_tobii_glasses_pkg_s.ep.rosidl_typesupport_introspection_c.c.i
+
+CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/tobii_glasses_pkg/_tobii_glasses_pkg_s.ep.rosidl_typesupport_introspection_c.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/tobii_glasses_pkg/_tobii_glasses_pkg_s.ep.rosidl_typesupport_introspection_c.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_py/tobii_glasses_pkg/_tobii_glasses_pkg_s.ep.rosidl_typesupport_introspection_c.c -o CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/tobii_glasses_pkg/_tobii_glasses_pkg_s.ep.rosidl_typesupport_introspection_c.c.s
+>>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
 
 # Object files for target tobii_glasses_pkg__rosidl_typesupport_introspection_c__pyext
 tobii_glasses_pkg__rosidl_typesupport_introspection_c__pyext_OBJECTS = \
@@ -118,7 +138,11 @@ rosidl_generator_py/tobii_glasses_pkg/tobii_glasses_pkg_s__rosidl_typesupport_in
 rosidl_generator_py/tobii_glasses_pkg/tobii_glasses_pkg_s__rosidl_typesupport_introspection_c.cpython-38-x86_64-linux-gnu.so: /opt/ros/foxy/lib/librcutils.so
 rosidl_generator_py/tobii_glasses_pkg/tobii_glasses_pkg_s__rosidl_typesupport_introspection_c.cpython-38-x86_64-linux-gnu.so: /opt/ros/foxy/lib/librosidl_typesupport_introspection_c.so
 rosidl_generator_py/tobii_glasses_pkg/tobii_glasses_pkg_s__rosidl_typesupport_introspection_c.cpython-38-x86_64-linux-gnu.so: CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_introspection_c__pyext.dir/link.txt
+<<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C shared library rosidl_generator_py/tobii_glasses_pkg/tobii_glasses_pkg_s__rosidl_typesupport_introspection_c.cpython-38-x86_64-linux-gnu.so"
+=======
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C shared library rosidl_generator_py/tobii_glasses_pkg/tobii_glasses_pkg_s__rosidl_typesupport_introspection_c.cpython-38-x86_64-linux-gnu.so"
+>>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_introspection_c__pyext.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -131,6 +155,10 @@ CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_introspection_c__pyext.dir/clea
 .PHONY : CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_introspection_c__pyext.dir/clean
 
 CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_introspection_c__pyext.dir/depend:
+<<<<<<< HEAD
 	cd /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ema/workspaces/ros2_tobii_glasses2 /home/ema/workspaces/ros2_tobii_glasses2 /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_introspection_c__pyext.dir/DependInfo.cmake --color=$(COLOR)
+=======
+	cd /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/usr/workspaces/ros2_tobii_glasses2 /home/usr/workspaces/ros2_tobii_glasses2 /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_introspection_c__pyext.dir/DependInfo.cmake --color=$(COLOR)
+>>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
 .PHONY : CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_introspection_c__pyext.dir/depend
 

@@ -6,7 +6,11 @@
 
 #IncludeRegexTransform: 
 
+<<<<<<< HEAD
 /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_py/tobii_glasses_pkg/_tobii_glasses_pkg_s.ep.rosidl_typesupport_fastrtps_c.c
+=======
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_py/tobii_glasses_pkg/_tobii_glasses_pkg_s.ep.rosidl_typesupport_fastrtps_c.c
+>>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
 Python.h
 -
 stdbool.h
@@ -14,6 +18,7 @@ stdbool.h
 stdint.h
 -
 rosidl_runtime_c/visibility_control.h
+<<<<<<< HEAD
 /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_py/tobii_glasses_pkg/rosidl_runtime_c/visibility_control.h
 rosidl_runtime_c/message_type_support_struct.h
 /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_py/tobii_glasses_pkg/rosidl_runtime_c/message_type_support_struct.h
@@ -45,6 +50,39 @@ tobii_glasses_pkg/msg/detail/eye_data__struct.h
 /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_py/tobii_glasses_pkg/tobii_glasses_pkg/msg/detail/eye_data__struct.h
 tobii_glasses_pkg/msg/detail/eye_data__functions.h
 /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_py/tobii_glasses_pkg/tobii_glasses_pkg/msg/detail/eye_data__functions.h
+=======
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_py/tobii_glasses_pkg/rosidl_runtime_c/visibility_control.h
+rosidl_runtime_c/message_type_support_struct.h
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_py/tobii_glasses_pkg/rosidl_runtime_c/message_type_support_struct.h
+rosidl_runtime_c/service_type_support_struct.h
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_py/tobii_glasses_pkg/rosidl_runtime_c/service_type_support_struct.h
+rosidl_runtime_c/action_type_support_struct.h
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_py/tobii_glasses_pkg/rosidl_runtime_c/action_type_support_struct.h
+tobii_glasses_pkg/msg/detail/tobii_glasses__type_support.h
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_py/tobii_glasses_pkg/tobii_glasses_pkg/msg/detail/tobii_glasses__type_support.h
+tobii_glasses_pkg/msg/detail/tobii_glasses__struct.h
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_py/tobii_glasses_pkg/tobii_glasses_pkg/msg/detail/tobii_glasses__struct.h
+tobii_glasses_pkg/msg/detail/tobii_glasses__functions.h
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_py/tobii_glasses_pkg/tobii_glasses_pkg/msg/detail/tobii_glasses__functions.h
+tobii_glasses_pkg/msg/detail/gaze_position__type_support.h
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_py/tobii_glasses_pkg/tobii_glasses_pkg/msg/detail/gaze_position__type_support.h
+tobii_glasses_pkg/msg/detail/gaze_position__struct.h
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_py/tobii_glasses_pkg/tobii_glasses_pkg/msg/detail/gaze_position__struct.h
+tobii_glasses_pkg/msg/detail/gaze_position__functions.h
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_py/tobii_glasses_pkg/tobii_glasses_pkg/msg/detail/gaze_position__functions.h
+tobii_glasses_pkg/msg/detail/gaze_position3_d__type_support.h
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_py/tobii_glasses_pkg/tobii_glasses_pkg/msg/detail/gaze_position3_d__type_support.h
+tobii_glasses_pkg/msg/detail/gaze_position3_d__struct.h
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_py/tobii_glasses_pkg/tobii_glasses_pkg/msg/detail/gaze_position3_d__struct.h
+tobii_glasses_pkg/msg/detail/gaze_position3_d__functions.h
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_py/tobii_glasses_pkg/tobii_glasses_pkg/msg/detail/gaze_position3_d__functions.h
+tobii_glasses_pkg/msg/detail/eye_data__type_support.h
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_py/tobii_glasses_pkg/tobii_glasses_pkg/msg/detail/eye_data__type_support.h
+tobii_glasses_pkg/msg/detail/eye_data__struct.h
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_py/tobii_glasses_pkg/tobii_glasses_pkg/msg/detail/eye_data__struct.h
+tobii_glasses_pkg/msg/detail/eye_data__functions.h
+/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_py/tobii_glasses_pkg/tobii_glasses_pkg/msg/detail/eye_data__functions.h
+>>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
 
 /opt/ros/foxy/include/builtin_interfaces/msg/detail/time__struct.h
 stdbool.h

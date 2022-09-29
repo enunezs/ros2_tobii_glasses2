@@ -241,6 +241,15 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/opt/ros/foxy/share/builtin_interfaces/cmake/rosidl_cmake-extras.cmake"
   "/opt/ros/foxy/share/builtin_interfaces/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake"
   "/opt/ros/foxy/share/builtin_interfaces/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake"
+<<<<<<< HEAD
+=======
+  "/opt/ros/foxy/share/cv_bridge/cmake/ament_cmake_export_dependencies-extras.cmake"
+  "/opt/ros/foxy/share/cv_bridge/cmake/ament_cmake_export_include_directories-extras.cmake"
+  "/opt/ros/foxy/share/cv_bridge/cmake/ament_cmake_export_libraries-extras.cmake"
+  "/opt/ros/foxy/share/cv_bridge/cmake/cv_bridge-extras.cmake"
+  "/opt/ros/foxy/share/cv_bridge/cmake/cv_bridgeConfig-version.cmake"
+  "/opt/ros/foxy/share/cv_bridge/cmake/cv_bridgeConfig.cmake"
+>>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
   "/opt/ros/foxy/share/fastrtps/cmake/fast-discovery-server-targets-none.cmake"
   "/opt/ros/foxy/share/fastrtps/cmake/fast-discovery-server-targets.cmake"
   "/opt/ros/foxy/share/fastrtps/cmake/fastrtps-config-version.cmake"
@@ -478,6 +487,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/opt/ros/foxy/share/std_msgs/cmake/std_msgs__rosidl_typesupport_introspection_cExport.cmake"
   "/opt/ros/foxy/share/std_msgs/cmake/std_msgs__rosidl_typesupport_introspection_cppExport-none.cmake"
   "/opt/ros/foxy/share/std_msgs/cmake/std_msgs__rosidl_typesupport_introspection_cppExport.cmake"
+<<<<<<< HEAD
   "/usr/share/cmake-3.16/Modules/CMakeCCompiler.cmake.in"
   "/usr/share/cmake-3.16/Modules/CMakeCCompilerABI.c"
   "/usr/share/cmake-3.16/Modules/CMakeCInformation.cmake"
@@ -495,10 +505,21 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/usr/share/cmake-3.16/Modules/CMakeDetermineCompilerId.cmake"
   "/usr/share/cmake-3.16/Modules/CMakeDetermineSystem.cmake"
   "/usr/share/cmake-3.16/Modules/CMakeFindBinUtils.cmake"
+=======
+  "/usr/lib/x86_64-linux-gnu/cmake/opencv4/OpenCVConfig-version.cmake"
+  "/usr/lib/x86_64-linux-gnu/cmake/opencv4/OpenCVConfig.cmake"
+  "/usr/lib/x86_64-linux-gnu/cmake/opencv4/OpenCVModules-release.cmake"
+  "/usr/lib/x86_64-linux-gnu/cmake/opencv4/OpenCVModules.cmake"
+  "/usr/share/cmake-3.16/Modules/CMakeCInformation.cmake"
+  "/usr/share/cmake-3.16/Modules/CMakeCXXInformation.cmake"
+  "/usr/share/cmake-3.16/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake"
+  "/usr/share/cmake-3.16/Modules/CMakeCommonLanguageInclude.cmake"
+>>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
   "/usr/share/cmake-3.16/Modules/CMakeFindFrameworks.cmake"
   "/usr/share/cmake-3.16/Modules/CMakeGenericSystem.cmake"
   "/usr/share/cmake-3.16/Modules/CMakeInitializeConfigs.cmake"
   "/usr/share/cmake-3.16/Modules/CMakeLanguageInformation.cmake"
+<<<<<<< HEAD
   "/usr/share/cmake-3.16/Modules/CMakeParseImplicitIncludeInfo.cmake"
   "/usr/share/cmake-3.16/Modules/CMakeParseImplicitLinkInfo.cmake"
   "/usr/share/cmake-3.16/Modules/CMakeSystem.cmake.in"
@@ -556,6 +577,14 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/usr/share/cmake-3.16/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake"
   "/usr/share/cmake-3.16/Modules/Compiler/zOS-C-DetermineCompiler.cmake"
   "/usr/share/cmake-3.16/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake"
+=======
+  "/usr/share/cmake-3.16/Modules/CMakeSystemSpecificInformation.cmake"
+  "/usr/share/cmake-3.16/Modules/CMakeSystemSpecificInitialize.cmake"
+  "/usr/share/cmake-3.16/Modules/Compiler/CMakeCommonCompilerMacros.cmake"
+  "/usr/share/cmake-3.16/Modules/Compiler/GNU-C.cmake"
+  "/usr/share/cmake-3.16/Modules/Compiler/GNU-CXX.cmake"
+  "/usr/share/cmake-3.16/Modules/Compiler/GNU.cmake"
+>>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
   "/usr/share/cmake-3.16/Modules/DartConfiguration.tcl.in"
   "/usr/share/cmake-3.16/Modules/FindOpenSSL.cmake"
   "/usr/share/cmake-3.16/Modules/FindPackageHandleStandardArgs.cmake"
@@ -564,8 +593,11 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/usr/share/cmake-3.16/Modules/FindPythonInterp.cmake"
   "/usr/share/cmake-3.16/Modules/FindPythonLibs.cmake"
   "/usr/share/cmake-3.16/Modules/Internal/CMakeCheckCompilerFlag.cmake"
+<<<<<<< HEAD
   "/usr/share/cmake-3.16/Modules/Internal/FeatureTesting.cmake"
   "/usr/share/cmake-3.16/Modules/Platform/Linux-Determine-CXX.cmake"
+=======
+>>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
   "/usr/share/cmake-3.16/Modules/Platform/Linux-GNU-C.cmake"
   "/usr/share/cmake-3.16/Modules/Platform/Linux-GNU-CXX.cmake"
   "/usr/share/cmake-3.16/Modules/Platform/Linux-GNU.cmake"
@@ -582,11 +614,14 @@ set(CMAKE_MAKEFILE_OUTPUTS
 
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
+<<<<<<< HEAD
   "CMakeFiles/3.16.3/CMakeSystem.cmake"
   "CMakeFiles/3.16.3/CMakeCCompiler.cmake"
   "CMakeFiles/3.16.3/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.16.3/CMakeCCompiler.cmake"
   "CMakeFiles/3.16.3/CMakeCXXCompiler.cmake"
+=======
+>>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
   "ament_cmake_core/stamps/templates_2_cmake.py.stamp"
   "ament_cmake_uninstall_target/ament_cmake_uninstall_target.cmake"
   "CTestConfiguration.ini"

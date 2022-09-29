@@ -18,20 +18,20 @@ endif()
 # find dependencies
 find_package(ament_cmake REQUIRED)
 find_package(ament_cmake_python REQUIRED)
+
 find_package(rclpy REQUIRED)
-#find_package(geometry_msgs REQUIRED)
-find_package(sensor_msgs REQUIRED)
+
 find_package(std_msgs REQUIRED)
+find_package(builtin_interfaces REQUIRED)
+find_package(sensor_msgs REQUIRED)
+
+#find_package(numpy REQUIRED)
+#find_package(cv2 REQUIRED)
+find_package(cv_bridge REQUIRED)
+#find_package(json REQUIRED)
+#find_package(pyautogui REQUIRED)
+
 find_package(rosidl_default_generators REQUIRED)
-
-
-# Path to scripts
-ament_python_install_package(scripts/)
-install(PROGRAMS
-  scripts/tobii_glasses.py
-  #scripts/devel_cam.py
-  DESTINATION lib/${PROJECT_NAME}
-)
 
 # Path to resources
 install(DIRECTORY
@@ -39,15 +39,23 @@ install(DIRECTORY
   DESTINATION share/${PROJECT_NAME}/
 )
 
+
+# Path to scripts
+#ament_python_install_package(scripts/)
+ament_python_install_package(${PROJECT_NAME})
+
+install(PROGRAMS
+  scripts/tobii_glasses.py
+  DESTINATION lib/${PROJECT_NAME}
+)
+
+
 # Generate custom messages
 rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/TobiiGlasses.msg"
-  "msg/GazePosition.msg"
-  "msg/GazePosition3D.msg"
   "msg/EyeData.msg"
   DEPENDENCIES builtin_interfaces
   DEPENDENCIES sensor_msgs
-#  DEPENDENCIES geometry_msgs   
 )
 
 

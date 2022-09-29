@@ -4,7 +4,11 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
+<<<<<<< HEAD
   "/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_py/tobii_glasses_pkg/_tobii_glasses_pkg_s.ep.rosidl_typesupport_c.c" "/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/tobii_glasses_pkg/_tobii_glasses_pkg_s.ep.rosidl_typesupport_c.c.o"
+=======
+  "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_py/tobii_glasses_pkg/_tobii_glasses_pkg_s.ep.rosidl_typesupport_c.c" "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/tobii_glasses_pkg/_tobii_glasses_pkg_s.ep.rosidl_typesupport_c.c.o"
+>>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
@@ -26,9 +30,15 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
+<<<<<<< HEAD
   "/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/tobii_glasses_pkg__python.dir/DependInfo.cmake"
   "/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_c.dir/DependInfo.cmake"
   "/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/tobii_glasses_pkg__rosidl_generator_c.dir/DependInfo.cmake"
+=======
+  "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/tobii_glasses_pkg__python.dir/DependInfo.cmake"
+  "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_c.dir/DependInfo.cmake"
+  "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/tobii_glasses_pkg__rosidl_generator_c.dir/DependInfo.cmake"
+>>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
   )
 
 # Fortran module output directory.

@@ -48,10 +48,17 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
+<<<<<<< HEAD
 CMAKE_SOURCE_DIR = /home/ema/workspaces/ros2_tobii_glasses2
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg
+=======
+CMAKE_SOURCE_DIR = /home/usr/workspaces/ros2_tobii_glasses2
+
+# The top-level build directory on which CMake was run.
+CMAKE_BINARY_DIR = /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg
+>>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -137,14 +144,24 @@ test/fast: test
 
 # The main all target
 all: cmake_check_build_system
+<<<<<<< HEAD
 	cd /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg && $(CMAKE_COMMAND) -E cmake_progress_start /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/tobii_glasses_pkg__py/CMakeFiles/progress.marks
 	cd /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg && $(MAKE) -f CMakeFiles/Makefile2 tobii_glasses_pkg__py/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles 0
+=======
+	cd /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg && $(CMAKE_COMMAND) -E cmake_progress_start /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/tobii_glasses_pkg__py/CMakeFiles/progress.marks
+	cd /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg && $(MAKE) -f CMakeFiles/Makefile2 tobii_glasses_pkg__py/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles 0
+>>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
 .PHONY : all
 
 # The main clean target
 clean:
+<<<<<<< HEAD
 	cd /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg && $(MAKE) -f CMakeFiles/Makefile2 tobii_glasses_pkg__py/clean
+=======
+	cd /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg && $(MAKE) -f CMakeFiles/Makefile2 tobii_glasses_pkg__py/clean
+>>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
 .PHONY : clean
 
 # The main clean target
@@ -154,22 +171,38 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
+<<<<<<< HEAD
 	cd /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg && $(MAKE) -f CMakeFiles/Makefile2 tobii_glasses_pkg__py/preinstall
+=======
+	cd /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg && $(MAKE) -f CMakeFiles/Makefile2 tobii_glasses_pkg__py/preinstall
+>>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
+<<<<<<< HEAD
 	cd /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg && $(MAKE) -f CMakeFiles/Makefile2 tobii_glasses_pkg__py/preinstall
+=======
+	cd /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg && $(MAKE) -f CMakeFiles/Makefile2 tobii_glasses_pkg__py/preinstall
+>>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
+<<<<<<< HEAD
 	cd /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+=======
+	cd /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+>>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
 .PHONY : depend
 
 # Convenience name for target.
 tobii_glasses_pkg__py/CMakeFiles/tobii_glasses_pkg__py.dir/rule:
+<<<<<<< HEAD
 	cd /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg && $(MAKE) -f CMakeFiles/Makefile2 tobii_glasses_pkg__py/CMakeFiles/tobii_glasses_pkg__py.dir/rule
+=======
+	cd /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg && $(MAKE) -f CMakeFiles/Makefile2 tobii_glasses_pkg__py/CMakeFiles/tobii_glasses_pkg__py.dir/rule
+>>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
 .PHONY : tobii_glasses_pkg__py/CMakeFiles/tobii_glasses_pkg__py.dir/rule
 
 # Convenience name for target.
@@ -179,7 +212,11 @@ tobii_glasses_pkg__py: tobii_glasses_pkg__py/CMakeFiles/tobii_glasses_pkg__py.di
 
 # fast build rule for target.
 tobii_glasses_pkg__py/fast:
+<<<<<<< HEAD
 	cd /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg && $(MAKE) -f tobii_glasses_pkg__py/CMakeFiles/tobii_glasses_pkg__py.dir/build.make tobii_glasses_pkg__py/CMakeFiles/tobii_glasses_pkg__py.dir/build
+=======
+	cd /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg && $(MAKE) -f tobii_glasses_pkg__py/CMakeFiles/tobii_glasses_pkg__py.dir/build.make tobii_glasses_pkg__py/CMakeFiles/tobii_glasses_pkg__py.dir/build
+>>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
 .PHONY : tobii_glasses_pkg__py/fast
 
 # Help Target
@@ -207,6 +244,10 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
+<<<<<<< HEAD
 	cd /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+=======
+	cd /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+>>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
 .PHONY : cmake_check_build_system
 

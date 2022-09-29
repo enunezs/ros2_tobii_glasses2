@@ -43,10 +43,17 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
+<<<<<<< HEAD
 CMAKE_SOURCE_DIR = /home/ema/workspaces/ros2_tobii_glasses2
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg
+=======
+CMAKE_SOURCE_DIR = /home/usr/workspaces/ros2_tobii_glasses2
+
+# The top-level build directory on which CMake was run.
+CMAKE_BINARY_DIR = /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg
+>>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
 
 # Include any dependencies generated for this target.
 include CMakeFiles/tobii_glasses_pkg__rosidl_generator_c.dir/depend.make
@@ -163,8 +170,13 @@ rosidl_generator_c/tobii_glasses_pkg/msg/tobii_glasses.h: /opt/ros/foxy/share/st
 rosidl_generator_c/tobii_glasses_pkg/msg/tobii_glasses.h: /opt/ros/foxy/share/std_msgs/msg/UInt64MultiArray.idl
 rosidl_generator_c/tobii_glasses_pkg/msg/tobii_glasses.h: /opt/ros/foxy/share/std_msgs/msg/UInt8.idl
 rosidl_generator_c/tobii_glasses_pkg/msg/tobii_glasses.h: /opt/ros/foxy/share/std_msgs/msg/UInt8MultiArray.idl
+<<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C code for ROS interfaces"
 	/usr/bin/python3 /opt/ros/foxy/share/rosidl_generator_c/cmake/../../../lib/rosidl_generator_c/rosidl_generator_c --generator-arguments-file /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_c__arguments.json
+=======
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C code for ROS interfaces"
+	/usr/bin/python3 /opt/ros/foxy/share/rosidl_generator_c/cmake/../../../lib/rosidl_generator_c/rosidl_generator_c --generator-arguments-file /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_c__arguments.json
+>>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
 
 rosidl_generator_c/tobii_glasses_pkg/msg/detail/tobii_glasses__functions.h: rosidl_generator_c/tobii_glasses_pkg/msg/tobii_glasses.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/tobii_glasses_pkg/msg/detail/tobii_glasses__functions.h
@@ -225,6 +237,7 @@ rosidl_generator_c/tobii_glasses_pkg/msg/detail/eye_data__functions.c: rosidl_ge
 
 CMakeFiles/tobii_glasses_pkg__rosidl_generator_c.dir/rosidl_generator_c/tobii_glasses_pkg/msg/detail/tobii_glasses__functions.c.o: CMakeFiles/tobii_glasses_pkg__rosidl_generator_c.dir/flags.make
 CMakeFiles/tobii_glasses_pkg__rosidl_generator_c.dir/rosidl_generator_c/tobii_glasses_pkg/msg/detail/tobii_glasses__functions.c.o: rosidl_generator_c/tobii_glasses_pkg/msg/detail/tobii_glasses__functions.c
+<<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/tobii_glasses_pkg__rosidl_generator_c.dir/rosidl_generator_c/tobii_glasses_pkg/msg/detail/tobii_glasses__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/tobii_glasses_pkg__rosidl_generator_c.dir/rosidl_generator_c/tobii_glasses_pkg/msg/detail/tobii_glasses__functions.c.o   -c /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_c/tobii_glasses_pkg/msg/detail/tobii_glasses__functions.c
 
@@ -274,6 +287,57 @@ CMakeFiles/tobii_glasses_pkg__rosidl_generator_c.dir/rosidl_generator_c/tobii_gl
 CMakeFiles/tobii_glasses_pkg__rosidl_generator_c.dir/rosidl_generator_c/tobii_glasses_pkg/msg/detail/eye_data__functions.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/tobii_glasses_pkg__rosidl_generator_c.dir/rosidl_generator_c/tobii_glasses_pkg/msg/detail/eye_data__functions.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_c/tobii_glasses_pkg/msg/detail/eye_data__functions.c -o CMakeFiles/tobii_glasses_pkg__rosidl_generator_c.dir/rosidl_generator_c/tobii_glasses_pkg/msg/detail/eye_data__functions.c.s
+=======
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/tobii_glasses_pkg__rosidl_generator_c.dir/rosidl_generator_c/tobii_glasses_pkg/msg/detail/tobii_glasses__functions.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/tobii_glasses_pkg__rosidl_generator_c.dir/rosidl_generator_c/tobii_glasses_pkg/msg/detail/tobii_glasses__functions.c.o   -c /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_c/tobii_glasses_pkg/msg/detail/tobii_glasses__functions.c
+
+CMakeFiles/tobii_glasses_pkg__rosidl_generator_c.dir/rosidl_generator_c/tobii_glasses_pkg/msg/detail/tobii_glasses__functions.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/tobii_glasses_pkg__rosidl_generator_c.dir/rosidl_generator_c/tobii_glasses_pkg/msg/detail/tobii_glasses__functions.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_c/tobii_glasses_pkg/msg/detail/tobii_glasses__functions.c > CMakeFiles/tobii_glasses_pkg__rosidl_generator_c.dir/rosidl_generator_c/tobii_glasses_pkg/msg/detail/tobii_glasses__functions.c.i
+
+CMakeFiles/tobii_glasses_pkg__rosidl_generator_c.dir/rosidl_generator_c/tobii_glasses_pkg/msg/detail/tobii_glasses__functions.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/tobii_glasses_pkg__rosidl_generator_c.dir/rosidl_generator_c/tobii_glasses_pkg/msg/detail/tobii_glasses__functions.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_c/tobii_glasses_pkg/msg/detail/tobii_glasses__functions.c -o CMakeFiles/tobii_glasses_pkg__rosidl_generator_c.dir/rosidl_generator_c/tobii_glasses_pkg/msg/detail/tobii_glasses__functions.c.s
+
+CMakeFiles/tobii_glasses_pkg__rosidl_generator_c.dir/rosidl_generator_c/tobii_glasses_pkg/msg/detail/gaze_position__functions.c.o: CMakeFiles/tobii_glasses_pkg__rosidl_generator_c.dir/flags.make
+CMakeFiles/tobii_glasses_pkg__rosidl_generator_c.dir/rosidl_generator_c/tobii_glasses_pkg/msg/detail/gaze_position__functions.c.o: rosidl_generator_c/tobii_glasses_pkg/msg/detail/gaze_position__functions.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/tobii_glasses_pkg__rosidl_generator_c.dir/rosidl_generator_c/tobii_glasses_pkg/msg/detail/gaze_position__functions.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/tobii_glasses_pkg__rosidl_generator_c.dir/rosidl_generator_c/tobii_glasses_pkg/msg/detail/gaze_position__functions.c.o   -c /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_c/tobii_glasses_pkg/msg/detail/gaze_position__functions.c
+
+CMakeFiles/tobii_glasses_pkg__rosidl_generator_c.dir/rosidl_generator_c/tobii_glasses_pkg/msg/detail/gaze_position__functions.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/tobii_glasses_pkg__rosidl_generator_c.dir/rosidl_generator_c/tobii_glasses_pkg/msg/detail/gaze_position__functions.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_c/tobii_glasses_pkg/msg/detail/gaze_position__functions.c > CMakeFiles/tobii_glasses_pkg__rosidl_generator_c.dir/rosidl_generator_c/tobii_glasses_pkg/msg/detail/gaze_position__functions.c.i
+
+CMakeFiles/tobii_glasses_pkg__rosidl_generator_c.dir/rosidl_generator_c/tobii_glasses_pkg/msg/detail/gaze_position__functions.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/tobii_glasses_pkg__rosidl_generator_c.dir/rosidl_generator_c/tobii_glasses_pkg/msg/detail/gaze_position__functions.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_c/tobii_glasses_pkg/msg/detail/gaze_position__functions.c -o CMakeFiles/tobii_glasses_pkg__rosidl_generator_c.dir/rosidl_generator_c/tobii_glasses_pkg/msg/detail/gaze_position__functions.c.s
+
+CMakeFiles/tobii_glasses_pkg__rosidl_generator_c.dir/rosidl_generator_c/tobii_glasses_pkg/msg/detail/gaze_position3_d__functions.c.o: CMakeFiles/tobii_glasses_pkg__rosidl_generator_c.dir/flags.make
+CMakeFiles/tobii_glasses_pkg__rosidl_generator_c.dir/rosidl_generator_c/tobii_glasses_pkg/msg/detail/gaze_position3_d__functions.c.o: rosidl_generator_c/tobii_glasses_pkg/msg/detail/gaze_position3_d__functions.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/tobii_glasses_pkg__rosidl_generator_c.dir/rosidl_generator_c/tobii_glasses_pkg/msg/detail/gaze_position3_d__functions.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/tobii_glasses_pkg__rosidl_generator_c.dir/rosidl_generator_c/tobii_glasses_pkg/msg/detail/gaze_position3_d__functions.c.o   -c /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_c/tobii_glasses_pkg/msg/detail/gaze_position3_d__functions.c
+
+CMakeFiles/tobii_glasses_pkg__rosidl_generator_c.dir/rosidl_generator_c/tobii_glasses_pkg/msg/detail/gaze_position3_d__functions.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/tobii_glasses_pkg__rosidl_generator_c.dir/rosidl_generator_c/tobii_glasses_pkg/msg/detail/gaze_position3_d__functions.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_c/tobii_glasses_pkg/msg/detail/gaze_position3_d__functions.c > CMakeFiles/tobii_glasses_pkg__rosidl_generator_c.dir/rosidl_generator_c/tobii_glasses_pkg/msg/detail/gaze_position3_d__functions.c.i
+
+CMakeFiles/tobii_glasses_pkg__rosidl_generator_c.dir/rosidl_generator_c/tobii_glasses_pkg/msg/detail/gaze_position3_d__functions.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/tobii_glasses_pkg__rosidl_generator_c.dir/rosidl_generator_c/tobii_glasses_pkg/msg/detail/gaze_position3_d__functions.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_c/tobii_glasses_pkg/msg/detail/gaze_position3_d__functions.c -o CMakeFiles/tobii_glasses_pkg__rosidl_generator_c.dir/rosidl_generator_c/tobii_glasses_pkg/msg/detail/gaze_position3_d__functions.c.s
+
+CMakeFiles/tobii_glasses_pkg__rosidl_generator_c.dir/rosidl_generator_c/tobii_glasses_pkg/msg/detail/eye_data__functions.c.o: CMakeFiles/tobii_glasses_pkg__rosidl_generator_c.dir/flags.make
+CMakeFiles/tobii_glasses_pkg__rosidl_generator_c.dir/rosidl_generator_c/tobii_glasses_pkg/msg/detail/eye_data__functions.c.o: rosidl_generator_c/tobii_glasses_pkg/msg/detail/eye_data__functions.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/tobii_glasses_pkg__rosidl_generator_c.dir/rosidl_generator_c/tobii_glasses_pkg/msg/detail/eye_data__functions.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/tobii_glasses_pkg__rosidl_generator_c.dir/rosidl_generator_c/tobii_glasses_pkg/msg/detail/eye_data__functions.c.o   -c /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_c/tobii_glasses_pkg/msg/detail/eye_data__functions.c
+
+CMakeFiles/tobii_glasses_pkg__rosidl_generator_c.dir/rosidl_generator_c/tobii_glasses_pkg/msg/detail/eye_data__functions.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/tobii_glasses_pkg__rosidl_generator_c.dir/rosidl_generator_c/tobii_glasses_pkg/msg/detail/eye_data__functions.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_c/tobii_glasses_pkg/msg/detail/eye_data__functions.c > CMakeFiles/tobii_glasses_pkg__rosidl_generator_c.dir/rosidl_generator_c/tobii_glasses_pkg/msg/detail/eye_data__functions.c.i
+
+CMakeFiles/tobii_glasses_pkg__rosidl_generator_c.dir/rosidl_generator_c/tobii_glasses_pkg/msg/detail/eye_data__functions.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/tobii_glasses_pkg__rosidl_generator_c.dir/rosidl_generator_c/tobii_glasses_pkg/msg/detail/eye_data__functions.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_c/tobii_glasses_pkg/msg/detail/eye_data__functions.c -o CMakeFiles/tobii_glasses_pkg__rosidl_generator_c.dir/rosidl_generator_c/tobii_glasses_pkg/msg/detail/eye_data__functions.c.s
+>>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
 
 # Object files for target tobii_glasses_pkg__rosidl_generator_c
 tobii_glasses_pkg__rosidl_generator_c_OBJECTS = \
@@ -318,7 +382,11 @@ libtobii_glasses_pkg__rosidl_generator_c.so: /opt/ros/foxy/lib/librosidl_runtime
 libtobii_glasses_pkg__rosidl_generator_c.so: /opt/ros/foxy/lib/librcpputils.so
 libtobii_glasses_pkg__rosidl_generator_c.so: /opt/ros/foxy/lib/librcutils.so
 libtobii_glasses_pkg__rosidl_generator_c.so: CMakeFiles/tobii_glasses_pkg__rosidl_generator_c.dir/link.txt
+<<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking C shared library libtobii_glasses_pkg__rosidl_generator_c.so"
+=======
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking C shared library libtobii_glasses_pkg__rosidl_generator_c.so"
+>>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/tobii_glasses_pkg__rosidl_generator_c.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -350,6 +418,10 @@ CMakeFiles/tobii_glasses_pkg__rosidl_generator_c.dir/depend: rosidl_generator_c/
 CMakeFiles/tobii_glasses_pkg__rosidl_generator_c.dir/depend: rosidl_generator_c/tobii_glasses_pkg/msg/detail/gaze_position__functions.c
 CMakeFiles/tobii_glasses_pkg__rosidl_generator_c.dir/depend: rosidl_generator_c/tobii_glasses_pkg/msg/detail/gaze_position3_d__functions.c
 CMakeFiles/tobii_glasses_pkg__rosidl_generator_c.dir/depend: rosidl_generator_c/tobii_glasses_pkg/msg/detail/eye_data__functions.c
+<<<<<<< HEAD
 	cd /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ema/workspaces/ros2_tobii_glasses2 /home/ema/workspaces/ros2_tobii_glasses2 /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/tobii_glasses_pkg__rosidl_generator_c.dir/DependInfo.cmake --color=$(COLOR)
+=======
+	cd /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/usr/workspaces/ros2_tobii_glasses2 /home/usr/workspaces/ros2_tobii_glasses2 /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/tobii_glasses_pkg__rosidl_generator_c.dir/DependInfo.cmake --color=$(COLOR)
+>>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
 .PHONY : CMakeFiles/tobii_glasses_pkg__rosidl_generator_c.dir/depend
 
