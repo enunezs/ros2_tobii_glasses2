@@ -1,4 +1,0 @@
-Invoking command in '/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --build /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg -- -j12 -l12
-Invoked command in '/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg' returned '0': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --build /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg -- -j12 -l12
-Invoking command in '/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --install /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg
-Invoked command in '/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg' returned '0': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --install /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg

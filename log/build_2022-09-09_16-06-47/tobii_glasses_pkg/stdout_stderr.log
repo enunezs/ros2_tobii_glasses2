@@ -1,7 +1,0 @@
-CMake Error at CMakeLists.txt:32:
-  Parse error.  Expected a newline, got identifier with text "a".
-
-
--- Configuring incomplete, errors occurred!
-See also "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/CMakeOutput.log".
-make: *** [Makefile:1468: cmake_check_build_system] Error 1

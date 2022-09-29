@@ -1,11 +1,2 @@
-<<<<<<< HEAD
-/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_adapter/tobii_glasses_pkg:msg/TobiiGlasses.idl
-/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_adapter/tobii_glasses_pkg:msg/GazePosition.idl
-/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_adapter/tobii_glasses_pkg:msg/GazePosition3D.idl
-/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_adapter/tobii_glasses_pkg:msg/EyeData.idl
-=======
-/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_adapter/tobii_glasses_pkg:msg/TobiiGlasses.idl
-/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_adapter/tobii_glasses_pkg:msg/GazePosition.idl
-/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_adapter/tobii_glasses_pkg:msg/GazePosition3D.idl
-/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_adapter/tobii_glasses_pkg:msg/EyeData.idl
->>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
+/root/build/tobii_glasses_pkg/rosidl_adapter/tobii_glasses_pkg:msg/TobiiGlasses.idl
+/root/build/tobii_glasses_pkg/rosidl_adapter/tobii_glasses_pkg:msg/EyeData.idl

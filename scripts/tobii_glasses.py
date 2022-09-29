@@ -58,7 +58,7 @@ video_resolution = (1600, 900)
 
 ### * Mouse emulation * ###
 import pyautogui
-EMULATE_GLASSES = True
+EMULATE_GLASSES = False
 
 ### * DEBUG * ###
 syncronize_data = False  

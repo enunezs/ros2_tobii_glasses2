@@ -14,10 +14,6 @@
 #include "std_msgs/msg/detail/header__functions.h"
 // Member `camera_image`
 #include "sensor_msgs/msg/detail/image__functions.h"
-// Member `gaze_position`
-#include "tobii_glasses_pkg/msg/detail/gaze_position__functions.h"
-// Member `gaze_position_3d`
-#include "tobii_glasses_pkg/msg/detail/gaze_position3_d__functions.h"
 // Member `right_eye`
 // Member `left_eye`
 #include "tobii_glasses_pkg/msg/detail/eye_data__functions.h"
@@ -39,15 +35,7 @@ tobii_glasses_pkg__msg__TobiiGlasses__init(tobii_glasses_pkg__msg__TobiiGlasses 
     return false;
   }
   // gaze_position
-  if (!tobii_glasses_pkg__msg__GazePosition__init(&msg->gaze_position)) {
-    tobii_glasses_pkg__msg__TobiiGlasses__fini(msg);
-    return false;
-  }
   // gaze_position_3d
-  if (!tobii_glasses_pkg__msg__GazePosition3D__init(&msg->gaze_position_3d)) {
-    tobii_glasses_pkg__msg__TobiiGlasses__fini(msg);
-    return false;
-  }
   // right_eye
   if (!tobii_glasses_pkg__msg__EyeData__init(&msg->right_eye)) {
     tobii_glasses_pkg__msg__TobiiGlasses__fini(msg);
@@ -58,6 +46,8 @@ tobii_glasses_pkg__msg__TobiiGlasses__init(tobii_glasses_pkg__msg__TobiiGlasses 
     tobii_glasses_pkg__msg__TobiiGlasses__fini(msg);
     return false;
   }
+  // acelerometer
+  // gyroscope
   return true;
 }
 
@@ -72,13 +62,13 @@ tobii_glasses_pkg__msg__TobiiGlasses__fini(tobii_glasses_pkg__msg__TobiiGlasses 
   // camera_image
   sensor_msgs__msg__Image__fini(&msg->camera_image);
   // gaze_position
-  tobii_glasses_pkg__msg__GazePosition__fini(&msg->gaze_position);
   // gaze_position_3d
-  tobii_glasses_pkg__msg__GazePosition3D__fini(&msg->gaze_position_3d);
   // right_eye
   tobii_glasses_pkg__msg__EyeData__fini(&msg->right_eye);
   // left_eye
   tobii_glasses_pkg__msg__EyeData__fini(&msg->left_eye);
+  // acelerometer
+  // gyroscope
 }
 
 tobii_glasses_pkg__msg__TobiiGlasses *

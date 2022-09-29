@@ -1,16 +1,8 @@
-<<<<<<< HEAD
-# Install script for directory: /home/ema/workspaces/ros2_tobii_glasses2
+# Install script for directory: /root
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg")
-=======
-# Install script for directory: /home/usr/workspaces/ros2_tobii_glasses2
-
-# Set the install prefix
-if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg")
->>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
+  set(CMAKE_INSTALL_PREFIX "/root/install/tobii_glasses_pkg")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -46,71 +38,39 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-<<<<<<< HEAD
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/environment" TYPE FILE FILES "/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/ament_cmake_environment_hooks/pythonpath.sh")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/" TYPE DIRECTORY FILES "/root/launch")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/environment" TYPE FILE FILES "/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/ament_cmake_environment_hooks/pythonpath.dsv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/environment" TYPE FILE FILES "/root/build/tobii_glasses_pkg/ament_cmake_environment_hooks/pythonpath.sh")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3.8/site-packages/scripts/" TYPE DIRECTORY FILES "/home/ema/workspaces/ros2_tobii_glasses2/scripts//" REGEX "/[^/]*\\.pyc$" EXCLUDE REGEX "/\\_\\_pycache\\_\\_$" EXCLUDE)
-=======
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/" TYPE DIRECTORY FILES "/home/usr/workspaces/ros2_tobii_glasses2/launch")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/environment" TYPE FILE FILES "/root/build/tobii_glasses_pkg/ament_cmake_environment_hooks/pythonpath.dsv")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/environment" TYPE FILE FILES "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/ament_cmake_environment_hooks/pythonpath.sh")
-endif()
-
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/environment" TYPE FILE FILES "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/ament_cmake_environment_hooks/pythonpath.dsv")
-endif()
-
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3.8/site-packages/tobii_glasses_pkg" TYPE DIRECTORY FILES "/home/usr/workspaces/ros2_tobii_glasses2/tobii_glasses_pkg/" REGEX "/[^/]*\\.pyc$" EXCLUDE REGEX "/\\_\\_pycache\\_\\_$" EXCLUDE)
->>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3.8/site-packages/tobii_glasses_pkg" TYPE DIRECTORY FILES "/root/tobii_glasses_pkg/" REGEX "/[^/]*\\.pyc$" EXCLUDE REGEX "/\\_\\_pycache\\_\\_$" EXCLUDE)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   execute_process(
         COMMAND
         "/usr/bin/python3" "-m" "compileall"
-<<<<<<< HEAD
-        "/home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/python3.8/site-packages/scripts/"
-=======
-        "/home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/python3.8/site-packages/tobii_glasses_pkg"
->>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
+        "/root/install/tobii_glasses_pkg/lib/python3.8/site-packages/tobii_glasses_pkg"
       )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-<<<<<<< HEAD
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/tobii_glasses_pkg" TYPE PROGRAM FILES "/home/ema/workspaces/ros2_tobii_glasses2/scripts/tobii_glasses.py")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/tobii_glasses_pkg" TYPE PROGRAM FILES "/root/scripts/tobii_glasses.py")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/" TYPE DIRECTORY FILES "/home/ema/workspaces/ros2_tobii_glasses2/launch")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/rosidl_interfaces" TYPE FILE FILES "/root/build/tobii_glasses_pkg/ament_cmake_index/share/ament_index/resource_index/rosidl_interfaces/tobii_glasses_pkg")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/rosidl_interfaces" TYPE FILE FILES "/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/ament_cmake_index/share/ament_index/resource_index/rosidl_interfaces/tobii_glasses_pkg")
-endif()
-
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/tobii_glasses_pkg" TYPE DIRECTORY FILES "/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_c/tobii_glasses_pkg/" REGEX "/[^/]*\\.h$")
-=======
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/tobii_glasses_pkg" TYPE PROGRAM FILES "/home/usr/workspaces/ros2_tobii_glasses2/scripts/tobii_glasses.py")
-endif()
-
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/rosidl_interfaces" TYPE FILE FILES "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/ament_cmake_index/share/ament_index/resource_index/rosidl_interfaces/tobii_glasses_pkg")
-endif()
-
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/tobii_glasses_pkg" TYPE DIRECTORY FILES "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_c/tobii_glasses_pkg/" REGEX "/[^/]*\\.h$")
->>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/tobii_glasses_pkg" TYPE DIRECTORY FILES "/root/build/tobii_glasses_pkg/rosidl_generator_c/tobii_glasses_pkg/" REGEX "/[^/]*\\.h$")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -118,11 +78,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-<<<<<<< HEAD
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/environment" TYPE FILE FILES "/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/ament_cmake_environment_hooks/library_path.dsv")
-=======
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/environment" TYPE FILE FILES "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/ament_cmake_environment_hooks/library_path.dsv")
->>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/environment" TYPE FILE FILES "/root/build/tobii_glasses_pkg/ament_cmake_environment_hooks/library_path.dsv")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -132,11 +88,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libtobii_glasses_pkg__rosidl_generator_c.so"
          RPATH "")
   endif()
-<<<<<<< HEAD
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/libtobii_glasses_pkg__rosidl_generator_c.so")
-=======
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/libtobii_glasses_pkg__rosidl_generator_c.so")
->>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/root/build/tobii_glasses_pkg/libtobii_glasses_pkg__rosidl_generator_c.so")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libtobii_glasses_pkg__rosidl_generator_c.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libtobii_glasses_pkg__rosidl_generator_c.so")
     file(RPATH_CHANGE
@@ -153,11 +105,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-<<<<<<< HEAD
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/tobii_glasses_pkg" TYPE DIRECTORY FILES "/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_fastrtps_c/tobii_glasses_pkg/" REGEX "/[^/]*\\.cpp$" EXCLUDE)
-=======
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/tobii_glasses_pkg" TYPE DIRECTORY FILES "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_fastrtps_c/tobii_glasses_pkg/" REGEX "/[^/]*\\.cpp$" EXCLUDE)
->>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/tobii_glasses_pkg" TYPE DIRECTORY FILES "/root/build/tobii_glasses_pkg/rosidl_typesupport_fastrtps_c/tobii_glasses_pkg/" REGEX "/[^/]*\\.cpp$" EXCLUDE)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -167,20 +115,12 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libtobii_glasses_pkg__rosidl_typesupport_fastrtps_c.so"
          RPATH "")
   endif()
-<<<<<<< HEAD
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/libtobii_glasses_pkg__rosidl_typesupport_fastrtps_c.so")
-=======
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/libtobii_glasses_pkg__rosidl_typesupport_fastrtps_c.so")
->>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/root/build/tobii_glasses_pkg/libtobii_glasses_pkg__rosidl_typesupport_fastrtps_c.so")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libtobii_glasses_pkg__rosidl_typesupport_fastrtps_c.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libtobii_glasses_pkg__rosidl_typesupport_fastrtps_c.so")
     file(RPATH_CHANGE
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libtobii_glasses_pkg__rosidl_typesupport_fastrtps_c.so"
-<<<<<<< HEAD
-         OLD_RPATH "/opt/ros/foxy/lib:/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg:"
-=======
-         OLD_RPATH "/opt/ros/foxy/lib:/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg:"
->>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
+         OLD_RPATH "/opt/ros/foxy/lib:/root/build/tobii_glasses_pkg:"
          NEW_RPATH "")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libtobii_glasses_pkg__rosidl_typesupport_fastrtps_c.so")
@@ -192,11 +132,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-<<<<<<< HEAD
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/tobii_glasses_pkg" TYPE DIRECTORY FILES "/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/" REGEX "/[^/]*\\.cpp$" EXCLUDE)
-=======
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/tobii_glasses_pkg" TYPE DIRECTORY FILES "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/" REGEX "/[^/]*\\.cpp$" EXCLUDE)
->>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/tobii_glasses_pkg" TYPE DIRECTORY FILES "/root/build/tobii_glasses_pkg/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/" REGEX "/[^/]*\\.cpp$" EXCLUDE)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -206,11 +142,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libtobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.so"
          RPATH "")
   endif()
-<<<<<<< HEAD
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/libtobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.so")
-=======
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/libtobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.so")
->>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/root/build/tobii_glasses_pkg/libtobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.so")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libtobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libtobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.so")
     file(RPATH_CHANGE
@@ -227,11 +159,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-<<<<<<< HEAD
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/tobii_glasses_pkg" TYPE DIRECTORY FILES "/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_introspection_c/tobii_glasses_pkg/" REGEX "/[^/]*\\.h$")
-=======
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/tobii_glasses_pkg" TYPE DIRECTORY FILES "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_introspection_c/tobii_glasses_pkg/" REGEX "/[^/]*\\.h$")
->>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/tobii_glasses_pkg" TYPE DIRECTORY FILES "/root/build/tobii_glasses_pkg/rosidl_typesupport_introspection_c/tobii_glasses_pkg/" REGEX "/[^/]*\\.h$")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -241,20 +169,12 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libtobii_glasses_pkg__rosidl_typesupport_introspection_c.so"
          RPATH "")
   endif()
-<<<<<<< HEAD
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/libtobii_glasses_pkg__rosidl_typesupport_introspection_c.so")
-=======
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/libtobii_glasses_pkg__rosidl_typesupport_introspection_c.so")
->>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/root/build/tobii_glasses_pkg/libtobii_glasses_pkg__rosidl_typesupport_introspection_c.so")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libtobii_glasses_pkg__rosidl_typesupport_introspection_c.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libtobii_glasses_pkg__rosidl_typesupport_introspection_c.so")
     file(RPATH_CHANGE
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libtobii_glasses_pkg__rosidl_typesupport_introspection_c.so"
-<<<<<<< HEAD
-         OLD_RPATH "/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg:/opt/ros/foxy/lib:"
-=======
-         OLD_RPATH "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg:/opt/ros/foxy/lib:"
->>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
+         OLD_RPATH "/root/build/tobii_glasses_pkg:/opt/ros/foxy/lib:"
          NEW_RPATH "")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libtobii_glasses_pkg__rosidl_typesupport_introspection_c.so")
@@ -272,11 +192,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libtobii_glasses_pkg__rosidl_typesupport_c.so"
          RPATH "")
   endif()
-<<<<<<< HEAD
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/libtobii_glasses_pkg__rosidl_typesupport_c.so")
-=======
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/libtobii_glasses_pkg__rosidl_typesupport_c.so")
->>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/root/build/tobii_glasses_pkg/libtobii_glasses_pkg__rosidl_typesupport_c.so")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libtobii_glasses_pkg__rosidl_typesupport_c.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libtobii_glasses_pkg__rosidl_typesupport_c.so")
     file(RPATH_CHANGE
@@ -293,19 +209,11 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-<<<<<<< HEAD
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/tobii_glasses_pkg" TYPE DIRECTORY FILES "/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_cpp/tobii_glasses_pkg/" REGEX "/[^/]*\\.hpp$")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/tobii_glasses_pkg" TYPE DIRECTORY FILES "/root/build/tobii_glasses_pkg/rosidl_generator_cpp/tobii_glasses_pkg/" REGEX "/[^/]*\\.hpp$")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/tobii_glasses_pkg" TYPE DIRECTORY FILES "/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_introspection_cpp/tobii_glasses_pkg/" REGEX "/[^/]*\\.hpp$")
-=======
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/tobii_glasses_pkg" TYPE DIRECTORY FILES "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_cpp/tobii_glasses_pkg/" REGEX "/[^/]*\\.hpp$")
-endif()
-
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/tobii_glasses_pkg" TYPE DIRECTORY FILES "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_introspection_cpp/tobii_glasses_pkg/" REGEX "/[^/]*\\.hpp$")
->>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/tobii_glasses_pkg" TYPE DIRECTORY FILES "/root/build/tobii_glasses_pkg/rosidl_typesupport_introspection_cpp/tobii_glasses_pkg/" REGEX "/[^/]*\\.hpp$")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -315,11 +223,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libtobii_glasses_pkg__rosidl_typesupport_introspection_cpp.so"
          RPATH "")
   endif()
-<<<<<<< HEAD
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/libtobii_glasses_pkg__rosidl_typesupport_introspection_cpp.so")
-=======
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/libtobii_glasses_pkg__rosidl_typesupport_introspection_cpp.so")
->>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/root/build/tobii_glasses_pkg/libtobii_glasses_pkg__rosidl_typesupport_introspection_cpp.so")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libtobii_glasses_pkg__rosidl_typesupport_introspection_cpp.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libtobii_glasses_pkg__rosidl_typesupport_introspection_cpp.so")
     file(RPATH_CHANGE
@@ -342,11 +246,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libtobii_glasses_pkg__rosidl_typesupport_cpp.so"
          RPATH "")
   endif()
-<<<<<<< HEAD
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/libtobii_glasses_pkg__rosidl_typesupport_cpp.so")
-=======
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/libtobii_glasses_pkg__rosidl_typesupport_cpp.so")
->>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/root/build/tobii_glasses_pkg/libtobii_glasses_pkg__rosidl_typesupport_cpp.so")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libtobii_glasses_pkg__rosidl_typesupport_cpp.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libtobii_glasses_pkg__rosidl_typesupport_cpp.so")
     file(RPATH_CHANGE
@@ -363,31 +263,19 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-<<<<<<< HEAD
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3.8/site-packages/tobii_glasses_pkg" TYPE FILE FILES "/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_py/tobii_glasses_pkg/__init__.py")
-=======
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3.8/site-packages/tobii_glasses_pkg" TYPE FILE FILES "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_py/tobii_glasses_pkg/__init__.py")
->>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3.8/site-packages/tobii_glasses_pkg" TYPE FILE FILES "/root/build/tobii_glasses_pkg/rosidl_generator_py/tobii_glasses_pkg/__init__.py")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   execute_process(
         COMMAND
         "/usr/bin/python3" "-m" "compileall"
-<<<<<<< HEAD
-        "/home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/python3.8/site-packages/tobii_glasses_pkg/__init__.py"
-=======
-        "/home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/python3.8/site-packages/tobii_glasses_pkg/__init__.py"
->>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
+        "/root/install/tobii_glasses_pkg/lib/python3.8/site-packages/tobii_glasses_pkg/__init__.py"
       )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-<<<<<<< HEAD
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3.8/site-packages/tobii_glasses_pkg/msg" TYPE DIRECTORY FILES "/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_py/tobii_glasses_pkg/msg/" REGEX "/[^/]*\\.py$")
-=======
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3.8/site-packages/tobii_glasses_pkg/msg" TYPE DIRECTORY FILES "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_py/tobii_glasses_pkg/msg/" REGEX "/[^/]*\\.py$")
->>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3.8/site-packages/tobii_glasses_pkg/msg" TYPE DIRECTORY FILES "/root/build/tobii_glasses_pkg/rosidl_generator_py/tobii_glasses_pkg/msg/" REGEX "/[^/]*\\.py$")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -397,20 +285,12 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/python3.8/site-packages/tobii_glasses_pkg/tobii_glasses_pkg_s__rosidl_typesupport_fastrtps_c.cpython-38-x86_64-linux-gnu.so"
          RPATH "")
   endif()
-<<<<<<< HEAD
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3.8/site-packages/tobii_glasses_pkg" TYPE SHARED_LIBRARY FILES "/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_py/tobii_glasses_pkg/tobii_glasses_pkg_s__rosidl_typesupport_fastrtps_c.cpython-38-x86_64-linux-gnu.so")
-=======
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3.8/site-packages/tobii_glasses_pkg" TYPE SHARED_LIBRARY FILES "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_py/tobii_glasses_pkg/tobii_glasses_pkg_s__rosidl_typesupport_fastrtps_c.cpython-38-x86_64-linux-gnu.so")
->>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3.8/site-packages/tobii_glasses_pkg" TYPE SHARED_LIBRARY FILES "/root/build/tobii_glasses_pkg/rosidl_generator_py/tobii_glasses_pkg/tobii_glasses_pkg_s__rosidl_typesupport_fastrtps_c.cpython-38-x86_64-linux-gnu.so")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/python3.8/site-packages/tobii_glasses_pkg/tobii_glasses_pkg_s__rosidl_typesupport_fastrtps_c.cpython-38-x86_64-linux-gnu.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/python3.8/site-packages/tobii_glasses_pkg/tobii_glasses_pkg_s__rosidl_typesupport_fastrtps_c.cpython-38-x86_64-linux-gnu.so")
     file(RPATH_CHANGE
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/python3.8/site-packages/tobii_glasses_pkg/tobii_glasses_pkg_s__rosidl_typesupport_fastrtps_c.cpython-38-x86_64-linux-gnu.so"
-<<<<<<< HEAD
-         OLD_RPATH "/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_py/tobii_glasses_pkg:/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg:/opt/ros/foxy/lib:/opt/ros/foxy/share/builtin_interfaces/cmake/../../../lib:/opt/ros/foxy/share/sensor_msgs/cmake/../../../lib:/opt/ros/foxy/share/geometry_msgs/cmake/../../../lib:/opt/ros/foxy/share/std_msgs/cmake/../../../lib:"
-=======
-         OLD_RPATH "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_py/tobii_glasses_pkg:/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg:/opt/ros/foxy/lib:/opt/ros/foxy/share/builtin_interfaces/cmake/../../../lib:/opt/ros/foxy/share/sensor_msgs/cmake/../../../lib:/opt/ros/foxy/share/geometry_msgs/cmake/../../../lib:/opt/ros/foxy/share/std_msgs/cmake/../../../lib:"
->>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
+         OLD_RPATH "/root/build/tobii_glasses_pkg/rosidl_generator_py/tobii_glasses_pkg:/root/build/tobii_glasses_pkg:/opt/ros/foxy/lib:/opt/ros/foxy/share/builtin_interfaces/cmake/../../../lib:/opt/ros/foxy/share/sensor_msgs/cmake/../../../lib:/opt/ros/foxy/share/geometry_msgs/cmake/../../../lib:/opt/ros/foxy/share/std_msgs/cmake/../../../lib:"
          NEW_RPATH "")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/python3.8/site-packages/tobii_glasses_pkg/tobii_glasses_pkg_s__rosidl_typesupport_fastrtps_c.cpython-38-x86_64-linux-gnu.so")
@@ -428,20 +308,12 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/python3.8/site-packages/tobii_glasses_pkg/tobii_glasses_pkg_s__rosidl_typesupport_introspection_c.cpython-38-x86_64-linux-gnu.so"
          RPATH "")
   endif()
-<<<<<<< HEAD
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3.8/site-packages/tobii_glasses_pkg" TYPE SHARED_LIBRARY FILES "/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_py/tobii_glasses_pkg/tobii_glasses_pkg_s__rosidl_typesupport_introspection_c.cpython-38-x86_64-linux-gnu.so")
-=======
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3.8/site-packages/tobii_glasses_pkg" TYPE SHARED_LIBRARY FILES "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_py/tobii_glasses_pkg/tobii_glasses_pkg_s__rosidl_typesupport_introspection_c.cpython-38-x86_64-linux-gnu.so")
->>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3.8/site-packages/tobii_glasses_pkg" TYPE SHARED_LIBRARY FILES "/root/build/tobii_glasses_pkg/rosidl_generator_py/tobii_glasses_pkg/tobii_glasses_pkg_s__rosidl_typesupport_introspection_c.cpython-38-x86_64-linux-gnu.so")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/python3.8/site-packages/tobii_glasses_pkg/tobii_glasses_pkg_s__rosidl_typesupport_introspection_c.cpython-38-x86_64-linux-gnu.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/python3.8/site-packages/tobii_glasses_pkg/tobii_glasses_pkg_s__rosidl_typesupport_introspection_c.cpython-38-x86_64-linux-gnu.so")
     file(RPATH_CHANGE
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/python3.8/site-packages/tobii_glasses_pkg/tobii_glasses_pkg_s__rosidl_typesupport_introspection_c.cpython-38-x86_64-linux-gnu.so"
-<<<<<<< HEAD
-         OLD_RPATH "/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_py/tobii_glasses_pkg:/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg:/opt/ros/foxy/lib:/opt/ros/foxy/share/builtin_interfaces/cmake/../../../lib:/opt/ros/foxy/share/sensor_msgs/cmake/../../../lib:/opt/ros/foxy/share/geometry_msgs/cmake/../../../lib:/opt/ros/foxy/share/std_msgs/cmake/../../../lib:"
-=======
-         OLD_RPATH "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_py/tobii_glasses_pkg:/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg:/opt/ros/foxy/lib:/opt/ros/foxy/share/builtin_interfaces/cmake/../../../lib:/opt/ros/foxy/share/sensor_msgs/cmake/../../../lib:/opt/ros/foxy/share/geometry_msgs/cmake/../../../lib:/opt/ros/foxy/share/std_msgs/cmake/../../../lib:"
->>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
+         OLD_RPATH "/root/build/tobii_glasses_pkg/rosidl_generator_py/tobii_glasses_pkg:/root/build/tobii_glasses_pkg:/opt/ros/foxy/lib:/opt/ros/foxy/share/builtin_interfaces/cmake/../../../lib:/opt/ros/foxy/share/sensor_msgs/cmake/../../../lib:/opt/ros/foxy/share/geometry_msgs/cmake/../../../lib:/opt/ros/foxy/share/std_msgs/cmake/../../../lib:"
          NEW_RPATH "")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/python3.8/site-packages/tobii_glasses_pkg/tobii_glasses_pkg_s__rosidl_typesupport_introspection_c.cpython-38-x86_64-linux-gnu.so")
@@ -459,20 +331,12 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/python3.8/site-packages/tobii_glasses_pkg/tobii_glasses_pkg_s__rosidl_typesupport_c.cpython-38-x86_64-linux-gnu.so"
          RPATH "")
   endif()
-<<<<<<< HEAD
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3.8/site-packages/tobii_glasses_pkg" TYPE SHARED_LIBRARY FILES "/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_py/tobii_glasses_pkg/tobii_glasses_pkg_s__rosidl_typesupport_c.cpython-38-x86_64-linux-gnu.so")
-=======
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3.8/site-packages/tobii_glasses_pkg" TYPE SHARED_LIBRARY FILES "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_py/tobii_glasses_pkg/tobii_glasses_pkg_s__rosidl_typesupport_c.cpython-38-x86_64-linux-gnu.so")
->>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3.8/site-packages/tobii_glasses_pkg" TYPE SHARED_LIBRARY FILES "/root/build/tobii_glasses_pkg/rosidl_generator_py/tobii_glasses_pkg/tobii_glasses_pkg_s__rosidl_typesupport_c.cpython-38-x86_64-linux-gnu.so")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/python3.8/site-packages/tobii_glasses_pkg/tobii_glasses_pkg_s__rosidl_typesupport_c.cpython-38-x86_64-linux-gnu.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/python3.8/site-packages/tobii_glasses_pkg/tobii_glasses_pkg_s__rosidl_typesupport_c.cpython-38-x86_64-linux-gnu.so")
     file(RPATH_CHANGE
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/python3.8/site-packages/tobii_glasses_pkg/tobii_glasses_pkg_s__rosidl_typesupport_c.cpython-38-x86_64-linux-gnu.so"
-<<<<<<< HEAD
-         OLD_RPATH "/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_py/tobii_glasses_pkg:/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg:/opt/ros/foxy/lib:/opt/ros/foxy/share/builtin_interfaces/cmake/../../../lib:/opt/ros/foxy/share/sensor_msgs/cmake/../../../lib:/opt/ros/foxy/share/geometry_msgs/cmake/../../../lib:/opt/ros/foxy/share/std_msgs/cmake/../../../lib:"
-=======
-         OLD_RPATH "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_py/tobii_glasses_pkg:/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg:/opt/ros/foxy/lib:/opt/ros/foxy/share/builtin_interfaces/cmake/../../../lib:/opt/ros/foxy/share/sensor_msgs/cmake/../../../lib:/opt/ros/foxy/share/geometry_msgs/cmake/../../../lib:/opt/ros/foxy/share/std_msgs/cmake/../../../lib:"
->>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
+         OLD_RPATH "/root/build/tobii_glasses_pkg/rosidl_generator_py/tobii_glasses_pkg:/root/build/tobii_glasses_pkg:/opt/ros/foxy/lib:/opt/ros/foxy/share/builtin_interfaces/cmake/../../../lib:/opt/ros/foxy/share/sensor_msgs/cmake/../../../lib:/opt/ros/foxy/share/geometry_msgs/cmake/../../../lib:/opt/ros/foxy/share/std_msgs/cmake/../../../lib:"
          NEW_RPATH "")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/python3.8/site-packages/tobii_glasses_pkg/tobii_glasses_pkg_s__rosidl_typesupport_c.cpython-38-x86_64-linux-gnu.so")
@@ -490,20 +354,12 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libtobii_glasses_pkg__python.so"
          RPATH "")
   endif()
-<<<<<<< HEAD
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_py/tobii_glasses_pkg/libtobii_glasses_pkg__python.so")
-=======
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_py/tobii_glasses_pkg/libtobii_glasses_pkg__python.so")
->>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/root/build/tobii_glasses_pkg/rosidl_generator_py/tobii_glasses_pkg/libtobii_glasses_pkg__python.so")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libtobii_glasses_pkg__python.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libtobii_glasses_pkg__python.so")
     file(RPATH_CHANGE
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libtobii_glasses_pkg__python.so"
-<<<<<<< HEAD
-         OLD_RPATH "/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg:/opt/ros/foxy/share/builtin_interfaces/cmake/../../../lib:/opt/ros/foxy/share/sensor_msgs/cmake/../../../lib:/opt/ros/foxy/share/geometry_msgs/cmake/../../../lib:/opt/ros/foxy/share/std_msgs/cmake/../../../lib:/opt/ros/foxy/lib:"
-=======
-         OLD_RPATH "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg:/opt/ros/foxy/share/builtin_interfaces/cmake/../../../lib:/opt/ros/foxy/share/sensor_msgs/cmake/../../../lib:/opt/ros/foxy/share/geometry_msgs/cmake/../../../lib:/opt/ros/foxy/share/std_msgs/cmake/../../../lib:/opt/ros/foxy/lib:"
->>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
+         OLD_RPATH "/root/build/tobii_glasses_pkg:/opt/ros/foxy/share/builtin_interfaces/cmake/../../../lib:/opt/ros/foxy/share/sensor_msgs/cmake/../../../lib:/opt/ros/foxy/share/geometry_msgs/cmake/../../../lib:/opt/ros/foxy/share/std_msgs/cmake/../../../lib:/opt/ros/foxy/lib:"
          NEW_RPATH "")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libtobii_glasses_pkg__python.so")
@@ -515,83 +371,27 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-<<<<<<< HEAD
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/msg" TYPE FILE FILES "/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_adapter/tobii_glasses_pkg/msg/TobiiGlasses.idl")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/msg" TYPE FILE FILES "/root/build/tobii_glasses_pkg/rosidl_adapter/tobii_glasses_pkg/msg/TobiiGlasses.idl")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/msg" TYPE FILE FILES "/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_adapter/tobii_glasses_pkg/msg/GazePosition.idl")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/msg" TYPE FILE FILES "/root/build/tobii_glasses_pkg/rosidl_adapter/tobii_glasses_pkg/msg/EyeData.idl")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/msg" TYPE FILE FILES "/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_adapter/tobii_glasses_pkg/msg/GazePosition3D.idl")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/msg" TYPE FILE FILES "/root/msg/TobiiGlasses.msg")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/msg" TYPE FILE FILES "/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_adapter/tobii_glasses_pkg/msg/EyeData.idl")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/msg" TYPE FILE FILES "/root/msg/EyeData.msg")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/msg" TYPE FILE FILES "/home/ema/workspaces/ros2_tobii_glasses2/msg/TobiiGlasses.msg")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/package_run_dependencies" TYPE FILE FILES "/root/build/tobii_glasses_pkg/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/tobii_glasses_pkg")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/msg" TYPE FILE FILES "/home/ema/workspaces/ros2_tobii_glasses2/msg/GazePosition.msg")
-endif()
-
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/msg" TYPE FILE FILES "/home/ema/workspaces/ros2_tobii_glasses2/msg/GazePosition3D.msg")
-endif()
-
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/msg" TYPE FILE FILES "/home/ema/workspaces/ros2_tobii_glasses2/msg/EyeData.msg")
-endif()
-
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/package_run_dependencies" TYPE FILE FILES "/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/tobii_glasses_pkg")
-endif()
-
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/parent_prefix_path" TYPE FILE FILES "/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/tobii_glasses_pkg")
-=======
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/msg" TYPE FILE FILES "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_adapter/tobii_glasses_pkg/msg/TobiiGlasses.idl")
-endif()
-
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/msg" TYPE FILE FILES "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_adapter/tobii_glasses_pkg/msg/GazePosition.idl")
-endif()
-
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/msg" TYPE FILE FILES "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_adapter/tobii_glasses_pkg/msg/GazePosition3D.idl")
-endif()
-
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/msg" TYPE FILE FILES "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_adapter/tobii_glasses_pkg/msg/EyeData.idl")
-endif()
-
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/msg" TYPE FILE FILES "/home/usr/workspaces/ros2_tobii_glasses2/msg/TobiiGlasses.msg")
-endif()
-
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/msg" TYPE FILE FILES "/home/usr/workspaces/ros2_tobii_glasses2/msg/GazePosition.msg")
-endif()
-
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/msg" TYPE FILE FILES "/home/usr/workspaces/ros2_tobii_glasses2/msg/GazePosition3D.msg")
-endif()
-
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/msg" TYPE FILE FILES "/home/usr/workspaces/ros2_tobii_glasses2/msg/EyeData.msg")
-endif()
-
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/package_run_dependencies" TYPE FILE FILES "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/tobii_glasses_pkg")
-endif()
-
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/parent_prefix_path" TYPE FILE FILES "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/tobii_glasses_pkg")
->>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/parent_prefix_path" TYPE FILE FILES "/root/build/tobii_glasses_pkg/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/tobii_glasses_pkg")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -599,11 +399,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-<<<<<<< HEAD
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/environment" TYPE FILE FILES "/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/ament_cmake_environment_hooks/ament_prefix_path.dsv")
-=======
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/environment" TYPE FILE FILES "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/ament_cmake_environment_hooks/ament_prefix_path.dsv")
->>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/environment" TYPE FILE FILES "/root/build/tobii_glasses_pkg/ament_cmake_environment_hooks/ament_prefix_path.dsv")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -611,70 +407,38 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-<<<<<<< HEAD
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/environment" TYPE FILE FILES "/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/ament_cmake_environment_hooks/path.dsv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/environment" TYPE FILE FILES "/root/build/tobii_glasses_pkg/ament_cmake_environment_hooks/path.dsv")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg" TYPE FILE FILES "/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/ament_cmake_environment_hooks/local_setup.bash")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg" TYPE FILE FILES "/root/build/tobii_glasses_pkg/ament_cmake_environment_hooks/local_setup.bash")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg" TYPE FILE FILES "/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/ament_cmake_environment_hooks/local_setup.sh")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg" TYPE FILE FILES "/root/build/tobii_glasses_pkg/ament_cmake_environment_hooks/local_setup.sh")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg" TYPE FILE FILES "/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/ament_cmake_environment_hooks/local_setup.zsh")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg" TYPE FILE FILES "/root/build/tobii_glasses_pkg/ament_cmake_environment_hooks/local_setup.zsh")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg" TYPE FILE FILES "/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/ament_cmake_environment_hooks/local_setup.dsv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg" TYPE FILE FILES "/root/build/tobii_glasses_pkg/ament_cmake_environment_hooks/local_setup.dsv")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg" TYPE FILE FILES "/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/ament_cmake_environment_hooks/package.dsv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg" TYPE FILE FILES "/root/build/tobii_glasses_pkg/ament_cmake_environment_hooks/package.dsv")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/packages" TYPE FILE FILES "/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/ament_cmake_index/share/ament_index/resource_index/packages/tobii_glasses_pkg")
-=======
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/environment" TYPE FILE FILES "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/ament_cmake_environment_hooks/path.dsv")
-endif()
-
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg" TYPE FILE FILES "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/ament_cmake_environment_hooks/local_setup.bash")
-endif()
-
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg" TYPE FILE FILES "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/ament_cmake_environment_hooks/local_setup.sh")
-endif()
-
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg" TYPE FILE FILES "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/ament_cmake_environment_hooks/local_setup.zsh")
-endif()
-
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg" TYPE FILE FILES "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/ament_cmake_environment_hooks/local_setup.dsv")
-endif()
-
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg" TYPE FILE FILES "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/ament_cmake_environment_hooks/package.dsv")
-endif()
-
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/packages" TYPE FILE FILES "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/ament_cmake_index/share/ament_index/resource_index/packages/tobii_glasses_pkg")
->>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/packages" TYPE FILE FILES "/root/build/tobii_glasses_pkg/ament_cmake_index/share/ament_index/resource_index/packages/tobii_glasses_pkg")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_generator_cExport.cmake")
     file(DIFFERENT EXPORT_FILE_CHANGED FILES
          "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_generator_cExport.cmake"
-<<<<<<< HEAD
-         "/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/Export/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_generator_cExport.cmake")
-=======
-         "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/Export/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_generator_cExport.cmake")
->>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
+         "/root/build/tobii_glasses_pkg/CMakeFiles/Export/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_generator_cExport.cmake")
     if(EXPORT_FILE_CHANGED)
       file(GLOB OLD_CONFIG_FILES "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_generator_cExport-*.cmake")
       if(OLD_CONFIG_FILES)
@@ -683,15 +447,9 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
       endif()
     endif()
   endif()
-<<<<<<< HEAD
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/cmake" TYPE FILE FILES "/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/Export/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_generator_cExport.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/cmake" TYPE FILE FILES "/root/build/tobii_glasses_pkg/CMakeFiles/Export/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_generator_cExport.cmake")
   if("${CMAKE_INSTALL_CONFIG_NAME}" MATCHES "^()$")
-    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/cmake" TYPE FILE FILES "/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/Export/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_generator_cExport-noconfig.cmake")
-=======
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/cmake" TYPE FILE FILES "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/Export/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_generator_cExport.cmake")
-  if("${CMAKE_INSTALL_CONFIG_NAME}" MATCHES "^()$")
-    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/cmake" TYPE FILE FILES "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/Export/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_generator_cExport-noconfig.cmake")
->>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/cmake" TYPE FILE FILES "/root/build/tobii_glasses_pkg/CMakeFiles/Export/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_generator_cExport-noconfig.cmake")
   endif()
 endif()
 
@@ -699,11 +457,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_typesupport_introspection_cExport.cmake")
     file(DIFFERENT EXPORT_FILE_CHANGED FILES
          "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_typesupport_introspection_cExport.cmake"
-<<<<<<< HEAD
-         "/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/Export/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_typesupport_introspection_cExport.cmake")
-=======
-         "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/Export/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_typesupport_introspection_cExport.cmake")
->>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
+         "/root/build/tobii_glasses_pkg/CMakeFiles/Export/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_typesupport_introspection_cExport.cmake")
     if(EXPORT_FILE_CHANGED)
       file(GLOB OLD_CONFIG_FILES "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_typesupport_introspection_cExport-*.cmake")
       if(OLD_CONFIG_FILES)
@@ -712,15 +466,9 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
       endif()
     endif()
   endif()
-<<<<<<< HEAD
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/cmake" TYPE FILE FILES "/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/Export/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_typesupport_introspection_cExport.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/cmake" TYPE FILE FILES "/root/build/tobii_glasses_pkg/CMakeFiles/Export/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_typesupport_introspection_cExport.cmake")
   if("${CMAKE_INSTALL_CONFIG_NAME}" MATCHES "^()$")
-    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/cmake" TYPE FILE FILES "/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/Export/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_typesupport_introspection_cExport-noconfig.cmake")
-=======
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/cmake" TYPE FILE FILES "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/Export/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_typesupport_introspection_cExport.cmake")
-  if("${CMAKE_INSTALL_CONFIG_NAME}" MATCHES "^()$")
-    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/cmake" TYPE FILE FILES "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/Export/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_typesupport_introspection_cExport-noconfig.cmake")
->>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/cmake" TYPE FILE FILES "/root/build/tobii_glasses_pkg/CMakeFiles/Export/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_typesupport_introspection_cExport-noconfig.cmake")
   endif()
 endif()
 
@@ -728,11 +476,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_typesupport_cExport.cmake")
     file(DIFFERENT EXPORT_FILE_CHANGED FILES
          "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_typesupport_cExport.cmake"
-<<<<<<< HEAD
-         "/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/Export/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_typesupport_cExport.cmake")
-=======
-         "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/Export/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_typesupport_cExport.cmake")
->>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
+         "/root/build/tobii_glasses_pkg/CMakeFiles/Export/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_typesupport_cExport.cmake")
     if(EXPORT_FILE_CHANGED)
       file(GLOB OLD_CONFIG_FILES "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_typesupport_cExport-*.cmake")
       if(OLD_CONFIG_FILES)
@@ -741,15 +485,9 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
       endif()
     endif()
   endif()
-<<<<<<< HEAD
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/cmake" TYPE FILE FILES "/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/Export/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_typesupport_cExport.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/cmake" TYPE FILE FILES "/root/build/tobii_glasses_pkg/CMakeFiles/Export/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_typesupport_cExport.cmake")
   if("${CMAKE_INSTALL_CONFIG_NAME}" MATCHES "^()$")
-    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/cmake" TYPE FILE FILES "/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/Export/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_typesupport_cExport-noconfig.cmake")
-=======
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/cmake" TYPE FILE FILES "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/Export/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_typesupport_cExport.cmake")
-  if("${CMAKE_INSTALL_CONFIG_NAME}" MATCHES "^()$")
-    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/cmake" TYPE FILE FILES "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/Export/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_typesupport_cExport-noconfig.cmake")
->>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/cmake" TYPE FILE FILES "/root/build/tobii_glasses_pkg/CMakeFiles/Export/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_typesupport_cExport-noconfig.cmake")
   endif()
 endif()
 
@@ -757,11 +495,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_generator_cppExport.cmake")
     file(DIFFERENT EXPORT_FILE_CHANGED FILES
          "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_generator_cppExport.cmake"
-<<<<<<< HEAD
-         "/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/Export/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_generator_cppExport.cmake")
-=======
-         "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/Export/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_generator_cppExport.cmake")
->>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
+         "/root/build/tobii_glasses_pkg/CMakeFiles/Export/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_generator_cppExport.cmake")
     if(EXPORT_FILE_CHANGED)
       file(GLOB OLD_CONFIG_FILES "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_generator_cppExport-*.cmake")
       if(OLD_CONFIG_FILES)
@@ -770,22 +504,14 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
       endif()
     endif()
   endif()
-<<<<<<< HEAD
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/cmake" TYPE FILE FILES "/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/Export/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_generator_cppExport.cmake")
-=======
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/cmake" TYPE FILE FILES "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/Export/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_generator_cppExport.cmake")
->>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/cmake" TYPE FILE FILES "/root/build/tobii_glasses_pkg/CMakeFiles/Export/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_generator_cppExport.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_typesupport_introspection_cppExport.cmake")
     file(DIFFERENT EXPORT_FILE_CHANGED FILES
          "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_typesupport_introspection_cppExport.cmake"
-<<<<<<< HEAD
-         "/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/Export/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_typesupport_introspection_cppExport.cmake")
-=======
-         "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/Export/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_typesupport_introspection_cppExport.cmake")
->>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
+         "/root/build/tobii_glasses_pkg/CMakeFiles/Export/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_typesupport_introspection_cppExport.cmake")
     if(EXPORT_FILE_CHANGED)
       file(GLOB OLD_CONFIG_FILES "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_typesupport_introspection_cppExport-*.cmake")
       if(OLD_CONFIG_FILES)
@@ -794,15 +520,9 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
       endif()
     endif()
   endif()
-<<<<<<< HEAD
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/cmake" TYPE FILE FILES "/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/Export/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_typesupport_introspection_cppExport.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/cmake" TYPE FILE FILES "/root/build/tobii_glasses_pkg/CMakeFiles/Export/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_typesupport_introspection_cppExport.cmake")
   if("${CMAKE_INSTALL_CONFIG_NAME}" MATCHES "^()$")
-    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/cmake" TYPE FILE FILES "/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/Export/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_typesupport_introspection_cppExport-noconfig.cmake")
-=======
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/cmake" TYPE FILE FILES "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/Export/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_typesupport_introspection_cppExport.cmake")
-  if("${CMAKE_INSTALL_CONFIG_NAME}" MATCHES "^()$")
-    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/cmake" TYPE FILE FILES "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/Export/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_typesupport_introspection_cppExport-noconfig.cmake")
->>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/cmake" TYPE FILE FILES "/root/build/tobii_glasses_pkg/CMakeFiles/Export/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_typesupport_introspection_cppExport-noconfig.cmake")
   endif()
 endif()
 
@@ -810,11 +530,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_typesupport_cppExport.cmake")
     file(DIFFERENT EXPORT_FILE_CHANGED FILES
          "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_typesupport_cppExport.cmake"
-<<<<<<< HEAD
-         "/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/Export/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_typesupport_cppExport.cmake")
-=======
-         "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/Export/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_typesupport_cppExport.cmake")
->>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
+         "/root/build/tobii_glasses_pkg/CMakeFiles/Export/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_typesupport_cppExport.cmake")
     if(EXPORT_FILE_CHANGED)
       file(GLOB OLD_CONFIG_FILES "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_typesupport_cppExport-*.cmake")
       if(OLD_CONFIG_FILES)
@@ -823,101 +539,54 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
       endif()
     endif()
   endif()
-<<<<<<< HEAD
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/cmake" TYPE FILE FILES "/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/Export/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_typesupport_cppExport.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/cmake" TYPE FILE FILES "/root/build/tobii_glasses_pkg/CMakeFiles/Export/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_typesupport_cppExport.cmake")
   if("${CMAKE_INSTALL_CONFIG_NAME}" MATCHES "^()$")
-    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/cmake" TYPE FILE FILES "/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/Export/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_typesupport_cppExport-noconfig.cmake")
-=======
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/cmake" TYPE FILE FILES "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/Export/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_typesupport_cppExport.cmake")
-  if("${CMAKE_INSTALL_CONFIG_NAME}" MATCHES "^()$")
-    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/cmake" TYPE FILE FILES "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/Export/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_typesupport_cppExport-noconfig.cmake")
->>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/cmake" TYPE FILE FILES "/root/build/tobii_glasses_pkg/CMakeFiles/Export/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_typesupport_cppExport-noconfig.cmake")
   endif()
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-<<<<<<< HEAD
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/cmake" TYPE FILE FILES "/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_cmake/rosidl_cmake-extras.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/cmake" TYPE FILE FILES "/root/build/tobii_glasses_pkg/rosidl_cmake/rosidl_cmake-extras.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/cmake" TYPE FILE FILES "/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/ament_cmake_export_dependencies/ament_cmake_export_dependencies-extras.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/cmake" TYPE FILE FILES "/root/build/tobii_glasses_pkg/ament_cmake_export_dependencies/ament_cmake_export_dependencies-extras.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/cmake" TYPE FILE FILES "/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/ament_cmake_export_libraries/ament_cmake_export_libraries-extras.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/cmake" TYPE FILE FILES "/root/build/tobii_glasses_pkg/ament_cmake_export_libraries/ament_cmake_export_libraries-extras.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/cmake" TYPE FILE FILES "/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/ament_cmake_export_targets/ament_cmake_export_targets-extras.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/cmake" TYPE FILE FILES "/root/build/tobii_glasses_pkg/ament_cmake_export_targets/ament_cmake_export_targets-extras.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/cmake" TYPE FILE FILES "/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/ament_cmake_export_include_directories/ament_cmake_export_include_directories-extras.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/cmake" TYPE FILE FILES "/root/build/tobii_glasses_pkg/ament_cmake_export_include_directories/ament_cmake_export_include_directories-extras.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/cmake" TYPE FILE FILES "/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/cmake" TYPE FILE FILES "/root/build/tobii_glasses_pkg/rosidl_cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/cmake" TYPE FILE FILES "/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_cmake/rosidl_cmake_export_typesupport_targets-extras.cmake")
-=======
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/cmake" TYPE FILE FILES "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_cmake/rosidl_cmake-extras.cmake")
-endif()
-
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/cmake" TYPE FILE FILES "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/ament_cmake_export_dependencies/ament_cmake_export_dependencies-extras.cmake")
-endif()
-
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/cmake" TYPE FILE FILES "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/ament_cmake_export_libraries/ament_cmake_export_libraries-extras.cmake")
-endif()
-
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/cmake" TYPE FILE FILES "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/ament_cmake_export_targets/ament_cmake_export_targets-extras.cmake")
-endif()
-
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/cmake" TYPE FILE FILES "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/ament_cmake_export_include_directories/ament_cmake_export_include_directories-extras.cmake")
-endif()
-
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/cmake" TYPE FILE FILES "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake")
-endif()
-
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/cmake" TYPE FILE FILES "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_cmake/rosidl_cmake_export_typesupport_targets-extras.cmake")
->>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/cmake" TYPE FILE FILES "/root/build/tobii_glasses_pkg/rosidl_cmake/rosidl_cmake_export_typesupport_targets-extras.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg/cmake" TYPE FILE FILES
-<<<<<<< HEAD
-    "/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/ament_cmake_core/tobii_glasses_pkgConfig.cmake"
-    "/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/ament_cmake_core/tobii_glasses_pkgConfig-version.cmake"
-=======
-    "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/ament_cmake_core/tobii_glasses_pkgConfig.cmake"
-    "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/ament_cmake_core/tobii_glasses_pkgConfig-version.cmake"
->>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
+    "/root/build/tobii_glasses_pkg/ament_cmake_core/tobii_glasses_pkgConfig.cmake"
+    "/root/build/tobii_glasses_pkg/ament_cmake_core/tobii_glasses_pkgConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-<<<<<<< HEAD
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg" TYPE FILE FILES "/home/ema/workspaces/ros2_tobii_glasses2/package.xml")
-=======
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg" TYPE FILE FILES "/home/usr/workspaces/ros2_tobii_glasses2/package.xml")
->>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tobii_glasses_pkg" TYPE FILE FILES "/root/package.xml")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-<<<<<<< HEAD
-  include("/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/tobii_glasses_pkg__py/cmake_install.cmake")
-=======
-  include("/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/tobii_glasses_pkg__py/cmake_install.cmake")
->>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
+  include("/root/build/tobii_glasses_pkg/tobii_glasses_pkg__py/cmake_install.cmake")
 
 endif()
 
@@ -929,9 +598,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-<<<<<<< HEAD
-file(WRITE "/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/${CMAKE_INSTALL_MANIFEST}"
-=======
-file(WRITE "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/${CMAKE_INSTALL_MANIFEST}"
->>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
+file(WRITE "/root/build/tobii_glasses_pkg/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

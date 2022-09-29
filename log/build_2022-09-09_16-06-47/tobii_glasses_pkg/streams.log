@@ -1,9 +1,0 @@
-[0.015s] Invoking command in '/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg': /usr/bin/cmake --build /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg -- -j8 -l8
-[0.038s] CMake Error at CMakeLists.txt:32:
-[0.038s]   Parse error.  Expected a newline, got identifier with text "a".
-[0.039s] 
-[0.039s] 
-[0.039s] -- Configuring incomplete, errors occurred!
-[0.039s] See also "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/CMakeOutput.log".
-[0.040s] make: *** [Makefile:1468: cmake_check_build_system] Error 1
-[0.042s] Invoked command in '/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg' returned '2': /usr/bin/cmake --build /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg -- -j8 -l8

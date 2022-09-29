@@ -5,6 +5,12 @@
 
 # Import statements for member types
 
+# Member 'gaze_position'
+# Member 'gaze_position_3d'
+# Member 'acelerometer'
+# Member 'gyroscope'
+import numpy  # noqa: E402, I100
+
 import rosidl_parser.definition  # noqa: E402, I100
 
 
@@ -52,14 +58,6 @@ class Metaclass_TobiiGlasses(type):
             if EyeData.__class__._TYPE_SUPPORT is None:
                 EyeData.__class__.__import_type_support__()
 
-            from tobii_glasses_pkg.msg import GazePosition
-            if GazePosition.__class__._TYPE_SUPPORT is None:
-                GazePosition.__class__.__import_type_support__()
-
-            from tobii_glasses_pkg.msg import GazePosition3D
-            if GazePosition3D.__class__._TYPE_SUPPORT is None:
-                GazePosition3D.__class__.__import_type_support__()
-
     @classmethod
     def __prepare__(cls, name, bases, **kwargs):
         # list constant names here so that they appear in the help text of
@@ -79,24 +77,30 @@ class TobiiGlasses(metaclass=Metaclass_TobiiGlasses):
         '_gaze_position_3d',
         '_right_eye',
         '_left_eye',
+        '_acelerometer',
+        '_gyroscope',
     ]
 
     _fields_and_field_types = {
         'header': 'std_msgs/Header',
         'camera_image': 'sensor_msgs/Image',
-        'gaze_position': 'tobii_glasses_pkg/GazePosition',
-        'gaze_position_3d': 'tobii_glasses_pkg/GazePosition3D',
+        'gaze_position': 'float[2]',
+        'gaze_position_3d': 'float[3]',
         'right_eye': 'tobii_glasses_pkg/EyeData',
         'left_eye': 'tobii_glasses_pkg/EyeData',
+        'acelerometer': 'float[3]',
+        'gyroscope': 'float[3]',
     }
 
     SLOT_TYPES = (
         rosidl_parser.definition.NamespacedType(['std_msgs', 'msg'], 'Header'),  # noqa: E501
         rosidl_parser.definition.NamespacedType(['sensor_msgs', 'msg'], 'Image'),  # noqa: E501
-        rosidl_parser.definition.NamespacedType(['tobii_glasses_pkg', 'msg'], 'GazePosition'),  # noqa: E501
-        rosidl_parser.definition.NamespacedType(['tobii_glasses_pkg', 'msg'], 'GazePosition3D'),  # noqa: E501
+        rosidl_parser.definition.Array(rosidl_parser.definition.BasicType('float'), 2),  # noqa: E501
+        rosidl_parser.definition.Array(rosidl_parser.definition.BasicType('float'), 3),  # noqa: E501
         rosidl_parser.definition.NamespacedType(['tobii_glasses_pkg', 'msg'], 'EyeData'),  # noqa: E501
         rosidl_parser.definition.NamespacedType(['tobii_glasses_pkg', 'msg'], 'EyeData'),  # noqa: E501
+        rosidl_parser.definition.Array(rosidl_parser.definition.BasicType('float'), 3),  # noqa: E501
+        rosidl_parser.definition.Array(rosidl_parser.definition.BasicType('float'), 3),  # noqa: E501
     )
 
     def __init__(self, **kwargs):
@@ -107,14 +111,30 @@ class TobiiGlasses(metaclass=Metaclass_TobiiGlasses):
         self.header = kwargs.get('header', Header())
         from sensor_msgs.msg import Image
         self.camera_image = kwargs.get('camera_image', Image())
-        from tobii_glasses_pkg.msg import GazePosition
-        self.gaze_position = kwargs.get('gaze_position', GazePosition())
-        from tobii_glasses_pkg.msg import GazePosition3D
-        self.gaze_position_3d = kwargs.get('gaze_position_3d', GazePosition3D())
+        if 'gaze_position' not in kwargs:
+            self.gaze_position = numpy.zeros(2, dtype=numpy.float32)
+        else:
+            self.gaze_position = numpy.array(kwargs.get('gaze_position'), dtype=numpy.float32)
+            assert self.gaze_position.shape == (2, )
+        if 'gaze_position_3d' not in kwargs:
+            self.gaze_position_3d = numpy.zeros(3, dtype=numpy.float32)
+        else:
+            self.gaze_position_3d = numpy.array(kwargs.get('gaze_position_3d'), dtype=numpy.float32)
+            assert self.gaze_position_3d.shape == (3, )
         from tobii_glasses_pkg.msg import EyeData
         self.right_eye = kwargs.get('right_eye', EyeData())
         from tobii_glasses_pkg.msg import EyeData
         self.left_eye = kwargs.get('left_eye', EyeData())
+        if 'acelerometer' not in kwargs:
+            self.acelerometer = numpy.zeros(3, dtype=numpy.float32)
+        else:
+            self.acelerometer = numpy.array(kwargs.get('acelerometer'), dtype=numpy.float32)
+            assert self.acelerometer.shape == (3, )
+        if 'gyroscope' not in kwargs:
+            self.gyroscope = numpy.zeros(3, dtype=numpy.float32)
+        else:
+            self.gyroscope = numpy.array(kwargs.get('gyroscope'), dtype=numpy.float32)
+            assert self.gyroscope.shape == (3, )
 
     def __repr__(self):
         typename = self.__class__.__module__.split('.')
@@ -149,13 +169,17 @@ class TobiiGlasses(metaclass=Metaclass_TobiiGlasses):
             return False
         if self.camera_image != other.camera_image:
             return False
-        if self.gaze_position != other.gaze_position:
+        if all(self.gaze_position != other.gaze_position):
             return False
-        if self.gaze_position_3d != other.gaze_position_3d:
+        if all(self.gaze_position_3d != other.gaze_position_3d):
             return False
         if self.right_eye != other.right_eye:
             return False
         if self.left_eye != other.left_eye:
+            return False
+        if all(self.acelerometer != other.acelerometer):
+            return False
+        if all(self.gyroscope != other.gyroscope):
             return False
         return True
 
@@ -199,12 +223,29 @@ class TobiiGlasses(metaclass=Metaclass_TobiiGlasses):
 
     @gaze_position.setter
     def gaze_position(self, value):
+        if isinstance(value, numpy.ndarray):
+            assert value.dtype == numpy.float32, \
+                "The 'gaze_position' numpy.ndarray() must have the dtype of 'numpy.float32'"
+            assert value.size == 2, \
+                "The 'gaze_position' numpy.ndarray() must have a size of 2"
+            self._gaze_position = value
+            return
         if __debug__:
-            from tobii_glasses_pkg.msg import GazePosition
+            from collections.abc import Sequence
+            from collections.abc import Set
+            from collections import UserList
+            from collections import UserString
             assert \
-                isinstance(value, GazePosition), \
-                "The 'gaze_position' field must be a sub message of type 'GazePosition'"
-        self._gaze_position = value
+                ((isinstance(value, Sequence) or
+                  isinstance(value, Set) or
+                  isinstance(value, UserList)) and
+                 not isinstance(value, str) and
+                 not isinstance(value, UserString) and
+                 len(value) == 2 and
+                 all(isinstance(v, float) for v in value) and
+                 True), \
+                "The 'gaze_position' field must be a set or sequence with length 2 and each value of type 'float'"
+        self._gaze_position = numpy.array(value, dtype=numpy.float32)
 
     @property
     def gaze_position_3d(self):
@@ -213,12 +254,29 @@ class TobiiGlasses(metaclass=Metaclass_TobiiGlasses):
 
     @gaze_position_3d.setter
     def gaze_position_3d(self, value):
+        if isinstance(value, numpy.ndarray):
+            assert value.dtype == numpy.float32, \
+                "The 'gaze_position_3d' numpy.ndarray() must have the dtype of 'numpy.float32'"
+            assert value.size == 3, \
+                "The 'gaze_position_3d' numpy.ndarray() must have a size of 3"
+            self._gaze_position_3d = value
+            return
         if __debug__:
-            from tobii_glasses_pkg.msg import GazePosition3D
+            from collections.abc import Sequence
+            from collections.abc import Set
+            from collections import UserList
+            from collections import UserString
             assert \
-                isinstance(value, GazePosition3D), \
-                "The 'gaze_position_3d' field must be a sub message of type 'GazePosition3D'"
-        self._gaze_position_3d = value
+                ((isinstance(value, Sequence) or
+                  isinstance(value, Set) or
+                  isinstance(value, UserList)) and
+                 not isinstance(value, str) and
+                 not isinstance(value, UserString) and
+                 len(value) == 3 and
+                 all(isinstance(v, float) for v in value) and
+                 True), \
+                "The 'gaze_position_3d' field must be a set or sequence with length 3 and each value of type 'float'"
+        self._gaze_position_3d = numpy.array(value, dtype=numpy.float32)
 
     @property
     def right_eye(self):
@@ -247,3 +305,65 @@ class TobiiGlasses(metaclass=Metaclass_TobiiGlasses):
                 isinstance(value, EyeData), \
                 "The 'left_eye' field must be a sub message of type 'EyeData'"
         self._left_eye = value
+
+    @property
+    def acelerometer(self):
+        """Message field 'acelerometer'."""
+        return self._acelerometer
+
+    @acelerometer.setter
+    def acelerometer(self, value):
+        if isinstance(value, numpy.ndarray):
+            assert value.dtype == numpy.float32, \
+                "The 'acelerometer' numpy.ndarray() must have the dtype of 'numpy.float32'"
+            assert value.size == 3, \
+                "The 'acelerometer' numpy.ndarray() must have a size of 3"
+            self._acelerometer = value
+            return
+        if __debug__:
+            from collections.abc import Sequence
+            from collections.abc import Set
+            from collections import UserList
+            from collections import UserString
+            assert \
+                ((isinstance(value, Sequence) or
+                  isinstance(value, Set) or
+                  isinstance(value, UserList)) and
+                 not isinstance(value, str) and
+                 not isinstance(value, UserString) and
+                 len(value) == 3 and
+                 all(isinstance(v, float) for v in value) and
+                 True), \
+                "The 'acelerometer' field must be a set or sequence with length 3 and each value of type 'float'"
+        self._acelerometer = numpy.array(value, dtype=numpy.float32)
+
+    @property
+    def gyroscope(self):
+        """Message field 'gyroscope'."""
+        return self._gyroscope
+
+    @gyroscope.setter
+    def gyroscope(self, value):
+        if isinstance(value, numpy.ndarray):
+            assert value.dtype == numpy.float32, \
+                "The 'gyroscope' numpy.ndarray() must have the dtype of 'numpy.float32'"
+            assert value.size == 3, \
+                "The 'gyroscope' numpy.ndarray() must have a size of 3"
+            self._gyroscope = value
+            return
+        if __debug__:
+            from collections.abc import Sequence
+            from collections.abc import Set
+            from collections import UserList
+            from collections import UserString
+            assert \
+                ((isinstance(value, Sequence) or
+                  isinstance(value, Set) or
+                  isinstance(value, UserList)) and
+                 not isinstance(value, str) and
+                 not isinstance(value, UserString) and
+                 len(value) == 3 and
+                 all(isinstance(v, float) for v in value) and
+                 True), \
+                "The 'gyroscope' field must be a set or sequence with length 3 and each value of type 'float'"
+        self._gyroscope = numpy.array(value, dtype=numpy.float32)

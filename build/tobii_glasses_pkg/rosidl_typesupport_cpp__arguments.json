@@ -1,22 +1,10 @@
 {
   "package_name": "tobii_glasses_pkg",
-<<<<<<< HEAD
-  "output_dir": "/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_cpp/tobii_glasses_pkg",
+  "output_dir": "/root/build/tobii_glasses_pkg/rosidl_typesupport_cpp/tobii_glasses_pkg",
   "template_dir": "/opt/ros/foxy/share/rosidl_typesupport_cpp/resource",
   "idl_tuples": [
-    "/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_adapter/tobii_glasses_pkg:msg/TobiiGlasses.idl",
-    "/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_adapter/tobii_glasses_pkg:msg/GazePosition.idl",
-    "/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_adapter/tobii_glasses_pkg:msg/GazePosition3D.idl",
-    "/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_adapter/tobii_glasses_pkg:msg/EyeData.idl"
-=======
-  "output_dir": "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_cpp/tobii_glasses_pkg",
-  "template_dir": "/opt/ros/foxy/share/rosidl_typesupport_cpp/resource",
-  "idl_tuples": [
-    "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_adapter/tobii_glasses_pkg:msg/TobiiGlasses.idl",
-    "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_adapter/tobii_glasses_pkg:msg/GazePosition.idl",
-    "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_adapter/tobii_glasses_pkg:msg/GazePosition3D.idl",
-    "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_adapter/tobii_glasses_pkg:msg/EyeData.idl"
->>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
+    "/root/build/tobii_glasses_pkg/rosidl_adapter/tobii_glasses_pkg:msg/TobiiGlasses.idl",
+    "/root/build/tobii_glasses_pkg/rosidl_adapter/tobii_glasses_pkg:msg/EyeData.idl"
   ],
   "ros_interface_dependencies": [
     "builtin_interfaces:/opt/ros/foxy/share/builtin_interfaces/msg/Duration.idl",
@@ -116,17 +104,8 @@
     "/opt/ros/foxy/share/rosidl_typesupport_cpp/resource/idl__type_support.cpp.em",
     "/opt/ros/foxy/share/rosidl_typesupport_cpp/resource/msg__type_support.cpp.em",
     "/opt/ros/foxy/share/rosidl_typesupport_cpp/resource/srv__type_support.cpp.em",
-<<<<<<< HEAD
-    "/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_adapter/tobii_glasses_pkg/msg/TobiiGlasses.idl",
-    "/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_adapter/tobii_glasses_pkg/msg/GazePosition.idl",
-    "/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_adapter/tobii_glasses_pkg/msg/GazePosition3D.idl",
-    "/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_adapter/tobii_glasses_pkg/msg/EyeData.idl",
-=======
-    "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_adapter/tobii_glasses_pkg/msg/TobiiGlasses.idl",
-    "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_adapter/tobii_glasses_pkg/msg/GazePosition.idl",
-    "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_adapter/tobii_glasses_pkg/msg/GazePosition3D.idl",
-    "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_adapter/tobii_glasses_pkg/msg/EyeData.idl",
->>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
+    "/root/build/tobii_glasses_pkg/rosidl_adapter/tobii_glasses_pkg/msg/TobiiGlasses.idl",
+    "/root/build/tobii_glasses_pkg/rosidl_adapter/tobii_glasses_pkg/msg/EyeData.idl",
     "/opt/ros/foxy/share/builtin_interfaces/msg/Duration.idl",
     "/opt/ros/foxy/share/builtin_interfaces/msg/Time.idl",
     "/opt/ros/foxy/share/sensor_msgs/msg/BatteryState.idl",

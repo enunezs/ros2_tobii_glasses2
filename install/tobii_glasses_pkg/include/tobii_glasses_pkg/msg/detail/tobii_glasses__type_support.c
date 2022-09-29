@@ -21,14 +21,6 @@
 #include "sensor_msgs/msg/image.h"
 // Member `camera_image`
 #include "sensor_msgs/msg/detail/image__rosidl_typesupport_introspection_c.h"
-// Member `gaze_position`
-#include "tobii_glasses_pkg/msg/gaze_position.h"
-// Member `gaze_position`
-#include "tobii_glasses_pkg/msg/detail/gaze_position__rosidl_typesupport_introspection_c.h"
-// Member `gaze_position_3d`
-#include "tobii_glasses_pkg/msg/gaze_position3_d.h"
-// Member `gaze_position_3d`
-#include "tobii_glasses_pkg/msg/detail/gaze_position3_d__rosidl_typesupport_introspection_c.h"
 // Member `right_eye`
 // Member `left_eye`
 #include "tobii_glasses_pkg/msg/eye_data.h"
@@ -55,7 +47,7 @@ void TobiiGlasses__rosidl_typesupport_introspection_c__TobiiGlasses_fini_functio
   tobii_glasses_pkg__msg__TobiiGlasses__fini(message_memory);
 }
 
-static rosidl_typesupport_introspection_c__MessageMember TobiiGlasses__rosidl_typesupport_introspection_c__TobiiGlasses_message_member_array[6] = {
+static rosidl_typesupport_introspection_c__MessageMember TobiiGlasses__rosidl_typesupport_introspection_c__TobiiGlasses_message_member_array[8] = {
   {
     "header",  // name
     rosidl_typesupport_introspection_c__ROS_TYPE_MESSAGE,  // type
@@ -88,11 +80,11 @@ static rosidl_typesupport_introspection_c__MessageMember TobiiGlasses__rosidl_ty
   },
   {
     "gaze_position",  // name
-    rosidl_typesupport_introspection_c__ROS_TYPE_MESSAGE,  // type
+    rosidl_typesupport_introspection_c__ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
-    NULL,  // members of sub message (initialized later)
-    false,  // is array
-    0,  // array size
+    NULL,  // members of sub message
+    true,  // is array
+    2,  // array size
     false,  // is upper bound
     offsetof(tobii_glasses_pkg__msg__TobiiGlasses, gaze_position),  // bytes offset in struct
     NULL,  // default value
@@ -103,11 +95,11 @@ static rosidl_typesupport_introspection_c__MessageMember TobiiGlasses__rosidl_ty
   },
   {
     "gaze_position_3d",  // name
-    rosidl_typesupport_introspection_c__ROS_TYPE_MESSAGE,  // type
+    rosidl_typesupport_introspection_c__ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
-    NULL,  // members of sub message (initialized later)
-    false,  // is array
-    0,  // array size
+    NULL,  // members of sub message
+    true,  // is array
+    3,  // array size
     false,  // is upper bound
     offsetof(tobii_glasses_pkg__msg__TobiiGlasses, gaze_position_3d),  // bytes offset in struct
     NULL,  // default value
@@ -145,13 +137,43 @@ static rosidl_typesupport_introspection_c__MessageMember TobiiGlasses__rosidl_ty
     NULL,  // get_const(index) function pointer
     NULL,  // get(index) function pointer
     NULL  // resize(index) function pointer
+  },
+  {
+    "acelerometer",  // name
+    rosidl_typesupport_introspection_c__ROS_TYPE_FLOAT,  // type
+    0,  // upper bound of string
+    NULL,  // members of sub message
+    true,  // is array
+    3,  // array size
+    false,  // is upper bound
+    offsetof(tobii_glasses_pkg__msg__TobiiGlasses, acelerometer),  // bytes offset in struct
+    NULL,  // default value
+    NULL,  // size() function pointer
+    NULL,  // get_const(index) function pointer
+    NULL,  // get(index) function pointer
+    NULL  // resize(index) function pointer
+  },
+  {
+    "gyroscope",  // name
+    rosidl_typesupport_introspection_c__ROS_TYPE_FLOAT,  // type
+    0,  // upper bound of string
+    NULL,  // members of sub message
+    true,  // is array
+    3,  // array size
+    false,  // is upper bound
+    offsetof(tobii_glasses_pkg__msg__TobiiGlasses, gyroscope),  // bytes offset in struct
+    NULL,  // default value
+    NULL,  // size() function pointer
+    NULL,  // get_const(index) function pointer
+    NULL,  // get(index) function pointer
+    NULL  // resize(index) function pointer
   }
 };
 
 static const rosidl_typesupport_introspection_c__MessageMembers TobiiGlasses__rosidl_typesupport_introspection_c__TobiiGlasses_message_members = {
   "tobii_glasses_pkg__msg",  // message namespace
   "TobiiGlasses",  // message name
-  6,  // number of fields
+  8,  // number of fields
   sizeof(tobii_glasses_pkg__msg__TobiiGlasses),
   TobiiGlasses__rosidl_typesupport_introspection_c__TobiiGlasses_message_member_array,  // message members
   TobiiGlasses__rosidl_typesupport_introspection_c__TobiiGlasses_init_function,  // function to initialize message memory (memory has to be allocated)
@@ -173,10 +195,6 @@ ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(rosidl_typesupport_introspecti
     ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(rosidl_typesupport_introspection_c, std_msgs, msg, Header)();
   TobiiGlasses__rosidl_typesupport_introspection_c__TobiiGlasses_message_member_array[1].members_ =
     ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(rosidl_typesupport_introspection_c, sensor_msgs, msg, Image)();
-  TobiiGlasses__rosidl_typesupport_introspection_c__TobiiGlasses_message_member_array[2].members_ =
-    ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(rosidl_typesupport_introspection_c, tobii_glasses_pkg, msg, GazePosition)();
-  TobiiGlasses__rosidl_typesupport_introspection_c__TobiiGlasses_message_member_array[3].members_ =
-    ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(rosidl_typesupport_introspection_c, tobii_glasses_pkg, msg, GazePosition3D)();
   TobiiGlasses__rosidl_typesupport_introspection_c__TobiiGlasses_message_member_array[4].members_ =
     ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(rosidl_typesupport_introspection_c, tobii_glasses_pkg, msg, EyeData)();
   TobiiGlasses__rosidl_typesupport_introspection_c__TobiiGlasses_message_member_array[5].members_ =

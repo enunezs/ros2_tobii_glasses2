@@ -37,8 +37,6 @@ extern "C"
 #include "sensor_msgs/msg/detail/image__functions.h"  // camera_image
 #include "std_msgs/msg/detail/header__functions.h"  // header
 #include "tobii_glasses_pkg/msg/detail/eye_data__functions.h"  // left_eye, right_eye
-#include "tobii_glasses_pkg/msg/detail/gaze_position3_d__functions.h"  // gaze_position_3d
-#include "tobii_glasses_pkg/msg/detail/gaze_position__functions.h"  // gaze_position
 
 // forward declare type support functions
 ROSIDL_TYPESUPPORT_FASTRTPS_C_IMPORT_tobii_glasses_pkg
@@ -77,26 +75,6 @@ size_t max_serialized_size_tobii_glasses_pkg__msg__EyeData(
 
 const rosidl_message_type_support_t *
   ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(rosidl_typesupport_fastrtps_c, tobii_glasses_pkg, msg, EyeData)();
-size_t get_serialized_size_tobii_glasses_pkg__msg__GazePosition(
-  const void * untyped_ros_message,
-  size_t current_alignment);
-
-size_t max_serialized_size_tobii_glasses_pkg__msg__GazePosition(
-  bool & full_bounded,
-  size_t current_alignment);
-
-const rosidl_message_type_support_t *
-  ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(rosidl_typesupport_fastrtps_c, tobii_glasses_pkg, msg, GazePosition)();
-size_t get_serialized_size_tobii_glasses_pkg__msg__GazePosition3D(
-  const void * untyped_ros_message,
-  size_t current_alignment);
-
-size_t max_serialized_size_tobii_glasses_pkg__msg__GazePosition3D(
-  bool & full_bounded,
-  size_t current_alignment);
-
-const rosidl_message_type_support_t *
-  ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(rosidl_typesupport_fastrtps_c, tobii_glasses_pkg, msg, GazePosition3D)();
 
 
 using _TobiiGlasses__ros_msg_type = tobii_glasses_pkg__msg__TobiiGlasses;
@@ -140,30 +118,16 @@ static bool _TobiiGlasses__cdr_serialize(
 
   // Field name: gaze_position
   {
-    const message_type_support_callbacks_t * callbacks =
-      static_cast<const message_type_support_callbacks_t *>(
-      ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(
-        rosidl_typesupport_fastrtps_c, tobii_glasses_pkg, msg, GazePosition
-      )()->data);
-    if (!callbacks->cdr_serialize(
-        &ros_message->gaze_position, cdr))
-    {
-      return false;
-    }
+    size_t size = 2;
+    auto array_ptr = ros_message->gaze_position;
+    cdr.serializeArray(array_ptr, size);
   }
 
   // Field name: gaze_position_3d
   {
-    const message_type_support_callbacks_t * callbacks =
-      static_cast<const message_type_support_callbacks_t *>(
-      ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(
-        rosidl_typesupport_fastrtps_c, tobii_glasses_pkg, msg, GazePosition3D
-      )()->data);
-    if (!callbacks->cdr_serialize(
-        &ros_message->gaze_position_3d, cdr))
-    {
-      return false;
-    }
+    size_t size = 3;
+    auto array_ptr = ros_message->gaze_position_3d;
+    cdr.serializeArray(array_ptr, size);
   }
 
   // Field name: right_eye
@@ -192,6 +156,20 @@ static bool _TobiiGlasses__cdr_serialize(
     {
       return false;
     }
+  }
+
+  // Field name: acelerometer
+  {
+    size_t size = 3;
+    auto array_ptr = ros_message->acelerometer;
+    cdr.serializeArray(array_ptr, size);
+  }
+
+  // Field name: gyroscope
+  {
+    size_t size = 3;
+    auto array_ptr = ros_message->gyroscope;
+    cdr.serializeArray(array_ptr, size);
   }
 
   return true;
@@ -236,30 +214,16 @@ static bool _TobiiGlasses__cdr_deserialize(
 
   // Field name: gaze_position
   {
-    const message_type_support_callbacks_t * callbacks =
-      static_cast<const message_type_support_callbacks_t *>(
-      ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(
-        rosidl_typesupport_fastrtps_c, tobii_glasses_pkg, msg, GazePosition
-      )()->data);
-    if (!callbacks->cdr_deserialize(
-        cdr, &ros_message->gaze_position))
-    {
-      return false;
-    }
+    size_t size = 2;
+    auto array_ptr = ros_message->gaze_position;
+    cdr.deserializeArray(array_ptr, size);
   }
 
   // Field name: gaze_position_3d
   {
-    const message_type_support_callbacks_t * callbacks =
-      static_cast<const message_type_support_callbacks_t *>(
-      ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(
-        rosidl_typesupport_fastrtps_c, tobii_glasses_pkg, msg, GazePosition3D
-      )()->data);
-    if (!callbacks->cdr_deserialize(
-        cdr, &ros_message->gaze_position_3d))
-    {
-      return false;
-    }
+    size_t size = 3;
+    auto array_ptr = ros_message->gaze_position_3d;
+    cdr.deserializeArray(array_ptr, size);
   }
 
   // Field name: right_eye
@@ -290,6 +254,20 @@ static bool _TobiiGlasses__cdr_deserialize(
     }
   }
 
+  // Field name: acelerometer
+  {
+    size_t size = 3;
+    auto array_ptr = ros_message->acelerometer;
+    cdr.deserializeArray(array_ptr, size);
+  }
+
+  // Field name: gyroscope
+  {
+    size_t size = 3;
+    auto array_ptr = ros_message->gyroscope;
+    cdr.deserializeArray(array_ptr, size);
+  }
+
   return true;
 }
 
@@ -316,13 +294,23 @@ size_t get_serialized_size_tobii_glasses_pkg__msg__TobiiGlasses(
   current_alignment += get_serialized_size_sensor_msgs__msg__Image(
     &(ros_message->camera_image), current_alignment);
   // field.name gaze_position
-
-  current_alignment += get_serialized_size_tobii_glasses_pkg__msg__GazePosition(
-    &(ros_message->gaze_position), current_alignment);
+  {
+    size_t array_size = 2;
+    auto array_ptr = ros_message->gaze_position;
+    (void)array_ptr;
+    size_t item_size = sizeof(array_ptr[0]);
+    current_alignment += array_size * item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
   // field.name gaze_position_3d
-
-  current_alignment += get_serialized_size_tobii_glasses_pkg__msg__GazePosition3D(
-    &(ros_message->gaze_position_3d), current_alignment);
+  {
+    size_t array_size = 3;
+    auto array_ptr = ros_message->gaze_position_3d;
+    (void)array_ptr;
+    size_t item_size = sizeof(array_ptr[0]);
+    current_alignment += array_size * item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
   // field.name right_eye
 
   current_alignment += get_serialized_size_tobii_glasses_pkg__msg__EyeData(
@@ -331,6 +319,24 @@ size_t get_serialized_size_tobii_glasses_pkg__msg__TobiiGlasses(
 
   current_alignment += get_serialized_size_tobii_glasses_pkg__msg__EyeData(
     &(ros_message->left_eye), current_alignment);
+  // field.name acelerometer
+  {
+    size_t array_size = 3;
+    auto array_ptr = ros_message->acelerometer;
+    (void)array_ptr;
+    size_t item_size = sizeof(array_ptr[0]);
+    current_alignment += array_size * item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name gyroscope
+  {
+    size_t array_size = 3;
+    auto array_ptr = ros_message->gyroscope;
+    (void)array_ptr;
+    size_t item_size = sizeof(array_ptr[0]);
+    current_alignment += array_size * item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
 
   return current_alignment - initial_alignment;
 }
@@ -379,25 +385,17 @@ size_t max_serialized_size_tobii_glasses_pkg__msg__TobiiGlasses(
   }
   // member: gaze_position
   {
-    size_t array_size = 1;
+    size_t array_size = 2;
 
-
-    for (size_t index = 0; index < array_size; ++index) {
-      current_alignment +=
-        max_serialized_size_tobii_glasses_pkg__msg__GazePosition(
-        full_bounded, current_alignment);
-    }
+    current_alignment += array_size * sizeof(uint32_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
   // member: gaze_position_3d
   {
-    size_t array_size = 1;
+    size_t array_size = 3;
 
-
-    for (size_t index = 0; index < array_size; ++index) {
-      current_alignment +=
-        max_serialized_size_tobii_glasses_pkg__msg__GazePosition3D(
-        full_bounded, current_alignment);
-    }
+    current_alignment += array_size * sizeof(uint32_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
   // member: right_eye
   {
@@ -420,6 +418,20 @@ size_t max_serialized_size_tobii_glasses_pkg__msg__TobiiGlasses(
         max_serialized_size_tobii_glasses_pkg__msg__EyeData(
         full_bounded, current_alignment);
     }
+  }
+  // member: acelerometer
+  {
+    size_t array_size = 3;
+
+    current_alignment += array_size * sizeof(uint32_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
+  }
+  // member: gyroscope
+  {
+    size_t array_size = 3;
+
+    current_alignment += array_size * sizeof(uint32_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
 
   return current_alignment - initial_alignment;

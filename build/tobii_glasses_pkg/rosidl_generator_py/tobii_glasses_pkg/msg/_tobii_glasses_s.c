@@ -16,6 +16,9 @@
 #include "tobii_glasses_pkg/msg/detail/tobii_glasses__struct.h"
 #include "tobii_glasses_pkg/msg/detail/tobii_glasses__functions.h"
 
+#include "rosidl_runtime_c/primitives_sequence.h"
+#include "rosidl_runtime_c/primitives_sequence_functions.h"
+
 ROSIDL_GENERATOR_C_IMPORT
 bool std_msgs__msg__header__convert_from_py(PyObject * _pymsg, void * _ros_message);
 ROSIDL_GENERATOR_C_IMPORT
@@ -24,10 +27,6 @@ ROSIDL_GENERATOR_C_IMPORT
 bool sensor_msgs__msg__image__convert_from_py(PyObject * _pymsg, void * _ros_message);
 ROSIDL_GENERATOR_C_IMPORT
 PyObject * sensor_msgs__msg__image__convert_to_py(void * raw_ros_message);
-bool tobii_glasses_pkg__msg__gaze_position__convert_from_py(PyObject * _pymsg, void * _ros_message);
-PyObject * tobii_glasses_pkg__msg__gaze_position__convert_to_py(void * raw_ros_message);
-bool tobii_glasses_pkg__msg__gaze_position3_d__convert_from_py(PyObject * _pymsg, void * _ros_message);
-PyObject * tobii_glasses_pkg__msg__gaze_position3_d__convert_to_py(void * raw_ros_message);
 bool tobii_glasses_pkg__msg__eye_data__convert_from_py(PyObject * _pymsg, void * _ros_message);
 PyObject * tobii_glasses_pkg__msg__eye_data__convert_to_py(void * raw_ros_message);
 bool tobii_glasses_pkg__msg__eye_data__convert_from_py(PyObject * _pymsg, void * _ros_message);
@@ -93,9 +92,22 @@ bool tobii_glasses_pkg__msg__tobii_glasses__convert_from_py(PyObject * _pymsg, v
     if (!field) {
       return false;
     }
-    if (!tobii_glasses_pkg__msg__gaze_position__convert_from_py(field, &ros_message->gaze_position)) {
-      Py_DECREF(field);
-      return false;
+    {
+      // TODO(dirk-thomas) use a better way to check the type before casting
+      assert(field->ob_type != NULL);
+      assert(field->ob_type->tp_name != NULL);
+      assert(strcmp(field->ob_type->tp_name, "numpy.ndarray") == 0);
+      PyArrayObject * seq_field = (PyArrayObject *)field;
+      Py_INCREF(seq_field);
+      assert(PyArray_NDIM(seq_field) == 1);
+      assert(PyArray_TYPE(seq_field) == NPY_FLOAT32);
+      Py_ssize_t size = 2;
+      float * dest = ros_message->gaze_position;
+      for (Py_ssize_t i = 0; i < size; ++i) {
+        float tmp = *(npy_float32 *)PyArray_GETPTR1(seq_field, i);
+        memcpy(&dest[i], &tmp, sizeof(float));
+      }
+      Py_DECREF(seq_field);
     }
     Py_DECREF(field);
   }
@@ -104,9 +116,22 @@ bool tobii_glasses_pkg__msg__tobii_glasses__convert_from_py(PyObject * _pymsg, v
     if (!field) {
       return false;
     }
-    if (!tobii_glasses_pkg__msg__gaze_position3_d__convert_from_py(field, &ros_message->gaze_position_3d)) {
-      Py_DECREF(field);
-      return false;
+    {
+      // TODO(dirk-thomas) use a better way to check the type before casting
+      assert(field->ob_type != NULL);
+      assert(field->ob_type->tp_name != NULL);
+      assert(strcmp(field->ob_type->tp_name, "numpy.ndarray") == 0);
+      PyArrayObject * seq_field = (PyArrayObject *)field;
+      Py_INCREF(seq_field);
+      assert(PyArray_NDIM(seq_field) == 1);
+      assert(PyArray_TYPE(seq_field) == NPY_FLOAT32);
+      Py_ssize_t size = 3;
+      float * dest = ros_message->gaze_position_3d;
+      for (Py_ssize_t i = 0; i < size; ++i) {
+        float tmp = *(npy_float32 *)PyArray_GETPTR1(seq_field, i);
+        memcpy(&dest[i], &tmp, sizeof(float));
+      }
+      Py_DECREF(seq_field);
     }
     Py_DECREF(field);
   }
@@ -129,6 +154,54 @@ bool tobii_glasses_pkg__msg__tobii_glasses__convert_from_py(PyObject * _pymsg, v
     if (!tobii_glasses_pkg__msg__eye_data__convert_from_py(field, &ros_message->left_eye)) {
       Py_DECREF(field);
       return false;
+    }
+    Py_DECREF(field);
+  }
+  {  // acelerometer
+    PyObject * field = PyObject_GetAttrString(_pymsg, "acelerometer");
+    if (!field) {
+      return false;
+    }
+    {
+      // TODO(dirk-thomas) use a better way to check the type before casting
+      assert(field->ob_type != NULL);
+      assert(field->ob_type->tp_name != NULL);
+      assert(strcmp(field->ob_type->tp_name, "numpy.ndarray") == 0);
+      PyArrayObject * seq_field = (PyArrayObject *)field;
+      Py_INCREF(seq_field);
+      assert(PyArray_NDIM(seq_field) == 1);
+      assert(PyArray_TYPE(seq_field) == NPY_FLOAT32);
+      Py_ssize_t size = 3;
+      float * dest = ros_message->acelerometer;
+      for (Py_ssize_t i = 0; i < size; ++i) {
+        float tmp = *(npy_float32 *)PyArray_GETPTR1(seq_field, i);
+        memcpy(&dest[i], &tmp, sizeof(float));
+      }
+      Py_DECREF(seq_field);
+    }
+    Py_DECREF(field);
+  }
+  {  // gyroscope
+    PyObject * field = PyObject_GetAttrString(_pymsg, "gyroscope");
+    if (!field) {
+      return false;
+    }
+    {
+      // TODO(dirk-thomas) use a better way to check the type before casting
+      assert(field->ob_type != NULL);
+      assert(field->ob_type->tp_name != NULL);
+      assert(strcmp(field->ob_type->tp_name, "numpy.ndarray") == 0);
+      PyArrayObject * seq_field = (PyArrayObject *)field;
+      Py_INCREF(seq_field);
+      assert(PyArray_NDIM(seq_field) == 1);
+      assert(PyArray_TYPE(seq_field) == NPY_FLOAT32);
+      Py_ssize_t size = 3;
+      float * dest = ros_message->gyroscope;
+      for (Py_ssize_t i = 0; i < size; ++i) {
+        float tmp = *(npy_float32 *)PyArray_GETPTR1(seq_field, i);
+        memcpy(&dest[i], &tmp, sizeof(float));
+      }
+      Py_DECREF(seq_field);
     }
     Py_DECREF(field);
   }
@@ -184,31 +257,39 @@ PyObject * tobii_glasses_pkg__msg__tobii_glasses__convert_to_py(void * raw_ros_m
   }
   {  // gaze_position
     PyObject * field = NULL;
-    field = tobii_glasses_pkg__msg__gaze_position__convert_to_py(&ros_message->gaze_position);
+    field = PyObject_GetAttrString(_pymessage, "gaze_position");
     if (!field) {
       return NULL;
     }
-    {
-      int rc = PyObject_SetAttrString(_pymessage, "gaze_position", field);
-      Py_DECREF(field);
-      if (rc) {
-        return NULL;
-      }
-    }
+    assert(field->ob_type != NULL);
+    assert(field->ob_type->tp_name != NULL);
+    assert(strcmp(field->ob_type->tp_name, "numpy.ndarray") == 0);
+    PyArrayObject * seq_field = (PyArrayObject *)field;
+    assert(PyArray_NDIM(seq_field) == 1);
+    assert(PyArray_TYPE(seq_field) == NPY_FLOAT32);
+    assert(sizeof(npy_float32) == sizeof(float));
+    npy_float32 * dst = (npy_float32 *)PyArray_GETPTR1(seq_field, 0);
+    float * src = &(ros_message->gaze_position[0]);
+    memcpy(dst, src, 2 * sizeof(float));
+    Py_DECREF(field);
   }
   {  // gaze_position_3d
     PyObject * field = NULL;
-    field = tobii_glasses_pkg__msg__gaze_position3_d__convert_to_py(&ros_message->gaze_position_3d);
+    field = PyObject_GetAttrString(_pymessage, "gaze_position_3d");
     if (!field) {
       return NULL;
     }
-    {
-      int rc = PyObject_SetAttrString(_pymessage, "gaze_position_3d", field);
-      Py_DECREF(field);
-      if (rc) {
-        return NULL;
-      }
-    }
+    assert(field->ob_type != NULL);
+    assert(field->ob_type->tp_name != NULL);
+    assert(strcmp(field->ob_type->tp_name, "numpy.ndarray") == 0);
+    PyArrayObject * seq_field = (PyArrayObject *)field;
+    assert(PyArray_NDIM(seq_field) == 1);
+    assert(PyArray_TYPE(seq_field) == NPY_FLOAT32);
+    assert(sizeof(npy_float32) == sizeof(float));
+    npy_float32 * dst = (npy_float32 *)PyArray_GETPTR1(seq_field, 0);
+    float * src = &(ros_message->gaze_position_3d[0]);
+    memcpy(dst, src, 3 * sizeof(float));
+    Py_DECREF(field);
   }
   {  // right_eye
     PyObject * field = NULL;
@@ -237,6 +318,42 @@ PyObject * tobii_glasses_pkg__msg__tobii_glasses__convert_to_py(void * raw_ros_m
         return NULL;
       }
     }
+  }
+  {  // acelerometer
+    PyObject * field = NULL;
+    field = PyObject_GetAttrString(_pymessage, "acelerometer");
+    if (!field) {
+      return NULL;
+    }
+    assert(field->ob_type != NULL);
+    assert(field->ob_type->tp_name != NULL);
+    assert(strcmp(field->ob_type->tp_name, "numpy.ndarray") == 0);
+    PyArrayObject * seq_field = (PyArrayObject *)field;
+    assert(PyArray_NDIM(seq_field) == 1);
+    assert(PyArray_TYPE(seq_field) == NPY_FLOAT32);
+    assert(sizeof(npy_float32) == sizeof(float));
+    npy_float32 * dst = (npy_float32 *)PyArray_GETPTR1(seq_field, 0);
+    float * src = &(ros_message->acelerometer[0]);
+    memcpy(dst, src, 3 * sizeof(float));
+    Py_DECREF(field);
+  }
+  {  // gyroscope
+    PyObject * field = NULL;
+    field = PyObject_GetAttrString(_pymessage, "gyroscope");
+    if (!field) {
+      return NULL;
+    }
+    assert(field->ob_type != NULL);
+    assert(field->ob_type->tp_name != NULL);
+    assert(strcmp(field->ob_type->tp_name, "numpy.ndarray") == 0);
+    PyArrayObject * seq_field = (PyArrayObject *)field;
+    assert(PyArray_NDIM(seq_field) == 1);
+    assert(PyArray_TYPE(seq_field) == NPY_FLOAT32);
+    assert(sizeof(npy_float32) == sizeof(float));
+    npy_float32 * dst = (npy_float32 *)PyArray_GETPTR1(seq_field, 0);
+    float * src = &(ros_message->gyroscope[0]);
+    memcpy(dst, src, 3 * sizeof(float));
+    Py_DECREF(field);
   }
 
   // ownership of _pymessage is transferred to the caller

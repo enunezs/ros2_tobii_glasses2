@@ -1,16 +1,7 @@
 {
   "package_name": "tobii_glasses_pkg",
   "non_idl_tuples": [
-<<<<<<< HEAD
-    "/home/ema/workspaces/ros2_tobii_glasses2:msg/TobiiGlasses.msg",
-    "/home/ema/workspaces/ros2_tobii_glasses2:msg/GazePosition.msg",
-    "/home/ema/workspaces/ros2_tobii_glasses2:msg/GazePosition3D.msg",
-    "/home/ema/workspaces/ros2_tobii_glasses2:msg/EyeData.msg"
-=======
-    "/home/usr/workspaces/ros2_tobii_glasses2:msg/TobiiGlasses.msg",
-    "/home/usr/workspaces/ros2_tobii_glasses2:msg/GazePosition.msg",
-    "/home/usr/workspaces/ros2_tobii_glasses2:msg/GazePosition3D.msg",
-    "/home/usr/workspaces/ros2_tobii_glasses2:msg/EyeData.msg"
->>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
+    "/root:msg/TobiiGlasses.msg",
+    "/root:msg/EyeData.msg"
   ]
 }

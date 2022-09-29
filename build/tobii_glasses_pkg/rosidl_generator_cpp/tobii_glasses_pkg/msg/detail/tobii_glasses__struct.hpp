@@ -19,10 +19,6 @@
 #include "std_msgs/msg/detail/header__struct.hpp"
 // Member 'camera_image'
 #include "sensor_msgs/msg/detail/image__struct.hpp"
-// Member 'gaze_position'
-#include "tobii_glasses_pkg/msg/detail/gaze_position__struct.hpp"
-// Member 'gaze_position_3d'
-#include "tobii_glasses_pkg/msg/detail/gaze_position3_d__struct.hpp"
 // Member 'right_eye'
 // Member 'left_eye'
 #include "tobii_glasses_pkg/msg/detail/eye_data__struct.hpp"
@@ -48,23 +44,37 @@ struct TobiiGlasses_
   explicit TobiiGlasses_(rosidl_runtime_cpp::MessageInitialization _init = rosidl_runtime_cpp::MessageInitialization::ALL)
   : header(_init),
     camera_image(_init),
-    gaze_position(_init),
-    gaze_position_3d(_init),
     right_eye(_init),
     left_eye(_init)
   {
-    (void)_init;
+    if (rosidl_runtime_cpp::MessageInitialization::ALL == _init ||
+      rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
+    {
+      std::fill<typename std::array<float, 2>::iterator, float>(this->gaze_position.begin(), this->gaze_position.end(), 0.0f);
+      std::fill<typename std::array<float, 3>::iterator, float>(this->gaze_position_3d.begin(), this->gaze_position_3d.end(), 0.0f);
+      std::fill<typename std::array<float, 3>::iterator, float>(this->acelerometer.begin(), this->acelerometer.end(), 0.0f);
+      std::fill<typename std::array<float, 3>::iterator, float>(this->gyroscope.begin(), this->gyroscope.end(), 0.0f);
+    }
   }
 
   explicit TobiiGlasses_(const ContainerAllocator & _alloc, rosidl_runtime_cpp::MessageInitialization _init = rosidl_runtime_cpp::MessageInitialization::ALL)
   : header(_alloc, _init),
     camera_image(_alloc, _init),
-    gaze_position(_alloc, _init),
-    gaze_position_3d(_alloc, _init),
+    gaze_position(_alloc),
+    gaze_position_3d(_alloc),
     right_eye(_alloc, _init),
-    left_eye(_alloc, _init)
+    left_eye(_alloc, _init),
+    acelerometer(_alloc),
+    gyroscope(_alloc)
   {
-    (void)_init;
+    if (rosidl_runtime_cpp::MessageInitialization::ALL == _init ||
+      rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
+    {
+      std::fill<typename std::array<float, 2>::iterator, float>(this->gaze_position.begin(), this->gaze_position.end(), 0.0f);
+      std::fill<typename std::array<float, 3>::iterator, float>(this->gaze_position_3d.begin(), this->gaze_position_3d.end(), 0.0f);
+      std::fill<typename std::array<float, 3>::iterator, float>(this->acelerometer.begin(), this->acelerometer.end(), 0.0f);
+      std::fill<typename std::array<float, 3>::iterator, float>(this->gyroscope.begin(), this->gyroscope.end(), 0.0f);
+    }
   }
 
   // field types and members
@@ -75,10 +85,10 @@ struct TobiiGlasses_
     sensor_msgs::msg::Image_<ContainerAllocator>;
   _camera_image_type camera_image;
   using _gaze_position_type =
-    tobii_glasses_pkg::msg::GazePosition_<ContainerAllocator>;
+    std::array<float, 2>;
   _gaze_position_type gaze_position;
   using _gaze_position_3d_type =
-    tobii_glasses_pkg::msg::GazePosition3D_<ContainerAllocator>;
+    std::array<float, 3>;
   _gaze_position_3d_type gaze_position_3d;
   using _right_eye_type =
     tobii_glasses_pkg::msg::EyeData_<ContainerAllocator>;
@@ -86,6 +96,12 @@ struct TobiiGlasses_
   using _left_eye_type =
     tobii_glasses_pkg::msg::EyeData_<ContainerAllocator>;
   _left_eye_type left_eye;
+  using _acelerometer_type =
+    std::array<float, 3>;
+  _acelerometer_type acelerometer;
+  using _gyroscope_type =
+    std::array<float, 3>;
+  _gyroscope_type gyroscope;
 
   // setters for named parameter idiom
   Type & set__header(
@@ -101,13 +117,13 @@ struct TobiiGlasses_
     return *this;
   }
   Type & set__gaze_position(
-    const tobii_glasses_pkg::msg::GazePosition_<ContainerAllocator> & _arg)
+    const std::array<float, 2> & _arg)
   {
     this->gaze_position = _arg;
     return *this;
   }
   Type & set__gaze_position_3d(
-    const tobii_glasses_pkg::msg::GazePosition3D_<ContainerAllocator> & _arg)
+    const std::array<float, 3> & _arg)
   {
     this->gaze_position_3d = _arg;
     return *this;
@@ -122,6 +138,18 @@ struct TobiiGlasses_
     const tobii_glasses_pkg::msg::EyeData_<ContainerAllocator> & _arg)
   {
     this->left_eye = _arg;
+    return *this;
+  }
+  Type & set__acelerometer(
+    const std::array<float, 3> & _arg)
+  {
+    this->acelerometer = _arg;
+    return *this;
+  }
+  Type & set__gyroscope(
+    const std::array<float, 3> & _arg)
+  {
+    this->gyroscope = _arg;
     return *this;
   }
 
@@ -183,6 +211,12 @@ struct TobiiGlasses_
       return false;
     }
     if (this->left_eye != other.left_eye) {
+      return false;
+    }
+    if (this->acelerometer != other.acelerometer) {
+      return false;
+    }
+    if (this->gyroscope != other.gyroscope) {
       return false;
     }
     return true;

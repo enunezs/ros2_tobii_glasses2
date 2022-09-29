@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-builtin_interfaces:geometry_msgs:rclpy:rosidl_default_runtime:sensor_msgs:std_msgs
-=======
 builtin_interfaces:rclpy:rosidl_default_runtime:sensor_msgs:std_msgs
->>>>>>> 042d9849849bd86e9fad5b9d0f8e382dea69bd42
