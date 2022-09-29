@@ -1,0 +1,382 @@
+[0.000000] (-) TimerEvent: {}
+[0.000387] (tobii_glasses_pkg) JobQueued: {'identifier': 'tobii_glasses_pkg', 'dependencies': OrderedDict()}
+[0.000990] (tobii_glasses_pkg) JobStarted: {'identifier': 'tobii_glasses_pkg'}
+[0.010684] (tobii_glasses_pkg) JobProgress: {'identifier': 'tobii_glasses_pkg', 'progress': 'cmake'}
+[0.010753] (tobii_glasses_pkg) Command: {'cmd': ['/usr/bin/cmake', '/home/ema/workspaces/ros2_tobii_glasses2', '-DCMAKE_INSTALL_PREFIX=/home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg'], 'cwd': '/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg', 'env': OrderedDict([('HOSTNAME', 'franka-pc'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/lib/x86_64-linux-gnu:/opt/ros/foxy/lib'), ('HOME', '/root'), ('ROS_PYTHON_VERSION', '3'), ('ROS_DISTRO', 'foxy'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm'), ('ROS_LOCALHOST_ONLY', '0'), ('QT_X11_NO_MITSHM', '1'), ('PATH', '/opt/ros/foxy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/opt/ros/foxy'), ('PWD', '/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/opt/ros/foxy/lib/python3.8/site-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/opt/ros/foxy')]), 'shell': False}
+[0.058627] (tobii_glasses_pkg) StdoutLine: {'line': b'-- The C compiler identification is GNU 9.4.0\n'}
+[0.100049] (-) TimerEvent: {}
+[0.105591] (tobii_glasses_pkg) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 9.4.0\n'}
+[0.109431] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc\n'}
+[0.168037] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc -- works\n'}
+[0.168876] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.200166] (-) TimerEvent: {}
+[0.231623] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.242981] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.243316] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.245475] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++\n'}
+[0.300286] (-) TimerEvent: {}
+[0.308098] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ -- works\n'}
+[0.308946] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.370982] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[0.380048] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[0.380467] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[0.382458] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Found ament_cmake: 0.9.9 (/opt/ros/foxy/share/ament_cmake/cmake)\n'}
+[0.395712] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3") \n'}
+[0.395883] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Using PYTHON_EXECUTABLE: /usr/bin/python3\n'}
+[0.400380] (-) TimerEvent: {}
+[0.500580] (-) TimerEvent: {}
+[0.507325] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Found rclpy: 1.0.8 (/opt/ros/foxy/share/rclpy/cmake)\n'}
+[0.508197] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Found sensor_msgs: 2.0.5 (/opt/ros/foxy/share/sensor_msgs/cmake)\n'}
+[0.527515] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.532531] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Found rosidl_adapter: 1.2.1 (/opt/ros/foxy/share/rosidl_adapter/cmake)\n'}
+[0.583302] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "1.1.1f")  \n'}
+[0.600595] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/foxy/include  \n'}
+[0.600692] (-) TimerEvent: {}
+[0.656511] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.700792] (-) TimerEvent: {}
+[0.790496] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Found rosidl_default_generators: 1.0.1 (/opt/ros/foxy/share/rosidl_default_generators/cmake)\n'}
+[0.800893] (-) TimerEvent: {}
+[0.829438] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Found PythonInterp: /usr/bin/python3 (found version "3.8.10") \n'}
+[0.901006] (-) TimerEvent: {}
+[0.983432] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Found ament_cmake_ros: 0.9.2 (/opt/ros/foxy/share/ament_cmake_ros/cmake)\n'}
+[1.001102] (-) TimerEvent: {}
+[1.101308] (-) TimerEvent: {}
+[1.201527] (-) TimerEvent: {}
+[1.216418] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[1.301628] (-) TimerEvent: {}
+[1.340946] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[1.356104] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3.5") \n'}
+[1.357117] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Found python_cmake_module: 0.8.1 (/opt/ros/foxy/share/python_cmake_module/cmake)\n'}
+[1.371110] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Found PythonLibs: /usr/lib/x86_64-linux-gnu/libpython3.8.so (found suitable version "3.8.10", minimum required is "3.5") \n'}
+[1.371300] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Using PYTHON_EXECUTABLE: /usr/bin/python3\n'}
+[1.371359] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.8\n'}
+[1.371410] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.8.so\n'}
+[1.382454] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Found PythonExtra: .so  \n'}
+[1.401723] (-) TimerEvent: {}
+[1.438163] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.9.6 (/opt/ros/foxy/share/ament_lint_auto/cmake)\n'}
+[1.454536] (tobii_glasses_pkg) StdoutLine: {'line': b"-- Added test 'copyright' to check source files copyright and LICENSE\n"}
+[1.464554] (tobii_glasses_pkg) StdoutLine: {'line': b"-- Added test 'cppcheck' to perform static code analysis on C / C++ code\n"}
+[1.466160] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Configured cppcheck include dirs: $<BUILD_INTERFACE:/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_c>;/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_c;/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_cpp;/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_fastrtps_c;/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_fastrtps_cpp;$<BUILD_INTERFACE:/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_introspection_c>;$<BUILD_INTERFACE:/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_typesupport_c>;$<BUILD_INTERFACE:/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_cpp>;/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_py\n'}
+[1.466257] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Configured cppcheck exclude dirs and/or files: \n'}
+[1.476066] (tobii_glasses_pkg) StdoutLine: {'line': b"-- Added test 'cpplint' to check C / C++ code against the Google style\n"}
+[1.476145] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Configured cpplint exclude dirs and/or files: \n'}
+[1.477618] (tobii_glasses_pkg) StdoutLine: {'line': b"-- Added test 'flake8' to check Python code syntax and style conventions\n"}
+[1.480358] (tobii_glasses_pkg) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[1.481902] (tobii_glasses_pkg) StdoutLine: {'line': b"-- Added test 'pep257' to check Python code against some of the style conventions in PEP 257\n"}
+[1.492321] (tobii_glasses_pkg) StdoutLine: {'line': b"-- Added test 'uncrustify' to check C / C++ code style\n"}
+[1.492400] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Configured uncrustify additional arguments: \n'}
+[1.493891] (tobii_glasses_pkg) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[1.498715] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Configuring done\n'}
+[1.501817] (-) TimerEvent: {}
+[1.561240] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Generating done\n'}
+[1.563635] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Build files have been written to: /home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg\n'}
+[1.568855] (tobii_glasses_pkg) CommandEnded: {'returncode': 0}
+[1.569399] (tobii_glasses_pkg) JobProgress: {'identifier': 'tobii_glasses_pkg', 'progress': 'build'}
+[1.571017] (tobii_glasses_pkg) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg', '--', '-j12', '-l12'], 'cwd': '/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg', 'env': OrderedDict([('HOSTNAME', 'franka-pc'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/lib/x86_64-linux-gnu:/opt/ros/foxy/lib'), ('HOME', '/root'), ('ROS_PYTHON_VERSION', '3'), ('ROS_DISTRO', 'foxy'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm'), ('ROS_LOCALHOST_ONLY', '0'), ('QT_X11_NO_MITSHM', '1'), ('PATH', '/opt/ros/foxy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/opt/ros/foxy'), ('PWD', '/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/opt/ros/foxy/lib/python3.8/site-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/opt/ros/foxy')]), 'shell': False}
+[1.601949] (-) TimerEvent: {}
+[1.604251] (tobii_glasses_pkg) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target tobii_glasses_pkg__cpp\x1b[0m\n'}
+[1.605092] (tobii_glasses_pkg) StdoutLine: {'line': b'[  1%] \x1b[34m\x1b[1mGenerating C code for ROS interfaces\x1b[0m\n'}
+[1.613579] (tobii_glasses_pkg) StdoutLine: {'line': b'[  3%] \x1b[34m\x1b[1mGenerating C++ code for ROS interfaces\x1b[0m\n'}
+[1.702036] (-) TimerEvent: {}
+[1.802267] (-) TimerEvent: {}
+[1.902479] (-) TimerEvent: {}
+[1.978222] (tobii_glasses_pkg) StdoutLine: {'line': b'[  3%] Built target tobii_glasses_pkg__cpp\n'}
+[1.991762] (tobii_glasses_pkg) StdoutLine: {'line': b'[  5%] \x1b[34m\x1b[1mGenerating C++ type support dispatch for ROS interfaces\x1b[0m\n'}
+[1.995947] (tobii_glasses_pkg) StdoutLine: {'line': b'[  7%] \x1b[34m\x1b[1mGenerating C++ type support for eProsima Fast-RTPS\x1b[0m\n'}
+[1.996086] (tobii_glasses_pkg) StdoutLine: {'line': b'[  9%] \x1b[34m\x1b[1mGenerating C++ introspection for ROS interfaces\x1b[0m\n'}
+[2.000880] (tobii_glasses_pkg) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target tobii_glasses_pkg__rosidl_generator_c\x1b[0m\n'}
+[2.002578] (-) TimerEvent: {}
+[2.013244] (tobii_glasses_pkg) StdoutLine: {'line': b'[ 12%] \x1b[32mBuilding C object CMakeFiles/tobii_glasses_pkg__rosidl_generator_c.dir/rosidl_generator_c/tobii_glasses_pkg/msg/detail/gaze_position__functions.c.o\x1b[0m\n'}
+[2.013458] (tobii_glasses_pkg) StdoutLine: {'line': b'[ 12%] \x1b[32mBuilding C object CMakeFiles/tobii_glasses_pkg__rosidl_generator_c.dir/rosidl_generator_c/tobii_glasses_pkg/msg/detail/tobii_glasses__functions.c.o\x1b[0m\n'}
+[2.016014] (tobii_glasses_pkg) StdoutLine: {'line': b'[ 14%] \x1b[32mBuilding C object CMakeFiles/tobii_glasses_pkg__rosidl_generator_c.dir/rosidl_generator_c/tobii_glasses_pkg/msg/detail/gaze_position3_d__functions.c.o\x1b[0m\n'}
+[2.016145] (tobii_glasses_pkg) StdoutLine: {'line': b'[ 16%] \x1b[32mBuilding C object CMakeFiles/tobii_glasses_pkg__rosidl_generator_c.dir/rosidl_generator_c/tobii_glasses_pkg/msg/detail/eye_data__functions.c.o\x1b[0m\n'}
+[2.058679] (tobii_glasses_pkg) StdoutLine: {'line': b'[ 18%] \x1b[32m\x1b[1mLinking C shared library libtobii_glasses_pkg__rosidl_generator_c.so\x1b[0m\n'}
+[2.092177] (tobii_glasses_pkg) StdoutLine: {'line': b'[ 18%] Built target tobii_glasses_pkg__rosidl_generator_c\n'}
+[2.101450] (tobii_glasses_pkg) StdoutLine: {'line': b'[ 21%] \x1b[34m\x1b[1mGenerating C introspection for ROS interfaces\x1b[0m\n'}
+[2.101649] (tobii_glasses_pkg) StdoutLine: {'line': b'[ 21%] \x1b[34m\x1b[1mGenerating C type support dispatch for ROS interfaces\x1b[0m\n'}
+[2.102677] (-) TimerEvent: {}
+[2.202877] (-) TimerEvent: {}
+[2.303111] (-) TimerEvent: {}
+[2.323967] (tobii_glasses_pkg) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target tobii_glasses_pkg__rosidl_typesupport_cpp\x1b[0m\n'}
+[2.332598] (tobii_glasses_pkg) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target tobii_glasses_pkg__rosidl_typesupport_introspection_cpp\x1b[0m\n'}
+[2.337352] (tobii_glasses_pkg) StdoutLine: {'line': b'[ 23%] \x1b[32mBuilding CXX object CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/tobii_glasses_pkg/msg/tobii_glasses__type_support.cpp.o\x1b[0m\n'}
+[2.337753] (tobii_glasses_pkg) StdoutLine: {'line': b'[ 25%] \x1b[32mBuilding CXX object CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/tobii_glasses_pkg/msg/eye_data__type_support.cpp.o\x1b[0m\n'}
+[2.339567] (tobii_glasses_pkg) StdoutLine: {'line': b'[ 29%] \x1b[32mBuilding CXX object CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/tobii_glasses_pkg/msg/gaze_position3_d__type_support.cpp.o\x1b[0m\n'}
+[2.339779] (tobii_glasses_pkg) StdoutLine: {'line': b'[ 29%] \x1b[32mBuilding CXX object CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/tobii_glasses_pkg/msg/gaze_position__type_support.cpp.o\x1b[0m\n'}
+[2.348361] (tobii_glasses_pkg) StdoutLine: {'line': b'[ 34%] \x1b[32mBuilding CXX object CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/tobii_glasses_pkg/msg/detail/gaze_position__type_support.cpp.o\x1b[0m\n'}
+[2.348584] (tobii_glasses_pkg) StdoutLine: {'line': b'[ 34%] \x1b[32mBuilding CXX object CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/tobii_glasses_pkg/msg/detail/eye_data__type_support.cpp.o\x1b[0m\n'}
+[2.348702] (tobii_glasses_pkg) StdoutLine: {'line': b'[ 36%] \x1b[32mBuilding CXX object CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/tobii_glasses_pkg/msg/detail/tobii_glasses__type_support.cpp.o\x1b[0m\n'}
+[2.348794] (tobii_glasses_pkg) StdoutLine: {'line': b'[ 36%] \x1b[32mBuilding CXX object CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/tobii_glasses_pkg/msg/detail/gaze_position3_d__type_support.cpp.o\x1b[0m\n'}
+[2.403207] (-) TimerEvent: {}
+[2.415626] (tobii_glasses_pkg) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target tobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp\x1b[0m\n'}
+[2.438597] (tobii_glasses_pkg) StdoutLine: {'line': b'[ 40%] \x1b[32mBuilding CXX object CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/tobii_glasses__type_support.cpp.o\x1b[0m\n'}
+[2.438812] (tobii_glasses_pkg) StdoutLine: {'line': b'[ 40%] \x1b[32mBuilding CXX object CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/gaze_position__type_support.cpp.o\x1b[0m\n'}
+[2.495160] (tobii_glasses_pkg) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target tobii_glasses_pkg__rosidl_typesupport_c\x1b[0m\n'}
+[2.503302] (-) TimerEvent: {}
+[2.513788] (tobii_glasses_pkg) StdoutLine: {'line': b'[ 41%] \x1b[32mBuilding CXX object CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_c.dir/rosidl_typesupport_c/tobii_glasses_pkg/msg/tobii_glasses__type_support.cpp.o\x1b[0m\n'}
+[2.553955] (tobii_glasses_pkg) StdoutLine: {'line': b'[ 43%] \x1b[32mBuilding CXX object CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_c.dir/rosidl_typesupport_c/tobii_glasses_pkg/msg/gaze_position__type_support.cpp.o\x1b[0m\n'}
+[2.594735] (tobii_glasses_pkg) StdoutLine: {'line': b'[ 45%] \x1b[32mBuilding CXX object CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_c.dir/rosidl_typesupport_c/tobii_glasses_pkg/msg/gaze_position3_d__type_support.cpp.o\x1b[0m\n'}
+[2.603403] (-) TimerEvent: {}
+[2.609086] (tobii_glasses_pkg) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target tobii_glasses_pkg__rosidl_typesupport_introspection_c\x1b[0m\n'}
+[2.631299] (tobii_glasses_pkg) StdoutLine: {'line': b'[ 47%] \x1b[32mBuilding C object CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/tobii_glasses_pkg/msg/detail/tobii_glasses__type_support.c.o\x1b[0m\n'}
+[2.634166] (tobii_glasses_pkg) StdoutLine: {'line': b'[ 49%] \x1b[32mBuilding CXX object CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_c.dir/rosidl_typesupport_c/tobii_glasses_pkg/msg/eye_data__type_support.cpp.o\x1b[0m\n'}
+[2.672329] (tobii_glasses_pkg) StdoutLine: {'line': b'[ 50%] \x1b[32m\x1b[1mLinking CXX shared library libtobii_glasses_pkg__rosidl_typesupport_c.so\x1b[0m\n'}
+[2.677768] (tobii_glasses_pkg) StdoutLine: {'line': b'[ 52%] \x1b[32mBuilding C object CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/tobii_glasses_pkg/msg/detail/gaze_position__type_support.c.o\x1b[0m\n'}
+[2.699135] (tobii_glasses_pkg) StdoutLine: {'line': b'[ 54%] \x1b[32mBuilding C object CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/tobii_glasses_pkg/msg/detail/gaze_position3_d__type_support.c.o\x1b[0m\n'}
+[2.703515] (-) TimerEvent: {}
+[2.711456] (tobii_glasses_pkg) StdoutLine: {'line': b'[ 56%] \x1b[32mBuilding C object CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/tobii_glasses_pkg/msg/detail/eye_data__type_support.c.o\x1b[0m\n'}
+[2.719469] (tobii_glasses_pkg) StdoutLine: {'line': b'[ 58%] \x1b[32mBuilding CXX object CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/gaze_position3_d__type_support.cpp.o\x1b[0m\n'}
+[2.724452] (tobii_glasses_pkg) StdoutLine: {'line': b'[ 60%] \x1b[32m\x1b[1mLinking CXX shared library libtobii_glasses_pkg__rosidl_typesupport_cpp.so\x1b[0m\n'}
+[2.724758] (tobii_glasses_pkg) StdoutLine: {'line': b'[ 61%] \x1b[32mBuilding CXX object CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/tobii_glasses_pkg/msg/detail/dds_fastrtps/eye_data__type_support.cpp.o\x1b[0m\n'}
+[2.730709] (tobii_glasses_pkg) StdoutLine: {'line': b'[ 61%] Built target tobii_glasses_pkg__rosidl_typesupport_c\n'}
+[2.754678] (tobii_glasses_pkg) StdoutLine: {'line': b'[ 63%] \x1b[32m\x1b[1mLinking C shared library libtobii_glasses_pkg__rosidl_typesupport_introspection_c.so\x1b[0m\n'}
+[2.755454] (tobii_glasses_pkg) StdoutLine: {'line': b'[ 65%] \x1b[32m\x1b[1mLinking CXX shared library libtobii_glasses_pkg__rosidl_typesupport_introspection_cpp.so\x1b[0m\n'}
+[2.763957] (tobii_glasses_pkg) StdoutLine: {'line': b'[ 65%] Built target tobii_glasses_pkg__rosidl_typesupport_cpp\n'}
+[2.788171] (tobii_glasses_pkg) StdoutLine: {'line': b'[ 65%] Built target tobii_glasses_pkg__rosidl_typesupport_introspection_c\n'}
+[2.803616] (-) TimerEvent: {}
+[2.823681] (tobii_glasses_pkg) StdoutLine: {'line': b'[ 65%] Built target tobii_glasses_pkg__rosidl_typesupport_introspection_cpp\n'}
+[2.903713] (-) TimerEvent: {}
+[3.004002] (-) TimerEvent: {}
+[3.059498] (tobii_glasses_pkg) StdoutLine: {'line': b'[ 67%] \x1b[32m\x1b[1mLinking CXX shared library libtobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.so\x1b[0m\n'}
+[3.104116] (-) TimerEvent: {}
+[3.130173] (tobii_glasses_pkg) StdoutLine: {'line': b'[ 67%] Built target tobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp\n'}
+[3.139260] (tobii_glasses_pkg) StdoutLine: {'line': b'[ 69%] \x1b[34m\x1b[1mGenerating C type support for eProsima Fast-RTPS\x1b[0m\n'}
+[3.204223] (-) TimerEvent: {}
+[3.304453] (-) TimerEvent: {}
+[3.404664] (-) TimerEvent: {}
+[3.480891] (tobii_glasses_pkg) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target tobii_glasses_pkg__rosidl_typesupport_fastrtps_c\x1b[0m\n'}
+[3.498389] (tobii_glasses_pkg) StdoutLine: {'line': b'[ 76%] \x1b[32mBuilding CXX object CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/tobii_glasses_pkg/msg/detail/gaze_position__type_support_c.cpp.o\x1b[0m\n'}
+[3.498528] (tobii_glasses_pkg) StdoutLine: {'line': b'[ 76%] \x1b[32mBuilding CXX object CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/tobii_glasses_pkg/msg/detail/eye_data__type_support_c.cpp.o\x1b[0m\n'}
+[3.498595] (tobii_glasses_pkg) StdoutLine: {'line': b'[ 76%] \x1b[32mBuilding CXX object CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/tobii_glasses_pkg/msg/detail/tobii_glasses__type_support_c.cpp.o\x1b[0m\n'}
+[3.498657] (tobii_glasses_pkg) StdoutLine: {'line': b'[ 76%] \x1b[32mBuilding CXX object CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/tobii_glasses_pkg/msg/detail/gaze_position3_d__type_support_c.cpp.o\x1b[0m\n'}
+[3.504754] (-) TimerEvent: {}
+[3.604969] (-) TimerEvent: {}
+[3.705214] (-) TimerEvent: {}
+[3.778258] (tobii_glasses_pkg) StdoutLine: {'line': b'[ 78%] \x1b[32m\x1b[1mLinking CXX shared library libtobii_glasses_pkg__rosidl_typesupport_fastrtps_c.so\x1b[0m\n'}
+[3.805329] (-) TimerEvent: {}
+[3.850093] (tobii_glasses_pkg) StdoutLine: {'line': b'[ 78%] Built target tobii_glasses_pkg__rosidl_typesupport_fastrtps_c\n'}
+[3.857912] (tobii_glasses_pkg) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target tobii_glasses_pkg\x1b[0m\n'}
+[3.866157] (tobii_glasses_pkg) StdoutLine: {'line': b'[ 78%] Built target tobii_glasses_pkg\n'}
+[3.874249] (tobii_glasses_pkg) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target tobii_glasses_pkg__py\x1b[0m\n'}
+[3.883315] (tobii_glasses_pkg) StdoutLine: {'line': b'[ 80%] \x1b[34m\x1b[1mGenerating Python code for ROS interfaces\x1b[0m\n'}
+[3.905428] (-) TimerEvent: {}
+[4.005638] (-) TimerEvent: {}
+[4.105862] (-) TimerEvent: {}
+[4.206092] (-) TimerEvent: {}
+[4.306310] (-) TimerEvent: {}
+[4.406512] (-) TimerEvent: {}
+[4.506716] (-) TimerEvent: {}
+[4.566693] (tobii_glasses_pkg) StdoutLine: {'line': b'[ 80%] Built target tobii_glasses_pkg__py\n'}
+[4.574461] (tobii_glasses_pkg) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target tobii_glasses_pkg__python\x1b[0m\n'}
+[4.595919] (tobii_glasses_pkg) StdoutLine: {'line': b'[ 83%] \x1b[32mBuilding C object CMakeFiles/tobii_glasses_pkg__python.dir/rosidl_generator_py/tobii_glasses_pkg/msg/_tobii_glasses_s.c.o\x1b[0m\n'}
+[4.596141] (tobii_glasses_pkg) StdoutLine: {'line': b'[ 83%] \x1b[32mBuilding C object CMakeFiles/tobii_glasses_pkg__python.dir/rosidl_generator_py/tobii_glasses_pkg/msg/_gaze_position_s.c.o\x1b[0m\n'}
+[4.596280] (tobii_glasses_pkg) StdoutLine: {'line': b'[ 85%] \x1b[32mBuilding C object CMakeFiles/tobii_glasses_pkg__python.dir/rosidl_generator_py/tobii_glasses_pkg/msg/_gaze_position3_d_s.c.o\x1b[0m\n'}
+[4.596430] (tobii_glasses_pkg) StdoutLine: {'line': b'[ 87%] \x1b[32mBuilding C object CMakeFiles/tobii_glasses_pkg__python.dir/rosidl_generator_py/tobii_glasses_pkg/msg/_eye_data_s.c.o\x1b[0m\n'}
+[4.606820] (-) TimerEvent: {}
+[4.673786] (tobii_glasses_pkg) StdoutLine: {'line': b'[ 89%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/tobii_glasses_pkg/libtobii_glasses_pkg__python.so\x1b[0m\n'}
+[4.706934] (-) TimerEvent: {}
+[4.713242] (tobii_glasses_pkg) StdoutLine: {'line': b'[ 89%] Built target tobii_glasses_pkg__python\n'}
+[4.721535] (tobii_glasses_pkg) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target tobii_glasses_pkg__rosidl_typesupport_c__pyext\x1b[0m\n'}
+[4.721667] (tobii_glasses_pkg) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target tobii_glasses_pkg__rosidl_typesupport_introspection_c__pyext\x1b[0m\n'}
+[4.721725] (tobii_glasses_pkg) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target tobii_glasses_pkg__rosidl_typesupport_fastrtps_c__pyext\x1b[0m\n'}
+[4.737210] (tobii_glasses_pkg) StdoutLine: {'line': b'[ 92%] \x1b[32mBuilding C object CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/tobii_glasses_pkg/_tobii_glasses_pkg_s.ep.rosidl_typesupport_introspection_c.c.o\x1b[0m\n'}
+[4.737415] (tobii_glasses_pkg) StdoutLine: {'line': b'[ 92%] \x1b[32mBuilding C object CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/tobii_glasses_pkg/_tobii_glasses_pkg_s.ep.rosidl_typesupport_c.c.o\x1b[0m\n'}
+[4.739067] (tobii_glasses_pkg) StdoutLine: {'line': b'[ 94%] \x1b[32mBuilding C object CMakeFiles/tobii_glasses_pkg__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/tobii_glasses_pkg/_tobii_glasses_pkg_s.ep.rosidl_typesupport_fastrtps_c.c.o\x1b[0m\n'}
+[4.807057] (-) TimerEvent: {}
+[4.807832] (tobii_glasses_pkg) StdoutLine: {'line': b'[ 98%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/tobii_glasses_pkg/tobii_glasses_pkg_s__rosidl_typesupport_c.cpython-38-x86_64-linux-gnu.so\x1b[0m\n'}
+[4.807951] (tobii_glasses_pkg) StdoutLine: {'line': b'[ 98%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/tobii_glasses_pkg/tobii_glasses_pkg_s__rosidl_typesupport_introspection_c.cpython-38-x86_64-linux-gnu.so\x1b[0m\n'}
+[4.811561] (tobii_glasses_pkg) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX shared library rosidl_generator_py/tobii_glasses_pkg/tobii_glasses_pkg_s__rosidl_typesupport_fastrtps_c.cpython-38-x86_64-linux-gnu.so\x1b[0m\n'}
+[4.843558] (tobii_glasses_pkg) StdoutLine: {'line': b'[100%] Built target tobii_glasses_pkg__rosidl_typesupport_c__pyext\n'}
+[4.845326] (tobii_glasses_pkg) StdoutLine: {'line': b'[100%] Built target tobii_glasses_pkg__rosidl_typesupport_introspection_c__pyext\n'}
+[4.875258] (tobii_glasses_pkg) StdoutLine: {'line': b'[100%] Built target tobii_glasses_pkg__rosidl_typesupport_fastrtps_c__pyext\n'}
+[4.884651] (tobii_glasses_pkg) CommandEnded: {'returncode': 0}
+[4.907252] (-) TimerEvent: {}
+[4.993711] (tobii_glasses_pkg) JobProgress: {'identifier': 'tobii_glasses_pkg', 'progress': 'install'}
+[5.007764] (-) TimerEvent: {}
+[5.026937] (tobii_glasses_pkg) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg'], 'cwd': '/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg', 'env': OrderedDict([('HOSTNAME', 'franka-pc'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/lib/x86_64-linux-gnu:/opt/ros/foxy/lib'), ('HOME', '/root'), ('ROS_PYTHON_VERSION', '3'), ('ROS_DISTRO', 'foxy'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm'), ('ROS_LOCALHOST_ONLY', '0'), ('QT_X11_NO_MITSHM', '1'), ('PATH', '/opt/ros/foxy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/opt/ros/foxy'), ('PWD', '/home/ema/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/opt/ros/foxy/lib/python3.8/site-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/opt/ros/foxy')]), 'shell': False}
+[5.041072] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[5.041339] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg/environment/pythonpath.sh\n'}
+[5.041560] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg/environment/pythonpath.dsv\n'}
+[5.041743] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/python3.8/site-packages/scripts/\n'}
+[5.041925] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/python3.8/site-packages/scripts//tobii_glasses_buffer.py\n'}
+[5.042012] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/python3.8/site-packages/scripts//calibrate_glasses.py\n'}
+[5.042126] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/python3.8/site-packages/scripts//tobii_glasses.py\n'}
+[5.042255] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/python3.8/site-packages/scripts//video_capture.py\n'}
+[5.042395] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/python3.8/site-packages/scripts//__init__.py\n'}
+[5.074771] (tobii_glasses_pkg) StdoutLine: {'line': b"Listing '/home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/python3.8/site-packages/scripts/'...\n"}
+[5.074903] (tobii_glasses_pkg) StdoutLine: {'line': b"Compiling '/home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/python3.8/site-packages/scripts/__init__.py'...\n"}
+[5.074976] (tobii_glasses_pkg) StdoutLine: {'line': b"Compiling '/home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/python3.8/site-packages/scripts/calibrate_glasses.py'...\n"}
+[5.075044] (tobii_glasses_pkg) StdoutLine: {'line': b"Compiling '/home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/python3.8/site-packages/scripts/tobii_glasses.py'...\n"}
+[5.075111] (tobii_glasses_pkg) StdoutLine: {'line': b"Compiling '/home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/python3.8/site-packages/scripts/tobii_glasses_buffer.py'...\n"}
+[5.075176] (tobii_glasses_pkg) StdoutLine: {'line': b"Compiling '/home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/python3.8/site-packages/scripts/video_capture.py'...\n"}
+[5.077872] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/tobii_glasses_pkg/tobii_glasses.py\n'}
+[5.078033] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg//launch\n'}
+[5.078207] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg//launch/piano_demo.launch.py\n'}
+[5.078299] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg//launch/pupil.launch.py\n'}
+[5.078388] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg//launch/pupil_devel.launch.py\n'}
+[5.078623] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/ament_index/resource_index/rosidl_interfaces/tobii_glasses_pkg\n'}
+[5.078790] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg\n'}
+[5.078887] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg\n'}
+[5.078990] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/eye_data.h\n'}
+[5.079044] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/tobii_glasses.h\n'}
+[5.079110] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/rosidl_generator_c__visibility_control.h\n'}
+[5.079174] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail\n'}
+[5.079294] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/eye_data__struct.h\n'}
+[5.079366] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/gaze_position__type_support.h\n'}
+[5.079435] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/gaze_position3_d__functions.c\n'}
+[5.079540] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/gaze_position__struct.h\n'}
+[5.079683] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/eye_data__type_support.h\n'}
+[5.079789] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/gaze_position3_d__functions.h\n'}
+[5.079890] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/tobii_glasses__functions.h\n'}
+[5.079963] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/tobii_glasses__type_support.h\n'}
+[5.080088] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/gaze_position3_d__type_support.h\n'}
+[5.080162] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/gaze_position3_d__struct.h\n'}
+[5.080263] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/tobii_glasses__functions.c\n'}
+[5.080369] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/tobii_glasses__struct.h\n'}
+[5.080471] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/gaze_position__functions.c\n'}
+[5.080572] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/eye_data__functions.c\n'}
+[5.080718] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/eye_data__functions.h\n'}
+[5.080810] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/gaze_position__functions.h\n'}
+[5.080887] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/gaze_position.h\n'}
+[5.080985] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/gaze_position3_d.h\n'}
+[5.081150] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg/environment/library_path.sh\n'}
+[5.081312] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg/environment/library_path.dsv\n'}
+[5.081535] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/libtobii_glasses_pkg__rosidl_generator_c.so\n'}
+[5.081971] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Set runtime path of "/home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/libtobii_glasses_pkg__rosidl_generator_c.so" to ""\n'}
+[5.082058] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Up-to-date: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg\n'}
+[5.082121] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Up-to-date: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg\n'}
+[5.082267] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/rosidl_typesupport_fastrtps_c__visibility_control.h\n'}
+[5.082358] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Up-to-date: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail\n'}
+[5.082418] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/gaze_position3_d__rosidl_typesupport_fastrtps_c.h\n'}
+[5.082565] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/eye_data__rosidl_typesupport_fastrtps_c.h\n'}
+[5.082632] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/gaze_position__rosidl_typesupport_fastrtps_c.h\n'}
+[5.082688] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/tobii_glasses__rosidl_typesupport_fastrtps_c.h\n'}
+[5.082832] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/libtobii_glasses_pkg__rosidl_typesupport_fastrtps_c.so\n'}
+[5.083170] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Set runtime path of "/home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/libtobii_glasses_pkg__rosidl_typesupport_fastrtps_c.so" to ""\n'}
+[5.083265] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Up-to-date: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg\n'}
+[5.083345] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Up-to-date: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg\n'}
+[5.083395] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h\n'}
+[5.083480] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Up-to-date: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail\n'}
+[5.083548] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/gaze_position__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[5.083615] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/tobii_glasses__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[5.083678] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/eye_data__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[5.083757] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/gaze_position3_d__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[5.083884] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/dds_fastrtps\n'}
+[5.084057] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/libtobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.so\n'}
+[5.084539] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Set runtime path of "/home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/libtobii_glasses_pkg__rosidl_typesupport_fastrtps_cpp.so" to ""\n'}
+[5.084689] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Up-to-date: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg\n'}
+[5.084758] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Up-to-date: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg\n'}
+[5.084809] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/rosidl_typesupport_introspection_c__visibility_control.h\n'}
+[5.084878] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Up-to-date: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail\n'}
+[5.084950] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/gaze_position__type_support.c\n'}
+[5.085016] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/eye_data__rosidl_typesupport_introspection_c.h\n'}
+[5.085083] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/gaze_position3_d__type_support.c\n'}
+[5.085185] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/tobii_glasses__type_support.c\n'}
+[5.085298] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/tobii_glasses__rosidl_typesupport_introspection_c.h\n'}
+[5.085402] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/eye_data__type_support.c\n'}
+[5.085510] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/gaze_position__rosidl_typesupport_introspection_c.h\n'}
+[5.085615] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/gaze_position3_d__rosidl_typesupport_introspection_c.h\n'}
+[5.085829] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/libtobii_glasses_pkg__rosidl_typesupport_introspection_c.so\n'}
+[5.086328] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Set runtime path of "/home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/libtobii_glasses_pkg__rosidl_typesupport_introspection_c.so" to ""\n'}
+[5.086461] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/libtobii_glasses_pkg__rosidl_typesupport_c.so\n'}
+[5.086838] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Set runtime path of "/home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/libtobii_glasses_pkg__rosidl_typesupport_c.so" to ""\n'}
+[5.086984] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Up-to-date: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg\n'}
+[5.087066] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Up-to-date: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg\n'}
+[5.087148] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/gaze_position.hpp\n'}
+[5.087204] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/tobii_glasses.hpp\n'}
+[5.087283] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/eye_data.hpp\n'}
+[5.087354] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/gaze_position3_d.hpp\n'}
+[5.087419] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Up-to-date: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail\n'}
+[5.087486] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/gaze_position3_d__traits.hpp\n'}
+[5.087551] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/tobii_glasses__builder.hpp\n'}
+[5.087637] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/eye_data__builder.hpp\n'}
+[5.087741] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/gaze_position3_d__struct.hpp\n'}
+[5.087878] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/tobii_glasses__traits.hpp\n'}
+[5.087984] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/gaze_position3_d__builder.hpp\n'}
+[5.088088] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/eye_data__traits.hpp\n'}
+[5.088207] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/gaze_position__builder.hpp\n'}
+[5.088299] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/gaze_position__traits.hpp\n'}
+[5.088378] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/eye_data__struct.hpp\n'}
+[5.088487] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/tobii_glasses__struct.hpp\n'}
+[5.088595] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/gaze_position__struct.hpp\n'}
+[5.088763] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Up-to-date: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg\n'}
+[5.088828] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Up-to-date: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg\n'}
+[5.088908] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Up-to-date: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail\n'}
+[5.088960] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/gaze_position__rosidl_typesupport_introspection_cpp.hpp\n'}
+[5.089024] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/gaze_position3_d__type_support.cpp\n'}
+[5.089106] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/gaze_position__type_support.cpp\n'}
+[5.089216] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/tobii_glasses__rosidl_typesupport_introspection_cpp.hpp\n'}
+[5.089366] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/eye_data__rosidl_typesupport_introspection_cpp.hpp\n'}
+[5.089483] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/gaze_position3_d__rosidl_typesupport_introspection_cpp.hpp\n'}
+[5.089600] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/eye_data__type_support.cpp\n'}
+[5.089713] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/include/tobii_glasses_pkg/msg/detail/tobii_glasses__type_support.cpp\n'}
+[5.089913] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/libtobii_glasses_pkg__rosidl_typesupport_introspection_cpp.so\n'}
+[5.090440] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Set runtime path of "/home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/libtobii_glasses_pkg__rosidl_typesupport_introspection_cpp.so" to ""\n'}
+[5.090539] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/libtobii_glasses_pkg__rosidl_typesupport_cpp.so\n'}
+[5.090909] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Set runtime path of "/home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/libtobii_glasses_pkg__rosidl_typesupport_cpp.so" to ""\n'}
+[5.091002] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/python3.8/site-packages/tobii_glasses_pkg/__init__.py\n'}
+[5.107716] (-) TimerEvent: {}
+[5.113905] (tobii_glasses_pkg) StdoutLine: {'line': b"Compiling '/home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/python3.8/site-packages/tobii_glasses_pkg/__init__.py'...\n"}
+[5.116502] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/python3.8/site-packages/tobii_glasses_pkg/msg\n'}
+[5.116678] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/python3.8/site-packages/tobii_glasses_pkg/msg/_eye_data_s.c\n'}
+[5.116755] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/python3.8/site-packages/tobii_glasses_pkg/msg/_gaze_position3_d.py\n'}
+[5.116896] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/python3.8/site-packages/tobii_glasses_pkg/msg/_gaze_position_s.c\n'}
+[5.116977] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/python3.8/site-packages/tobii_glasses_pkg/msg/_tobii_glasses.py\n'}
+[5.117065] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/python3.8/site-packages/tobii_glasses_pkg/msg/__init__.py\n'}
+[5.117132] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/python3.8/site-packages/tobii_glasses_pkg/msg/_tobii_glasses_s.c\n'}
+[5.117203] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/python3.8/site-packages/tobii_glasses_pkg/msg/_eye_data.py\n'}
+[5.117321] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/python3.8/site-packages/tobii_glasses_pkg/msg/_gaze_position3_d_s.c\n'}
+[5.117412] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/python3.8/site-packages/tobii_glasses_pkg/msg/_gaze_position.py\n'}
+[5.117653] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/python3.8/site-packages/tobii_glasses_pkg/tobii_glasses_pkg_s__rosidl_typesupport_fastrtps_c.cpython-38-x86_64-linux-gnu.so\n'}
+[5.118265] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Set runtime path of "/home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/python3.8/site-packages/tobii_glasses_pkg/tobii_glasses_pkg_s__rosidl_typesupport_fastrtps_c.cpython-38-x86_64-linux-gnu.so" to ""\n'}
+[5.118520] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/python3.8/site-packages/tobii_glasses_pkg/tobii_glasses_pkg_s__rosidl_typesupport_introspection_c.cpython-38-x86_64-linux-gnu.so\n'}
+[5.118999] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Set runtime path of "/home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/python3.8/site-packages/tobii_glasses_pkg/tobii_glasses_pkg_s__rosidl_typesupport_introspection_c.cpython-38-x86_64-linux-gnu.so" to ""\n'}
+[5.119169] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/python3.8/site-packages/tobii_glasses_pkg/tobii_glasses_pkg_s__rosidl_typesupport_c.cpython-38-x86_64-linux-gnu.so\n'}
+[5.119606] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Set runtime path of "/home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/python3.8/site-packages/tobii_glasses_pkg/tobii_glasses_pkg_s__rosidl_typesupport_c.cpython-38-x86_64-linux-gnu.so" to ""\n'}
+[5.119823] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/libtobii_glasses_pkg__python.so\n'}
+[5.120150] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Set runtime path of "/home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/lib/libtobii_glasses_pkg__python.so" to ""\n'}
+[5.120290] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg/msg/TobiiGlasses.idl\n'}
+[5.120379] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg/msg/GazePosition.idl\n'}
+[5.120451] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg/msg/GazePosition3D.idl\n'}
+[5.120581] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg/msg/EyeData.idl\n'}
+[5.120728] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg/msg/TobiiGlasses.msg\n'}
+[5.120848] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg/msg/GazePosition.msg\n'}
+[5.120985] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg/msg/GazePosition3D.msg\n'}
+[5.121105] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg/msg/EyeData.msg\n'}
+[5.121314] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/ament_index/resource_index/package_run_dependencies/tobii_glasses_pkg\n'}
+[5.121474] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/ament_index/resource_index/parent_prefix_path/tobii_glasses_pkg\n'}
+[5.121569] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg/environment/ament_prefix_path.sh\n'}
+[5.121696] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg/environment/ament_prefix_path.dsv\n'}
+[5.121862] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg/environment/path.sh\n'}
+[5.121970] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg/environment/path.dsv\n'}
+[5.122115] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg/local_setup.bash\n'}
+[5.122318] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg/local_setup.sh\n'}
+[5.122436] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg/local_setup.zsh\n'}
+[5.122562] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg/local_setup.dsv\n'}
+[5.122683] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg/package.dsv\n'}
+[5.122841] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/ament_index/resource_index/packages/tobii_glasses_pkg\n'}
+[5.123026] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_generator_cExport.cmake\n'}
+[5.123212] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_generator_cExport-noconfig.cmake\n'}
+[5.123349] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_typesupport_introspection_cExport.cmake\n'}
+[5.123473] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_typesupport_introspection_cExport-noconfig.cmake\n'}
+[5.123638] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_typesupport_cExport.cmake\n'}
+[5.123785] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_typesupport_cExport-noconfig.cmake\n'}
+[5.123948] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_generator_cppExport.cmake\n'}
+[5.124182] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_typesupport_introspection_cppExport.cmake\n'}
+[5.124328] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_typesupport_introspection_cppExport-noconfig.cmake\n'}
+[5.124494] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_typesupport_cppExport.cmake\n'}
+[5.124627] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg/cmake/tobii_glasses_pkg__rosidl_typesupport_cppExport-noconfig.cmake\n'}
+[5.124756] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg/cmake/rosidl_cmake-extras.cmake\n'}
+[5.124901] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[5.125063] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[5.125164] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg/cmake/ament_cmake_export_targets-extras.cmake\n'}
+[5.125320] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[5.125457] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake\n'}
+[5.125557] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake\n'}
+[5.125669] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg/cmake/tobii_glasses_pkgConfig.cmake\n'}
+[5.125761] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg/cmake/tobii_glasses_pkgConfig-version.cmake\n'}
+[5.125882] (tobii_glasses_pkg) StdoutLine: {'line': b'-- Installing: /home/ema/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg/share/tobii_glasses_pkg/package.xml\n'}
+[5.127799] (tobii_glasses_pkg) CommandEnded: {'returncode': 0}
+[5.207866] (-) TimerEvent: {}
+[5.233903] (tobii_glasses_pkg) JobEnded: {'identifier': 'tobii_glasses_pkg', 'rc': 0}
+[5.234446] (-) EventReactorShutdown: {}
