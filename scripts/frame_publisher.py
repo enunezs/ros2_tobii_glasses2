@@ -1,27 +1,28 @@
-import math
+#! /usr/bin/env python3
+
 import sys
 
-from geometry_msgs.msg import TransformStamped
-
-#import numpy as np
-from numpy import cross as cross_product
-from numpy.linalg import norm
-from numpy import dot
-import numpy as np
-
-from math import sqrt
-
+# * Core dependencies
 import rclpy
 from rclpy.node import Node
+
+from math import sqrt
 
 # Broadcasters
 from tf2_ros.static_transform_broadcaster import StaticTransformBroadcaster
 from tf2_ros import TransformBroadcaster
-
+from geometry_msgs.msg import TransformStamped
 
 # * Glasses messages
 from tobii_glasses_pkg.msg import TobiiGlasses as TobiiGlassesMsg
 from tobii_glasses_pkg.msg import EyeData as EyeDataMsg
+
+# np
+from numpy import cross as cross_product
+from numpy.linalg import norm
+from numpy import dot
+
+import cv2, queue, threading, time
 
 #from tf2_ros.transformations import quaternion_from_euler
 
@@ -131,8 +132,8 @@ class FramePublisher(Node):
         # eye_vector and ref_vector are 3D vectors
 
         # Get the unit vectors
-        eye_vector = eye_vector / np.linalg.norm(eye_vector)
-        ref_vector = ref_vector / np.linalg.norm(ref_vector)
+        eye_vector = eye_vector / norm(eye_vector)
+        ref_vector = ref_vector / norm(ref_vector)
         """
 
         # Get the rotation angle
@@ -166,6 +167,7 @@ def main(args=None):
     try:
         rclpy.spin(glasses_frame_publisher)  # prevents closure. Run until interrupt
     except KeyboardInterrupt:
+        cv2.destroyAllWindows()
         glasses_frame_publisher.destroy_node()  # duh
         rclpy.shutdown()  # Shutdown DDS !
 

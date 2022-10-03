@@ -24,6 +24,8 @@ find_package(rclpy REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(builtin_interfaces REQUIRED)
 find_package(sensor_msgs REQUIRED)
+find_package(tf2_ros REQUIRED)
+
 
 #find_package(numpy REQUIRED)
 #find_package(cv2 REQUIRED)
@@ -46,6 +48,7 @@ ament_python_install_package(${PROJECT_NAME})
 
 install(PROGRAMS
   scripts/tobii_glasses.py
+  scripts/frame_publisher.py
   DESTINATION lib/${PROJECT_NAME}
 )
 
