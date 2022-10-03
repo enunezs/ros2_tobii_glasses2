@@ -1,8 +1,9 @@
 FROM ros:foxy-ros-base	
 LABEL maintainer="Emanuel Nunez S gmail dot com"
+
+# working directory
 ENV HOME /root
 WORKDIR $HOME
-SHELL ["/bin/bash", "-c"]
 
 # install ros2 packages
 RUN apt-get update && apt-get install -y \ 
@@ -23,7 +24,6 @@ RUN pip3 install --upgrade pip
 RUN pip3 install -U \
   	argcomplete \
 	pyautogui
-
 
 # general utilities
 RUN apt-get update && apt-get install -y \
@@ -49,14 +49,20 @@ RUN apt-get update && apt-get install -y \
 	python3-tk\
 	python3-dev
 
-RUN source /opt/ros/foxy/setup.sh && \
-	colcon build
 
-WORKDIR $HOME
+RUN echo ' \n\
+echo "Sourcing ROS2 packages..." \n\
+source /opt/ros/foxy/setup.sh \n\
+source /home/usr/workspaces/ros2_tobii_glasses2/install/setup.sh' >> $HOME/.bashrc
 
-RUN echo 'source /opt/ros/foxy/setup.sh && source $HOME/ws/install/setup.bash' >> $HOME/.bashrc
+#### SET ENVIRONMENT
+WORKDIR /home/usr/workspaces/ros2_tobii_glasses2
 
-# RUN echo 'alias python="python3"' >> $HOME/.bashrc
+RUN echo ' \n\
+colcon build \n\
+source install/setup.bash'
+
+RUN echo 'alias python="python3"' >> $HOME/.bashrc
 
 # launch ros package
 #CMD ["ros2", "launch", "demo_nodes_cpp", "talker_listener.launch.py"]
