@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root
+CMAKE_SOURCE_DIR = /root/ws/ros2_tobii_glasses2
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/build/tobii_glasses_pkg
+CMAKE_BINARY_DIR = /root/ws/ros2_tobii_glasses2/build/tobii_glasses_pkg
 
 # Utility rule file for tobii_glasses_pkg__py.
 
@@ -167,8 +167,8 @@ rosidl_generator_py/tobii_glasses_pkg/_tobii_glasses_pkg_s.ep.rosidl_typesupport
 rosidl_generator_py/tobii_glasses_pkg/_tobii_glasses_pkg_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/foxy/share/std_msgs/msg/UInt64MultiArray.idl
 rosidl_generator_py/tobii_glasses_pkg/_tobii_glasses_pkg_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/foxy/share/std_msgs/msg/UInt8.idl
 rosidl_generator_py/tobii_glasses_pkg/_tobii_glasses_pkg_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/foxy/share/std_msgs/msg/UInt8MultiArray.idl
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/build/tobii_glasses_pkg/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python code for ROS interfaces"
-	cd /root/build/tobii_glasses_pkg/tobii_glasses_pkg__py && /usr/bin/python3 /opt/ros/foxy/share/rosidl_generator_py/cmake/../../../lib/rosidl_generator_py/rosidl_generator_py --generator-arguments-file /root/build/tobii_glasses_pkg/rosidl_generator_py__arguments.json --typesupport-impls "rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c;rosidl_typesupport_c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/ws/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python code for ROS interfaces"
+	cd /root/ws/ros2_tobii_glasses2/build/tobii_glasses_pkg/tobii_glasses_pkg__py && /usr/bin/python3 /opt/ros/foxy/share/rosidl_generator_py/cmake/../../../lib/rosidl_generator_py/rosidl_generator_py --generator-arguments-file /root/ws/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_py__arguments.json --typesupport-impls "rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c;rosidl_typesupport_c"
 
 rosidl_generator_py/tobii_glasses_pkg/_tobii_glasses_pkg_s.ep.rosidl_typesupport_introspection_c.c: rosidl_generator_py/tobii_glasses_pkg/_tobii_glasses_pkg_s.ep.rosidl_typesupport_fastrtps_c.c
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_py/tobii_glasses_pkg/_tobii_glasses_pkg_s.ep.rosidl_typesupport_introspection_c.c
@@ -210,10 +210,10 @@ tobii_glasses_pkg__py/CMakeFiles/tobii_glasses_pkg__py.dir/build: tobii_glasses_
 .PHONY : tobii_glasses_pkg__py/CMakeFiles/tobii_glasses_pkg__py.dir/build
 
 tobii_glasses_pkg__py/CMakeFiles/tobii_glasses_pkg__py.dir/clean:
-	cd /root/build/tobii_glasses_pkg/tobii_glasses_pkg__py && $(CMAKE_COMMAND) -P CMakeFiles/tobii_glasses_pkg__py.dir/cmake_clean.cmake
+	cd /root/ws/ros2_tobii_glasses2/build/tobii_glasses_pkg/tobii_glasses_pkg__py && $(CMAKE_COMMAND) -P CMakeFiles/tobii_glasses_pkg__py.dir/cmake_clean.cmake
 .PHONY : tobii_glasses_pkg__py/CMakeFiles/tobii_glasses_pkg__py.dir/clean
 
 tobii_glasses_pkg__py/CMakeFiles/tobii_glasses_pkg__py.dir/depend:
-	cd /root/build/tobii_glasses_pkg && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root /root/build/tobii_glasses_pkg/tobii_glasses_pkg__py /root/build/tobii_glasses_pkg /root/build/tobii_glasses_pkg/tobii_glasses_pkg__py /root/build/tobii_glasses_pkg/tobii_glasses_pkg__py/CMakeFiles/tobii_glasses_pkg__py.dir/DependInfo.cmake --color=$(COLOR)
+	cd /root/ws/ros2_tobii_glasses2/build/tobii_glasses_pkg && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/ws/ros2_tobii_glasses2 /root/ws/ros2_tobii_glasses2/build/tobii_glasses_pkg/tobii_glasses_pkg__py /root/ws/ros2_tobii_glasses2/build/tobii_glasses_pkg /root/ws/ros2_tobii_glasses2/build/tobii_glasses_pkg/tobii_glasses_pkg__py /root/ws/ros2_tobii_glasses2/build/tobii_glasses_pkg/tobii_glasses_pkg__py/CMakeFiles/tobii_glasses_pkg__py.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : tobii_glasses_pkg__py/CMakeFiles/tobii_glasses_pkg__py.dir/depend
 

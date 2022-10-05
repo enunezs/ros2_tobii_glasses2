@@ -53,10 +53,10 @@ RUN apt-get update && apt-get install -y \
 RUN echo ' \n\
 echo "Sourcing ROS2 packages..." \n\
 source /opt/ros/foxy/setup.sh \n\
-source /home/usr/workspaces/ros2_tobii_glasses2/install/setup.sh' >> $HOME/.bashrc
+source $HOME/ws/ros2_tobii_glasses2/install/setup.sh' >> $HOME/.bashrc
 
 #### SET ENVIRONMENT
-WORKDIR /home/usr/workspaces/ros2_tobii_glasses2
+WORKDIR $HOME/ws/ros2_tobii_glasses2
 
 RUN echo ' \n\
 colcon build \n\
