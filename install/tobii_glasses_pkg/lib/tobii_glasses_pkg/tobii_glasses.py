@@ -31,60 +31,62 @@ from builtin_interfaces.msg import Time as TimeMsg
 from tobiiglassesctrl import TobiiGlassesController  # Import glasses lib
 
 # * Glasses messages
-# TODO: Ahem, simplify or fill
 from tobii_glasses_pkg.msg import TobiiGlasses as TobiiGlassesMsg
 from tobii_glasses_pkg.msg import EyeData as EyeDataMsg
-#from tobii_glasses_pkg.msg import GazePosition
-#from tobii_glasses_pkg.msg import GazePosition3D
+
+# * Mouse emulation
+import pyautogui
+
+# TODO Remove after study done
+import numpy as np
+import cv2, queue, threading, time
 
 ### * PARAMETERS * ###
 # Wifi connection
 ipv4_address = "192.168.71.50"
-# Wired conneciton
-ipv6_address = "fe80::76fe:48ff:fe1f:2c16"      # fe80::692c:1876:10f:33c8
-ipv6_interface = "enx60634c83de17"
-#ping6 ff02::1%eth0
-wired_mode = False
-publish_freq = 25   #Hz
+# Refresh mode
+high_refresh_rate = True
+publish_freq = 50   #50 Hz for high refresh rate, 25 Hz for low
+# Sample resolutions, only change if set to low refresh rate
 video_resolution = (960, 540)     # (qHD) Default for high framerate, optimal performance
-video_resolution = (720, 480)     # Not recommmeded
-video_resolution = (1280, 720)    # plain HD
-video_resolution = (1600, 900)
+#video_resolution = (720, 480)     # Not recommmeded
+#video_resolution = (1280, 720)    # plain HD
+#video_resolution = (1600, 900)
 #video_resolution = (1920,1080)    # (full HD) Default for low framerate
 
-# TODO: Visualization error for eye marker
-
-#use_glasses_timestamp = True # TODO, if false uses ROS-es
-
-### * Mouse emulation * ###
-import pyautogui
-EMULATE_GLASSES = False
+# Glasses emulation via mouse, very useful for testing
+EMULATE_GLASSES = True
+# Perform initial calibration
+do_calibration = True # Set to false to skip calibration process
+# Send image on topic "tobii_glasses/front_camera"
+send_image = True
 
 ### * DEBUG * ###
 syncronize_data = False  
 greyscale = False
-high_refresh_rate = True
-do_calibration = False
-send_image = True
 draw_circle = True
-
 print_performance = False
-record_glasses = False      # TODO: Future
-undo_distortion = False     # TODO: Future
 
-# TODO Remove after study done
-import numpy as np
+### ! Future:
+
+# ! Wired connection, not supported yet
+wired_mode = False
+#ipv6_address = "fe80::76fe:48ff:fe1f:2c16"      # fe80::692c:1876:10f:33c8
+#ipv6_interface = "enx60634c83de17"
+#ping6 ff02::1%eth0
+
+# record_glasses = False      # TODO: Future
+# undo_distortion = False     # TODO: Future
+
 
 # TODO: Future: INVESTIGATE Individual eye control
 # Add toggle to switch between eyes
 # Trigger calibration from other terminal?
-# TODO: Need to carefully observe data, particularly time
 # TODO: Parameter expose
 # TODO: Use config file
 
 # >>> ros2 run turtlesim turtlesim_node --ros-args --params-file ./turtlesim.yaml
 
-import cv2, queue, threading, time
 
 class tobiiPublisher(Node): 
 
@@ -110,16 +112,16 @@ class tobiiPublisher(Node):
             String, "tobii_glasses/gaze_position", 1)
         """
 
-
-
         # * Init glasses
         self.bridge = CvBridge()
         global syncronize_data
-        
         global publish_freq
+
         if EMULATE_GLASSES:
+            print("Connecting to webcam 0")
             self.cap = VideoCapture(0)
             syncronize_data = False
+            publish_freq = 25 
             #self.cap.set(cv2.CAP_PROP_BUFFERSIZE, 0)
             #publish_freq = 5            #Hz
             #syncronize_data = False     
@@ -155,11 +157,12 @@ class tobiiPublisher(Node):
                 "rtsp://%s:8554/live/scene" % ipv4_address)
 
         # * Check if connection is succesful
-        """
-        if (self.cap.isOpened() == False):
+        
+        if (self.cap == False):
             print("Error opening video stream")
-        """
-
+        else:
+            print("Video stream opened")
+        
 
         if syncronize_data:
             self.buffer = TobiiGlassesBuffer()

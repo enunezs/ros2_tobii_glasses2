@@ -55,9 +55,9 @@ video_resolution = (960, 540)     # (qHD) Default for high framerate, optimal pe
 #video_resolution = (1920,1080)    # (full HD) Default for low framerate
 
 # Glasses emulation via mouse, very useful for testing
-EMULATE_GLASSES = False
+EMULATE_GLASSES = True
 # Perform initial calibration
-do_calibration = False # Set to false to skip calibration process
+do_calibration = True # Set to false to skip calibration process
 # Send image on topic "tobii_glasses/front_camera"
 send_image = True
 
@@ -115,11 +115,13 @@ class tobiiPublisher(Node):
         # * Init glasses
         self.bridge = CvBridge()
         global syncronize_data
-        
         global publish_freq
+
         if EMULATE_GLASSES:
+            print("Connecting to webcam 0")
             self.cap = VideoCapture(0)
             syncronize_data = False
+            publish_freq = 25 
             #self.cap.set(cv2.CAP_PROP_BUFFERSIZE, 0)
             #publish_freq = 5            #Hz
             #syncronize_data = False     
@@ -155,11 +157,12 @@ class tobiiPublisher(Node):
                 "rtsp://%s:8554/live/scene" % ipv4_address)
 
         # * Check if connection is succesful
-        """
-        if (self.cap.isOpened() == False):
+        
+        if (self.cap == False):
             print("Error opening video stream")
-        """
-
+        else:
+            print("Video stream opened")
+        
 
         if syncronize_data:
             self.buffer = TobiiGlassesBuffer()
