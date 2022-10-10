@@ -2,8 +2,12 @@ xhost +local:root
 
 docker image build -t ros2-glass-base .     
 
+<<<<<<< HEAD
 docker run -it \
 	--env="DISPLAY" \
+=======
+docker run -it --env="DISPLAY" \
+>>>>>>> acb9fe5807dc3423a38e0c209adf7e186eab4078
 	--device=/dev/video0:/dev/video0 \
 	-e DISPLAY=$DISPLAY \
 	--env="QT_X11_NO_MITSHM=1" \
