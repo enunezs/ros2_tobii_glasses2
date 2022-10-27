@@ -1,7 +1,0 @@
-{
-  "package_name": "tobii_glasses_pkg",
-  "non_idl_tuples": [
-    "/root/ws/ros2_tobii_glasses2:msg/TobiiGlasses.msg",
-    "/root/ws/ros2_tobii_glasses2:msg/EyeData.msg"
-  ]
-}

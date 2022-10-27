@@ -128,11 +128,13 @@ class tobiiPublisher(Node):
         # * Init glasses
         self.bridge = CvBridge()
         global syncronize_data
-        
         global publish_freq
+
         if EMULATE_GLASSES:
+            print("Connecting to webcam 0")
             self.cap = VideoCapture(0)
             syncronize_data = False
+            publish_freq = 25 
             #self.cap.set(cv2.CAP_PROP_BUFFERSIZE, 0)
             #publish_freq = 5            #Hz
             #syncronize_data = False     
@@ -168,11 +170,12 @@ class tobiiPublisher(Node):
                 "rtsp://%s:8554/live/scene" % ipv4_address)
 
         # * Check if connection is succesful
-        """
-        if (self.cap.isOpened() == False):
+        
+        if (self.cap == False):
             print("Error opening video stream")
-        """
-
+        else:
+            print("Video stream opened")
+        
 
         if syncronize_data:
             self.buffer = TobiiGlassesBuffer()
