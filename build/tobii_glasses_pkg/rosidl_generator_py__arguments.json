@@ -1,12 +1,10 @@
 {
   "package_name": "tobii_glasses_pkg",
-  "output_dir": "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_py/tobii_glasses_pkg",
+  "output_dir": "/root/ws/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_generator_py/tobii_glasses_pkg",
   "template_dir": "/opt/ros/foxy/share/rosidl_generator_py/cmake/../resource",
   "idl_tuples": [
-    "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_adapter/tobii_glasses_pkg:msg/TobiiGlasses.idl",
-    "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_adapter/tobii_glasses_pkg:msg/GazePosition.idl",
-    "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_adapter/tobii_glasses_pkg:msg/GazePosition3D.idl",
-    "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_adapter/tobii_glasses_pkg:msg/EyeData.idl"
+    "/root/ws/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_adapter/tobii_glasses_pkg:msg/TobiiGlasses.idl",
+    "/root/ws/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_adapter/tobii_glasses_pkg:msg/EyeData.idl"
   ],
   "ros_interface_dependencies": [
     "builtin_interfaces:/opt/ros/foxy/share/builtin_interfaces/msg/Duration.idl",
@@ -113,10 +111,8 @@
     "/opt/ros/foxy/share/rosidl_generator_py/cmake/../resource/_msg.py.em",
     "/opt/ros/foxy/share/rosidl_generator_py/cmake/../resource/_srv_pkg_typesupport_entry_point.c.em",
     "/opt/ros/foxy/share/rosidl_generator_py/cmake/../resource/_srv.py.em",
-    "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_adapter/tobii_glasses_pkg/msg/TobiiGlasses.idl",
-    "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_adapter/tobii_glasses_pkg/msg/GazePosition.idl",
-    "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_adapter/tobii_glasses_pkg/msg/GazePosition3D.idl",
-    "/home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_adapter/tobii_glasses_pkg/msg/EyeData.idl",
+    "/root/ws/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_adapter/tobii_glasses_pkg/msg/TobiiGlasses.idl",
+    "/root/ws/ros2_tobii_glasses2/build/tobii_glasses_pkg/rosidl_adapter/tobii_glasses_pkg/msg/EyeData.idl",
     "/opt/ros/foxy/share/builtin_interfaces/msg/Duration.idl",
     "/opt/ros/foxy/share/builtin_interfaces/msg/Time.idl",
     "/opt/ros/foxy/share/sensor_msgs/msg/BatteryState.idl",

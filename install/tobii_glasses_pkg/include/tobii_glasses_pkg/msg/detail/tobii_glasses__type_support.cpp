@@ -37,7 +37,87 @@ void TobiiGlasses_fini_function(void * message_memory)
   typed_message->~TobiiGlasses();
 }
 
-static const ::rosidl_typesupport_introspection_cpp::MessageMember TobiiGlasses_message_member_array[6] = {
+size_t size_function__TobiiGlasses__gaze_position(const void * untyped_member)
+{
+  (void)untyped_member;
+  return 2;
+}
+
+const void * get_const_function__TobiiGlasses__gaze_position(const void * untyped_member, size_t index)
+{
+  const auto & member =
+    *reinterpret_cast<const std::array<float, 2> *>(untyped_member);
+  return &member[index];
+}
+
+void * get_function__TobiiGlasses__gaze_position(void * untyped_member, size_t index)
+{
+  auto & member =
+    *reinterpret_cast<std::array<float, 2> *>(untyped_member);
+  return &member[index];
+}
+
+size_t size_function__TobiiGlasses__gaze_position_3d(const void * untyped_member)
+{
+  (void)untyped_member;
+  return 3;
+}
+
+const void * get_const_function__TobiiGlasses__gaze_position_3d(const void * untyped_member, size_t index)
+{
+  const auto & member =
+    *reinterpret_cast<const std::array<float, 3> *>(untyped_member);
+  return &member[index];
+}
+
+void * get_function__TobiiGlasses__gaze_position_3d(void * untyped_member, size_t index)
+{
+  auto & member =
+    *reinterpret_cast<std::array<float, 3> *>(untyped_member);
+  return &member[index];
+}
+
+size_t size_function__TobiiGlasses__acelerometer(const void * untyped_member)
+{
+  (void)untyped_member;
+  return 3;
+}
+
+const void * get_const_function__TobiiGlasses__acelerometer(const void * untyped_member, size_t index)
+{
+  const auto & member =
+    *reinterpret_cast<const std::array<float, 3> *>(untyped_member);
+  return &member[index];
+}
+
+void * get_function__TobiiGlasses__acelerometer(void * untyped_member, size_t index)
+{
+  auto & member =
+    *reinterpret_cast<std::array<float, 3> *>(untyped_member);
+  return &member[index];
+}
+
+size_t size_function__TobiiGlasses__gyroscope(const void * untyped_member)
+{
+  (void)untyped_member;
+  return 3;
+}
+
+const void * get_const_function__TobiiGlasses__gyroscope(const void * untyped_member, size_t index)
+{
+  const auto & member =
+    *reinterpret_cast<const std::array<float, 3> *>(untyped_member);
+  return &member[index];
+}
+
+void * get_function__TobiiGlasses__gyroscope(void * untyped_member, size_t index)
+{
+  auto & member =
+    *reinterpret_cast<std::array<float, 3> *>(untyped_member);
+  return &member[index];
+}
+
+static const ::rosidl_typesupport_introspection_cpp::MessageMember TobiiGlasses_message_member_array[8] = {
   {
     "header",  // name
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_MESSAGE,  // type
@@ -70,32 +150,32 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember TobiiGlasses_
   },
   {
     "gaze_position",  // name
-    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_MESSAGE,  // type
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
-    ::rosidl_typesupport_introspection_cpp::get_message_type_support_handle<tobii_glasses_pkg::msg::GazePosition>(),  // members of sub message
-    false,  // is array
-    0,  // array size
+    nullptr,  // members of sub message
+    true,  // is array
+    2,  // array size
     false,  // is upper bound
     offsetof(tobii_glasses_pkg::msg::TobiiGlasses, gaze_position),  // bytes offset in struct
     nullptr,  // default value
-    nullptr,  // size() function pointer
-    nullptr,  // get_const(index) function pointer
-    nullptr,  // get(index) function pointer
+    size_function__TobiiGlasses__gaze_position,  // size() function pointer
+    get_const_function__TobiiGlasses__gaze_position,  // get_const(index) function pointer
+    get_function__TobiiGlasses__gaze_position,  // get(index) function pointer
     nullptr  // resize(index) function pointer
   },
   {
     "gaze_position_3d",  // name
-    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_MESSAGE,  // type
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
-    ::rosidl_typesupport_introspection_cpp::get_message_type_support_handle<tobii_glasses_pkg::msg::GazePosition3D>(),  // members of sub message
-    false,  // is array
-    0,  // array size
+    nullptr,  // members of sub message
+    true,  // is array
+    3,  // array size
     false,  // is upper bound
     offsetof(tobii_glasses_pkg::msg::TobiiGlasses, gaze_position_3d),  // bytes offset in struct
     nullptr,  // default value
-    nullptr,  // size() function pointer
-    nullptr,  // get_const(index) function pointer
-    nullptr,  // get(index) function pointer
+    size_function__TobiiGlasses__gaze_position_3d,  // size() function pointer
+    get_const_function__TobiiGlasses__gaze_position_3d,  // get_const(index) function pointer
+    get_function__TobiiGlasses__gaze_position_3d,  // get(index) function pointer
     nullptr  // resize(index) function pointer
   },
   {
@@ -127,13 +207,43 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember TobiiGlasses_
     nullptr,  // get_const(index) function pointer
     nullptr,  // get(index) function pointer
     nullptr  // resize(index) function pointer
+  },
+  {
+    "acelerometer",  // name
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_FLOAT,  // type
+    0,  // upper bound of string
+    nullptr,  // members of sub message
+    true,  // is array
+    3,  // array size
+    false,  // is upper bound
+    offsetof(tobii_glasses_pkg::msg::TobiiGlasses, acelerometer),  // bytes offset in struct
+    nullptr,  // default value
+    size_function__TobiiGlasses__acelerometer,  // size() function pointer
+    get_const_function__TobiiGlasses__acelerometer,  // get_const(index) function pointer
+    get_function__TobiiGlasses__acelerometer,  // get(index) function pointer
+    nullptr  // resize(index) function pointer
+  },
+  {
+    "gyroscope",  // name
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_FLOAT,  // type
+    0,  // upper bound of string
+    nullptr,  // members of sub message
+    true,  // is array
+    3,  // array size
+    false,  // is upper bound
+    offsetof(tobii_glasses_pkg::msg::TobiiGlasses, gyroscope),  // bytes offset in struct
+    nullptr,  // default value
+    size_function__TobiiGlasses__gyroscope,  // size() function pointer
+    get_const_function__TobiiGlasses__gyroscope,  // get_const(index) function pointer
+    get_function__TobiiGlasses__gyroscope,  // get(index) function pointer
+    nullptr  // resize(index) function pointer
   }
 };
 
 static const ::rosidl_typesupport_introspection_cpp::MessageMembers TobiiGlasses_message_members = {
   "tobii_glasses_pkg::msg",  // message namespace
   "TobiiGlasses",  // message name
-  6,  // number of fields
+  8,  // number of fields
   sizeof(tobii_glasses_pkg::msg::TobiiGlasses),
   TobiiGlasses_message_member_array,  // message members
   TobiiGlasses_init_function,  // function to initialize message memory (memory has to be allocated)

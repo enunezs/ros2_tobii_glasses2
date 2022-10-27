@@ -1,8 +1,4 @@
 msg/EyeData.idl
 msg/EyeData.msg
-msg/GazePosition.idl
-msg/GazePosition.msg
-msg/GazePosition3D.idl
-msg/GazePosition3D.msg
 msg/TobiiGlasses.idl
 msg/TobiiGlasses.msg

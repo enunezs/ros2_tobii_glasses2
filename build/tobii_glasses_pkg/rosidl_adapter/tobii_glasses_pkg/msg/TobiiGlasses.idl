@@ -5,49 +5,29 @@
 #include "sensor_msgs/msg/Image.idl"
 #include "std_msgs/msg/Header.idl"
 #include "tobii_glasses_pkg/msg/EyeData.idl"
-#include "tobii_glasses_pkg/msg/GazePosition.idl"
-#include "tobii_glasses_pkg/msg/GazePosition3D.idl"
 
 module tobii_glasses_pkg {
   module msg {
-    @verbatim (language="comment", text=
-      " Values roughly correspond to:" "\n"
-      " ts (timestamp)" "\n"
-      " s (status)" "\n"
-      " gidx (gaze index)" "\n"
-      " l (latency)" "\n"
-      " gp (gaze position)")
+    typedef float float__2[2];
+    typedef float float__3[3];
     struct TobiiGlasses {
-      @verbatim (language="comment", text=
-        "'gp': {'ts':                    1493630785, 's': 0, 'gidx': 126842, 'l': 71271, 'gp': [0.6345, 0.5532]}," "\n"
-        " Header timestamp should be acquisition time of image" "\n"
-        " Header frame_id should be optical frame of camera" "\n"
-        " origin of frame should be optical center of camera" "\n"
-        " +x should point to the right in the image" "\n"
-        " +y should point down in the image" "\n"
-        " +z should point into to plane of the image" "\n"
-        " If the frame_id here and the frame_id of the CameraInfo" "\n"
-        " message associated with the image conflict" "\n"
-        " the behavior is undefined")
       std_msgs::msg::Header header;
 
       @verbatim (language="comment", text=
-        " Front camera image")
+        "TODO: Eventually add other cameras")
       sensor_msgs::msg::Image camera_image;
 
-      tobii_glasses_pkg::msg::GazePosition gaze_position;
+      float__2 gaze_position;
 
-      @verbatim (language="comment", text=
-        "float32 gaze_position")
-      @unit (value="2")
-      tobii_glasses_pkg::msg::GazePosition3D gaze_position_3d;
+      float__3 gaze_position_3d;
 
-      @verbatim (language="comment", text=
-        "float32 gaze_position_3d")
-      @unit (value="3")
       tobii_glasses_pkg::msg::EyeData right_eye;
 
       tobii_glasses_pkg::msg::EyeData left_eye;
+
+      float__3 acelerometer;
+
+      float__3 gyroscope;
     };
   };
 };

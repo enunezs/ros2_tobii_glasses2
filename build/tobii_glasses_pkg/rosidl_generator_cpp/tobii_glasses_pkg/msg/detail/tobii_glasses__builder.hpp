@@ -20,16 +20,48 @@ namespace msg
 namespace builder
 {
 
+class Init_TobiiGlasses_gyroscope
+{
+public:
+  explicit Init_TobiiGlasses_gyroscope(::tobii_glasses_pkg::msg::TobiiGlasses & msg)
+  : msg_(msg)
+  {}
+  ::tobii_glasses_pkg::msg::TobiiGlasses gyroscope(::tobii_glasses_pkg::msg::TobiiGlasses::_gyroscope_type arg)
+  {
+    msg_.gyroscope = std::move(arg);
+    return std::move(msg_);
+  }
+
+private:
+  ::tobii_glasses_pkg::msg::TobiiGlasses msg_;
+};
+
+class Init_TobiiGlasses_acelerometer
+{
+public:
+  explicit Init_TobiiGlasses_acelerometer(::tobii_glasses_pkg::msg::TobiiGlasses & msg)
+  : msg_(msg)
+  {}
+  Init_TobiiGlasses_gyroscope acelerometer(::tobii_glasses_pkg::msg::TobiiGlasses::_acelerometer_type arg)
+  {
+    msg_.acelerometer = std::move(arg);
+    return Init_TobiiGlasses_gyroscope(msg_);
+  }
+
+private:
+  ::tobii_glasses_pkg::msg::TobiiGlasses msg_;
+};
+
 class Init_TobiiGlasses_left_eye
 {
 public:
   explicit Init_TobiiGlasses_left_eye(::tobii_glasses_pkg::msg::TobiiGlasses & msg)
   : msg_(msg)
   {}
-  ::tobii_glasses_pkg::msg::TobiiGlasses left_eye(::tobii_glasses_pkg::msg::TobiiGlasses::_left_eye_type arg)
+  Init_TobiiGlasses_acelerometer left_eye(::tobii_glasses_pkg::msg::TobiiGlasses::_left_eye_type arg)
   {
     msg_.left_eye = std::move(arg);
-    return std::move(msg_);
+    return Init_TobiiGlasses_acelerometer(msg_);
   }
 
 private:

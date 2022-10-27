@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/usr/workspaces/ros2_tobii_glasses2
+CMAKE_SOURCE_DIR = /root/ws/ros2_tobii_glasses2
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg
+CMAKE_BINARY_DIR = /root/ws/ros2_tobii_glasses2/build/tobii_glasses_pkg
 
 # Utility rule file for tobii_glasses_pkg_uninstall.
 
@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_
 include CMakeFiles/tobii_glasses_pkg_uninstall.dir/progress.make
 
 CMakeFiles/tobii_glasses_pkg_uninstall:
-	/usr/bin/cmake -P /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/ament_cmake_uninstall_target/ament_cmake_uninstall_target.cmake
+	/usr/bin/cmake -P /root/ws/ros2_tobii_glasses2/build/tobii_glasses_pkg/ament_cmake_uninstall_target/ament_cmake_uninstall_target.cmake
 
 tobii_glasses_pkg_uninstall: CMakeFiles/tobii_glasses_pkg_uninstall
 tobii_glasses_pkg_uninstall: CMakeFiles/tobii_glasses_pkg_uninstall.dir/build.make
@@ -71,6 +71,6 @@ CMakeFiles/tobii_glasses_pkg_uninstall.dir/clean:
 .PHONY : CMakeFiles/tobii_glasses_pkg_uninstall.dir/clean
 
 CMakeFiles/tobii_glasses_pkg_uninstall.dir/depend:
-	cd /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/usr/workspaces/ros2_tobii_glasses2 /home/usr/workspaces/ros2_tobii_glasses2 /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/tobii_glasses_pkg_uninstall.dir/DependInfo.cmake --color=$(COLOR)
+	cd /root/ws/ros2_tobii_glasses2/build/tobii_glasses_pkg && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/ws/ros2_tobii_glasses2 /root/ws/ros2_tobii_glasses2 /root/ws/ros2_tobii_glasses2/build/tobii_glasses_pkg /root/ws/ros2_tobii_glasses2/build/tobii_glasses_pkg /root/ws/ros2_tobii_glasses2/build/tobii_glasses_pkg/CMakeFiles/tobii_glasses_pkg_uninstall.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/tobii_glasses_pkg_uninstall.dir/depend
 

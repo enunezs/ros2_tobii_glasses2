@@ -1,9 +1,7 @@
 {
   "package_name": "tobii_glasses_pkg",
   "non_idl_tuples": [
-    "/home/usr/workspaces/ros2_tobii_glasses2:msg/TobiiGlasses.msg",
-    "/home/usr/workspaces/ros2_tobii_glasses2:msg/GazePosition.msg",
-    "/home/usr/workspaces/ros2_tobii_glasses2:msg/GazePosition3D.msg",
-    "/home/usr/workspaces/ros2_tobii_glasses2:msg/EyeData.msg"
+    "/root/ws/ros2_tobii_glasses2:msg/TobiiGlasses.msg",
+    "/root/ws/ros2_tobii_glasses2:msg/EyeData.msg"
   ]
 }

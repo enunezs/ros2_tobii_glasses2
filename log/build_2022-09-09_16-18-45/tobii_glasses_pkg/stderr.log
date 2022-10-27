@@ -1,6 +1,0 @@
-CMake Error at cmake_install.cmake:41 (file):
-  file INSTALL cannot find
-  "/home/usr/workspaces/ros2_tobii_glasses2/../tobii_glasses_pkg": No such
-  file or directory.
-
-

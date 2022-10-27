@@ -1,6 +1,0 @@
-CMake Error at CMakeLists.txt:45 (install):
-  install DIRECTORY given non-directory "scripts/video_capture.py" to
-  install.
-
-
-make: *** [Makefile:1468: cmake_check_build_system] Error 1

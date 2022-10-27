@@ -46,6 +46,7 @@ ament_python_install_package(${PROJECT_NAME})
 
 install(PROGRAMS
   scripts/tobii_glasses.py
+  scripts/frame_publisher.py
   DESTINATION lib/${PROJECT_NAME}
 )
 

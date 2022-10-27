@@ -15,10 +15,6 @@
 #include "std_msgs/msg/detail/header__traits.hpp"
 // Member 'camera_image'
 #include "sensor_msgs/msg/detail/image__traits.hpp"
-// Member 'gaze_position'
-#include "tobii_glasses_pkg/msg/detail/gaze_position__traits.hpp"
-// Member 'gaze_position_3d'
-#include "tobii_glasses_pkg/msg/detail/gaze_position3_d__traits.hpp"
 // Member 'right_eye'
 // Member 'left_eye'
 #include "tobii_glasses_pkg/msg/detail/eye_data__traits.hpp"
@@ -40,11 +36,11 @@ inline const char * name<tobii_glasses_pkg::msg::TobiiGlasses>()
 
 template<>
 struct has_fixed_size<tobii_glasses_pkg::msg::TobiiGlasses>
-  : std::integral_constant<bool, has_fixed_size<sensor_msgs::msg::Image>::value && has_fixed_size<std_msgs::msg::Header>::value && has_fixed_size<tobii_glasses_pkg::msg::EyeData>::value && has_fixed_size<tobii_glasses_pkg::msg::GazePosition3D>::value && has_fixed_size<tobii_glasses_pkg::msg::GazePosition>::value> {};
+  : std::integral_constant<bool, has_fixed_size<sensor_msgs::msg::Image>::value && has_fixed_size<std_msgs::msg::Header>::value && has_fixed_size<tobii_glasses_pkg::msg::EyeData>::value> {};
 
 template<>
 struct has_bounded_size<tobii_glasses_pkg::msg::TobiiGlasses>
-  : std::integral_constant<bool, has_bounded_size<sensor_msgs::msg::Image>::value && has_bounded_size<std_msgs::msg::Header>::value && has_bounded_size<tobii_glasses_pkg::msg::EyeData>::value && has_bounded_size<tobii_glasses_pkg::msg::GazePosition3D>::value && has_bounded_size<tobii_glasses_pkg::msg::GazePosition>::value> {};
+  : std::integral_constant<bool, has_bounded_size<sensor_msgs::msg::Image>::value && has_bounded_size<std_msgs::msg::Header>::value && has_bounded_size<tobii_glasses_pkg::msg::EyeData>::value> {};
 
 template<>
 struct is_message<tobii_glasses_pkg::msg::TobiiGlasses>

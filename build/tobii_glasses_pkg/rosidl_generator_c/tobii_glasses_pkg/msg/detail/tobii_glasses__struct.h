@@ -22,10 +22,6 @@ extern "C"
 #include "std_msgs/msg/detail/header__struct.h"
 // Member 'camera_image'
 #include "sensor_msgs/msg/detail/image__struct.h"
-// Member 'gaze_position'
-#include "tobii_glasses_pkg/msg/detail/gaze_position__struct.h"
-// Member 'gaze_position_3d'
-#include "tobii_glasses_pkg/msg/detail/gaze_position3_d__struct.h"
 // Member 'right_eye'
 // Member 'left_eye'
 #include "tobii_glasses_pkg/msg/detail/eye_data__struct.h"
@@ -35,10 +31,12 @@ typedef struct tobii_glasses_pkg__msg__TobiiGlasses
 {
   std_msgs__msg__Header header;
   sensor_msgs__msg__Image camera_image;
-  tobii_glasses_pkg__msg__GazePosition gaze_position;
-  tobii_glasses_pkg__msg__GazePosition3D gaze_position_3d;
+  float gaze_position[2];
+  float gaze_position_3d[3];
   tobii_glasses_pkg__msg__EyeData right_eye;
   tobii_glasses_pkg__msg__EyeData left_eye;
+  float acelerometer[3];
+  float gyroscope[3];
 } tobii_glasses_pkg__msg__TobiiGlasses;
 
 // Struct for a sequence of tobii_glasses_pkg__msg__TobiiGlasses.

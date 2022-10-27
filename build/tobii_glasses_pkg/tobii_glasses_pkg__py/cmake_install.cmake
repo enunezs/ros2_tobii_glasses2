@@ -1,8 +1,8 @@
-# Install script for directory: /home/usr/workspaces/ros2_tobii_glasses2/build/tobii_glasses_pkg/tobii_glasses_pkg__py
+# Install script for directory: /root/ws/ros2_tobii_glasses2/build/tobii_glasses_pkg/tobii_glasses_pkg__py
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/usr/workspaces/ros2_tobii_glasses2/install/tobii_glasses_pkg")
+  set(CMAKE_INSTALL_PREFIX "/root/ws/ros2_tobii_glasses2/install/tobii_glasses_pkg")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 

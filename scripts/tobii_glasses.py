@@ -36,60 +36,64 @@ from builtin_interfaces.msg import Time as TimeMsg
 from tobiiglassesctrl import TobiiGlassesController  # Import glasses lib
 
 # * Glasses messages
-# TODO: Ahem, simplify or fill
 from tobii_glasses_pkg.msg import TobiiGlasses as TobiiGlassesMsg
 from tobii_glasses_pkg.msg import EyeData as EyeDataMsg
-#from tobii_glasses_pkg.msg import GazePosition
-#from tobii_glasses_pkg.msg import GazePosition3D
+
+# * Mouse emulation
+import pyautogui
+
+# TODO Remove after study done
+import numpy as np
+import cv2, queue, threading, time
 
 ### * PARAMETERS * ###
 # Wifi connection
 ipv4_address = "192.168.71.50"
-# Wired conneciton
-ipv6_address = "fe80::76fe:48ff:fe1f:2c16"      # fe80::692c:1876:10f:33c8
-ipv6_interface = "enx60634c83de17"
-#ping6 ff02::1%eth0
-wired_mode = False
-publish_freq = 25   #Hz
+# Refresh mode
+high_refresh_rate = True
+publish_freq = 50   #50 Hz for high refresh rate, 25 Hz for low
+# Sample resolutions, only change if set to low refresh rate
 video_resolution = (960, 540)     # (qHD) Default for high framerate, optimal performance
-video_resolution = (720, 480)     # Not recommmeded
-video_resolution = (1280, 720)    # plain HD
-video_resolution = (1600, 900)
+#video_resolution = (720, 480)     # Not recommmeded
+#video_resolution = (1280, 720)    # plain HD
+#video_resolution = (1600, 900)
 #video_resolution = (1920,1080)    # (full HD) Default for low framerate
 
-# TODO: Visualization error for eye marker
 
-#use_glasses_timestamp = True # TODO, if false uses ROS-es
-
-### * Mouse emulation * ###
-import pyautogui
-EMULATE_GLASSES = False
+# Glasses emulation via mouse, very useful for testing
+EMULATE_GLASSES = True
+# Perform initial calibration
+do_calibration = True # Set to false to skip calibration process
+# Send image on topic "tobii_glasses/front_camera"
+send_image = True
 
 ### * DEBUG * ###
 syncronize_data = False  
 greyscale = False
-high_refresh_rate = True
-do_calibration = False
-send_image = True
-draw_circle = True
-
+draw_circle = False
 print_performance = False
-record_glasses = False      # TODO: Future
-undo_distortion = False     # TODO: Future
 
-# TODO Remove after study done
-import numpy as np
+### ! Future:
+
+# ! Debug mode not sending other eye data
+
+# ! Wired connection, not supported yet
+wired_mode = False
+#ipv6_address = "fe80::76fe:48ff:fe1f:2c16"      # fe80::692c:1876:10f:33c8
+#ipv6_interface = "enx60634c83de17"
+#ping6 ff02::1%eth0
+
+# record_glasses = False      # TODO: Future
+# undo_distortion = False     # TODO: Future
+
 
 # TODO: Future: INVESTIGATE Individual eye control
 # Add toggle to switch between eyes
 # Trigger calibration from other terminal?
-# TODO: Need to carefully observe data, particularly time
 # TODO: Parameter expose
 # TODO: Use config file
 
 # >>> ros2 run turtlesim turtlesim_node --ros-args --params-file ./turtlesim.yaml
-
-import cv2, queue, threading, time
 
 class tobiiPublisher(Node): 
 
@@ -116,12 +120,10 @@ class tobiiPublisher(Node):
 
         #marker_pub = rospy.Publisher("/visualization_marker", Marker, queue_size = 2)
 
-        """
-        self.publisher_eye_data = self.create_publisher(
+        
+        self.publisher_gaze_position = self.create_publisher(
             String, "tobii_glasses/gaze_position", 1)
-        """
-
-
+        
 
         # * Init glasses
         self.bridge = CvBridge()
@@ -233,7 +235,7 @@ class tobiiPublisher(Node):
         else:
             #Emulated: Webcam + Mouse
             string_data = self.emulate_glasses()
-            print(string_data)
+            #print(string_data)
             json_data = json.loads(string_data)
         
         eye_data_get_time = self.get_clock().now()
@@ -283,7 +285,17 @@ class tobiiPublisher(Node):
             self.publisher_front_camera.publish(img_msg)  # Publish the message
 
 
-        if True : # tobii_glasses_msg.left_eye:
+        # make a string message with the gaze point data and publish it
+        gaze_point_msg = String()
+        gaze_point_msg.data = str(tobii_glasses_msg.gaze_position[0]) + "," + str(tobii_glasses_msg.gaze_position[1])
+        self.publisher_gaze_position.publish(gaze_point_msg)
+
+        #self.publisher_gaze_position.publish()  # Publish the message
+
+
+
+
+        if False : # tobii_glasses_msg.left_eye:
 
             marker_msg = MarkerArray()
             magnitude = 0.15
@@ -527,7 +539,6 @@ class tobiiPublisher(Node):
         emulation_data = "{" + emulation_mems + "," + emulation_right_eye + "," + emulation_left_eye + "," + emulation_gp + "," + emulation_gp3 + "," + emulation_pts + "}"
 
         emulation_data = emulation_data.replace(" ", "")
-        #print(emulation_data)
         return emulation_data
 
     def print_performance_stats(self, start_time, end_time):
