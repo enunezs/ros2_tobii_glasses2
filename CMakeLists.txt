@@ -46,6 +46,7 @@ ament_python_install_package(${PROJECT_NAME})
 
 install(PROGRAMS
   scripts/tobii_glasses.py
+  scripts/frame_publisher.py
   DESTINATION lib/${PROJECT_NAME}
 )
 
@@ -53,8 +54,6 @@ install(PROGRAMS
 # Generate custom messages
 rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/TobiiGlasses.msg"
-  "msg/GazePosition.msg"
-  "msg/GazePosition3D.msg"
   "msg/EyeData.msg"
   DEPENDENCIES builtin_interfaces
   DEPENDENCIES sensor_msgs
