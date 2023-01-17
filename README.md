@@ -4,7 +4,7 @@ Tobii Glasses 2 interfacing for ROS2.
 
 Provides and publishes a `tobii_glasses` message with the Glasses information, as well as optional `tobii_glasses/camera` and `tobii_glasses/gaze_position`for just those variables.
 
-The script has many customizable variables to configure resolution, frequency, syncing and more!
+The script has many customizable variables to configure resolution, frequency, syncing mode and more
 
 Using the amazing library [Tobiiglassespysuite](https://github.com/ddetommaso/TobiiGlassesPySuite).
 
@@ -18,7 +18,7 @@ source install/setup
 ros2 run tobii_glasses_pkg tobii_glasses.py
 ```
 
-Alternatively, run the associated as a docker container with the providedDockerfile
+Alternatively, run the associated as a docker container with the provided Dockerfile
 
 ```
 xhost +local:root
