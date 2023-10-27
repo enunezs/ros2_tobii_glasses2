@@ -61,7 +61,7 @@ video_resolution = (960, 540)     # (qHD) Default for high framerate, optimal pe
 
 
 # Glasses emulation via mouse, very useful for testing
-EMULATE_GLASSES = True
+EMULATE_GLASSES = False
 # Perform initial calibration
 do_calibration = True # Set to false to skip calibration process
 # Send image on topic "tobii_glasses/front_camera"
@@ -113,6 +113,12 @@ class tobiiPublisher(Node):
         if send_image:
             self.publisher_front_camera = self.create_publisher(
                 Image, "tobii_glasses/front_camera", 1)
+
+        self.declare_parameter('devel_mode', False)
+
+        global EMULATE_GLASSES
+        EMULATE_GLASSES = self.get_parameter('devel_mode').get_parameter_value().bool_value
+        print("emulate mode is ", EMULATE_GLASSES)
 
         # * markers
         self.publisher_marker = self.create_publisher(
@@ -166,8 +172,10 @@ class tobiiPublisher(Node):
 
             # self.load_glasses_calibration()
             
-            self.cap = VideoCapture(
-                "rtsp://%s:8554/live/scene" % ipv4_address)
+            self.cap = VideoCapture("rtsp://%s:8554/live/scene" % ipv4_address)
+            #self.cap = VideoCapture("rtsp://%s:8554/live/eyes" % ipv4_address)
+            
+                
 
         # * Check if connection is succesful
         
